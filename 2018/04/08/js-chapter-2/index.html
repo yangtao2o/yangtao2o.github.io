@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>学习《JavaScript经典实例》之第2章 | 大涛子峡谷</title>
+  <meta name="description" content="一枚小小的前端攻城狮、迷恋摄影" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/img/favicon-y.ico">
+  <link rel="alternate" href="/atom.xml" title="大涛子峡谷">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="/img/favicon-y.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				大涛子峡谷
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-projects flat-box' href='https://www.qdfuns.com/u/32286.html'>
+    									<i class='fa fa-cube fa-'></i>&nbsp;项目
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-rss fa-'></i>&nbsp;博客
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='/archives'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-favorite flat-box' href='http://collect.w3ctrain.com/'>
+    									<i class='fa fa-address-book fa-'></i>&nbsp;收藏夹
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-juejin flat-box' href='https://juejin.im/user/58b67dd58fd9c50061238e38/shares'>
+    									<i class='fa fa-share-alt-square fa-'></i>&nbsp;分享
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-photo flat-box' href='https://tuchong.com/2763959/'>
+    									<i class='fa fa-camera-retro fa-'></i>&nbsp;摄影
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-book flat-box' href='https://www.jianshu.com/u/c6b5715f3016'>
+    									<i class='fa fa-book fa-'></i>&nbsp;简书
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">大涛子峡谷</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-projects flat-box nav flat-box' href='https://www.qdfuns.com/u/32286.html'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-favorite flat-box nav flat-box' href='http://collect.w3ctrain.com/'><i class='fa fa-address-book fa-fw'></i>&nbsp;收藏夹</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-juejin flat-box nav flat-box' href='https://juejin.im/user/58b67dd58fd9c50061238e38/shares'><i class='fa fa-share-alt-square fa-fw'></i>&nbsp;分享</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-photo flat-box nav flat-box' href='https://tuchong.com/2763959/'><i class='fa fa-camera-retro fa-fw'></i>&nbsp;摄影</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-book flat-box nav flat-box' href='https://www.jianshu.com/u/c6b5715f3016'><i class='fa fa-book fa-fw'></i>&nbsp;简书</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-js-chapter-2" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                学习《JavaScript经典实例》之第2章
+            
+        </h1>
+        <time>
+            2018-04-08&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="第2章-JavaScript数组"><a href="#第2章-JavaScript数组" class="headerlink" title="第2章 JavaScript数组"></a>第2章 JavaScript数组</h3><a id="more"></a>
+<h4 id="2-1-在数组中搜索"><a href="#2-1-在数组中搜索" class="headerlink" title="2.1 在数组中搜索"></a>2.1 在数组中搜索</h4><ul>
+<li><code>indexOf()、lastIndexOf()</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'dog'</span>, <span class="string">'cat'</span>, <span class="string">'seal'</span>, <span class="string">'elephant'</span>, <span class="string">'walrus'</span>, <span class="string">'lion'</span>);</span><br><span class="line"><span class="keyword">var</span> index = animals.indexOf(<span class="string">'cat'</span>);</span><br><span class="line"><span class="keyword">var</span> index2 = animals.lastIndexOf(<span class="string">'lion'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'i'</span>,index);  <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'i2'</span>,index2);  <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.runoob.com/jsref/jsref-findindex.html" target="_blank" rel="noopener">findIndex()</a> 方法返回传入一个测试条件（函数）符合条件的数组第一个元素位置。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nums = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">199</span>, <span class="number">80</span>, <span class="number">400</span>, <span class="number">30</span>, <span class="number">90</span>];</span><br><span class="line"><span class="keyword">var</span> over = nums.findIndex(<span class="function"><span class="keyword">function</span>(<span class="params">ele</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (ele &gt;= <span class="number">100</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'nums'</span>,nums[over]);  <span class="comment">//199</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-用concat-和apply-将一个二维数组扁平化"><a href="#2-2-用concat-和apply-将一个二维数组扁平化" class="headerlink" title="2.2 用concat()和apply()将一个二维数组扁平化"></a>2.2 用concat()和apply()将一个二维数组扁平化</h4><ul>
+<li>concat() 方法用于连接两个或多个数组。该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。<ul>
+<li><code>arrayObject.concat(arrayX,arrayX,......,arrayX)</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruitarray = [];</span><br><span class="line">fruitarray[<span class="number">0</span>] = [<span class="string">'stranwberry'</span>, <span class="string">'orange'</span>];</span><br><span class="line">fruitarray[<span class="number">1</span>] = [<span class="string">'lime'</span>, <span class="string">'peach'</span>, <span class="string">'banana'</span>];</span><br><span class="line">fruitarray[<span class="number">2</span>] = [<span class="string">'tangerine'</span>, <span class="string">'apricot'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'array'</span>,fruitarray.concat());</span><br><span class="line"><span class="keyword">var</span> newArray = fruitarray.concat.apply([], fruitarray);</span><br><span class="line"><span class="built_in">console</span>.log(newArray);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.cnblogs.com/lengyuehuahun/p/5643625.html" target="_blank" rel="noopener">apply()与call()的区别</a></li>
+<li><a href="https://www.zhihu.com/question/20289071" target="_blank" rel="noopener">如何理解和熟练运用js中的call及apply？</a><ul>
+<li><code>obj.call(thisObj, arg1, arg2, ...);</code></li>
+<li><code>obj.apply(thisObj, [arg1, arg2, ...]);</code></li>
+</ul>
+</li>
+<li>call() &amp; apply()，动态改变this</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'add'</span>, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'sum'</span>, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">1</span>, <span class="number">2</span>);  <span class="comment">//Window</span></span><br><span class="line">sum(<span class="number">1</span>, <span class="number">2</span>);  <span class="comment">//Window</span></span><br><span class="line"></span><br><span class="line">add.call(sum, <span class="number">1</span>, <span class="number">2</span>);  <span class="comment">//sum(a, b)</span></span><br><span class="line">sum.call(add, <span class="number">1</span>, <span class="number">2</span>);  <span class="comment">//add(a ,b)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>arguments装换为数组, 返回的是数组，但是arguments本身保持不变</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arg = [].slice.call(<span class="built_in">arguments</span>);</span><br><span class="line"><span class="comment">// [].slice.call(document.getElementsByTagName('li'));</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>借用别人的方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">	name: <span class="string">'jack'</span>,</span><br><span class="line">	showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'this name:'</span>,<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = &#123;</span><br><span class="line">	name: <span class="string">'rose'</span></span><br><span class="line">&#125;</span><br><span class="line">foo.showName();  <span class="comment">//jack</span></span><br><span class="line">foo.showName.call(bar);  <span class="comment">//rose</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现继承</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Student = <span class="function"><span class="keyword">function</span>(<span class="params">name, age, high</span>) </span>&#123;</span><br><span class="line">	Person.call(<span class="keyword">this</span>, name, age);</span><br><span class="line">	<span class="keyword">this</span>.high = high;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>封装对象保证this的指向</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">_this.$box.on(<span class="string">'mousedown'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> _this.fndown.apply(_this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-删除或替换数组元素"><a href="#2-3-删除或替换数组元素" class="headerlink" title="2.3 删除或替换数组元素"></a>2.3 删除或替换数组元素</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">splice()</a> 方法与 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">slice()</a> 方法的作用是不同的，splice() 方法会直接对数组进行修改。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'dog'</span>, <span class="string">'cat'</span>, <span class="string">'rabbit'</span>, <span class="string">'pig'</span>, <span class="string">'apple'</span>);</span><br><span class="line"><span class="comment">// 从数组删除元素</span></span><br><span class="line">animals.splice(animals.indexOf(<span class="string">'apple'</span>), <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(animals);  <span class="comment">// ["dog", "cat", "rabbit", "pig"]</span></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line">animals.splice(animals.indexOf(<span class="string">'pig'</span>), <span class="number">1</span>, <span class="string">'monkey'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(animals);  <span class="comment">//["dog", "cat", "rabbit", "monkey"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用循环和分割来替换和删除元素</span></span><br><span class="line"><span class="keyword">var</span> charSets = [<span class="string">"ab"</span>, <span class="string">"bb"</span>, <span class="string">"cd"</span>, <span class="string">"ab"</span>, <span class="string">"cc"</span>, <span class="string">"ab"</span>, <span class="string">"dd"</span>, <span class="string">"ab"</span>];</span><br><span class="line"><span class="keyword">while</span>(charSets.indexOf(<span class="string">'ab'</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">	charSets.splice(charSets.indexOf(<span class="string">'ab'</span>), <span class="number">1</span>, <span class="string">'**'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(charSets);  <span class="comment">//["**", "bb", "cd", "**", "cc", "**", "dd", "**"]</span></span><br><span class="line"><span class="keyword">while</span>(charSets.indexOf(<span class="string">'**'</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">	charSets.splice(charSets.indexOf(<span class="string">'**'</span>), <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(charSets); <span class="comment">//["bb", "cd", "cc", "dd"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-4-提取一个数组中的一部分"><a href="#2-4-提取一个数组中的一部分" class="headerlink" title="2.4 提取一个数组中的一部分"></a>2.4 提取一个数组中的一部分</h4><ul>
+<li>不更改原数组，使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">slice()</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'dog'</span>, <span class="string">'cat'</span>, <span class="string">'rabbit'</span>, <span class="string">'pig'</span>, <span class="string">'apple'</span>);</span><br><span class="line"><span class="keyword">var</span> newAnimals = animals.slice(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(animals);  <span class="comment">//["dog", "cat", "rabbit", "pig", "apple"]</span></span><br><span class="line"><span class="built_in">console</span>.log(newAnimals);  <span class="comment">//["cat"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-5-对每一个数组元素应用一个函数"><a href="#2-5-对每一个数组元素应用一个函数" class="headerlink" title="2.5 对每一个数组元素应用一个函数"></a>2.5 对每一个数组元素应用一个函数</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/forEach" target="_blank" rel="noopener">Array.prototype.forEach()</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> charSets = [<span class="string">"ab"</span>, <span class="string">"bb"</span>, <span class="string">"cd"</span>, <span class="string">"ab"</span>, <span class="string">"cc"</span>, <span class="string">"ab"</span>, <span class="string">"dd"</span>, <span class="string">"ab"</span>];</span><br><span class="line">charSets.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(element == <span class="string">'ab'</span>) array[index] = <span class="string">'**'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(charSets);  <span class="comment">//["**", "bb", "cd", "**", "cc", "**", "dd", "**"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-6-使用forEach-和call-遍历querySelectorAll-的结果"><a href="#2-6-使用forEach-和call-遍历querySelectorAll-的结果" class="headerlink" title="2.6 使用forEach()和call()遍历querySelectorAll()的结果"></a>2.6 使用forEach()和call()遍历querySelectorAll()的结果</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/querySelectorAll" target="_blank" rel="noopener">querySelectorAll()</a></li>
+<li>可以将forEach()强制和一个NodeList一起使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cells = <span class="built_in">document</span>.querySelectorAll(<span class="string">'td + td'</span>);</span><br><span class="line">[].forEach.call(cells, <span class="function"><span class="keyword">function</span>(<span class="params">cell</span>) </span>&#123;</span><br><span class="line">	sum += <span class="built_in">parseFloat</span>(cell.firstChild.data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="2-7-对数组中的每个元素执行一个函数并返回一个新数组"><a href="#2-7-对数组中的每个元素执行一个函数并返回一个新数组" class="headerlink" title="2.7 对数组中的每个元素执行一个函数并返回一个新数组"></a>2.7 对数组中的每个元素执行一个函数并返回一个新数组</h4><ul>
+<li>将一个十进制的数组转化为新的等价的十六进制数组</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">map()</a>方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</li>
+<li>与forEach()不同，不会修改原数组，但是必须返回一个值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> decArray = [<span class="number">23</span>, <span class="number">3</span>, <span class="number">24</span>, <span class="number">45</span>, <span class="number">500</span>, <span class="number">9</span>, <span class="number">70</span>];</span><br><span class="line"><span class="keyword">var</span> hexArray = decArray.map(<span class="function"><span class="keyword">function</span>(<span class="params">ele</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ele.toString(<span class="number">16</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(decArray);  <span class="comment">//[23, 3, 24, 45, 500, 9, 70]</span></span><br><span class="line"><span class="built_in">console</span>.log(hexArray);  <span class="comment">//["17", "3", "18", "2d", "1f4", "9", "46"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-8-创建一个过滤后的数组"><a href="#2-8-创建一个过滤后的数组" class="headerlink" title="2.8 创建一个过滤后的数组"></a>2.8 创建一个过滤后的数组</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">filter()</a> 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> charSet = [<span class="string">'**'</span>, <span class="string">'bb'</span>, <span class="string">'cc'</span>, <span class="string">'**'</span>, <span class="string">'cd'</span>];</span><br><span class="line"><span class="keyword">var</span> newArray = charSet.filter(<span class="function"><span class="keyword">function</span>(<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> element != <span class="string">"**"</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(newArray);  <span class="comment">//["bb", "cc", "cd"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-9-验证数组内容"><a href="#2-9-验证数组内容" class="headerlink" title="2.9 验证数组内容"></a>2.9 验证数组内容</h4><ul>
+<li>使用Array <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">every()</a>方法来检查每个元素是否符合给定的条件</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">some()</a> 方法确保至少某些元素符合该条件</li>
+<li>区别：every()方法只要函数返回一个false值，处理就会结束，而some()方法会继续测试每个元素，直至返回true，此时，不再验证其他元素，即可返回ture</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testValue</span>(<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> testExp = <span class="regexp">/^[a-zA-Z]+$/</span>;</span><br><span class="line">	<span class="keyword">return</span> testExp.test(element);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> elemSet = [<span class="string">'**'</span>, <span class="number">123</span>, <span class="string">'adv'</span>, <span class="string">'-'</span>, <span class="number">45</span>, <span class="string">'AAA'</span>];</span><br><span class="line"><span class="keyword">var</span> result = elemSet.every(testValue);</span><br><span class="line"><span class="keyword">var</span> result2 = elemSet.some(testValue);</span><br><span class="line"><span class="built_in">console</span>.log(result);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(result2);  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> elemSet2 = [<span class="string">'aaa'</span>, <span class="string">'animals'</span>, <span class="string">'vvv'</span>];</span><br><span class="line">result = elemSet2.every(testValue);</span><br><span class="line">result2 = elemSet2.some(testValue);</span><br><span class="line"><span class="built_in">console</span>.log(result);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(result2);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-10-使用一个关联数组来存储表单元素名和值"><a href="#2-10-使用一个关联数组来存储表单元素名和值" class="headerlink" title="2.10 使用一个关联数组来存储表单元素名和值"></a>2.10 使用一个关联数组来存储表单元素名和值</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/keys" target="_blank" rel="noopener">keys()</a> 方法返回一个新的Array迭代器，它包含数组中每个索引的键。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elemArray = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> elem = <span class="built_in">document</span>.forms[<span class="number">0</span>].elements[<span class="number">0</span>];</span><br><span class="line">elemArray[elem.id] = elem.value;</span><br><span class="line"><span class="keyword">var</span> elemArray = &#123;<span class="attr">name</span>: <span class="string">'yt'</span>, <span class="attr">age</span>:<span class="number">25</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(elemArray).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> value = elemArray[key];</span><br><span class="line">	<span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>待续~</p>
+</blockquote>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/JavaScript/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;JavaScript</a>
+                
+                    <a href="/tags/JavaScript经典实例/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;JavaScript经典实例</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/04/08/js-chapter-3/" rel="prev" title="学习《JavaScript经典实例》之第3章">
+                                  
+                                      学习《JavaScript经典实例》之第3章
+                                  
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>JavaScript
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>JavaScript经典实例
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/04/08/js-chapter-1/" rel="prev" title="学习《JavaScript经典实例》之第1章">
+                                    
+                                        学习《JavaScript经典实例》之第1章
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>JavaScript
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>JavaScript经典实例
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2018/07/06/hexo-order/">Hexo常用命令集合</a></li>
+            
+                <li><a href="https://istaotao.com/2018/04/08/yilia/">关于使用Hexo主题Yilia中碰到的问题一二</a></li>
+            
+                <li><a href="https://istaotao.com/2018/04/08/hexo/">使用Hexo+Github搭建自己的个人网站</a></li>
+            
+                <li><a href="https://istaotao.com/2018/04/08/js-chapter-3/">学习《JavaScript经典实例》之第3章</a></li>
+            
+                <li><a href="https://istaotao.com/2018/04/08/js-chapter-1/">学习《JavaScript经典实例》之第1章</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: '学习《JavaScript经典实例》之第2章',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+    <section class='m_widget author'>
+        
+            <div class='header'>
+                <img class='avatar' src='/img/me-lg.jpg' />
+            </div>
+        
+        <div class='content'>
+            
+                <h2>大涛子</h2>
+            
+            
+                <div>
+                    <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                    温度不迷茫，方向不倔强
+                </div>
+            
+        </div>
+        
+            <div class="social-wrapper">
+              
+                
+                    <a href="mailto:yangtaobanner@foxmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="https://github.com/yangtao2o" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="https://music.163.com/#/user/home?id=282751852" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-music" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-linkedin" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="http://weibo.com/taoboy0208" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-weibo" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="/img/wx.png" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-weixin" aria-hidden="true"></i></a>
+                
+              
+                
+              
+            </div>
+        
+    </section>
+
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/Email/"><div class='name'>Email</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/MacOS/"><div class='name'>MacOS</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/git/"><div class='name'>git</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/github/"><div class='name'>github</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/前端学习资料/"><div class='name'>前端学习资料</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/置顶/"><div class='name'>置顶</div><div class='badge'>1</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget tagcloud'>
+        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+        <div class='content'>
+            <a href="/tags/EDM/" style="font-size: 14px; color: #999">EDM</a> <a href="/tags/Hexo/" style="font-size: 20.67px; color: #6c6c6c">Hexo</a> <a href="/tags/Homebrew/" style="font-size: 14px; color: #999">Homebrew</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/JavaScript算法/" style="font-size: 14px; color: #999">JavaScript算法</a> <a href="/tags/JavaScript经典实例/" style="font-size: 20.67px; color: #6c6c6c">JavaScript经典实例</a> <a href="/tags/MacOS/" style="font-size: 20.67px; color: #6c6c6c">MacOS</a> <a href="/tags/Node/" style="font-size: 14px; color: #999">Node</a> <a href="/tags/Theme/" style="font-size: 17.33px; color: #828282">Theme</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/前端学习资料/" style="font-size: 14px; color: #999">前端学习资料</a> <a href="/tags/开发工具/" style="font-size: 17.33px; color: #828282">开发工具</a> <a href="/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/tags/置顶/" style="font-size: 14px; color: #999">置顶</a>
+        </div>
+    </section>
+
+
+    
+    
+        <section class='m_widget music'>
+    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=282751852&auto=0&height=450"></iframe>
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://isliulei.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;大雷子
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="hhttps://zguii.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;贵姥姥
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.zhangxinxu.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;张鑫旭
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.liaoxuefeng.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;廖雪峰的官方网站
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ruanyifeng.com/blog/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;阮一峰的网络日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://cherryblog.site/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Cherry’s blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://jser.me/about.html">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;草依山的Javascript世界
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第2章-JavaScript数组"><span class="toc-text">第2章 JavaScript数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-在数组中搜索"><span class="toc-text">2.1 在数组中搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-用concat-和apply-将一个二维数组扁平化"><span class="toc-text">2.2 用concat()和apply()将一个二维数组扁平化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-删除或替换数组元素"><span class="toc-text">2.3 删除或替换数组元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-提取一个数组中的一部分"><span class="toc-text">2.4 提取一个数组中的一部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-对每一个数组元素应用一个函数"><span class="toc-text">2.5 对每一个数组元素应用一个函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-使用forEach-和call-遍历querySelectorAll-的结果"><span class="toc-text">2.6 使用forEach()和call()遍历querySelectorAll()的结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-对数组中的每个元素执行一个函数并返回一个新数组"><span class="toc-text">2.7 对数组中的每个元素执行一个函数并返回一个新数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8-创建一个过滤后的数组"><span class="toc-text">2.8 创建一个过滤后的数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-验证数组内容"><span class="toc-text">2.9 验证数组内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-10-使用一个关联数组来存储表单元素名和值"><span class="toc-text">2.10 使用一个关联数组来存储表单元素名和值</span></a></li></ol></li></ol>
+        </div>
+    </section>
+
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:yangtaobanner@foxmail.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/yangtao2o" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=282751852" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social fa fa-linkedin flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://weibo.com/taoboy0208" class="social fa fa-weibo flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="/img/wx.png" class="social fa fa-weixin flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX","TeX"],
+            linebreaks: { automatic:true },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno",
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+            Macros: { href: "{}" }
+        },
+        messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>

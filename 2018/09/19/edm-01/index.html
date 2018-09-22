@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>从零制作edm邮件，需要了解的一些规则 | 大涛子峡谷</title>
+  <meta name="description" content="一枚小小的前端攻城狮、迷恋摄影" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/img/favicon-y.ico">
+  <link rel="alternate" href="/atom.xml" title="大涛子峡谷">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="/img/favicon-y.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				大涛子峡谷
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-projects flat-box' href='https://www.qdfuns.com/u/32286.html'>
+    									<i class='fa fa-cube fa-'></i>&nbsp;项目
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-rss fa-'></i>&nbsp;博客
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='/archives'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-favorite flat-box' href='http://collect.w3ctrain.com/'>
+    									<i class='fa fa-address-book fa-'></i>&nbsp;收藏夹
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-juejin flat-box' href='https://juejin.im/user/58b67dd58fd9c50061238e38/shares'>
+    									<i class='fa fa-share-alt-square fa-'></i>&nbsp;分享
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-photo flat-box' href='https://tuchong.com/2763959/'>
+    									<i class='fa fa-camera-retro fa-'></i>&nbsp;摄影
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-book flat-box' href='https://www.jianshu.com/u/c6b5715f3016'>
+    									<i class='fa fa-book fa-'></i>&nbsp;简书
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">大涛子峡谷</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-projects flat-box nav flat-box' href='https://www.qdfuns.com/u/32286.html'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-favorite flat-box nav flat-box' href='http://collect.w3ctrain.com/'><i class='fa fa-address-book fa-fw'></i>&nbsp;收藏夹</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-juejin flat-box nav flat-box' href='https://juejin.im/user/58b67dd58fd9c50061238e38/shares'><i class='fa fa-share-alt-square fa-fw'></i>&nbsp;分享</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-photo flat-box nav flat-box' href='https://tuchong.com/2763959/'><i class='fa fa-camera-retro fa-fw'></i>&nbsp;摄影</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-book flat-box nav flat-box' href='https://www.jianshu.com/u/c6b5715f3016'><i class='fa fa-book fa-fw'></i>&nbsp;简书</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post-edm-01" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                从零制作edm邮件，需要了解的一些规则
+            
+        </h1>
+        <time>
+            2018-09-19&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Email/">Email</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>因为电子邮件客户端预览窗口通常只是一小部分屏幕宽度，你最好上你的电子邮件的宽度设计在大约600px。没有人喜欢水平滚动条<br><a id="more"></a></p>
+<h3 id="一、初见"><a href="#一、初见" class="headerlink" title="一、初见"></a>一、初见</h3><h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><ul>
+<li><code>&lt;table&gt;</code> 标签定义 HTML 表格</li>
+<li>简单的 HTML 表格由 <code>table</code> 元素以及一个或多个 <code>tr</code>、<code>th</code> 或 <code>td</code> 元素组成</li>
+<li><code>tr(table row)</code> 元素定义表格行，<code>th(table head)</code> 元素定义表头，<code>td(table data)</code> 元素定义表格单元</li>
+<li>更复杂的 HTML 表格也可能包括 <code>caption</code>、<code>col</code>、<code>colgroup</code>、<code>thead</code>、<code>tfoot</code> 以及 <code>tbody</code> 元素</li>
+<li><a href="http://www.w3school.com.cn/tags/tag_table.asp" target="_blank" rel="noopener">HTML table 标签</a></li>
+</ul>
+<h4 id="table属性"><a href="#table属性" class="headerlink" title="table属性"></a>table属性</h4><ul>
+<li><code>border</code> — 规定表格边框的宽度</li>
+<li><code>align</code> — 规定表格相对周围元素的对齐方式 <code>(left,center,right)</code></li>
+<li><code>valign</code> — 垂直，默认是<code>valign=&quot;middle&quot;</code>，但是会修改为<code>valign=&quot;top&quot;</code></li>
+<li><code>cellspacing</code> — 规定单元格之间的空间</li>
+<li><code>cellpadding</code> — 规定单元边沿与其内容之间的空白</li>
+<li><code>width</code> — 规定表格的宽度</li>
+<li><code>height</code> — 规定表格的高度</li>
+<li><code>background</code> — 背景图像</li>
+<li><code>bgcolor</code> — 背景颜色</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">bgcolor</span>=<span class="string">"#cccccc"</span> <span class="attr">cellspacing</span>=<span class="string">"10"</span> <span class="attr">cellpadding</span>=<span class="string">"20"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>语文<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>数学<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>英语<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="style"><a href="#style" class="headerlink" title="style"></a>style</h4><ul>
+<li><code>width、height</code></li>
+<li><code>font-family</code></li>
+<li><code>font-size</code></li>
+<li><code>font-weight</code></li>
+<li><code>color</code></li>
+<li><code>line-height</code></li>
+<li><code>border</code></li>
+<li><code>background-color</code></li>
+<li><code>background-image</code></li>
+<li><code>vertical-align</code></li>
+</ul>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><h5 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h5><ul>
+<li><code>&lt;a href=&quot;http://www.eefocus.com&quot; target=&quot;_blank&quot;&gt;</code></li>
+<li><code>&lt;img src=&quot;http://baidu.com/hao123.png&quot; alt=&quot;hao123图片&quot;&gt;</code></li>
+<li><code>&lt;span&gt;我也可以是一段话，只是没法自主设置宽度而已&lt;/span&gt;</code></li>
+</ul>
+<h5 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h5><ul>
+<li><code>&lt;p&gt;我是一段话...&lt;/p&gt;</code></li>
+</ul>
+<h3 id="二、了解"><a href="#二、了解" class="headerlink" title="二、了解"></a>二、了解</h3><h4 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h4><h5 id="Area-1"><a href="#Area-1" class="headerlink" title="Area-1"></a>Area-1</h5><ul>
+<li>HTML 编码格式：<code>utf-8</code></li>
+<li>页面尽量保持宽（600px~800px）、高（1024px），整体邮件不要太大，比如15k（各个邮箱不同）左右，不然很容易走垃圾邮箱</li>
+<li>样式使用行间样式，如：<code>&lt;td style=&quot;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#000000;&quot; &gt;文字&lt;/td&gt;</code>其他的方式会被无视</li>
+</ul>
+<h5 id="Area-2"><a href="#Area-2" class="headerlink" title="Area-2"></a>Area-2</h5><ul>
+<li><code>font-family</code> 属性不能为空</li>
+<li>使用<code>&lt;table&gt;</code>布局，居中显示使用<code>align=&quot;center</code></li>
+<li>不使用 table 以外的 <code>body</code>、<code>meta</code>和<code>html</code>之类的标签，部分邮箱系统会把这些过滤掉</li>
+<li>不使用 <code>flash、java、javascript、frames、iframe、activeX</code> 以及 <code>dhtml</code></li>
+<li>不要出现<code>onmouseover</code>、<code>onmouseout</code>，即使设定了，也会被过滤掉</li>
+</ul>
+<h5 id="Area-3"><a href="#Area-3" class="headerlink" title="Area-3"></a>Area-3</h5><ul>
+<li>区域与区域之间的上下、左右之间的空白间隙，使用标准的<code>&lt;td width=15&gt;&amp;nbsp;&lt;/td&gt;</code>或<code>&lt;td height=&quot;15&quot;&gt;&amp;nbsp;&lt;/td&gt;</code>，不要使用<code>padding=&quot;15px&quot;</code> — 防止各个邮箱的解析不同</li>
+</ul>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><ul>
+<li>图片的每个属性都要定义完整，如：<code>&lt;img src=&quot;http://www.eefocus.com/logo.png&quot; style=&quot;vertical-align:top;display:block;&quot; width=&quot;210&quot; height=&quot;100&quot;  alt=&quot;logo&quot;/&gt;</code></li>
+<li>定义<code>style=&quot;vertical-align:top;&quot;</code> — 防止图片之间会有缝隙、变形等显示异常的情况</li>
+<li>定义<code>display:block</code> — 解决Outlook电子邮件客户中图片底部增加空白间距的问题</li>
+<li>限制每张图片的大小<code>width=&quot;200 height=&quot;200&quot;</code>或者<code>style=&quot;width:200px;height:200px;&quot;</code></li>
+<li>添加每张图片alt属性，如：<code>alt=&quot;我是干啥的&quot;</code> — 防止图片无法加载，也可以知晓这是做什么的</li>
+<li>图片格式使用<code>jpg、png</code>，尽量不要使用<code>gif</code></li>
+<li>地址使用绝对路径（以<code>http/https</code>开头的）</li>
+<li>尽量不使用背景图片<code>background-image</code>（Outlook不显示，但是可以显示背景色：<code>bgColor=&quot;f3f3f3&quot;</code>），直接使用图片<code>&lt;img src=&quot;&quot;&gt;</code></li>
+<li>为了保持各个邮箱的一致性，尽量使用图片，大图可拆分成几张小图拼接，每张图片不要太大（15K以内）</li>
+</ul>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><ul>
+<li>地址绝对路径：<code>&lt;a href=&quot;http://www.eefocus.com&quot;&gt;Logo Plus&lt;/a&gt;</code></li>
+<li>地址不可过长（超过255个字符），尽量简短</li>
+<li>数量尽量不超过10个</li>
+<li>地址不要使用特殊符号，避免解析错误</li>
+<li>文字中出现链接地址，被屏蔽的风险比较高，一般是文字+链接、图片+链接</li>
+<li>不要使用地图功能链接，很容易被划分为垃圾邮箱</li>
+<li>为避免用户收到的邮件图片无法浏览，请制作一份和邮件内容一样的web 页面，然后在邮件顶部写一句话：“如果您无法查看邮件内容，请点击这里”， 链接到放有同样内容的web页面</li>
+</ul>
+<h4 id="Outlook邮箱规则"><a href="#Outlook邮箱规则" class="headerlink" title="Outlook邮箱规则"></a>Outlook邮箱规则</h4><ul>
+<li>内敛元素的<code>padding</code>无效、<code>vertical-align</code>不能被识别，可定义在<code>td</code></li>
+<li>别想着继承的事儿，某一块的样式都单独设置，比如链接样式，文字样式等</li>
+<li><code>p</code>标签的<code>width</code>不起作用，可定义在<code>td</code></li>
+<li>当设置 <code>&lt;img align=&quot;left&quot; /&gt;</code> 或 <code>&lt;img align=&quot;right&quot; /&gt;</code>时，图片会脱离文档流，在其父元素设置了 <code>margin</code> 或 <code>padding</code> 的话，都无法使其下移，左移或右移</li>
+</ul>
+<h5 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h5><ul>
+<li>避免使用<code>margin padding</code>等属性，定义宽高的属性放在<code>td</code>，定义样式放在<code>p</code>或者<code>span</code>等标签内</li>
+<li>一般而言，指定表格单元格宽度要比指定表格自身宽度要好 </li>
+<li>使用bgcolor来替找style=”background:”,在电子邮件客户端中HTML属性要比CSS样式更好，但是优先等级依旧是：css样式&gt;html属性</li>
+</ul>
+<h3 id="三、悟道"><a href="#三、悟道" class="headerlink" title="三、悟道"></a>三、悟道</h3><h4 id="邮件设计"><a href="#邮件设计" class="headerlink" title="邮件设计"></a>邮件设计</h4><ul>
+<li>电子邮件的设计过程是非常纠结的，为了美还得考虑制作过程的煎熬<h5 id="保持简单"><a href="#保持简单" class="headerlink" title="保持简单"></a>保持简单</h5></li>
+<li>当设计一个HTML电子邮件时，请记住保持简单，编码的时候考虑坚持两列布局，这样能为您省去很多麻烦的事情<h5 id="减少图像的使用甚至避免使用"><a href="#减少图像的使用甚至避免使用" class="headerlink" title="减少图像的使用甚至避免使用"></a>减少图像的使用甚至避免使用</h5></li>
+<li>记住你的设计不能太花哨，因为Outlook不支持背景图像<h5 id="窄屏最好"><a href="#窄屏最好" class="headerlink" title="窄屏最好"></a>窄屏最好</h5></li>
+<li>因为电子邮件客户端预览窗口通常只是一小部分屏幕宽度，你最好上你的电子邮件的宽度设计在大约600px。没有人喜欢水平滚动条<h5 id="保持一致"><a href="#保持一致" class="headerlink" title="保持一致"></a>保持一致</h5></li>
+<li>记住，我们使用固定的元素属性cellpadding和cellspacing设置单元格的边距和单元格的间距。这样保持元素之间的间距一致性是正确的与谨慎的<blockquote>
+<p>节选自：<a href="http://www.w3cplus.com/css/getting-started-with-html-emails.html" target="_blank" rel="noopener">开始制作HTML Email </a>之邮件设计</p>
+</blockquote>
+<h4 id="邮件制作"><a href="#邮件制作" class="headerlink" title="邮件制作"></a>邮件制作</h4></li>
+<li>电子邮件的制作过程是非常煎熬的，一不小心就乱了、乱了。<h4 id="邮件测试"><a href="#邮件测试" class="headerlink" title="邮件测试"></a>邮件测试</h4></li>
+<li>电子邮件的测试过程是非常痛苦的，也是最让人奔溃的，因为你很有可能拆了西墙补东墙</li>
+</ul>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><h5 id="我们看一下测试邮件：效果图"><a href="#我们看一下测试邮件：效果图" class="headerlink" title="我们看一下测试邮件：效果图"></a>我们看一下测试邮件：<a href="https://www.qdfuns.com/article.php?mod=view&amp;id=333432fb9305a8331f6cc39998a2626e&amp;uid=32286" target="_blank" rel="noopener">效果图</a></h5>
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/EDM/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;EDM</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2028/04/06/hello-world/" rel="prev" title="欢迎来到大涛子峡谷">
+                                  
+                                      欢迎来到大涛子峡谷
+                                  
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>置顶
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/08/13/macos-bash/" rel="prev" title="Mac 终端简易学习总结">
+                                    
+                                        Mac 终端简易学习总结
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>MacOS
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>终端
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2028/04/06/hello-world/">欢迎来到大涛子峡谷</a></li>
+            
+                <li><a href="https://istaotao.com/2018/08/13/macos-bash/">Mac 终端简易学习总结</a></li>
+            
+                <li><a href="https://istaotao.com/2018/08/09/git-revert/">Git之本地拉取Github代码、修改远程URL</a></li>
+            
+                <li><a href="https://istaotao.com/2018/08/05/macos-brew/">macOS安装homebrew报错 LibreSSL SSL_read SSL_ERROR_SYSCALL errno 54</a></li>
+            
+                <li><a href="https://istaotao.com/2018/08/05/macos-node/">macOS下node版本管理下载新版本时中断返回Segmentation fault 11</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: '从零制作edm邮件，需要了解的一些规则',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+    <section class='m_widget author'>
+        
+            <div class='header'>
+                <img class='avatar' src='/img/me-lg.jpg' />
+            </div>
+        
+        <div class='content'>
+            
+                <h2>大涛子</h2>
+            
+            
+                <div>
+                    <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                    温度不迷茫，方向不倔强
+                </div>
+            
+        </div>
+        
+            <div class="social-wrapper">
+              
+                
+                    <a href="mailto:yangtaobanner@foxmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="https://github.com/yangtao2o" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="https://music.163.com/#/user/home?id=282751852" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-music" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-linkedin" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="http://weibo.com/taoboy0208" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-weibo" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="/img/wx.png" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-weixin" aria-hidden="true"></i></a>
+                
+              
+                
+              
+            </div>
+        
+    </section>
+
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/Email/"><div class='name'>Email</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/MacOS/"><div class='name'>MacOS</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/git/"><div class='name'>git</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/github/"><div class='name'>github</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/前端学习资料/"><div class='name'>前端学习资料</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/置顶/"><div class='name'>置顶</div><div class='badge'>1</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget tagcloud'>
+        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+        <div class='content'>
+            <a href="/tags/EDM/" style="font-size: 14px; color: #999">EDM</a> <a href="/tags/Hexo/" style="font-size: 20.67px; color: #6c6c6c">Hexo</a> <a href="/tags/Homebrew/" style="font-size: 14px; color: #999">Homebrew</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/JavaScript算法/" style="font-size: 14px; color: #999">JavaScript算法</a> <a href="/tags/JavaScript经典实例/" style="font-size: 20.67px; color: #6c6c6c">JavaScript经典实例</a> <a href="/tags/MacOS/" style="font-size: 20.67px; color: #6c6c6c">MacOS</a> <a href="/tags/Node/" style="font-size: 14px; color: #999">Node</a> <a href="/tags/Theme/" style="font-size: 17.33px; color: #828282">Theme</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/前端学习资料/" style="font-size: 14px; color: #999">前端学习资料</a> <a href="/tags/开发工具/" style="font-size: 17.33px; color: #828282">开发工具</a> <a href="/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/tags/置顶/" style="font-size: 14px; color: #999">置顶</a>
+        </div>
+    </section>
+
+
+    
+    
+        <section class='m_widget music'>
+    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=282751852&auto=0&height=450"></iframe>
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://isliulei.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;大雷子
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="hhttps://zguii.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;贵姥姥
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.zhangxinxu.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;张鑫旭
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.liaoxuefeng.com/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;廖雪峰的官方网站
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ruanyifeng.com/blog/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;阮一峰的网络日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://cherryblog.site/">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;Cherry’s blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://jser.me/about.html">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;草依山的Javascript世界
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、初见"><span class="toc-text">一、初见</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#table"><span class="toc-text">table</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#table属性"><span class="toc-text">table属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#style"><span class="toc-text">style</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标签"><span class="toc-text">标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#行内元素"><span class="toc-text">行内元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#块级元素"><span class="toc-text">块级元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、了解"><span class="toc-text">二、了解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本格式"><span class="toc-text">基本格式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Area-1"><span class="toc-text">Area-1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Area-2"><span class="toc-text">Area-2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Area-3"><span class="toc-text">Area-3</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片"><span class="toc-text">图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链接"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Outlook邮箱规则"><span class="toc-text">Outlook邮箱规则</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、悟道"><span class="toc-text">三、悟道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#邮件设计"><span class="toc-text">邮件设计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#保持简单"><span class="toc-text">保持简单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#减少图像的使用甚至避免使用"><span class="toc-text">减少图像的使用甚至避免使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#窄屏最好"><span class="toc-text">窄屏最好</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#保持一致"><span class="toc-text">保持一致</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#邮件制作"><span class="toc-text">邮件制作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#邮件测试"><span class="toc-text">邮件测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#我们看一下测试邮件：效果图"><span class="toc-text">我们看一下测试邮件：效果图</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </section>
+
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:yangtaobanner@foxmail.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/yangtao2o" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=282751852" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social fa fa-linkedin flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://weibo.com/taoboy0208" class="social fa fa-weibo flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="/img/wx.png" class="social fa fa-weixin flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX","TeX"],
+            linebreaks: { automatic:true },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno",
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+            Macros: { href: "{}" }
+        },
+        messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
