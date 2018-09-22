@@ -103,9 +103,9 @@
       <category term="git" scheme="https://istaotao.com/categories/git/"/>
     
     
-      <category term="git" scheme="https://istaotao.com/tags/git/"/>
-    
       <category term="开发工具" scheme="https://istaotao.com/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="git" scheme="https://istaotao.com/tags/git/"/>
     
   </entry>
   
@@ -203,9 +203,9 @@
       <category term="github" scheme="https://istaotao.com/categories/github/"/>
     
     
-      <category term="开发工具" scheme="https://istaotao.com/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="github" scheme="https://istaotao.com/tags/github/"/>
+    
+      <category term="开发工具" scheme="https://istaotao.com/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
