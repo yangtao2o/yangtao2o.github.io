@@ -26,6 +26,75 @@
     </entry>
     
     <entry>
+      <title>Purl.js-JS获取地址栏信息用例测试</title>
+      <link href="/2018/09/23/js-purl/"/>
+      <url>/2018/09/23/js-purl/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Purl.js可以帮助我们来获取地址栏的一些信息， 可以使用原生js，也可以使用jQuery</p></blockquote><ul><li><a href="https://www.bootcdn.cn/purl/readme/" target="_blank" rel="noopener">Purl.js官方文档</a></li></ul><a id="more"></a><table><thead><tr><th style="text-align:left">Attributes</th><th>Info</th></tr></thead><tbody><tr><td style="text-align:left">source</td><td>The whole url being parsed</td></tr><tr><td style="text-align:left">protocol</td><td>eg. http, https, file, etc</td></tr><tr><td style="text-align:left">host</td><td>eg. <a href="http://www.mydomain.com" target="_blank" rel="noopener">www.mydomain.com</a>, localhost etc</td></tr><tr><td style="text-align:left">port</td><td>eg. 80</td></tr><tr><td style="text-align:left">relative</td><td>The relative path to the file including the querystring (eg. /folder/dir/index.html?item=value)</td></tr><tr><td style="text-align:left">path</td><td>The path to the file (eg. /folder/dir/index.html)</td></tr><tr><td style="text-align:left">directory</td><td>The directory part of the path (eg. /folder/dir/)</td></tr><tr><td style="text-align:left">file</td><td>The basename of the file eg. index.html</td></tr><tr><td style="text-align:left">query</td><td>The entire query string if it exists, eg. item=value&amp;item2=value2</td></tr><tr><td style="text-align:left">fragment or anchor</td><td>The entire string after the # symbol</td></tr></tbody></table><h4 id="初始化："><a href="#初始化：" class="headerlink" title="初始化："></a>初始化：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url;</span><br><span class="line"><span class="keyword">var</span> myurl;</span><br><span class="line"></span><br><span class="line">$(<span class="string">"#clickBtn"</span>).find(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res, resInfo;</span><br><span class="line"></span><br><span class="line">  myurl = $(<span class="string">"#urlArea"</span>).val();</span><br><span class="line">  <span class="comment">// 如果myurl为空，则会获取当前页面的url</span></span><br><span class="line">  url = purl(myurl);</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#urlArea"</span>).val(myurl);</span><br><span class="line"></span><br><span class="line">  res = $(<span class="keyword">this</span>).text();</span><br><span class="line">  resInfo = getUrlInfo(url, res);</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#inputRes"</span>).val(resInfo);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlInfo</span>(<span class="params">url, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (res === <span class="string">'param'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> url.param();</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res === <span class="string">'segment'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> url.segment();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> url.attr(res);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="运行试试看："><a href="#运行试试看：" class="headerlink" title="运行试试看："></a>运行试试看：</h4><ul><li><a href="https://codepen.io/istaotao/pen/EeJoKP" target="_blank" rel="noopener">codepen完整代码</a> — <a href="https://s.codepen.io/istaotao/debug/EeJoKP/YvAgOnLzXDRA" target="_blank" rel="noopener">【点击运行】</a></li></ul><h4 id="截图如下所示："><a href="#截图如下所示：" class="headerlink" title="截图如下所示："></a>截图如下所示：</h4><p><img src="https://cdn.files.qdfuns.com/article/content/picture/201807/20/221014v16gkkkdks3eegac.png" alt="截图"></p><h4 id="记录在QDfuns"><a href="#记录在QDfuns" class="headerlink" title="记录在QDfuns:"></a>记录在QDfuns:</h4><ul><li><a href="https://www.qdfuns.com/article/32286/0a69e234cca1cab2f2005425338623a8.html" target="_blank" rel="noopener">Purl.js-使用JS获取URL信息</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js插件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>HTML5 Canvas 图形绘制</title>
+      <link href="/2018/09/23/canvas-01/"/>
+      <url>/2018/09/23/canvas-01/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>canvas元素并非Canvas中最强大的部分，真正的关键部分是2D渲染上下文，这是你真正绘制图形的地方。canvas元素的用途只是作为2D渲染上下文的包装器，它包含绘图和图形操作所需要的全部方法和丰富功能。理解这一点是很重要的，强调一下：绘图是在2D渲染上下文中进行的，而不是在canvas元素中进行。可以通过canvas元素访问和显示2D渲染上下文。<a href="http://techbrood.com/h5b2a?p=html-canvas-2dcontext" target="_blank" rel="noopener">【引入原文】</a></p></blockquote><h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p><a href="https://s.codepen.io/istaotao/debug/LJvzEm/bYMdyeODzdJr" target="_blank" rel="noopener">HTML5 Canvas粉尘态粒子引力效应</a><br><a id="more"></a></p><h3 id="文章："><a href="#文章：" class="headerlink" title="文章："></a>文章：</h3><p><a href="https://www.qdfuns.com/article/32286/453691c72f71e7534b062c8baa8e3506.html" target="_blank" rel="noopener">HTML5 Canvas 图形绘制 初级</a></p><p><a href="https://www.qdfuns.com/article/32286/4c494e2cdc21135c41be95fbb685e379.html" target="_blank" rel="noopener">HTML5 Canvas 图形绘制 中级</a></p><p><a href="https://www.qdfuns.com/article/32286/237e32dfb71a2626c02cfc74c65f7271.html" target="_blank" rel="noopener">HTML5跟随鼠标移动的雪花动画</a></p><p><a href="https://www.qdfuns.com/article/32286/e833cda2cb9eacc01f09ffae5734405e.html" target="_blank" rel="noopener">HTML5 Canvas很酷炫的粉尘态粒子引力效应实践</a></p><p><a href="https://www.qdfuns.com/article/32286/c05adac0d8a4f65121707a336bd1190b.html" target="_blank" rel="noopener">HTML5很酷炫的点线粒子特效，你不试一下？</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Html5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Canvas </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>【转】高效学习JavaScript的六个思维技巧</title>
+      <link href="/2018/09/22/js-learn/"/>
+      <url>/2018/09/22/js-learn/</url>
+      
+        <content type="html"><![CDATA[<p>初始整理于慕课网手记<a href="http://www.imooc.com/article/12113" target="_blank" rel="noopener">高效学习JavaScript的六个思维技巧</a><br><a id="more"></a></p><h2 id="更快学习JavaScript的六个思维技巧"><a href="#更快学习JavaScript的六个思维技巧" class="headerlink" title="更快学习JavaScript的六个思维技巧"></a>更快学习JavaScript的六个思维技巧</h2><blockquote><p><strong>当人们试图学习JavaScript或其他编程语言的时候，他们通常会遇到如下挑战。</strong></p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 一些概念让他们感到困惑，特别是如果之前学过其他类型的语言。</span><br><span class="line"></span><br><span class="line">2. 很难找到学习的时间（或者动力）去学习。</span><br><span class="line"></span><br><span class="line">3. 你很容易忘掉之前学到的东西。</span><br><span class="line"></span><br><span class="line">4. JavaScript工具太多并且经常更新，以至于很难找到学习的切入点。</span><br><span class="line"></span><br><span class="line">5. ...</span><br></pre></td></tr></table></figure><p><strong>幸运的是，这些难题最终能够被克服。在这篇文章，我将展示六个能够帮助你更快、更开心、更高效地学习JavaScript的六个思维技巧。</strong></p><h3 id="1、不要让对未来的忧虑干扰你现在的学习"><a href="#1、不要让对未来的忧虑干扰你现在的学习" class="headerlink" title="1、不要让对未来的忧虑干扰你现在的学习"></a>1、不要让对未来的忧虑干扰你现在的学习</h3><blockquote><p>有些JavaScript初学者会问刚开始要学习哪种框架，但是如果你还没能熟练使用原生JavaScript，你就不应该问这种问题。因为你会花很多时间研究各种框架而得不到进步。</p></blockquote><blockquote><p>走出这个陷阱的一个方法是制定一个学习路径图。例如，要成为前端开发，你的路径图可能是下图。在将来你能够使用HTML和CSS制作动态页面。</p></blockquote><p><img src="http://img.mukewang.com/57ad9d660001149f07470214.png" alt="前端开发学习路径图"></p><h3 id="2、不要让自信骗你进入持续遗忘的陷阱"><a href="#2、不要让自信骗你进入持续遗忘的陷阱" class="headerlink" title="2、不要让自信骗你进入持续遗忘的陷阱"></a>2、不要让自信骗你进入持续遗忘的陷阱</h3><p><strong>快速理解一个概念会是JavaScript进步的最大阻碍，下面我将解释。</strong></p><blockquote><p>当你遇到一个知识点，而你好像理解了，你很可能抑制不住内心跳到下一个知识点的冲动。</p></blockquote><blockquote><p>现实可能是你会理解下一个知识点然后继续跳到下一个知识点。</p></blockquote><blockquote><p>但是，很快你会到达一个节点，在这个节点你发现自己已经忘了前面所学，于是你需要回过头复习，你快速瞟了一下之前所学然后又继续学习新的知识。</p></blockquote><blockquote><p>   但是现在，你忘记了其他东西。</p></blockquote><blockquote><p>   你一直重复这种继续-回顾-继续-回顾模式直到你发现自己完全迷失。</p><p>   你开始沮丧，想要休息，然后当你开始重振旗鼓，却发现自己已经忘掉所有。</p></blockquote><p><strong>幸运的是，我们有两个应对上述问题的方法：</strong></p><ul><li><p>一次只学一样东西；</p></li><li><p>做练习——实际就是敲代码；</p></li></ul><blockquote><p>   当你学习一个新的概念，你要将它实践出来，练习它，与它和善相处，甚至能够将它与其他概念联系到一起。</p></blockquote><blockquote><p>   当你学习一个示例，最重要的是你要自己将代码敲出来，这样能帮助你吸收它。另外，一次只学一个东西能够帮助你巩固所学，因为记忆更少的东西更容易。</p></blockquote><p><strong>这个过程看起来貌似比阅读然后快速跳到下一个知识点要花费更长的时间，但是实际上它所花的时间更少，因为这样你就不需要频繁复习之前所学。我在好几个场合后才艰难的领悟到这个道理。</strong></p><h3 id="3、使用正确的思维方式练习"><a href="#3、使用正确的思维方式练习" class="headerlink" title="3、使用正确的思维方式练习"></a>3、使用正确的思维方式练习</h3><p><strong>很多人认为敲代码是烦人的重复性工作，所以他们通常会跳过这个步骤试着寻找捷径。如果你试图为JavaScript练习寻找捷径，你将会为此花费更多的时间。</strong></p><p><strong>但是我们如何才能使得敲代码更加的有趣，使得我们愿意去敲代码呢？</strong></p><p><em>试着改变为下面的思维模式：</em></p><blockquote><p> 如果你刚学了一个JavaScript概念，然而你被告知不能使用它，对此你感觉如何？个人来说我会感到有点恼火，特别是为了弄懂它我花费了宝贵的时间。这就像是一个小孩得到了一个新的玩具，但却被限制不能玩它。</p></blockquote><blockquote><p>当你学习JavaScript的新知识，试着将这个知识点视作一个新玩具，例如新车、一双新鞋、或任何你觉得值得有趣的东西。然后，不要把敲代码当成工作，将敲代码视作你正在玩游戏。你正在使用刚学的技能做一些很酷的事情。给自己惊喜，把成果展示给你的朋友。</p></blockquote><blockquote><p>   带着游戏的思维模式你将学得更快，将记忆的更牢，同时你将体会到更多乐趣。</p></blockquote><h3 id="4、使用Facebook技巧为编程腾时间"><a href="#4、使用Facebook技巧为编程腾时间" class="headerlink" title="4、使用Facebook技巧为编程腾时间"></a>4、使用Facebook技巧为编程腾时间</h3><blockquote><p>人们遇到的一个普遍问题是，他们通常找不到时间去敲代码。通常，这些人会花好几个小时浏览例如Facebook、YouTube、Wikipedia或者Reddit这样的网站。无论你是否符合上述描述，我们都能从中学到一些东西。</p></blockquote><blockquote><p> 我当然有时间只浏览Facebook一会儿，但通常我会在上面待好几个小时浏览往返。这是如何发生的？我认为原因在于，刚开始我并没打算花在这上面花费那么多时间。开始行动是做一件事情最困难的部分，所以将目标设定的足够小能够帮助我们进入状态。如果有人问我是不是打算花几个小时浏览Facebook，我会回答不，因为我没有时间。然而，对于仅仅尝试一下我是能够接受的，这也是我能够沉浸其中的方法。</p></blockquote><blockquote><p>  <strong>好消息是，你能够对敲代码运用同样的心理技巧。</strong></p><p>   <strong>不要计划花几个小时敲代码，因为你会发现自己没有时间。</strong></p><p>   <strong>相反的，告诉自己只敲三分钟代码。这样你就不需要为寻找敲代码的时间烦心。</strong></p></blockquote><h3 id="5、思考的更慢你将学得更快"><a href="#5、思考的更慢你将学得更快" class="headerlink" title="5、思考的更慢你将学得更快"></a>5、思考的更慢你将学得更快</h3><blockquote><p>这一条听起来违反直觉，所以下面我将用一个故事来解释。</p></blockquote><blockquote><p>我的一个朋友又一次对JavaScript的一个特性感到困惑。我让他将他知道的解释给我听，然后告诉我哪儿让他困惑。当它向我解释代码，我发现他在跳步。</p></blockquote><blockquote><p>“等会儿！”我说道。“慢慢来，然后将这些一步步解释给我听。”</p></blockquote><blockquote><p>我的朋友直接将整个代码的功能总结给我听。</p></blockquote><blockquote><p>我再次让他暂停。“你还是在跳步。再解释一次，这次我需要你一步步将每一行代码发生了什么解释给我听。”</p></blockquote><blockquote><p>这一次，我的朋友能够更好的解释代码是如何运行的。关键在于他花时间去理解每一行代码而不是试图一下理解所有。</p></blockquote><blockquote><p>在上述这种案例中，<strong>思考的更慢实际上让你学得更快。</strong></p></blockquote><h3 id="6、在写复杂代码前先用简单语言写下"><a href="#6、在写复杂代码前先用简单语言写下" class="headerlink" title="6、在写复杂代码前先用简单语言写下"></a>6、在写复杂代码前先用简单语言写下</h3><blockquote><p>如果你要写的代码是复杂并且不常见的，先用简单语言将代码写下。这样，你能够你能够在真正写之前知道自己要做什么。下面是使用这个方法的两个好处：</p></blockquote><ul><li><p>你将更容易更快速的写代码，因为你不需要时刻停下来思考自己将要怎么做。</p></li><li><p>由于你知道代码要干什么，能够更好的排除错误。</p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote><p>我们已经讲了好几个更快速学习JavaScript的方法，但是你也能将上述方法运用于学习其他东西。下面是上述方法的概括：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（1）、不要再想将要学什么，沉浸于现在；</span><br><span class="line"></span><br><span class="line">（2）、通过把新技能当做玩具使得练习更有趣；</span><br><span class="line"></span><br><span class="line">（3）、就像浏览Facebook、YouTube之类的网站一样，在敲代码前告诉自己只敲几分钟，这样你就拥有了敲代码的时间；</span><br><span class="line"></span><br><span class="line">（4）、慢下来，小步向前，你将学得更快。</span><br></pre></td></tr></table></figure><blockquote><p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="noopener">众成翻译</a></p><p>译者：<a href="http://www.zcfy.cc/@Ryan" target="_blank" rel="noopener">Ryan</a></p><p>链接：<a href="http://www.zcfy.cc/article/436" target="_blank" rel="noopener">http://www.zcfy.cc/article/436</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>从零制作edm邮件，需要了解的一些规则</title>
       <link href="/2018/09/19/edm-01/"/>
       <url>/2018/09/19/edm-01/</url>
@@ -90,9 +159,9 @@
       
         <tags>
             
-            <tag> 开发工具 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 开发工具 </tag>
             
         </tags>
       
@@ -190,9 +259,9 @@
       
         <tags>
             
-            <tag> github </tag>
-            
             <tag> 开发工具 </tag>
+            
+            <tag> github </tag>
             
         </tags>
       

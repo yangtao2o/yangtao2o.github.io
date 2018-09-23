@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2028 | 大涛子峡谷</title>
+  <title>Purl.js-JS获取地址栏信息用例测试 | 大涛子峡谷</title>
   <meta name="description" content="一枚小小的前端攻城狮、迷恋摄影" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -184,63 +184,216 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-js-purl" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-	
-    <script>
-        window.subData= { title:'year : 2028'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2028/04/06/hello-world/">
-                
-                    欢迎来到大涛子峡谷
-                
-            </a>
-        </h2>
+                Purl.js-JS获取地址栏信息用例测试
+            
+        </h1>
         <time>
-            2028-04-06
+            2018-09-23&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/置顶/">置顶</a>
+        <a href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <blockquote>
-<p>写在前头：<br>我想每个人都想拥有属于自己的个人网站，尤其是我这类喜欢新鲜的人儿，哈哈…<br>但是，想到各种环境、各种配置、各种脸都不认识的专有术语…想想都头疼…<br>之前有想过使用WordPress，并且在本地也能看到效果，但是根据项目开发使用的情况来看，并不是很喜欢呐<br>终于过了好久好久…<br>
-        
-            <div class="readmore">
-                <a href="/2028/04/06/hello-world/" class="flat-box">READ MORE</a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/置顶/"><i class="fa fa-tag fa-fw"></i>&nbsp;置顶</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>Purl.js可以帮助我们来获取地址栏的一些信息， 可以使用原生js，也可以使用jQuery</p>
+</blockquote>
+<ul>
+<li><a href="https://www.bootcdn.cn/purl/readme/" target="_blank" rel="noopener">Purl.js官方文档</a></li>
+</ul>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Attributes</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">source</td>
+<td>The whole url being parsed</td>
+</tr>
+<tr>
+<td style="text-align:left">protocol</td>
+<td>eg. http, https, file, etc</td>
+</tr>
+<tr>
+<td style="text-align:left">host</td>
+<td>eg. <a href="http://www.mydomain.com" target="_blank" rel="noopener">www.mydomain.com</a>, localhost etc</td>
+</tr>
+<tr>
+<td style="text-align:left">port</td>
+<td>eg. 80</td>
+</tr>
+<tr>
+<td style="text-align:left">relative</td>
+<td>The relative path to the file including the querystring (eg. /folder/dir/index.html?item=value)</td>
+</tr>
+<tr>
+<td style="text-align:left">path</td>
+<td>The path to the file (eg. /folder/dir/index.html)</td>
+</tr>
+<tr>
+<td style="text-align:left">directory</td>
+<td>The directory part of the path (eg. /folder/dir/)</td>
+</tr>
+<tr>
+<td style="text-align:left">file</td>
+<td>The basename of the file eg. index.html</td>
+</tr>
+<tr>
+<td style="text-align:left">query</td>
+<td>The entire query string if it exists, eg. item=value&amp;item2=value2</td>
+</tr>
+<tr>
+<td style="text-align:left">fragment or anchor</td>
+<td>The entire string after the # symbol</td>
+</tr>
+</tbody>
+</table>
+<h4 id="初始化："><a href="#初始化：" class="headerlink" title="初始化："></a>初始化：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> url;</span><br><span class="line"><span class="keyword">var</span> myurl;</span><br><span class="line"></span><br><span class="line">$(<span class="string">"#clickBtn"</span>).find(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res, resInfo;</span><br><span class="line"></span><br><span class="line">  myurl = $(<span class="string">"#urlArea"</span>).val();</span><br><span class="line">  <span class="comment">// 如果myurl为空，则会获取当前页面的url</span></span><br><span class="line">  url = purl(myurl);</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#urlArea"</span>).val(myurl);</span><br><span class="line"></span><br><span class="line">  res = $(<span class="keyword">this</span>).text();</span><br><span class="line">  resInfo = getUrlInfo(url, res);</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#inputRes"</span>).val(resInfo);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlInfo</span>(<span class="params">url, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (res === <span class="string">'param'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> url.param();</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res === <span class="string">'segment'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> url.segment();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> url.attr(res);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运行试试看："><a href="#运行试试看：" class="headerlink" title="运行试试看："></a>运行试试看：</h4><ul>
+<li><a href="https://codepen.io/istaotao/pen/EeJoKP" target="_blank" rel="noopener">codepen完整代码</a> — <a href="https://s.codepen.io/istaotao/debug/EeJoKP/YvAgOnLzXDRA" target="_blank" rel="noopener">【点击运行】</a></li>
+</ul>
+<h4 id="截图如下所示："><a href="#截图如下所示：" class="headerlink" title="截图如下所示："></a>截图如下所示：</h4><p><img src="https://cdn.files.qdfuns.com/article/content/picture/201807/20/221014v16gkkkdks3eegac.png" alt="截图"></p>
+<h4 id="记录在QDfuns"><a href="#记录在QDfuns" class="headerlink" title="记录在QDfuns:"></a>记录在QDfuns:</h4><ul>
+<li><a href="https://www.qdfuns.com/article/32286/0a69e234cca1cab2f2005425338623a8.html" target="_blank" rel="noopener">Purl.js-使用JS获取URL信息</a></li>
+</ul>
 
         </div>
-    
-</section>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/js插件/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;js插件</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2028/04/06/hello-world/" rel="prev" title="欢迎来到大涛子峡谷">
+                                  
+                                      欢迎来到大涛子峡谷
+                                  
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>置顶
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/09/23/canvas-01/" rel="prev" title="HTML5 Canvas 图形绘制">
+                                    
+                                        HTML5 Canvas 图形绘制
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Canvas
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2028/04/06/hello-world/">欢迎来到大涛子峡谷</a></li>
+            
+                <li><a href="https://istaotao.com/2018/09/23/canvas-01/">HTML5 Canvas 图形绘制</a></li>
+            
+                <li><a href="https://istaotao.com/2018/09/22/js-learn/">【转】高效学习JavaScript的六个思维技巧</a></li>
+            
+                <li><a href="https://istaotao.com/2018/09/19/edm-01/">从零制作edm邮件，需要了解的一些规则</a></li>
+            
+                <li><a href="https://istaotao.com/2018/08/13/macos-bash/">Mac 终端简易学习总结</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 
 
+            
 
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Purl.js-JS获取地址栏信息用例测试',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -461,6 +614,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化："><span class="toc-text">初始化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运行试试看："><span class="toc-text">运行试试看：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#截图如下所示："><span class="toc-text">截图如下所示：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#记录在QDfuns"><span class="toc-text">记录在QDfuns:</span></a></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -562,6 +722,34 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
     <script>setLoadingBarProgress(100);</script>
