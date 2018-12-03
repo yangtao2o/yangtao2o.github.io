@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: 置顶 | 大涛子峡谷</title>
+  <title>设置Cookie | 大涛子峡谷</title>
   <meta name="description" content="一枚小小的前端攻城狮、迷恋摄影" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -184,59 +184,151 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-设置Cookie" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-    <script>
-        window.subData= { title:'tag : 置顶'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2048/04/06/hello-world/">
-                
-                    欢迎来到大涛子峡谷
-                
-            </a>
-        </h2>
+                设置Cookie
+            
+        </h1>
         <time>
-            2048-04-06
+            2018-11-03&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/置顶/">置顶</a>
+        <a href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <h3 id="Welcome-to-my-home"><a href="#Welcome-to-my-home" class="headerlink" title="Welcome to my home."></a>Welcome to my home.</h3>
+
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="设置Cookie总结："><a href="#设置Cookie总结：" class="headerlink" title="设置Cookie总结："></a>设置Cookie总结：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 收藏功能</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">addFavorite</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> title = <span class="string">'意法半导体STM32/STM8技术社区 - 提供最新的ST资讯和技术交流'</span>;</span><br><span class="line">   <span class="keyword">var</span> URL = <span class="string">'http://www.stmcu.org.cn/'</span>; </span><br><span class="line">   <span class="comment">// IE10</span></span><br><span class="line">   <span class="keyword">if</span>(<span class="built_in">document</span>.all) &#123;</span><br><span class="line">     <span class="built_in">window</span>.external.addFavorite(URL, title);</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     alert(<span class="string">'手动 Ctrl+D 可以收藏我们的网站哦'</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 设置cookie，同一域名都可获取</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name, value, exdays</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> exdays = exdays || <span class="number">1024</span>;</span><br><span class="line">   <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">   d.setTime(d.getTime() + (exdays * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>));</span><br><span class="line">   <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + <span class="built_in">escape</span>(value) + <span class="string">";path=/;expires="</span> + d.toGMTString();</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">// 读取cookies，判断是否存在设置的name</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> name = name + <span class="string">"="</span>;</span><br><span class="line">   <span class="keyword">var</span> ca = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ca.length; i++) &#123;</span><br><span class="line">     <span class="keyword">var</span> c = ca[i].trim();</span><br><span class="line">     <span class="keyword">if</span> (c.indexOf(name) == <span class="number">0</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> c.substring(name.length, c.length);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">checkCookie</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> user = getCookie(<span class="string">"msgCookie"</span>);</span><br><span class="line">   <span class="keyword">var</span> width = <span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth;</span><br><span class="line">   <span class="keyword">if</span>(width &gt;= <span class="number">1080</span>) &#123;</span><br><span class="line">     <span class="keyword">if</span> (user != <span class="string">""</span>) &#123;</span><br><span class="line">       msgHide();</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       msgShow();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 关闭时设置cookie</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">closeModal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   msgHide();</span><br><span class="line">   setCookie(<span class="string">"msgCookie"</span>, <span class="string">'msgCookie'</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">msgHide</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">'newsTipsModal'</span>).style.display = <span class="string">'none'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">msgShow</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">'newsTipsModal'</span>).style.display = <span class="string">'block'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// init</span></span><br><span class="line"> checkCookie();</span><br></pre></td></tr></table></figure>
+        </div>
+
         
-            <div class="readmore">
-                <a href="/2048/04/06/hello-world/" class="flat-box">READ MORE</a>
+            <div class="article-tags tags">
+                
+                    <a href="/tags/js功能/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;js功能</a>
+                
             </div>
         
 
         
-            <div class="full-width auto-padding tags">
+            <div class="prev-next">
                 
-                    <a href="/tags/置顶/"><i class="fa fa-tag fa-fw"></i>&nbsp;置顶</a>
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/11/27/整点秒杀功能优化/" rel="prev" title="活动之整点秒杀功能优化">
+                                  
+                                      活动之整点秒杀功能优化
+                                  
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>js功能
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/31/学习JavaScript深入系列简要总结/" rel="prev" title="学习JavaScript深入系列简要总结">
+                                    
+                                        学习JavaScript深入系列简要总结
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>JavaScript
+                                    
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
             </div>
         
+
     </section>
+
 </article>
 
-        </div>
-    
-</section>
+<br>
 
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2018/11/27/九宫格抽奖/">九宫格抽奖</a></li>
+            
+                <li><a href="https://istaotao.com/2018/11/27/整点秒杀功能优化/">活动之整点秒杀功能优化</a></li>
+            
+                <li><a href="https://istaotao.com/2018/10/31/学习JavaScript深入系列简要总结/">学习JavaScript深入系列简要总结</a></li>
+            
+                <li><a href="https://istaotao.com/2018/10/26/blog-01/">冴羽的博客之JavaScript、ES6系列集锦</a></li>
+            
+                <li><a href="https://istaotao.com/2018/09/23/js-purl/">Purl.js-JS获取地址栏信息用例测试</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: '设置Cookie',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -466,6 +558,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Cookie总结："><span class="toc-text">设置Cookie总结：</span></a></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -567,6 +666,34 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'monsterid',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
     <script>setLoadingBarProgress(100);</script>
