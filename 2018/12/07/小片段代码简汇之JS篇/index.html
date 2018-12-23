@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>小片段代码简汇之JS篇 | yangtao&#39;s blog</title>
+  
+  <meta name="keywords" content="大涛子 前端 web 摄影">
+  
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/img/favicon-y.ico">
+  <link rel="alternate" href="/atom.xml" title="yangtao's blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="/img/favicon-y.ico" />
+  <link rel="icon" href="/img/favicon-y.ico" />
+
+
+  <link href='//cdn.jsdelivr.net/npm/node-waves@0.7.5/dist/waves.min.css' rel='stylesheet'>
+
+  <!-- style.css -->
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <!-- fontawesome -->
+  
+    <link rel="stylesheet" href="/fontawesome-free-5.6.3-web/css/all.min.css">
+  
+
+  <!-- google_fonts -->
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  <!-- ga -->
+  
+  <!-- ba -->
+  
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar" class="pure"></div>
+</div>
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header pure">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          yangtao's blog
+        
+      </a>
+			<div class='menu'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:codepen.ioistaotao"
+								 class="nav flat-box" href="https://codepen.io/istaotao/">
+									<i class='fas fa-cube fa-fw'></i>&nbsp;项目
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="archives"
+								 class="nav flat-box" href="/archives/">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="http:collect.w3ctrain.com"
+								 class="nav flat-box" href="http://collect.w3ctrain.com/">
+									<i class='fas fa-address-book fa-fw'></i>&nbsp;收藏夹
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:tool.lucdeveloper"
+								 class="nav flat-box" href="https://tool.lu/c/developer/">
+									<i class='fas fa-wrench fa-fw'></i>&nbsp;工具
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:juejin.imuser58b67dd58fd9c50061238e38shares"
+								 class="nav flat-box" href="https://juejin.im/user/58b67dd58fd9c50061238e38/shares/">
+									<i class='fas fa-share-alt-square fa-fw'></i>&nbsp;分享
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:tuchong.com2763959"
+								 class="nav flat-box" href="https://tuchong.com/2763959/">
+									<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:www.jianshu.comuc6b5715f3016"
+								 class="nav flat-box" href="https://www.jianshu.com/u/c6b5715f3016/">
+									<i class='fas fa-book fa-fw'></i>&nbsp;简书
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="flat-btn fas fa-arrow-up fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu">
+      <ul>
+          
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-home fa-fw'></i>&nbsp;主页
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:codepen.ioistaotao" class="nav flat-box" href="https://codepen.io/istaotao/">
+											<i class='fas fa-cube fa-fw'></i>&nbsp;项目
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="archives" class="nav flat-box" href="/archives/">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="http:collect.w3ctrain.com" class="nav flat-box" href="http://collect.w3ctrain.com/">
+											<i class='fas fa-address-book fa-fw'></i>&nbsp;收藏夹
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:tool.lucdeveloper" class="nav flat-box" href="https://tool.lu/c/developer/">
+											<i class='fas fa-wrench fa-fw'></i>&nbsp;工具
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:juejin.imuser58b67dd58fd9c50061238e38shares" class="nav flat-box" href="https://juejin.im/user/58b67dd58fd9c50061238e38/shares/">
+											<i class='fas fa-share-alt-square fa-fw'></i>&nbsp;分享
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:tuchong.com2763959" class="nav flat-box" href="https://tuchong.com/2763959/">
+											<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:www.jianshu.comuc6b5715f3016" class="nav flat-box" href="https://www.jianshu.com/u/c6b5715f3016/">
+											<i class='fas fa-book fa-fw'></i>&nbsp;简书
+										</a>
+                  </li>
+              
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      
+          <h1 class="title">小片段代码简汇之JS篇</h1>
+      
+    
+
+    
+      <time class="time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+        2018-12-07
+      </time>
+    
+
+    
+      
+    
+    <div class='cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+        <a class="categories" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+    
+
+    
+      
+        <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>总结在平时开发中遇到的一些小问题，大概很长一段时间就会来这么一次，小片段剧场。</p>
+</blockquote>
+<p>Show Time:<br><a id="more"></a></p>
+<h4 id="多行文本截取clamp-js"><a href="#多行文本截取clamp-js" class="headerlink" title="多行文本截取clamp.js"></a>多行文本截取clamp.js</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src = <span class="string">"https://cdn.bootcss.com/Clamp.js/0.5.1/clamp.min.js"</span> &gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">clampFunc(<span class="string">"obj-content-header"</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clampFunc</span>(<span class="params">className, clampNum</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> $<span class="built_in">module</span> = $(<span class="string">"."</span> + className);</span><br><span class="line">  clampNum = clampNum ? clampNum : <span class="number">1</span>;</span><br><span class="line">  $.each($<span class="built_in">module</span>, <span class="function"><span class="keyword">function</span> (<span class="params">i, index</span>) </span>&#123;</span><br><span class="line">    $clamp($(<span class="keyword">this</span>).get(<span class="number">0</span>), &#123;</span><br><span class="line">      clamp: clampNum</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="判断本地是否存在jquery写法"><a href="#判断本地是否存在jquery写法" class="headerlink" title="判断本地是否存在jquery写法"></a>判断本地是否存在jquery写法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> jQuery == <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="built_in">unescape</span>(<span class="string">"%3Cscript src='https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js' type='text/javascript'%3E%3C/script%3E"</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="截流函数-AND-节流函数"><a href="#截流函数-AND-节流函数" class="headerlink" title="截流函数 AND 节流函数"></a>截流函数 AND 节流函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 截流函数 **/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * fn 执行函数</span></span><br><span class="line"><span class="comment">  * context 绑定上下文</span></span><br><span class="line"><span class="comment">  * timeout 延时数值</span></span><br><span class="line"><span class="comment">  **/</span></span><br><span class="line"><span class="keyword">let</span> debounce = <span class="function"><span class="keyword">function</span>(<span class="params">fn, context, timeout</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> timer;</span><br><span class="line">	<span class="comment">// 使用闭包将内容传递出去</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(timer) &#123;</span><br><span class="line">			clearTimeout(timer);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">				fn.apply(context, <span class="built_in">arguments</span>);</span><br><span class="line">			&#125;, timeout);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** 节流函数 **/</span></span><br><span class="line"><span class="keyword">var</span> throttle = <span class="function"><span class="keyword">function</span>(<span class="params">fn, delay, mustRunDelay</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">var</span> t_start;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">		<span class="keyword">var</span> t_curr = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">		clearTimeout(timer);</span><br><span class="line">		<span class="comment">// 初始化</span></span><br><span class="line">		<span class="keyword">if</span>(!t_start) &#123;</span><br><span class="line">			t_start = t_curr;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="comment">// 超时判断</span></span><br><span class="line">		<span class="keyword">if</span>(t_curr - t_start &gt;= mustRunDelay) &#123;</span><br><span class="line">			fn.apply(context, args);</span><br><span class="line">			t_start = t_curr;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="for循环添加点击事件"><a href="#for循环添加点击事件" class="headerlink" title="for循环添加点击事件"></a>for循环添加点击事件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elems = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = elems.length; i &lt; l; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">index</span>) </span>&#123;</span><br><span class="line">    elems[index].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      e.preventDefault();</span><br><span class="line">      <span class="built_in">console</span>.log(index);</span><br><span class="line">    &#125;, <span class="string">'false'</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="判断浏览器是否开启本地cookie"><a href="#判断浏览器是否开启本地cookie" class="headerlink" title="判断浏览器是否开启本地cookie"></a>判断浏览器是否开启本地cookie</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nd = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">nd.setSeconds(nd.getSeconds() + <span class="number">60</span>);</span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"cookietest=1; expires="</span> + nd.toGMTString();</span><br><span class="line"><span class="keyword">var</span> cookiesEnabled = <span class="built_in">document</span>.cookie.indexOf(<span class="string">"cookietest="</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">if</span> (!cookiesEnabled) &#123;</span><br><span class="line">  <span class="comment">//没有启用cookie   </span></span><br><span class="line">  alert(<span class="string">"没有启用cookie "</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">//已经启用cookie   </span></span><br><span class="line">  alert(<span class="string">"已经启用cookie "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="解决同级元素鼠标移入移出效果"><a href="#解决同级元素鼠标移入移出效果" class="headerlink" title="解决同级元素鼠标移入移出效果"></a>解决同级元素鼠标移入移出效果</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"member-card-item"</span> <span class="attr">id</span>=<span class="string">"memberCard"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"member-card-wper"</span> <span class="attr">id</span>=<span class="string">"memberProfile"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"drop-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"card-item"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"card-item"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cardTimer = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> $mCard = $(<span class="string">'#rightNav .wx-wper'</span>);</span><br><span class="line"><span class="keyword">var</span> $mProfile = $(<span class="string">'#rightNav .wx-outer'</span>);</span><br><span class="line">$mCard.get(<span class="number">0</span>).onmouseover = $mProfile.get(<span class="number">0</span>).onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  clearCardTime();</span><br><span class="line">&#125;</span><br><span class="line">$mCard.get(<span class="number">0</span>).onmouseout = $mProfile.get(<span class="number">0</span>).onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  cardTime();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cardTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  cardTimer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $mProfile.hide();</span><br><span class="line">  &#125;, <span class="number">400</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearCardTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  clearTimeout(cardTimer);</span><br><span class="line">  $mProfile.show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="placeholder样式兼容-amp-amp-属性IE兼容"><a href="#placeholder样式兼容-amp-amp-属性IE兼容" class="headerlink" title="placeholder样式兼容&amp;&amp;属性IE兼容"></a>placeholder样式兼容&amp;&amp;属性IE兼容</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.common-form-control</span><span class="selector-pseudo">::-webkit-input-placeholder</span>,</span><br><span class="line"><span class="selector-class">.common-form-control</span><span class="selector-pseudo">::-moz-placeholder</span>,</span><br><span class="line"><span class="selector-class">.common-form-control</span><span class="selector-pseudo">:-ms-input-placeholder</span>,</span><br><span class="line"><span class="selector-class">.common-form-control</span><span class="selector-pseudo">::placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#9b9b9b</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">  $.fn.placeholder = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> opts = $.extend(&#123;&#125;, $.fn.placeholder.defaults, options);</span><br><span class="line">    <span class="keyword">var</span> isIE = <span class="built_in">document</span>.all ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> _this = <span class="keyword">this</span>,</span><br><span class="line">        placeholderValue = _this.getAttribute(<span class="string">"placeholder"</span>); <span class="comment">//缓存默认的placeholder值</span></span><br><span class="line">      <span class="keyword">if</span> (isIE) &#123;</span><br><span class="line">        _this.setAttribute(<span class="string">"value"</span>, placeholderValue);</span><br><span class="line">        _this.onfocus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          $.trim(_this.value) == placeholderValue ? _this.value = <span class="string">""</span> : <span class="string">''</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        _this.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          $.trim(_this.value) == <span class="string">""</span> ? _this.value = placeholderValue : <span class="string">''</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)(jQuery);</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	$(<span class="string">"input"</span>).placeholder();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="返回顶部函数"><a href="#返回顶部函数" class="headerlink" title="返回顶部函数"></a>返回顶部函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回顶部</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gotoTop</span>(<span class="params">acceleration,stime</span>) </span>&#123;</span><br><span class="line">  acceleration = acceleration || <span class="number">0.1</span>;</span><br><span class="line">  stime = stime || <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">var</span> x1 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> y1 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> x2 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> y2 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> x3 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> y3 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.documentElement) &#123;</span><br><span class="line">    x1 = <span class="built_in">document</span>.documentElement.scrollLeft || <span class="number">0</span>;</span><br><span class="line">    y1 = <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.body) &#123;</span><br><span class="line">    x2 = <span class="built_in">document</span>.body.scrollLeft || <span class="number">0</span>;</span><br><span class="line">    y2 = <span class="built_in">document</span>.body.scrollTop || <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> x3 = <span class="built_in">window</span>.scrollX || <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> y3 = <span class="built_in">window</span>.scrollY || <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> x = <span class="built_in">Math</span>.max(x1, <span class="built_in">Math</span>.max(x2, x3));</span><br><span class="line">  <span class="keyword">var</span> y = <span class="built_in">Math</span>.max(y1, <span class="built_in">Math</span>.max(y2, y3));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> speeding = <span class="number">1</span> + acceleration;</span><br><span class="line">  <span class="built_in">window</span>.scrollTo(<span class="built_in">Math</span>.floor(x / speeding), <span class="built_in">Math</span>.floor(y / speeding));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(x &gt; <span class="number">0</span> || y &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> run = <span class="string">"gotoTop("</span> + acceleration + <span class="string">", "</span> + stime + <span class="string">")"</span>;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(run, stime);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="滚动监听垂直联动"><a href="#滚动监听垂直联动" class="headerlink" title="滚动监听垂直联动"></a>滚动监听垂直联动</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>,</span><br><span class="line">    sTop = $(<span class="keyword">this</span>).scrollTop(),</span><br><span class="line">    windowH = $(<span class="built_in">window</span>).height() / <span class="number">2</span>,</span><br><span class="line">    pos = <span class="built_in">parseFloat</span>($(<span class="string">'#area3'</span>).offset().top) / <span class="number">2</span>,</span><br><span class="line">    pos1 = $(<span class="string">'#area3'</span>).offset().top - windowH,</span><br><span class="line">    pos2 = $(<span class="string">'#area4'</span>).offset().top - windowH,</span><br><span class="line">    pos3 = $(<span class="string">'#area5'</span>).offset().top - windowH,</span><br><span class="line">    pos4 = $(<span class="string">'#area6'</span>).offset().top - windowH</span><br><span class="line">  $target = $(<span class="string">'#navList'</span>).parent().parent();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (sTop &gt;= pos) &#123;</span><br><span class="line">    $target.show();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $target.hide();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (sTop &gt;= pos4) &#123;</span><br><span class="line">    i = <span class="number">3</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sTop &gt;= pos3) &#123;</span><br><span class="line">    i = <span class="number">2</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sTop &gt;= pos2) &#123;</span><br><span class="line">    i = <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    i = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  $(<span class="string">'#navList li'</span>).eq(i).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="右侧浮动导航平滑切换"><a href="#右侧浮动导航平滑切换" class="headerlink" title="右侧浮动导航平滑切换"></a>右侧浮动导航平滑切换</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#navList a"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> href = $(<span class="keyword">this</span>).attr(<span class="string">"href"</span>);</span><br><span class="line">  <span class="keyword">var</span> pos = $(href).offset().top - <span class="number">48</span>;</span><br><span class="line">  $(<span class="keyword">this</span>).parent().addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">  <span class="keyword">if</span> (!$(<span class="string">"body"</span>).is(<span class="string">":animated"</span>)) &#123;</span><br><span class="line">    $(<span class="string">"html,body"</span>).animate(&#123;</span><br><span class="line">      scrollTop: pos</span><br><span class="line">    &#125;, <span class="number">600</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="判断浏览器是否为IE（包括IE11）"><a href="#判断浏览器是否为IE（包括IE11）" class="headerlink" title="判断浏览器是否为IE（包括IE11）"></a>判断浏览器是否为IE（包括IE11）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIE</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!!<span class="built_in">window</span>.ActiveXObject || <span class="string">"ActiveXObject"</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">    alert(<span class="string">"is IE"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"is not IE"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="判断浏览器是否为移动端"><a href="#判断浏览器是否为移动端" class="headerlink" title="判断浏览器是否为移动端"></a>判断浏览器是否为移动端</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isMobile = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span>(navigator.userAgent.match(<span class="regexp">/(iPhone|iPod|Android|ios)/i</span>)) &#123;</span><br><span class="line">  isMobile = <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  isMobile = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="将时间戳转换为时间"><a href="#将时间戳转换为时间" class="headerlink" title="将时间戳转换为时间"></a>将时间戳转换为时间</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMyDate</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>(str),</span><br><span class="line">    oYear = oDate.getFullYear(),</span><br><span class="line">    oMonth = oDate.getMonth() + <span class="number">1</span>,</span><br><span class="line">    oDay = oDate.getDate(),</span><br><span class="line">    oHour = oDate.getHours(),</span><br><span class="line">    oMin = oDate.getMinutes(),</span><br><span class="line">    oSen = oDate.getSeconds(),</span><br><span class="line">    oTime = oYear + <span class="string">'-'</span> + getzf(oMonth) + <span class="string">'-'</span> + getzf(oDay) + <span class="string">' '</span> + getzf(oHour) + <span class="string">':'</span> + getzf(oMin) + <span class="string">':'</span> + getzf(oSen); <span class="comment">//最后拼接时间  </span></span><br><span class="line">  <span class="keyword">return</span> oTime;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getzf</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">parseInt</span>(num) &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    num = <span class="string">'0'</span> + num;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Node实现JavaScript模块的原理简单介绍"><a href="#Node实现JavaScript模块的原理简单介绍" class="headerlink" title="Node实现JavaScript模块的原理简单介绍"></a>Node实现JavaScript模块的原理简单介绍</h4><p><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434502419592fd80bbb0613a42118ccab9435af408fd000" target="_blank" rel="noopener">原文</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/** Node实现JavaScript模块的一个简单的原理介绍</span><br><span class="line"> * Node利用JavaScript的函数式编程的特性，轻而易举地实现了模块的隔离</span><br><span class="line"> * 变量module是Node在加载js文件前准备的一个变量，并将其传入加载函数</span><br><span class="line"> **/</span><br><span class="line">(function() &#123;</span><br><span class="line">  var s = &apos;Hello&apos;; //读取Hello.js代码</span><br><span class="line">  var name = &apos;Taotao&apos;;</span><br><span class="line"></span><br><span class="line">  console.log(&apos;Hell0 &apos; + name + &apos;!&apos;);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">// 准备module对象</span><br><span class="line">var module = &#123;</span><br><span class="line">  id: &apos;hello&apos;,</span><br><span class="line">  exports: &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var load = function(module) &#123;</span><br><span class="line">  //读取Hello.js代码</span><br><span class="line">  function greet(module) &#123;</span><br><span class="line">    console.log(&apos;Hell0 &apos; + name + &apos;!&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  module.exports = greet;</span><br><span class="line">  return module.exports;</span><br><span class="line">&#125;</span><br><span class="line">var exported = load(module);</span><br><span class="line">//保存</span><br><span class="line">save(module, exported);</span><br></pre></td></tr></table></figure></p>
+<h4 id="Nodejs基本模块fs"><a href="#Nodejs基本模块fs" class="headerlink" title="Nodejs基本模块fs"></a>Nodejs基本模块fs</h4><p><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000" target="_blank" rel="noopener">Node.js内置的fs模块就是文件系统模块，负责读写文件。</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步读文件</span></span><br><span class="line">fs.readFile(<span class="string">'test1.txt'</span>, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步写文件</span></span><br><span class="line"><span class="keyword">var</span> writeData = <span class="string">'Hello,Node.js'</span>;</span><br><span class="line">fs.writeFile(<span class="string">'test1.txt'</span>, writeData, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'OK!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同步读文件</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> data = fs.readFileSync(<span class="string">'test1.txt'</span>, <span class="string">'utf-8'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同步读文件</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  fs.writeFileSync(<span class="string">'test1.txt'</span>, writeData);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"OK!"</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步读取文件相关信息</span></span><br><span class="line">fs.stat(<span class="string">'test1.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, stat</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'isFile: '</span> + stat.isFile()); <span class="comment">// 是否是文件</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'isDirectory: '</span> + stat.isDirectory()); <span class="comment">// 是否是目录</span></span><br><span class="line">    <span class="keyword">if</span> (stat.isFile()) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'size: '</span> + stat.size);  <span class="comment">// 文件大小</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'birth time: '</span> + stat.birthtime);  <span class="comment">// 创建时间，Date对象</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'modifier time: '</span> + stat.mtime);  <span class="comment">// 修改时间，Date对象</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同步读取文件 statSync()</span></span><br></pre></td></tr></table></figure>
+<h4 id="Nodejs基本模块http"><a href="#Nodejs基本模块http" class="headerlink" title="Nodejs基本模块http"></a>Nodejs基本模块http</h4><p><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345015296018cac40c198b543fead5c549865b9bd4a000" target="_blank" rel="noopener">廖雪峰的官方网站之Node中的Http</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="comment">// 导入http模块</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</span><br><span class="line">    url = <span class="built_in">require</span>(<span class="string">'url'</span>),</span><br><span class="line">    path = <span class="built_in">require</span>(<span class="string">'path'</span>),</span><br><span class="line">    http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从命令行参数获取root目录，默认是当前目录：</span></span><br><span class="line"><span class="keyword">var</span> root = path.resolve(process.argv[<span class="number">2</span>] || <span class="string">'.'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Static root dir: '</span> + root);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建http server</span></span><br><span class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 获得URL的path</span></span><br><span class="line">  <span class="keyword">var</span> pathname = url.parse(request.url).pathname;</span><br><span class="line">  <span class="comment">// 获得对应的本地文件路径</span></span><br><span class="line">  <span class="keyword">var</span> filepath = path.join(root, pathname);</span><br><span class="line">  <span class="comment">// 获取文件状态</span></span><br><span class="line">  fs.stat(filepath, <span class="function"><span class="keyword">function</span>(<span class="params">err, stats</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!err &amp;&amp; stats.isFile()) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'200 '</span> + request.url);</span><br><span class="line">      response.writeHead(<span class="number">200</span>);</span><br><span class="line">      <span class="comment">// 将文件流导向response</span></span><br><span class="line">      fs.createReadStream(filepath).pipe(response);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'404 '</span> + request.url);</span><br><span class="line">      response.writeHead(<span class="number">404</span>);</span><br><span class="line">      response.end(<span class="string">'404 Not Found'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 让服务器监听8080端口</span></span><br><span class="line">server.listen(<span class="number">8080</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server is running at http:127.0.0.1:8080/'</span>);</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+          <section class='meta' id="footer-meta">
+              <time class="time" itemprop="dateUpdated" datetime="2018-12-23T23:56:13+08:00" content="2018-12-23">
+                  <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;本文最后更新于：2018-12-23
+              </time>
+              
+                  
+                  <div class="tags"><a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;JavaScript</a></div>
+              
+          </section>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/12/09/小片段代码简汇之CSS篇/" rel="prev" title="小片段代码简汇之CSS篇">
+                                  
+                                      小片段代码简汇之CSS篇
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/css/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>css</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/12/07/自定义单选框、复选框样式/" rel="prev" title="自定义单选框、复选框样式">
+                                    
+                                        自定义单选框、复选框样式
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2018/12/14/Git-常用命令练习/">Git 常用命令练习</a></li>
+            
+                <li><a href="https://istaotao.com/2018/12/09/小片段代码简汇之CSS篇/">小片段代码简汇之CSS篇</a></li>
+            
+                <li><a href="https://istaotao.com/2018/12/07/自定义单选框、复选框样式/">自定义单选框、复选框样式</a></li>
+            
+                <li><a href="https://istaotao.com/2018/11/29/实现文字的无缝滚动、间歇性向上翻滚/">实现文字的无缝滚动、间歇性向上翻滚</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+                
+
+                
+
+                
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+
+<script>
+    window.subData = {
+        title: '小片段代码简汇之JS篇',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+  <section class='author'>
+    
+      <div class='header'>
+        <img class='avatar' src='/img/me-lg.jpg'/>
+      </div>
+    
+    
+      <div class='content'>
+        
+        
+          <p>就像风走了八千里，不问归期</p>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/img/wx.png" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-weixin" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="mailto:yangtaobanner@foxmail.com" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://github.com/yangtao2o" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=282751852" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-music" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-linkedin" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="http://weibo.com/taoboy0208" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-weibo" aria-hidden="true"></i></a>
+          
+        
+          
+        
+      </div>
+    
+  </section>
+
+
+    
+    
+    
+        <section class='categories'>
+    <header class='header pure'>
+        <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;博文分类</div>
+    </header>
+    <div class='content pure'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/Email/"><div class='name'>Email</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(共3篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Html5/"><div class='name'>Html5</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>(共13篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/MacOS/"><div class='name'>MacOS</div><div class='badge'>(共3篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/css/"><div class='name'>css</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/git/"><div class='name'>git</div><div class='badge'>(共3篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/github/"><div class='name'>github</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/node/"><div class='name'>node</div><div class='badge'>(共2篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/前端学习资料/"><div class='name'>前端学习资料</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/置顶/"><div class='name'>置顶</div><div class='badge'>(共1篇)</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='tagcloud'>
+        <header class="header pure">
+            <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+        </header>
+        <div class='content pure'>
+            <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/tags/EDM/" style="font-size: 14px; color: #999">EDM</a> <a href="/tags/Hexo/" style="font-size: 19px; color: #777">Hexo</a> <a href="/tags/Homebrew/" style="font-size: 14px; color: #999">Homebrew</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/JavaScript算法/" style="font-size: 14px; color: #999">JavaScript算法</a> <a href="/tags/JavaScript经典实例/" style="font-size: 19px; color: #777">JavaScript经典实例</a> <a href="/tags/MacOS/" style="font-size: 19px; color: #777">MacOS</a> <a href="/tags/Node/" style="font-size: 14px; color: #999">Node</a> <a href="/tags/Theme/" style="font-size: 16.5px; color: #888">Theme</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/gnvm/" style="font-size: 14px; color: #999">gnvm</a> <a href="/tags/js功能/" style="font-size: 16.5px; color: #888">js功能</a> <a href="/tags/js插件/" style="font-size: 16.5px; color: #888">js插件</a> <a href="/tags/node/" style="font-size: 16.5px; color: #888">node</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/前端学习资料/" style="font-size: 14px; color: #999">前端学习资料</a> <a href="/tags/开发工具/" style="font-size: 21.5px; color: #666">开发工具</a> <a href="/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/tags/置顶/" style="font-size: 14px; color: #999">置顶</a>
+        </div>
+    </section>
+
+
+    
+    
+        
+    <section class='toc-wrapper'>
+        <header class="header pure">
+            <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+            <div class='wrapper'><a class="s-toc rightBtn" title="固定到顶部" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+        </header>
+        <div class='content pure'>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#多行文本截取clamp-js"><span class="toc-text">多行文本截取clamp.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断本地是否存在jquery写法"><span class="toc-text">判断本地是否存在jquery写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#截流函数-AND-节流函数"><span class="toc-text">截流函数 AND 节流函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#for循环添加点击事件"><span class="toc-text">for循环添加点击事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断浏览器是否开启本地cookie"><span class="toc-text">判断浏览器是否开启本地cookie</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决同级元素鼠标移入移出效果"><span class="toc-text">解决同级元素鼠标移入移出效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#placeholder样式兼容-amp-amp-属性IE兼容"><span class="toc-text">placeholder样式兼容&amp;&amp;属性IE兼容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回顶部函数"><span class="toc-text">返回顶部函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#滚动监听垂直联动"><span class="toc-text">滚动监听垂直联动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#右侧浮动导航平滑切换"><span class="toc-text">右侧浮动导航平滑切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断浏览器是否为IE（包括IE11）"><span class="toc-text">判断浏览器是否为IE（包括IE11）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断浏览器是否为移动端"><span class="toc-text">判断浏览器是否为移动端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将时间戳转换为时间"><span class="toc-text">将时间戳转换为时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Node实现JavaScript模块的原理简单介绍"><span class="toc-text">Node实现JavaScript模块的原理简单介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nodejs基本模块fs"><span class="toc-text">Nodejs基本模块fs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nodejs基本模块http"><span class="toc-text">Nodejs基本模块http</span></a></li></ol>
+        </div>
+    </section>
+
+
+    
+    
+        
+
+
+  <section class='music'>
+    <header class='header pure'>
+      <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+      <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=389370925"><i class="far fa-heart fa-fw"></i></a>
+    </header>
+    <div class='content pure'>
+      <div class="aplayer" data-theme="#3DC550"
+        data-mode="circulation"
+        data-server="netease"
+        data-type="playlist"
+        data-id="389370925"
+        data-volume="0.5"></div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
+    
+        <section class='links'>
+    <header class='header pure'>
+        <div><i class="fas fa-handshake fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+        
+            <a class="rightBtn" title="联系博主添加友链" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:yangtaobanner@foxmail.com?subject=交换友链&body=你好，我想和你交换友链，我已经将【yangtao&#39;s blog】添加到我的博客的友链中。我的博客链接是："><i class="fas fa-plus fa-fw"></i></a>
+        
+    </header>
+    <div class='content pure'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" title="https://isliulei.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://isliulei.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;大雷子
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://zguii.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://zguii.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;贵姥姥
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://www.qdfuns.com/u/32286.html" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.qdfuns.com/u/32286.html">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;一者乎
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://xaoxuu.com" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://hcysun.me/" target="_blank" rel="external nofollow noopener noreferrer" href="http://hcysun.me/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;HcySunYang
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://www.zhangxinxu.com/" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.zhangxinxu.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;张鑫旭
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://www.liaoxuefeng.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.liaoxuefeng.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;廖雪峰的官方网站
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://www.ruanyifeng.com/blog/" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ruanyifeng.com/blog/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;阮一峰的网络日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://cherryblog.site/" target="_blank" rel="external nofollow noopener noreferrer" href="https://cherryblog.site/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;Cherry’s blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://jser.me/about.html" target="_blank" rel="external nofollow noopener noreferrer" href="http://jser.me/about.html">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;草依山的Javascript世界
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts" target="_blank" rel="external nofollow noopener noreferrer" href="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;冴羽的掘金
+                    </div>
+                </a></li>
+            
+        </ul>
+    </div>
+</section>
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="/img/wx.png" class="social fab fa-weixin flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="mailto:yangtaobanner@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/yangtao2o" class="social fab fa-github flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=282751852" class="social fas fa-music flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social fab fa-linkedin flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://weibo.com/taoboy0208" class="social fab fa-weibo flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/node-waves@0.7.5/dist/waves.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn@master/js/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- fastclick -->
+<script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    FastClick.attach(document.body)
+  }, false)
+</script>
+
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+
+
+
+  <script src="/js/app.js"></script>
+  <script src="/js/search.js"></script>
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+
+<!-- leancloud_visitors -->
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

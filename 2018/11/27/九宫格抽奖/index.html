@@ -4,205 +4,271 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>九宫格抽奖 | 大涛子峡谷</title>
-  <meta name="description" content="一枚小小的前端攻城狮、迷恋摄影" />
-  <meta name="keywords" content="" />
+  <title>九宫格抽奖 | yangtao&#39;s blog</title>
+  
+  <meta name="keywords" content="大涛子 前端 web 摄影">
+  
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/img/favicon-y.ico">
-  <link rel="alternate" href="/atom.xml" title="大涛子峡谷">
+  <link rel="alternate" href="/atom.xml" title="yangtao's blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="shortcut icon" href="" />
+  <link rel="shortcut icon" href="/img/favicon-y.ico" />
   <link rel="icon" href="/img/favicon-y.ico" />
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="/style.css">
+
+
+  <link href='//cdn.jsdelivr.net/npm/node-waves@0.7.5/dist/waves.min.css' rel='stylesheet'>
+
+  <!-- style.css -->
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <!-- fontawesome -->
+  
+    <link rel="stylesheet" href="/fontawesome-free-5.6.3-web/css/all.min.css">
+  
+
+  <!-- google_fonts -->
+  
+
   <script>
     function setLoadingBarProgress(num) {
       document.getElementById('loading-bar').style.width=num+"%";
     }
   </script>
+
+  <!-- ga -->
+  
+  <!-- ba -->
+  
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
 </head>
 
 <body>
     <div id="loading-bar-wrapper">
-  <div id="loading-bar"></div>
+  <div id="loading-bar" class="pure"></div>
 </div>
 
-
     <script>setLoadingBarProgress(20)</script>
-    <header class="l_header">
+    <header class="l_header pure">
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-			<a class="logo flat-box" href='/' >
-				<!-- <i class="fa fa-home"></i> -->
-				大涛子峡谷
-			</a>
-
-				<div class='menu'>
-					<ul class='h-list'>
-                        
-    						
-    							<li>
-    								<a class='nav-about flat-box' href='/'>
-    									<i class='fa fa-home fa-'></i>&nbsp;主页
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-projects flat-box' href='https://codepen.io/istaotao/'>
-    									<i class='fa fa-cube fa-'></i>&nbsp;项目
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-home flat-box' href='/'>
-    									<i class='fa fa-rss fa-'></i>&nbsp;博客
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-archives flat-box' href='/archives'>
-    									<i class='fa fa-archive fa-'></i>&nbsp;归档
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-favorite flat-box' href='http://collect.w3ctrain.com/'>
-    									<i class='fa fa-address-book fa-'></i>&nbsp;收藏夹
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-tool flat-box' href='https://tool.lu/c/developer'>
-    									<i class='fa fa-wrench fa-'></i>&nbsp;工具
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-juejin flat-box' href='https://juejin.im/user/58b67dd58fd9c50061238e38/shares'>
-    									<i class='fa fa-share-alt-square fa-'></i>&nbsp;分享
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-photo flat-box' href='https://tuchong.com/2763959/'>
-    									<i class='fa fa-camera-retro fa-'></i>&nbsp;摄影
-    								</a>
-    							</li>
-    						
-    							<li>
-    								<a class='nav-book flat-box' href='https://www.jianshu.com/u/c6b5715f3016'>
-    									<i class='fa fa-book fa-'></i>&nbsp;简书
-    								</a>
-    							</li>
-    						
-        			 
-					</ul>
-					<div class='underline'></div>
-				</div>
+      <a class="logo flat-box" href='/' >
+        
+          yangtao's blog
+        
+      </a>
+			<div class='menu'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:codepen.ioistaotao"
+								 class="nav flat-box" href="https://codepen.io/istaotao/">
+									<i class='fas fa-cube fa-fw'></i>&nbsp;项目
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="archives"
+								 class="nav flat-box" href="/archives/">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="http:collect.w3ctrain.com"
+								 class="nav flat-box" href="http://collect.w3ctrain.com/">
+									<i class='fas fa-address-book fa-fw'></i>&nbsp;收藏夹
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:tool.lucdeveloper"
+								 class="nav flat-box" href="https://tool.lu/c/developer/">
+									<i class='fas fa-wrench fa-fw'></i>&nbsp;工具
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:juejin.imuser58b67dd58fd9c50061238e38shares"
+								 class="nav flat-box" href="https://juejin.im/user/58b67dd58fd9c50061238e38/shares/">
+									<i class='fas fa-share-alt-square fa-fw'></i>&nbsp;分享
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:tuchong.com2763959"
+								 class="nav flat-box" href="https://tuchong.com/2763959/">
+									<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:www.jianshu.comuc6b5715f3016"
+								 class="nav flat-box" href="https://www.jianshu.com/u/c6b5715f3016/">
+									<i class='fas fa-book fa-fw'></i>&nbsp;简书
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
 
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
-						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
 					</form>
 				</div>
 			
 			<ul class='switcher h-list'>
 				
-					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
 		<div class='nav-sub container container--flex'>
-			<a class="logo" class="flat-box" href='javascript:void(0)'>
-				xaoxuu
-			</a>
-
+			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
-				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
-				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="flat-btn fas fa-arrow-up fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
 </header>
 	<aside class="menu-phone">
-        <div class="header">大涛子峡谷</div>
-		<nav>
-            <ul>
-                
-                    
-                        <li>
-                            <a class='nav-about flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-projects flat-box nav flat-box' href='https://codepen.io/istaotao/'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-favorite flat-box nav flat-box' href='http://collect.w3ctrain.com/'><i class='fa fa-address-book fa-fw'></i>&nbsp;收藏夹</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-tool flat-box nav flat-box' href='https://tool.lu/c/developer'><i class='fa fa-wrench fa-fw'></i>&nbsp;工具</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-juejin flat-box nav flat-box' href='https://juejin.im/user/58b67dd58fd9c50061238e38/shares'><i class='fa fa-share-alt-square fa-fw'></i>&nbsp;分享</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-photo flat-box nav flat-box' href='https://tuchong.com/2763959/'><i class='fa fa-camera-retro fa-fw'></i>&nbsp;摄影</a>
-                        </li>
-                    
-                        <li>
-                            <a class='nav-book flat-box nav flat-box' href='https://www.jianshu.com/u/c6b5715f3016'><i class='fa fa-book fa-fw'></i>&nbsp;简书</a>
-                        </li>
-                    
-             
-            </ul>
+    <header>
+		<nav class="menu">
+      <ul>
+          
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-home fa-fw'></i>&nbsp;主页
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:codepen.ioistaotao" class="nav flat-box" href="https://codepen.io/istaotao/">
+											<i class='fas fa-cube fa-fw'></i>&nbsp;项目
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="archives" class="nav flat-box" href="/archives/">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="http:collect.w3ctrain.com" class="nav flat-box" href="http://collect.w3ctrain.com/">
+											<i class='fas fa-address-book fa-fw'></i>&nbsp;收藏夹
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:tool.lucdeveloper" class="nav flat-box" href="https://tool.lu/c/developer/">
+											<i class='fas fa-wrench fa-fw'></i>&nbsp;工具
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:juejin.imuser58b67dd58fd9c50061238e38shares" class="nav flat-box" href="https://juejin.im/user/58b67dd58fd9c50061238e38/shares/">
+											<i class='fas fa-share-alt-square fa-fw'></i>&nbsp;分享
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:tuchong.com2763959" class="nav flat-box" href="https://tuchong.com/2763959/">
+											<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:www.jianshu.comuc6b5715f3016" class="nav flat-box" href="https://www.jianshu.com/u/c6b5715f3016/">
+											<i class='fas fa-book fa-fw'></i>&nbsp;简书
+										</a>
+                  </li>
+              
+       
+      </ul>
 		</nav>
+    </header>
 	</aside>
 
     <script>setLoadingBarProgress(40);</script>
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            <article id="post-九宫格抽奖" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    <section class='meta'>
-        <h1 class="title">
-            
-                九宫格抽奖
-            
-        </h1>
-        <time>
-            2018-11-27&nbsp;&nbsp;
-            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-        </time>
-        
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
     
-    <div class='cats'>
-        
-    </div>
+      
+          <h1 class="title">九宫格抽奖</h1>
+      
+    
 
+    
+      <time class="time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+        2018-11-27
+      </time>
+    
 
-    </section>
+    
+      
+
+    
+
+    
+      
+        <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
+
+  </div>
+</section>
 
     <section class="article typo">
 
@@ -210,19 +276,21 @@
             <p>九宫格抽奖记录：<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 九宫格抽奖</span></span><br><span class="line"><span class="keyword">var</span> click=<span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> luck=&#123;</span><br><span class="line"></span><br><span class="line">  index: <span class="number">0</span>,	<span class="comment">//当前转动到哪个位置，起点位置</span></span><br><span class="line">  count: <span class="number">0</span>,	<span class="comment">//总共有多少个位置</span></span><br><span class="line">  timer: <span class="number">0</span>,	<span class="comment">//setTimeout的ID，用clearTimeout清除</span></span><br><span class="line">  speed: <span class="number">30</span>,	<span class="comment">//初始转动速度</span></span><br><span class="line">  times: <span class="number">0</span>,	<span class="comment">//转动次数</span></span><br><span class="line">  cycle: <span class="number">70</span>,	<span class="comment">//转动基本次数：即至少需要转动多少次再进入抽奖环节</span></span><br><span class="line">  prize: <span class="number">-1</span>,	<span class="comment">//中奖位置</span></span><br><span class="line"></span><br><span class="line">  init:<span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="string">"#"</span>+id).find(<span class="string">".luck-unit"</span>).length&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      $luck = $(<span class="string">"#"</span>+id);</span><br><span class="line">      $units = $luck.find(<span class="string">".luck-unit"</span>);</span><br><span class="line">      <span class="keyword">this</span>.obj = $luck;</span><br><span class="line">      <span class="keyword">this</span>.count = $units.length;</span><br><span class="line">      <span class="comment">// $luck.find(".luck-unit-"+this.index).addClass("active");</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  roll:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="keyword">this</span>.index;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="keyword">this</span>.count;</span><br><span class="line">    <span class="keyword">var</span> luck = <span class="keyword">this</span>.obj;</span><br><span class="line">    $(luck).find(<span class="string">".luck-unit-"</span>+index).removeClass(<span class="string">"active"</span>);</span><br><span class="line">    index += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (index&gt;count<span class="number">-1</span>) &#123;</span><br><span class="line">      index = <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    $(luck).find(<span class="string">".luck-unit-"</span>+index).addClass(<span class="string">"active"</span>);</span><br><span class="line">    <span class="keyword">this</span>.index=index;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  stop:<span class="function"><span class="keyword">function</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.prize=index;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">roll</span>(<span class="params">which</span>)</span>&#123;</span><br><span class="line">  luck.times += <span class="number">1</span>;</span><br><span class="line">  luck.roll();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (luck.times &gt; luck.cycle+<span class="number">10</span> &amp;&amp; luck.prize==luck.index) &#123;</span><br><span class="line">    <span class="keyword">var</span> title = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> content = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> desc = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> prize = <span class="string">''</span>;</span><br><span class="line">    <span class="comment">// 最终停下来的位置</span></span><br><span class="line">    <span class="comment">// 初始化</span></span><br><span class="line">    clearTimeout(luck.timer);</span><br><span class="line">    luck.prize=<span class="number">-1</span>;</span><br><span class="line">    luck.times=<span class="number">0</span>;</span><br><span class="line">    click=<span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">switch</span>(which) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        prize = <span class="string">'小米鼠标'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        prize = <span class="string">'固态硬盘'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        prize = <span class="string">'乐扣保温杯'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        prize = <span class="string">'京东券'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        prize = <span class="string">'谢谢参与'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        prize = <span class="string">'万用表'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">        prize = <span class="string">'摩尔吧课程折扣券'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">        prize = <span class="string">'小米耳机'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(which == <span class="number">4</span>) &#123;</span><br><span class="line">      title = <span class="string">'谢谢参与'</span>;</span><br><span class="line">      content = <span class="string">'再接再厉'</span></span><br><span class="line">      desc = <span class="string">'请查看活动详情，获取更多抽奖资格'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      title = <span class="string">'恭喜您'</span>;</span><br><span class="line">      content = <span class="string">'获得 &lt;span class="blue"&gt;'</span>+ prize +<span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">      <span class="keyword">if</span>(which == <span class="number">6</span>) &#123;</span><br><span class="line">        desc = <span class="string">'请至您的”个人中心“查收'</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        desc = <span class="string">'奖品将于活动结束后统一发送'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 展示中奖状态</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      modalShow(title,content,desc);</span><br><span class="line">    &#125;, <span class="number">800</span>);  </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (luck.times&lt;luck.cycle) &#123;</span><br><span class="line">      luck.speed -= <span class="number">10</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (luck.times==luck.cycle) &#123;</span><br><span class="line">      <span class="comment">// 最终中奖位置的索引</span></span><br><span class="line">      luck.prize = which;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (luck.times &gt; luck.cycle+<span class="number">10</span> &amp;&amp; ((luck.prize==<span class="number">0</span> &amp;&amp; luck.index==<span class="number">7</span>) || luck.prize==luck.index+<span class="number">1</span>)) &#123;</span><br><span class="line">        luck.speed += <span class="number">110</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        luck.speed += <span class="number">20</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (luck.speed&lt;<span class="number">40</span>) &#123;</span><br><span class="line">      luck.speed=<span class="number">40</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    luck.timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      roll(which);</span><br><span class="line">    &#125;,luck.speed);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Lottery init</span></span><br><span class="line">  luck.init(<span class="string">'luckArea'</span>);</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#startBtn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(click) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      click=<span class="literal">true</span>;</span><br><span class="line">      luck.speed=<span class="number">100</span>;</span><br><span class="line">      $.get(<span class="string">"http://www.moore8.com/campaign/lotteryAct"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> data = $.parseJSON(data);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'data:'</span>, data);</span><br><span class="line">        <span class="keyword">if</span>(data.code == <span class="number">1</span>) &#123;</span><br><span class="line">          <span class="keyword">var</span> which = data.type;</span><br><span class="line">          <span class="comment">// 调取抽奖并传值</span></span><br><span class="line">          roll(which);  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">if</span>(data.msg == <span class="string">'请先登录！'</span>) &#123;</span><br><span class="line">            loginFunc(<span class="string">'course_gift'</span>);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> desc = <span class="string">'请查看活动详情，获取更多抽奖资格'</span>;</span><br><span class="line">            modalShow(<span class="string">'对不起'</span>, data.msg, desc);</span><br><span class="line">          &#125;</span><br><span class="line">          click = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">modalShow</span>(<span class="params">title, body, desc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> title = title || <span class="string">'温馨提示'</span>;</span><br><span class="line">  <span class="keyword">var</span> body = body || <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">var</span> desc = desc || <span class="string">''</span>;</span><br><span class="line">  $(<span class="string">'#mTitle'</span>).html(title);</span><br><span class="line">  $(<span class="string">'#mBody'</span>).html(body);</span><br><span class="line">  $(<span class="string">'#mDesc'</span>).html(desc);</span><br><span class="line">  $(<span class="string">'#myModal'</span>).modal(<span class="string">'show'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loginFunc</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> href = <span class="built_in">window</span>.location.href;</span><br><span class="line">  <span class="keyword">var</span> id = id ? <span class="string">"%23"</span> + id : <span class="string">''</span>;</span><br><span class="line">  <span class="built_in">window</span>.location.href = <span class="string">"/login/?referer="</span> + href + id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         </div>
-
         
-            <div class="article-tags tags">
-                
-            </div>
+          <section class='meta' id="footer-meta">
+              <time class="time" itemprop="dateUpdated" datetime="2018-12-03T23:13:13+08:00" content="2018-12-03">
+                  <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;本文最后更新于：2018-12-03
+              </time>
+              
+          </section>
         
 
         
             <div class="prev-next">
                 
-                    <section class="prev" >
+                    <section class="prev">
                         <span class="art-item-left">
-                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
                             <h4>
                                 <a href="/2018/11/29/实现文字的无缝滚动、间歇性向上翻滚/" rel="prev" title="实现文字的无缝滚动、间歇性向上翻滚">
                                   
@@ -231,10 +299,9 @@
                                 </a>
                             </h4>
                             
+                                
                                 <h6 class="tags">
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>js插件
-                                    
+                                    <a class="tag" href="/tags/js插件/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>js插件</a>
                                 </h6>
                             
                         </span>
@@ -243,7 +310,7 @@
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
-                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
                                 <a href="/2018/11/27/整点秒杀功能优化/" rel="prev" title="活动之整点秒杀功能优化">
                                     
@@ -252,10 +319,9 @@
                                 </a>
                             </h4>
                             
+                                
                                 <h6 class="tags">
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>js功能
-                                    
+                                    <a class="tag" href="/tags/js功能/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>js功能</a>
                                 </h6>
                             
                         </span>
@@ -268,6 +334,9 @@
 
 </article>
 
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 <br>
 
 <!-- 显示推荐文章和评论 -->
@@ -279,10 +348,10 @@
                 
 
     <div class="recommended_posts">
-        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
-                <li><a href="https://istaotao.com/2018/12/03/兼容win、Mac的字体设置/">兼容Windows、Mac的 font-family</a></li>
+                <li><a href="https://istaotao.com/2018/12/07/自定义单选框、复选框样式/">自定义单选框、复选框样式</a></li>
             
                 <li><a href="https://istaotao.com/2018/11/29/实现文字的无缝滚动、间歇性向上翻滚/">实现文字的无缝滚动、间歇性向上翻滚</a></li>
             
@@ -290,36 +359,27 @@
             
                 <li><a href="https://istaotao.com/2018/11/03/设置Cookie/">设置Cookie</a></li>
             
-                <li><a href="https://istaotao.com/2018/10/31/学习JavaScript深入系列简要总结/">学习JavaScript深入系列简要总结</a></li>
-            
         </ul>
     </div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 
 
             
 
             
 
+                <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
                 
 
                 
 
                 
-                    
-                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
-                        <section id="comments">
-                            <div id="valine_container" class="valine_thread">
-                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
-                            </div>
-                        </section>
-                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
                     
                 
             
 
         </section>
     </article>
+
 
 
 <script>
@@ -335,108 +395,110 @@
             
     
         
-    <section class='m_widget author'>
+  <section class='author'>
+    
+      <div class='header'>
+        <img class='avatar' src='/img/me-lg.jpg'/>
+      </div>
+    
+    
+      <div class='content'>
         
-            <div class='header'>
-                <img class='avatar' src='/img/me-lg.jpg' />
-            </div>
         
-        <div class='content'>
-            
-                <h2>大涛子</h2>
-            
-            
-                <div>
-                    <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
-                    就像风走了八千里，不问归期
-                </div>
-            
-        </div>
+          <p>就像风走了八千里，不问归期</p>
         
-            <div class="social-wrapper">
-              
-                
-                    <a href="mailto:yangtaobanner@foxmail.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
-                
-              
-                
-                    <a href="https://github.com/yangtao2o" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                    <a href="https://music.163.com/#/user/home?id=282751852" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-music" aria-hidden="true"></i></a>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                    <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-linkedin" aria-hidden="true"></i></a>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                    <a href="http://weibo.com/taoboy0208" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-weibo" aria-hidden="true"></i></a>
-                
-              
-                
-                    <a href="/img/wx.png" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-weixin" aria-hidden="true"></i></a>
-                
-              
-                
-              
-            </div>
+      </div>
+    
+    
+      <div class="social-wrapper">
         
-    </section>
+          
+            <a href="/img/wx.png" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-weixin" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="mailto:yangtaobanner@foxmail.com" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://github.com/yangtao2o" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=282751852" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-music" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-linkedin" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="http://weibo.com/taoboy0208" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-weibo" aria-hidden="true"></i></a>
+          
+        
+          
+        
+      </div>
+    
+  </section>
 
 
     
     
-        <section class='m_widget categories'>
-    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
-    <div class='content'>
+    
+        <section class='categories'>
+    <header class='header pure'>
+        <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;博文分类</div>
+    </header>
+    <div class='content pure'>
         
             <ul class="entry">
                 
-                    <li><a class="flat-box" href="/categories/Email/"><div class='name'>Email</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/Email/"><div class='name'>Email</div><div class='badge'>(共1篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>3</div></a></li>
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(共3篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/Html5/"><div class='name'>Html5</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/Html5/"><div class='name'>Html5</div><div class='badge'>(共1篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>11</div></a></li>
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>(共13篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/MacOS/"><div class='name'>MacOS</div><div class='badge'>3</div></a></li>
+                    <li><a class="flat-box" href="/categories/MacOS/"><div class='name'>MacOS</div><div class='badge'>(共3篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/css/"><div class='name'>css</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/css/"><div class='name'>css</div><div class='badge'>(共1篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/git/"><div class='name'>git</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/git/"><div class='name'>git</div><div class='badge'>(共3篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/github/"><div class='name'>github</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/github/"><div class='name'>github</div><div class='badge'>(共1篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/前端学习资料/"><div class='name'>前端学习资料</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/node/"><div class='name'>node</div><div class='badge'>(共2篇)</div></a></li>
                 
-                    <li><a class="flat-box" href="/categories/置顶/"><div class='name'>置顶</div><div class='badge'>1</div></a></li>
+                    <li><a class="flat-box" href="/categories/前端学习资料/"><div class='name'>前端学习资料</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/置顶/"><div class='name'>置顶</div><div class='badge'>(共1篇)</div></a></li>
                 
             </ul>
         
@@ -446,117 +508,158 @@
     
     
         
-    <section class='m_widget tagcloud'>
-        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
-        <div class='content'>
-            <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/tags/EDM/" style="font-size: 14px; color: #999">EDM</a> <a href="/tags/Hexo/" style="font-size: 20.67px; color: #6c6c6c">Hexo</a> <a href="/tags/Homebrew/" style="font-size: 14px; color: #999">Homebrew</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/JavaScript算法/" style="font-size: 14px; color: #999">JavaScript算法</a> <a href="/tags/JavaScript经典实例/" style="font-size: 20.67px; color: #6c6c6c">JavaScript经典实例</a> <a href="/tags/MacOS/" style="font-size: 20.67px; color: #6c6c6c">MacOS</a> <a href="/tags/Node/" style="font-size: 14px; color: #999">Node</a> <a href="/tags/Theme/" style="font-size: 17.33px; color: #828282">Theme</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/js功能/" style="font-size: 17.33px; color: #828282">js功能</a> <a href="/tags/js插件/" style="font-size: 17.33px; color: #828282">js插件</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/前端学习资料/" style="font-size: 14px; color: #999">前端学习资料</a> <a href="/tags/开发工具/" style="font-size: 17.33px; color: #828282">开发工具</a> <a href="/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/tags/置顶/" style="font-size: 14px; color: #999">置顶</a>
+    <section class='tagcloud'>
+        <header class="header pure">
+            <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+        </header>
+        <div class='content pure'>
+            <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/tags/EDM/" style="font-size: 14px; color: #999">EDM</a> <a href="/tags/Hexo/" style="font-size: 19px; color: #777">Hexo</a> <a href="/tags/Homebrew/" style="font-size: 14px; color: #999">Homebrew</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/JavaScript算法/" style="font-size: 14px; color: #999">JavaScript算法</a> <a href="/tags/JavaScript经典实例/" style="font-size: 19px; color: #777">JavaScript经典实例</a> <a href="/tags/MacOS/" style="font-size: 19px; color: #777">MacOS</a> <a href="/tags/Node/" style="font-size: 14px; color: #999">Node</a> <a href="/tags/Theme/" style="font-size: 16.5px; color: #888">Theme</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/gnvm/" style="font-size: 14px; color: #999">gnvm</a> <a href="/tags/js功能/" style="font-size: 16.5px; color: #888">js功能</a> <a href="/tags/js插件/" style="font-size: 16.5px; color: #888">js插件</a> <a href="/tags/node/" style="font-size: 16.5px; color: #888">node</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/前端学习资料/" style="font-size: 14px; color: #999">前端学习资料</a> <a href="/tags/开发工具/" style="font-size: 21.5px; color: #666">开发工具</a> <a href="/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/tags/置顶/" style="font-size: 14px; color: #999">置顶</a>
         </div>
     </section>
 
 
     
     
-        <section class='m_widget music'>
-    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
-    <div class='content'>
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=389370925&auto=0&height=450"></iframe>
-    </div>
-</section>
-
-    
-    
-        <section class='m_widget links'>
-    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
-    <div class='content'>
-        <ul class="entry" id="links">
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://isliulei.com/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;大雷子
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://zguii.com/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;贵姥姥
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.qdfuns.com/u/32286.html">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;一者乎
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;xaoxuu
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://hcysun.me/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;HcySunYang
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.zhangxinxu.com/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;张鑫旭
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.liaoxuefeng.com/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;廖雪峰的官方网站
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ruanyifeng.com/blog/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;阮一峰的网络日志
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://cherryblog.site/">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;Cherry’s blog
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://jser.me/about.html">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;草依山的Javascript世界
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts">
-                    <div class='name'>
-                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-                        &nbsp;&nbsp;冴羽的掘金
-                    </div>
-                </a></li>
-            
-            
-
-        </ul>
-
-    </div>
-</section>
+        
 
     
     
         
+
+
+  <section class='music'>
+    <header class='header pure'>
+      <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+      <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=389370925"><i class="far fa-heart fa-fw"></i></a>
+    </header>
+    <div class='content pure'>
+      <div class="aplayer" data-theme="#3DC550"
+        data-mode="circulation"
+        data-server="netease"
+        data-type="playlist"
+        data-id="389370925"
+        data-volume="0.5"></div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
+    
+        <section class='links'>
+    <header class='header pure'>
+        <div><i class="fas fa-handshake fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+        
+            <a class="rightBtn" title="联系博主添加友链" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:yangtaobanner@foxmail.com?subject=交换友链&body=你好，我想和你交换友链，我已经将【yangtao&#39;s blog】添加到我的博客的友链中。我的博客链接是："><i class="fas fa-plus fa-fw"></i></a>
+        
+    </header>
+    <div class='content pure'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" title="https://isliulei.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://isliulei.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;大雷子
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://zguii.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://zguii.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;贵姥姥
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://www.qdfuns.com/u/32286.html" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.qdfuns.com/u/32286.html">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;一者乎
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://xaoxuu.com" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://hcysun.me/" target="_blank" rel="external nofollow noopener noreferrer" href="http://hcysun.me/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;HcySunYang
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://www.zhangxinxu.com/" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.zhangxinxu.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;张鑫旭
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://www.liaoxuefeng.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.liaoxuefeng.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;廖雪峰的官方网站
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://www.ruanyifeng.com/blog/" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ruanyifeng.com/blog/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;阮一峰的网络日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://cherryblog.site/" target="_blank" rel="external nofollow noopener noreferrer" href="https://cherryblog.site/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;Cherry’s blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://jser.me/about.html" target="_blank" rel="external nofollow noopener noreferrer" href="http://jser.me/about.html">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;草依山的Javascript世界
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts" target="_blank" rel="external nofollow noopener noreferrer" href="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;冴羽的掘金
+                    </div>
+                </a></li>
+            
+        </ul>
+    </div>
+</section>
 
     
 
@@ -570,21 +673,15 @@
         <div class="social-wrapper">
           
               
-                  <a href="mailto:yangtaobanner@foxmail.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+                  <a href="/img/wx.png" class="social fab fa-weixin flat-btn" target="_blank" rel="external"></a>
               
           
               
-                  <a href="https://github.com/yangtao2o" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+                  <a href="mailto:yangtaobanner@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external"></a>
               
           
               
-          
-              
-          
-              
-          
-              
-                  <a href="https://music.163.com/#/user/home?id=282751852" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+                  <a href="https://github.com/yangtao2o" class="social fab fa-github flat-btn" target="_blank" rel="external"></a>
               
           
               
@@ -594,9 +691,7 @@
               
           
               
-          
-              
-                  <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social fa fa-linkedin flat-box" target="_blank" rel="external"></a>
+                  <a href="https://music.163.com/#/user/home?id=282751852" class="social fas fa-music flat-btn" target="_blank" rel="external"></a>
               
           
               
@@ -608,13 +703,21 @@
               
           
               
-          
-              
-                  <a href="http://weibo.com/taoboy0208" class="social fa fa-weibo flat-box" target="_blank" rel="external"></a>
+                  <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social fab fa-linkedin flat-btn" target="_blank" rel="external"></a>
               
           
               
-                  <a href="/img/wx.png" class="social fa fa-weixin flat-box" target="_blank" rel="external"></a>
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://weibo.com/taoboy0208" class="social fab fa-weibo flat-btn" target="_blank" rel="external"></a>
               
           
               
@@ -623,22 +726,25 @@
     
     <br>
     <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
-    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> 作为主题，
-		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
     </div>
 </footer>
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
 
     <script>setLoadingBarProgress(80);</script>
-    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
-<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/node-waves@0.7.5/dist/waves.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
 <!-- 访问统计 -->
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn@master/js/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- fastclick -->
+<script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    FastClick.attach(document.body)
+  }, false)
+</script>
 
-
-<script src="/js/jquery.fitvids.js"></script>
 
     <script>
         var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
@@ -655,38 +761,27 @@
         if(!ROOT.endsWith('/'))ROOT += '/';
     </script>
 
-<script src="/js/search.js"></script>
-<script src="/js/app.js"></script>
+
+
+
+  <script src="/js/app.js"></script>
+  <script src="/js/search.js"></script>
+
+
 
 
     
     
     
         
-            <script>
-            var GUEST_INFO = ['nick','mail','link'];
-            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-                return GUEST_INFO.indexOf(item) > -1
-            });
-            var notify = 'false' == true;
-            var verify = 'false' == true;
-            var valine = new Valine();
-            valine.init({
-                el: '#valine_container',
-                notify: notify,
-                verify: verify,
-                guest_info: guest_info,
-                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
-                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
-                placeholder: "你不想说些什么麽~",
-                pageSize:'10',
-                avatar:'monsterid',
-                lang:'zh-cn'
-            })
-            </script>
-        
     
+
+
+
+
+<!-- leancloud_visitors -->
 
 
     <script>setLoadingBarProgress(100);</script>
 </body>
+</html>

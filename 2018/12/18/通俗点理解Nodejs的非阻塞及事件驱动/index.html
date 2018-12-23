@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>通俗点理解Nodejs的非阻塞及事件驱动 | yangtao&#39;s blog</title>
+  
+  <meta name="keywords" content="大涛子 前端 web 摄影">
+  
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/img/favicon-y.ico">
+  <link rel="alternate" href="/atom.xml" title="yangtao's blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="/img/favicon-y.ico" />
+  <link rel="icon" href="/img/favicon-y.ico" />
+
+
+  <link href='//cdn.jsdelivr.net/npm/node-waves@0.7.5/dist/waves.min.css' rel='stylesheet'>
+
+  <!-- style.css -->
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <!-- fontawesome -->
+  
+    <link rel="stylesheet" href="/fontawesome-free-5.6.3-web/css/all.min.css">
+  
+
+  <!-- google_fonts -->
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  <!-- ga -->
+  
+  <!-- ba -->
+  
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar" class="pure"></div>
+</div>
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header pure">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          yangtao's blog
+        
+      </a>
+			<div class='menu'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:codepen.ioistaotao"
+								 class="nav flat-box" href="https://codepen.io/istaotao/">
+									<i class='fas fa-cube fa-fw'></i>&nbsp;项目
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="archives"
+								 class="nav flat-box" href="/archives/">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="http:collect.w3ctrain.com"
+								 class="nav flat-box" href="http://collect.w3ctrain.com/">
+									<i class='fas fa-address-book fa-fw'></i>&nbsp;收藏夹
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:tool.lucdeveloper"
+								 class="nav flat-box" href="https://tool.lu/c/developer/">
+									<i class='fas fa-wrench fa-fw'></i>&nbsp;工具
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:juejin.imuser58b67dd58fd9c50061238e38shares"
+								 class="nav flat-box" href="https://juejin.im/user/58b67dd58fd9c50061238e38/shares/">
+									<i class='fas fa-share-alt-square fa-fw'></i>&nbsp;分享
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:tuchong.com2763959"
+								 class="nav flat-box" href="https://tuchong.com/2763959/">
+									<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:www.jianshu.comuc6b5715f3016"
+								 class="nav flat-box" href="https://www.jianshu.com/u/c6b5715f3016/">
+									<i class='fas fa-book fa-fw'></i>&nbsp;简书
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="flat-btn fas fa-arrow-up fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu">
+      <ul>
+          
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-home fa-fw'></i>&nbsp;主页
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:codepen.ioistaotao" class="nav flat-box" href="https://codepen.io/istaotao/">
+											<i class='fas fa-cube fa-fw'></i>&nbsp;项目
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-rss fa-fw'></i>&nbsp;博客
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="archives" class="nav flat-box" href="/archives/">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="http:collect.w3ctrain.com" class="nav flat-box" href="http://collect.w3ctrain.com/">
+											<i class='fas fa-address-book fa-fw'></i>&nbsp;收藏夹
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:tool.lucdeveloper" class="nav flat-box" href="https://tool.lu/c/developer/">
+											<i class='fas fa-wrench fa-fw'></i>&nbsp;工具
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:juejin.imuser58b67dd58fd9c50061238e38shares" class="nav flat-box" href="https://juejin.im/user/58b67dd58fd9c50061238e38/shares/">
+											<i class='fas fa-share-alt-square fa-fw'></i>&nbsp;分享
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:tuchong.com2763959" class="nav flat-box" href="https://tuchong.com/2763959/">
+											<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="https:www.jianshu.comuc6b5715f3016" class="nav flat-box" href="https://www.jianshu.com/u/c6b5715f3016/">
+											<i class='fas fa-book fa-fw'></i>&nbsp;简书
+										</a>
+                  </li>
+              
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      
+          <h1 class="title">通俗点理解Nodejs的非阻塞及事件驱动</h1>
+      
+    
+
+    
+      <time class="time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+        2018-12-18
+      </time>
+    
+
+    
+      
+    
+    <div class='cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+        <a class="categories" href="/categories/node/">node</a>
+    </div>
+
+
+    
+
+    
+      
+        <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="node-js是什么"><a href="#node-js是什么" class="headerlink" title="node.js是什么"></a>node.js是什么</h3><blockquote>
+<p>node.js是什么？</p>
+</blockquote>
+<ul>
+<li>这是一种通过JavaScript语言开发web服务端的东西</li>
+</ul>
+<blockquote>
+<p>为什么我们要用node.js？</p>
+</blockquote>
+<ul>
+<li>node.js有非阻塞，事件驱动I/O等特性，从而让高并发（high concurrency）在的轮询（Polling）和comet构建的应用中成为可能。<a id="more"></a>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3></li>
+</ul>
+<p>浏览器给网站发请求的过程一直没怎么变过。</p>
+<p>当浏览器给网站发了请求。服务器收到了请求，然后开始搜寻被请求的资源。如果有需要，服务器还会查询一下数据库，最后把响应结果传回浏览器。</p>
+<p>不过，在传统的web服务器中（比如<code>Apache</code>），每一个请求都会让服务器创建一个新的进程来处理这个请求。</p>
+<p>后来有了Ajax。有了Ajax，我们就不用每次都请求一个完整的新页面了，取而代之的是，每次只请求需要的部分页面信息就可以了。</p>
+<p>这显然是一个进步。</p>
+<h3 id="长轮询"><a href="#长轮询" class="headerlink" title="长轮询"></a>长轮询</h3><p>但是比如你要建一个<code>FriendFeed</code>这样的社交网站（类似人人网那样的刷朋友新鲜事的网站），你的好友会随时的推送新的状态，然后你的新鲜事会实时自动刷新。</p>
+<p>要达成这个需求，我们需要让用户一直与服务器保持一个有效连接。目前最简单的实现方法，就是让用户和服务器之间保持<code>长轮询（long polling）</code>。</p>
+<p>HTTP请求不是持续的连接，你请求一次，服务器响应一次，然后就完了。</p>
+<p><code>长轮询是一种利用HTTP模拟持续连接的技巧</code>。具体来说，只要页面载入了，不管你需不需要服务器给你响应信息，你都会给服务器发一个Ajax请求。这个请求不同于一般的Ajax请求，服务器不会直接给你返回信息，而是它要等着，直到服务器觉得该给你发信息了，它才会响应。</p>
+<p>比如，你的好友发了一条新鲜事，服务器就会把这个新鲜事当做响应发给你的浏览器，然后你的浏览器就刷新页面了。浏览器收到响应刷新完之后，再发送一条新的请求给服务器，这个请求依然不会立即被响应。</p>
+<p>于是就开始重复以上步骤。</p>
+<p>利用这个方法，可以让浏览器始终保持等待响应的状态。虽然以上过程依然只有非持续的Http参与，但是我们模拟出了一个看似持续的连接状态。</p>
+<h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><p>我们再看传统的服务器（比如Apache）。</p>
+<p>每次一个新用户连到你的网站上，你的服务器就得开一个连接。每个连接都需要占一个进程，这些进程大部分时间都是闲着的（比如等着你好友发新鲜事，等好友发完才给用户响应信息。或者等着数据库返回查询结果什么的）。</p>
+<p>虽然这些进程闲着，但是照样占用内存。这意味着，如果用户连接数的增长到一定规模，你服务器没准就要耗光内存直接瘫了。</p>
+<h3 id="非阻塞和事件驱动"><a href="#非阻塞和事件驱动" class="headerlink" title="非阻塞和事件驱动"></a>非阻塞和事件驱动</h3><p>这种情况怎么解决？</p>
+<p>解决方法就是刚才上边说的：<em>非阻塞和事件驱动</em>。</p>
+<p>这些概念在我们谈的这个情景里面其实没那么难理解。</p>
+<p>你把非阻塞的服务器想象成一个loop循环，这个loop会一直跑下去。</p>
+<p>一个新请求来了，这个loop就接了这个请求，把这个请求传给其他的进程（比如传给一个搞数据库查询的进程），然后响应一个回调（callback）。</p>
+<p>完事了这loop就接着跑，接其他的请求。</p>
+<p>这样下来。服务器就不会像之前那样傻等着数据库返回结果了。</p>
+<p>如果数据库把结果返回来了，loop就把结果传回用户的浏览器，接着继续跑。</p>
+<p>在这种方式下，你的服务器的进程就不会闲着等着。</p>
+<p>从而在理论上说，同一时刻的数据库查询数量，以及用户的请求数量就没有限制了。服务器只在用户那边有事件发生的时候才响应，这就是事件驱动。</p>
+<p>FriendFeed是用基于Python的非阻塞框架Tornado (知乎也用了这个框架) 来实现上面说的新鲜事功能的。不过，Node.js就比前者更妙了。</p>
+<h3 id="再看Node-js"><a href="#再看Node-js" class="headerlink" title="再看Node.js"></a>再看Node.js</h3><p>Node.js的应用是通过javascript开发的，然后直接在Google的变态V8引擎上跑。</p>
+<p>用了Node.js，你就不用担心用户端的请求会在服务器里跑了一段能够造成阻塞的代码了。</p>
+<p>因为javascript本身就是事件驱动的脚本语言。</p>
+<p>你回想一下，在给前端写javascript的时候，更多时候你都是在搞事件处理和回调函数。</p>
+<p>javascript本身就是给事件处理量身定制的语言。</p>
+<p>Node.js还是处于初期阶段。如果你想开发一个基于Node.js的应用，你应该会需要写一些很底层代码。</p>
+<p>但是下一代浏览器很快就要采用<code>WebSocket</code>技术了，从而长轮询也会消失。</p>
+<p>在Web开发里，Node.js这种类型的技术只会变得越来越重要。</p>
+<p>英文原文：<a href="https://www.sitepoint.com/node-js-is-the-new-black/" target="_blank" rel="noopener">Node.js is the New Black</a></p>
+<p>中文原文：<a href="https://www.zhihu.com/question/33578075/answer/56951771" target="_blank" rel="noopener">Node.js是用来做什么的？</a></p>
+
+        </div>
+        
+          <section class='meta' id="footer-meta">
+              <time class="time" itemprop="dateUpdated" datetime="2018-12-24T00:09:20+08:00" content="2018-12-24">
+                  <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;本文最后更新于：2018-12-24
+              </time>
+              
+                  
+                  <div class="tags"><a class="tag" href="/tags/node/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;node</a></div>
+              
+          </section>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/" rel="prev" title="Windows下Node.js 多版本管理器-Gnvm">
+                                  
+                                      Windows下Node.js 多版本管理器-Gnvm
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/node/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>node</a> <a class="tag" href="/tags/gnvm/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>gnvm</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/12/17/git-push-报错之-Permission-to-userA-git-denied-to-userB/" rel="prev" title="git push 报错之 Permission to userA.git denied to userB">
+                                    
+                                        git push 报错之 Permission to userA.git denied to userB
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/git/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>git</a> <a class="tag" href="/tags/开发工具/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>开发工具</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2048/04/06/hello-world/">欢迎来到大涛子峡谷</a></li>
+            
+                <li><a href="https://istaotao.com/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/">Windows下Node.js 多版本管理器-Gnvm</a></li>
+            
+                <li><a href="https://istaotao.com/2018/12/17/git-push-报错之-Permission-to-userA-git-denied-to-userB/">git push 报错之 Permission to userA.git denied to userB</a></li>
+            
+                <li><a href="https://istaotao.com/2018/12/14/Git-常用命令练习/">Git 常用命令练习</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+                
+
+                
+
+                
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+
+<script>
+    window.subData = {
+        title: '通俗点理解Nodejs的非阻塞及事件驱动',
+        tools: true
+    }
+</script>
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+  <section class='author'>
+    
+      <div class='header'>
+        <img class='avatar' src='/img/me-lg.jpg'/>
+      </div>
+    
+    
+      <div class='content'>
+        
+        
+          <p>就像风走了八千里，不问归期</p>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/img/wx.png" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-weixin" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="mailto:yangtaobanner@foxmail.com" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://github.com/yangtao2o" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=282751852" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-music" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-linkedin" aria-hidden="true"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a href="http://weibo.com/taoboy0208" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-weibo" aria-hidden="true"></i></a>
+          
+        
+          
+        
+      </div>
+    
+  </section>
+
+
+    
+    
+    
+        <section class='categories'>
+    <header class='header pure'>
+        <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;博文分类</div>
+    </header>
+    <div class='content pure'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/Email/"><div class='name'>Email</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badge'>(共3篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Html5/"><div class='name'>Html5</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>(共13篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/MacOS/"><div class='name'>MacOS</div><div class='badge'>(共3篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/css/"><div class='name'>css</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/git/"><div class='name'>git</div><div class='badge'>(共3篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/github/"><div class='name'>github</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/node/"><div class='name'>node</div><div class='badge'>(共2篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/前端学习资料/"><div class='name'>前端学习资料</div><div class='badge'>(共1篇)</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/置顶/"><div class='name'>置顶</div><div class='badge'>(共1篇)</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='tagcloud'>
+        <header class="header pure">
+            <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+        </header>
+        <div class='content pure'>
+            <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/Canvas/" style="font-size: 14px; color: #999">Canvas</a> <a href="/tags/EDM/" style="font-size: 14px; color: #999">EDM</a> <a href="/tags/Hexo/" style="font-size: 19px; color: #777">Hexo</a> <a href="/tags/Homebrew/" style="font-size: 14px; color: #999">Homebrew</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/JavaScript算法/" style="font-size: 14px; color: #999">JavaScript算法</a> <a href="/tags/JavaScript经典实例/" style="font-size: 19px; color: #777">JavaScript经典实例</a> <a href="/tags/MacOS/" style="font-size: 19px; color: #777">MacOS</a> <a href="/tags/Node/" style="font-size: 14px; color: #999">Node</a> <a href="/tags/Theme/" style="font-size: 16.5px; color: #888">Theme</a> <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/gnvm/" style="font-size: 14px; color: #999">gnvm</a> <a href="/tags/js功能/" style="font-size: 16.5px; color: #888">js功能</a> <a href="/tags/js插件/" style="font-size: 16.5px; color: #888">js插件</a> <a href="/tags/node/" style="font-size: 16.5px; color: #888">node</a> <a href="/tags/前端/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/前端学习资料/" style="font-size: 14px; color: #999">前端学习资料</a> <a href="/tags/开发工具/" style="font-size: 21.5px; color: #666">开发工具</a> <a href="/tags/终端/" style="font-size: 14px; color: #999">终端</a> <a href="/tags/置顶/" style="font-size: 14px; color: #999">置顶</a>
+        </div>
+    </section>
+
+
+    
+    
+        
+    <section class='toc-wrapper'>
+        <header class="header pure">
+            <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+            <div class='wrapper'><a class="s-toc rightBtn" title="固定到顶部" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+        </header>
+        <div class='content pure'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是什么"><span class="toc-text">node.js是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP请求"><span class="toc-text">HTTP请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#长轮询"><span class="toc-text">长轮询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache"><span class="toc-text">Apache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非阻塞和事件驱动"><span class="toc-text">非阻塞和事件驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再看Node-js"><span class="toc-text">再看Node.js</span></a></li></ol>
+        </div>
+    </section>
+
+
+    
+    
+        
+
+
+  <section class='music'>
+    <header class='header pure'>
+      <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+      <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=389370925"><i class="far fa-heart fa-fw"></i></a>
+    </header>
+    <div class='content pure'>
+      <div class="aplayer" data-theme="#3DC550"
+        data-mode="circulation"
+        data-server="netease"
+        data-type="playlist"
+        data-id="389370925"
+        data-volume="0.5"></div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
+    
+        <section class='links'>
+    <header class='header pure'>
+        <div><i class="fas fa-handshake fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+        
+            <a class="rightBtn" title="联系博主添加友链" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:yangtaobanner@foxmail.com?subject=交换友链&body=你好，我想和你交换友链，我已经将【yangtao&#39;s blog】添加到我的博客的友链中。我的博客链接是："><i class="fas fa-plus fa-fw"></i></a>
+        
+    </header>
+    <div class='content pure'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" title="https://isliulei.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://isliulei.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;大雷子
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://zguii.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://zguii.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;贵姥姥
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://www.qdfuns.com/u/32286.html" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.qdfuns.com/u/32286.html">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;一者乎
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://xaoxuu.com" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://hcysun.me/" target="_blank" rel="external nofollow noopener noreferrer" href="http://hcysun.me/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;HcySunYang
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://www.zhangxinxu.com/" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.zhangxinxu.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;张鑫旭
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://www.liaoxuefeng.com/" target="_blank" rel="external nofollow noopener noreferrer" href="https://www.liaoxuefeng.com/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;廖雪峰的官方网站
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://www.ruanyifeng.com/blog/" target="_blank" rel="external nofollow noopener noreferrer" href="http://www.ruanyifeng.com/blog/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;阮一峰的网络日志
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://cherryblog.site/" target="_blank" rel="external nofollow noopener noreferrer" href="https://cherryblog.site/">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;Cherry’s blog
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="http://jser.me/about.html" target="_blank" rel="external nofollow noopener noreferrer" href="http://jser.me/about.html">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;草依山的Javascript世界
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" title="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts" target="_blank" rel="external nofollow noopener noreferrer" href="https://juejin.im/user/58e4b9b261ff4b006b3227f4/posts">
+                    <div class='name'>
+                        
+                            <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                        
+                        &nbsp;&nbsp;冴羽的掘金
+                    </div>
+                </a></li>
+            
+        </ul>
+    </div>
+</section>
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="/img/wx.png" class="social fab fa-weixin flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="mailto:yangtaobanner@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/yangtao2o" class="social fab fa-github flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=282751852" class="social fas fa-music flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/" class="social fab fa-linkedin flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="http://weibo.com/taoboy0208" class="social fab fa-weibo flat-btn" target="_blank" rel="external"></a>
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/node-waves@0.7.5/dist/waves.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn@master/js/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- fastclick -->
+<script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    FastClick.attach(document.body)
+  }, false)
+</script>
+
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+
+
+
+  <script src="/js/app.js"></script>
+  <script src="/js/search.js"></script>
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+
+<!-- leancloud_visitors -->
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
