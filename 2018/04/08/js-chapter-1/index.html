@@ -613,6 +613,17 @@
 
                 
                     
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分和接收回复提醒，请您在留言时填写一下<b>昵称</b>和<b>邮箱</b>。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                <i class="fas fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//cdn.jsdelivr.net/gh/xaoxuu/cdn@1.0/js/valine/1.3.4/valine.min.js"></script>
+                    
                 
             
 
@@ -1022,6 +1033,29 @@
     
     
     
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'monsterid',
+                lang:'zh-cn',
+                highlight:''
+            })
+            </script>
         
     
 
