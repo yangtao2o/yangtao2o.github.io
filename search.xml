@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>关于闭包的一道面试题</title>
+      <link href="/2019/02/19/js-closure/"/>
+      <url>/2019/02/19/js-closure/</url>
+      
+        <content type="html"><![CDATA[<p>原文地址：<a href="https://www.nowcoder.com/questionTerminal/da4115e308c948169a9a73e50d09a3e7?toCommentId=2555046" target="_blank" rel="noopener">依次点击4个li标签，哪一个选项是正确的运行结果</a></p><a id="more"></a><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>现有如下html结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>依次点击4个li标签，运行结果是什么<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">  <span class="keyword">var</span> length=elements.length;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">      elements[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      alert(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="回答（依次弹出4，4，4，4）"><a href="#回答（依次弹出4，4，4，4）" class="headerlink" title="回答（依次弹出4，4，4，4）"></a>回答（依次弹出4，4，4，4）</h3><p>以下是我当时在牛客网回答时从《JavaScript高级程序设计》书中抄的：</p><blockquote><p>这是由于作用域链的这种配置机制引出的一个副作用，即闭包只能取得包含函数中任何变量的最后一个值。闭包所保存的是整个变量对象，而不是某个特殊的变量。</p></blockquote><p>这里的闭包函数<code>elements[i].onclick=function(){alert(i);}</code>的作用域链中保存着闭包的活动对象（这里为空）和全局变量对象（主要是i）,所以，它们引用的是同一个变量i；当点击完成后，变量i=4,也就是每个内部函数i的值都是4；</p><p>可以通过创建另一个匿名函数强制让闭包的行为符合预期：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload  = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> elements=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">    <span class="keyword">var</span> length=elements.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        elements[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(num);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>在调用匿名函数时，我们传入变量i，由于参数是按值传递的，所以就会将变量i的当前值复制给参数num。而这个匿名函数内部，又创建并alert了一个访问num的闭包。这样，每一次点击都有num变量的一个副本，因此可以返回各自不同的数值。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用Node.js+Express+MongoDB 建站实例</title>
       <link href="/2019/02/17/node-express/"/>
       <url>/2019/02/17/node-express/</url>

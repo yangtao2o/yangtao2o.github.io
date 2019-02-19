@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: Angular | yangtao&#39;s blog</title>
+  <title>关于闭包的一道面试题 | yangtao&#39;s blog</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影">
   
@@ -236,34 +236,21 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            
-    <script>
-        window.subData= { title:'博文分类 : Angular'}
-    </script>
-
-
-<section class="post-list">
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
 <section class='meta'>
   
   <div class="meta" id="header-meta">
     
-      <h2 class="title">
-          <a href="/2019/01/13/localhost/">
-              
-                  npm run 报错：getaddrinfo ENOTFOUND localhost
-              
-          </a>
-      </h2>
+      
+          <h1 class="title">关于闭包的一道面试题</h1>
+      
     
 
     
       <time class="time">
         <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-        2019-01-13
+        2019-02-19
       </time>
     
 
@@ -272,49 +259,165 @@
     
     <div class='cats'>
         <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-        <a class="categories" href="/categories/Angular/">Angular</a>
+        <a class="categories" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
     
 
     
+      
+        <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
 
   </div>
 </section>
 
     <section class="article typo">
-        <p>安装 Angular 的时候，启动 <code>ng serve --open</code>，报错如下：<br>
-        
-            <div class="readmore">
-                <a href="/2019/01/13/localhost/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/报错/"><i class="fas fa-hashtag fa-fw"></i>报错</a>
-                
-                    <a href="/tags/Angular/"><i class="fas fa-hashtag fa-fw"></i>Angular</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <p>原文地址：<a href="https://www.nowcoder.com/questionTerminal/da4115e308c948169a9a73e50d09a3e7?toCommentId=2555046" target="_blank" rel="noopener">依次点击4个li标签，哪一个选项是正确的运行结果</a></p>
+<a id="more"></a>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>现有如下html结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>依次点击4个li标签，运行结果是什么<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">  <span class="keyword">var</span> length=elements.length;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">      elements[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      alert(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="回答（依次弹出4，4，4，4）"><a href="#回答（依次弹出4，4，4，4）" class="headerlink" title="回答（依次弹出4，4，4，4）"></a>回答（依次弹出4，4，4，4）</h3><p>以下是我当时在牛客网回答时从《JavaScript高级程序设计》书中抄的：</p>
+<blockquote>
+<p>这是由于作用域链的这种配置机制引出的一个副作用，即闭包只能取得包含函数中任何变量的最后一个值。闭包所保存的是整个变量对象，而不是某个特殊的变量。</p>
+</blockquote>
+<p>这里的闭包函数<code>elements[i].onclick=function(){alert(i);}</code>的作用域链中保存着闭包的活动对象（这里为空）和全局变量对象（主要是i）,所以，它们引用的是同一个变量i；当点击完成后，变量i=4,也就是每个内部函数i的值都是4；</p>
+<p>可以通过创建另一个匿名函数强制让闭包的行为符合预期：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload  = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> elements=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">    <span class="keyword">var</span> length=elements.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        elements[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(num);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在调用匿名函数时，我们传入变量i，由于参数是按值传递的，所以就会将变量i的当前值复制给参数num。而这个匿名函数内部，又创建并alert了一个访问num的闭包。这样，每一次点击都有num变量的一个副本，因此可以返回各自不同的数值。</p>
 
         </div>
-    
-</section>
+        
+          <section class='meta' id="footer-meta">
+              <time class="time" itemprop="dateUpdated" datetime="2019-02-19T18:10:49+08:00" content="2019-02-19">
+                  <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;本文最后更新于：2019-02-19
+              </time>
+              
+                  
+                  <div class="tags"><a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;JavaScript</a></div>
+              
+          </section>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2048/04/06/hello-world/" rel="prev" title="欢迎来到大涛子峡谷">
+                                  
+                                      欢迎来到大涛子峡谷
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/置顶/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>置顶</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/02/17/node-express/" rel="prev" title="使用Node.js+Express+MongoDB 建站实例">
+                                    
+                                        使用Node.js+Express+MongoDB 建站实例
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/node/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>node</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2048/04/06/hello-world/">欢迎来到大涛子峡谷</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/17/node-express/">使用Node.js+Express+MongoDB 建站实例</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/17/vue-todolist/">Vue经典实例 ToDoList</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/04/vue-router/">《Vue.js实战》之前端路由与vue-router</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+                
+
+                
+
+                
+                    
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分和接收回复提醒，请您在留言时填写一下<b>昵称</b>和<b>邮箱</b>。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                <i class="fas fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//cdn.jsdelivr.net/gh/xaoxuu/cdn@1.0/js/valine/1.3.4/valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
 
 
 
-<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-
-
+<script>
+    window.subData = {
+        title: '关于闭包的一道面试题',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -456,11 +559,39 @@
     
     
         
+    <section class='toc-wrapper'>
+        <header class="header pure">
+            <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+            <div class='wrapper'><a class="s-toc rightBtn" title="固定到顶部" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+        </header>
+        <div class='content pure'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回答（依次弹出4，4，4，4）"><span class="toc-text">回答（依次弹出4，4，4，4）</span></a></li></ol>
+        </div>
+    </section>
+
 
     
     
         
 
+
+  <section class='music'>
+    <header class='header pure'>
+      <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+      <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=389370925"><i class="far fa-heart fa-fw"></i></a>
+    </header>
+    <div class='content pure'>
+      <div class="aplayer" data-theme="#3DC550"
+        data-mode="circulation"
+        data-server="netease"
+        data-type="playlist"
+        data-id="389370925"
+        data-volume="0.5"></div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 
 
     
@@ -695,6 +826,35 @@
 
 
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'monsterid',
+                lang:'zh-cn',
+                highlight:''
+            })
+            </script>
+        
+    
 
 
 
