@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>说一说常见的请求头和相应头都有什么呢</title>
+      <link href="/2019/02/20/header-response/"/>
+      <url>/2019/02/20/header-response/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-请求-客户端-gt-服务端-request"><a href="#1-请求-客户端-gt-服务端-request" class="headerlink" title="1.请求(客户端-&gt;服务端[request])"></a>1.请求(客户端-&gt;服务端[request])</h3><a id="more"></a><ul><li><code>GET(请求的方式) /newcoder/hello.html</code>(请求的目标资源) <code>HTTP/1.1</code>(请求采用的协议和版本号) </li><li><code>Accept: */*</code>(客户端能接收的资源类型) </li><li><code>Accept-Language: en-us</code>(客户端接收的语言类型) </li><li><code>Connection: Keep-Alive</code>(维护客户端和服务端的连接关系) </li><li><code>Host: localhost:8080</code>(连接的目标主机和端口号) </li><li><code>Referer: http://localhost/links.asp</code>(告诉服务器我来自于哪里) </li><li><code>User-Agent: Mozilla/4.0</code>(客户端版本号的名字) </li><li><code>Accept-Encoding: gzip, deflate</code>(客户端能接收的压缩数据的类型) </li><li><code>If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT</code>(缓存时间)  </li><li><code>Cookie</code>(客户端暂存服务端的信息) </li><li><code>Date: Tue, 11 Jul 2000 18:23:51 GMT</code>(客户端请求服务端的时间)</li></ul><h3 id="2-响应-服务端-gt-客户端-response"><a href="#2-响应-服务端-gt-客户端-response" class="headerlink" title="2.响应(服务端-&gt;客户端[response])"></a>2.响应(服务端-&gt;客户端[response])</h3><ul><li><code>HTTP/1.1</code>(响应采用的协议和版本号) <code>200</code>(状态码) <code>OK</code>(描述信息)</li><li><code>Location: http://www.baidu.com</code>(服务端需要客户端访问的页面路径) </li><li><code>Server:apache tomcat</code>(服务端的Web服务端名)</li><li><code>Content-Encoding: gzip</code>(服务端能够发送压缩编码类型) </li><li><code>Content-Length: 80</code>(服务端发送的压缩数据的长度) </li><li><code>Content-Language: zh-cn</code>(服务端发送的语言类型) </li><li><code>Content-Type: text/html; charset=GB2312</code>(服务端发送的类型及采用的编码方式)</li><li><code>Last-Modified: Tue, 11 Jul 2000 18:23:51 GMT</code>(服务端对该资源最后修改的时间)</li><li><code>Refresh: 1;url=http://www.it315.org</code>(服务端要求客户端1秒钟后，刷新，然后访问指定的页面路径)</li><li><code>Content-Disposition: attachment; filename=aaa.zip</code>(服务端要求客户端以下载文件的方式打开该文件)</li><li><code>Transfer-Encoding: chunked</code>(分块传递数据到客户端）  </li><li><code>Set-Cookie:SS=Q0=5Lb_nQ; path=/search</code>(服务端发送到客户端的暂存数据)</li><li><code>Expires: -1</code>//3种(服务端禁止客户端缓存页面数据)</li><li><code>Cache-Control: no-cache</code>(服务端禁止客户端缓存页面数据)  </li><li><code>Pragma: no-cache</code>(服务端禁止客户端缓存页面数据)   </li><li><code>Connection: close(1.0)/(1.1)Keep-Alive</code>(维护客户端和服务端的连接关系)  </li><li><code>Date: Tue, 11 Jul 2000 18:23:51 GMT</code>(服务端响应客户端的时间)</li></ul><blockquote><p>在服务器响应客户端的时候，带上<code>Access-Control-Allow-Origin</code>头信息，解决跨域的一种方法。</p></blockquote><p>原文地址：<a href="https://www.nowcoder.com/test/question/done?tid=21233299&amp;qid=55682#summary" target="_blank" rel="noopener">传送门</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于闭包的一道面试题</title>
       <link href="/2019/02/19/js-closure/"/>
       <url>/2019/02/19/js-closure/</url>

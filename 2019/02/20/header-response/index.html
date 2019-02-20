@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: JavaScript算法 | yangtao&#39;s blog</title>
+  <title>说一说常见的请求头和相应头都有什么呢 | yangtao&#39;s blog</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影">
   
@@ -236,34 +236,21 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            
-    <script>
-        window.subData= { title:'热门标签 : JavaScript算法'}
-    </script>
-
-
-<section class="post-list">
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
 <section class='meta'>
   
   <div class="meta" id="header-meta">
     
-      <h2 class="title">
-          <a href="/2018/08/01/js算法/">
-              
-                  JavaScript算法初级练习
-              
-          </a>
-      </h2>
+      
+          <h1 class="title">说一说常见的请求头和相应头都有什么呢</h1>
+      
     
 
     
       <time class="time">
         <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-        2018-08-01
+        2019-02-20
       </time>
     
 
@@ -272,49 +259,191 @@
     
     <div class='cats'>
         <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-        <a class="categories" href="/categories/JavaScript/">JavaScript</a>
+        <a class="categories" href="/categories/http/">http</a>
     </div>
 
 
     
 
     
+      
+        <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
 
   </div>
 </section>
 
     <section class="article typo">
-        <h3 id="需要定义一个最小值和一个最大值之间的随机数"><a href="#需要定义一个最小值和一个最大值之间的随机数" class="headerlink" title="# 需要定义一个最小值和一个最大值之间的随机数"></a># 需要定义一个最小值和一个最大值之间的随机数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ourFunction</span>(<span class="params">ourMin, ourMax</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (ourMax - ourMin + <span class="number">1</span>)) + ourMin;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ourFunction(<span class="number">1</span>, <span class="number">9</span>);</span><br></pre></td></tr></table></figure>
-        
-            <div class="readmore">
-                <a href="/2018/08/01/js算法/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw"></i>JavaScript</a>
-                
-                    <a href="/tags/JavaScript算法/"><i class="fas fa-hashtag fa-fw"></i>JavaScript算法</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="1-请求-客户端-gt-服务端-request"><a href="#1-请求-客户端-gt-服务端-request" class="headerlink" title="1.请求(客户端-&gt;服务端[request])"></a>1.请求(客户端-&gt;服务端[request])</h3><a id="more"></a>
+<ul>
+<li><code>GET(请求的方式) /newcoder/hello.html</code>(请求的目标资源) <code>HTTP/1.1</code>(请求采用的协议和版本号) </li>
+<li><code>Accept: */*</code>(客户端能接收的资源类型) </li>
+<li><code>Accept-Language: en-us</code>(客户端接收的语言类型) </li>
+<li><code>Connection: Keep-Alive</code>(维护客户端和服务端的连接关系) </li>
+<li><code>Host: localhost:8080</code>(连接的目标主机和端口号) </li>
+<li><code>Referer: http://localhost/links.asp</code>(告诉服务器我来自于哪里) </li>
+<li><code>User-Agent: Mozilla/4.0</code>(客户端版本号的名字) </li>
+<li><code>Accept-Encoding: gzip, deflate</code>(客户端能接收的压缩数据的类型) </li>
+<li><code>If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT</code>(缓存时间)  </li>
+<li><code>Cookie</code>(客户端暂存服务端的信息) </li>
+<li><code>Date: Tue, 11 Jul 2000 18:23:51 GMT</code>(客户端请求服务端的时间)</li>
+</ul>
+<h3 id="2-响应-服务端-gt-客户端-response"><a href="#2-响应-服务端-gt-客户端-response" class="headerlink" title="2.响应(服务端-&gt;客户端[response])"></a>2.响应(服务端-&gt;客户端[response])</h3><ul>
+<li><code>HTTP/1.1</code>(响应采用的协议和版本号) <code>200</code>(状态码) <code>OK</code>(描述信息)</li>
+<li><code>Location: http://www.baidu.com</code>(服务端需要客户端访问的页面路径) </li>
+<li><code>Server:apache tomcat</code>(服务端的Web服务端名)</li>
+<li><code>Content-Encoding: gzip</code>(服务端能够发送压缩编码类型) </li>
+<li><code>Content-Length: 80</code>(服务端发送的压缩数据的长度) </li>
+<li><code>Content-Language: zh-cn</code>(服务端发送的语言类型) </li>
+<li><code>Content-Type: text/html; charset=GB2312</code>(服务端发送的类型及采用的编码方式)</li>
+<li><code>Last-Modified: Tue, 11 Jul 2000 18:23:51 GMT</code>(服务端对该资源最后修改的时间)</li>
+<li><code>Refresh: 1;url=http://www.it315.org</code>(服务端要求客户端1秒钟后，刷新，然后访问指定的页面路径)</li>
+<li><code>Content-Disposition: attachment; filename=aaa.zip</code>(服务端要求客户端以下载文件的方式打开该文件)</li>
+<li><code>Transfer-Encoding: chunked</code>(分块传递数据到客户端）  </li>
+<li><code>Set-Cookie:SS=Q0=5Lb_nQ; path=/search</code>(服务端发送到客户端的暂存数据)</li>
+<li><code>Expires: -1</code>//3种(服务端禁止客户端缓存页面数据)</li>
+<li><code>Cache-Control: no-cache</code>(服务端禁止客户端缓存页面数据)  </li>
+<li><code>Pragma: no-cache</code>(服务端禁止客户端缓存页面数据)   </li>
+<li><code>Connection: close(1.0)/(1.1)Keep-Alive</code>(维护客户端和服务端的连接关系)  </li>
+<li><code>Date: Tue, 11 Jul 2000 18:23:51 GMT</code>(服务端响应客户端的时间)</li>
+</ul>
+<blockquote>
+<p>在服务器响应客户端的时候，带上<code>Access-Control-Allow-Origin</code>头信息，解决跨域的一种方法。</p>
+</blockquote>
+<p>原文地址：<a href="https://www.nowcoder.com/test/question/done?tid=21233299&amp;qid=55682#summary" target="_blank" rel="noopener">传送门</a></p>
 
         </div>
-    
-</section>
+        
+          <section class='meta' id="footer-meta">
+              <time class="time" itemprop="dateUpdated" datetime="2019-02-20T20:09:51+08:00" content="2019-02-20">
+                  <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;本文最后更新于：2019-02-20
+              </time>
+              
+                  
+                  <div class="tags"><a class="tag" href="/tags/http/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;http</a></div>
+              
+          </section>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2048/04/06/hello-world/" rel="prev" title="欢迎来到大涛子峡谷">
+                                  
+                                      欢迎来到大涛子峡谷
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/置顶/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>置顶</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/02/19/js-closure/" rel="prev" title="关于闭包的一道面试题">
+                                    
+                                        关于闭包的一道面试题
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2048/04/06/hello-world/">欢迎来到大涛子峡谷</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/19/js-closure/">关于闭包的一道面试题</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/17/node-express/">使用Node.js+Express+MongoDB 建站实例</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/17/vue-todolist/">Vue经典实例 ToDoList</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+                
+
+                
+
+                
+                    
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分和接收回复提醒，请您在留言时填写一下<b>昵称</b>和<b>邮箱</b>。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                <i class="fas fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//cdn.jsdelivr.net/gh/xaoxuu/cdn@1.0/js/valine/1.3.4/valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
 
 
 
-<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-
-
+<script>
+    window.subData = {
+        title: '说一说常见的请求头和相应头都有什么呢',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -458,11 +587,39 @@
     
     
         
+    <section class='toc-wrapper'>
+        <header class="header pure">
+            <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+            <div class='wrapper'><a class="s-toc rightBtn" title="固定到顶部" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+        </header>
+        <div class='content pure'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-请求-客户端-gt-服务端-request"><span class="toc-text">1.请求(客户端-&gt;服务端[request])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-响应-服务端-gt-客户端-response"><span class="toc-text">2.响应(服务端-&gt;客户端[response])</span></a></li></ol>
+        </div>
+    </section>
+
 
     
     
         
 
+
+  <section class='music'>
+    <header class='header pure'>
+      <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+      <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=389370925"><i class="far fa-heart fa-fw"></i></a>
+    </header>
+    <div class='content pure'>
+      <div class="aplayer" data-theme="#3DC550"
+        data-mode="circulation"
+        data-server="netease"
+        data-type="playlist"
+        data-id="389370925"
+        data-volume="0.5"></div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 
 
     
@@ -697,6 +854,35 @@
 
 
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'monsterid',
+                lang:'zh-cn',
+                highlight:''
+            })
+            </script>
+        
+    
 
 
 
