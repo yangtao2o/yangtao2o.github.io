@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: Email | yangtao&#39;s blog</title>
+  <title>初探 JavaScript 的变量 | yangtao&#39;s blog</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影">
   
@@ -236,34 +236,21 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            
-    <script>
-        window.subData= { title:'博文分类 : Email'}
-    </script>
-
-
-<section class="post-list">
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
 <section class='meta'>
   
   <div class="meta" id="header-meta">
     
-      <h2 class="title">
-          <a href="/2018/09/19/edm-01/">
-              
-                  从零制作edm邮件，需要了解的一些规则
-              
-          </a>
-      </h2>
+      
+          <h1 class="title">初探 JavaScript 的变量</h1>
+      
     
 
     
       <time class="time">
         <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-        2018-09-19
+        2019-02-25
       </time>
     
 
@@ -272,47 +259,213 @@
     
     <div class='cats'>
         <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-        <a class="categories" href="/categories/Email/">Email</a>
+        <a class="categories" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
     
 
     
+      
+        <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
 
   </div>
 </section>
 
     <section class="article typo">
-        <p>因为电子邮件客户端预览窗口通常只是一小部分屏幕宽度，你最好上你的电子邮件的宽度设计在大约600px。没有人喜欢水平滚动条<br>
-        
-            <div class="readmore">
-                <a href="/2018/09/19/edm-01/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/EDM/"><i class="fas fa-hashtag fa-fw"></i>EDM</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h3><p><code>ECMAScript</code>变量一般有两种数据类型的值：<strong>基本类型和引用类型</strong>。</p>
+<ul>
+<li>基本类型： 简单的数据段：<code>Undefined, Null, Boolean, Number, String</code></li>
+<li>引用类型：多个值构成的对象；<a id="more"></a>
+<h4 id="1-动态的属性"><a href="#1-动态的属性" class="headerlink" title="1. 动态的属性"></a>1. 动态的属性</h4></li>
+</ul>
+<p>定义两者的值：创建一个变量并为其变量赋值；</p>
+<p>执行两者的值：</p>
+<ul>
+<li>引用类型：可以添加、删除属性和方法；</li>
+<li>基本类型：不能添加、删除属性和方法；</li>
+</ul>
+<p>比如：引用类型 a，可以添加属性 name age<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.name = <span class="string">"杨子龙"</span>;</span><br><span class="line">a.age = <span class="number">24</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.name);                      <span class="comment">//杨子龙</span></span><br></pre></td></tr></table></figure></p>
+<p>基本类型 name 无法添加属性 age<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"杨子龙"</span>;</span><br><span class="line">name.age  = <span class="number">24</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name.age);                 <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>代码中可知：只能给引用类型值动态地添加属性，以便将来使用。</p>
+<h4 id="2-赋值变量值"><a href="#2-赋值变量值" class="headerlink" title="2. 赋值变量值"></a>2. 赋值变量值</h4><p>从一个变量向另一个变量复制基本类型值和引用类型值时：</p>
+<ul>
+<li>基本类型：在变量对象上创建一个新值，并将其值复制给新变量分配的位置上；（完全独立的两个变量）<br>例如：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">111</span>;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line"><span class="built_in">console</span>.log(b);                 <span class="comment">//111</span></span><br></pre></td></tr></table></figure>
+<p>代码中可知：变量b的值只是变量a的值的一个副本，两者的值111是完全独立的。</p>
+<ul>
+<li>引用类型：将存储在变量对象中的值复制一份放到为新变量分配的空间中；（引用同一个对象的两个变量）</li>
+</ul>
+<p>引用类型的值的副本实际是一个指针，指向存储在堆中的一个对象。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line">obj1.name = <span class="string">"杨子龙"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj2,name);                 <span class="comment">// Object &#123; name="杨子龙"&#125; 杨子龙</span></span><br></pre></td></tr></table></figure></p>
+<p>代码中可知：obj1和obj2都指向同一个对象Object；所以，为obj1添加的name属性，通过obj2也可以访问的到。</p>
+<h4 id="3-传递参数"><a href="#3-传递参数" class="headerlink" title="3. 传递参数"></a>3. 传递参数</h4><p>我们都知道基本类型是<strong>按值访问</strong>的，因为可以访问保存在变量中的实际的值。<br>所有函数的参数都是<strong>按值传递</strong>的。</p>
+<ul>
+<li>基本类型：基本类型值的传递如同基本类型变量的复制一样；<br>在向参数传递值，被传递的值会被复制给一个局部变量（命名参数），因此这个局部变量的变化不会反映在函数的外部。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  num += <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> result = fn(a);</span><br><span class="line"><span class="built_in">console</span>.log(result);        <span class="comment">//20</span></span><br><span class="line"><span class="built_in">console</span>.log(a);             <span class="comment">//10</span></span><br></pre></td></tr></table></figure>
+<p>代码中可知：参数num和变量a互不相识，只是有着相同的值而已，用完之后，你还是你，我还是我，互不干政。</p>
+<ul>
+<li>引用类型：引用类型的传递如同引用类型变量的复制一样；<br>在向参数传递值时，会把这个值在内存中的地址复制给一个局部变量，因此这个局部变量的变化会反映在函数的外部。</li>
+</ul>
+<p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.name = <span class="string">'杨子龙'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">fn(person);</span><br><span class="line"><span class="built_in">console</span>.log(person.name);           <span class="comment">//杨子龙</span></span><br></pre></td></tr></table></figure></p>
+<p>代码中可知：在这个函数内部，参数obj和变量person引用的是同一个对象Object，所以，你不动我也不动，你动我也动，你中有我，我中有你，情义绵绵，经久不息……</p>
+<p>也就是说：即使变量person是按值传递的，但是参数obj（想象成局部变量）还是会按引用来访问同一个对象。</p>
+<blockquote>
+<p> 访问变量有按值和按引用两种方式，参数只能按值传递。</p>
+</blockquote>
+<h4 id="4-检测类型"><a href="#4-检测类型" class="headerlink" title="4. 检测类型"></a>4. 检测类型</h4><ul>
+<li>基本类型：<code>typeof</code></li>
+<li>引用类型：<code>instanceof</code>（对象或null）</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'Yang Zilong'</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">24</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">var</span> d = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> e;</span><br><span class="line"><span class="keyword">var</span> g = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">var</span> f = <span class="literal">null</span>;  <span class="comment">// 比较特殊</span></span><br><span class="line"><span class="keyword">var</span> h = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">//string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b); <span class="comment">//number </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c); <span class="comment">//string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d); <span class="comment">//boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> e); <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> g); <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f); <span class="comment">//object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> h); <span class="comment">//object</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所用引用类型的值都是Object的实例。</p>
+</blockquote>
+<p>如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> num = [<span class="number">1</span>,<span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/.at/i</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);     <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(num <span class="keyword">instanceof</span> <span class="built_in">Object</span>);        <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(num <span class="keyword">instanceof</span> <span class="built_in">Array</span>);         <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(pattern <span class="keyword">instanceof</span> <span class="built_in">Object</span>);    <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(pattern <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>);    <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用<code>instanceof</code>检测基本类型，会返回<code>false</code>，基本类型不是对象。</p>
+</blockquote>
+<ul>
+<li>参考资料：《JavaScript高级程序设计》（第三版）第四章</li>
+<li>同步于： <a href="https://juejin.im/post/5c73a28cf265da2de52d9390" target="_blank" rel="noopener">掘金</a>、<a href="https://www.imooc.com/article/280082" target="_blank" rel="noopener">慕课网</a></li>
+</ul>
 
         </div>
-    
-</section>
+        
+          <section class='meta' id="footer-meta">
+              <time class="time" itemprop="dateUpdated" datetime="2019-02-25T16:15:25+08:00" content="2019-02-25">
+                  <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;本文最后更新于：2019-02-25
+              </time>
+              
+                  
+                  <div class="tags"><a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;JavaScript</a></div>
+              
+          </section>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2048/04/06/hello-world/" rel="prev" title="欢迎来到大涛子峡谷">
+                                  
+                                      欢迎来到大涛子峡谷
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/置顶/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>置顶</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/02/25/js-prototype/" rel="prev" title="初探JavaScript之Prototype">
+                                    
+                                        初探JavaScript之Prototype
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://istaotao.com/2048/04/06/hello-world/">欢迎来到大涛子峡谷</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/25/js-prototype/">初探JavaScript之Prototype</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/24/debounce-throttle/">Debounce 和 Throttle</a></li>
+            
+                <li><a href="https://istaotao.com/2019/02/24/es6-class/">初探Class、继承、Promise 及 ES6 常用功能</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+                
+
+                
+
+                
+                    
+                        <div class="subtitle">
+                          <h6><b>文明评论，请勿灌水。</b>为了便于区分和接收回复提醒，请您在留言时填写一下<b>昵称</b>和<b>邮箱</b>。</h6>
+                        <div>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                <i class="fas fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                        <script src="//cdn.jsdelivr.net/gh/xaoxuu/cdn@1.0/js/valine/1.3.4/valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
 
 
 
-<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-
-
+<script>
+    window.subData = {
+        title: '初探 JavaScript 的变量',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -458,11 +611,39 @@
     
     
         
+    <section class='toc-wrapper'>
+        <header class="header pure">
+            <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+            <div class='wrapper'><a class="s-toc rightBtn" title="固定到顶部" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+        </header>
+        <div class='content pure'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型和引用类型的值"><span class="toc-text">基本类型和引用类型的值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-动态的属性"><span class="toc-text">1. 动态的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-赋值变量值"><span class="toc-text">2. 赋值变量值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-传递参数"><span class="toc-text">3. 传递参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-检测类型"><span class="toc-text">4. 检测类型</span></a></li></ol></li></ol>
+        </div>
+    </section>
+
 
     
     
         
 
+
+  <section class='music'>
+    <header class='header pure'>
+      <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+      <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/user/home?id=389370925"><i class="far fa-heart fa-fw"></i></a>
+    </header>
+    <div class='content pure'>
+      <div class="aplayer" data-theme="#3DC550"
+        data-mode="circulation"
+        data-server="netease"
+        data-type="playlist"
+        data-id="389370925"
+        data-volume="0.5"></div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 
 
     
@@ -697,6 +878,35 @@
 
 
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+                appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+                placeholder: "你不想说些什么麽~",
+                pageSize:'10',
+                avatar:'monsterid',
+                lang:'zh-cn',
+                highlight:''
+            })
+            </script>
+        
+    
 
 
 
