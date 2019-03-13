@@ -10,12 +10,33 @@ var customSearch;
 		$('html, body').animate({ 'scrollTop': $elem.offset().top - correction }, 400);
 	};
 
+  function setBackToTop(){
+    const $top = $('.s-top', '.l_body');
+    let pos = document.body.scrollTop;
+		$(document, window).scroll(() => {
+			const scrollTop = $(window).scrollTop();
+			const del = scrollTop - pos;
+			if (scrollTop > 150) {
+				pos = scrollTop;
+				$top.addClass('show');
+        if (del > 0) {
+          $top.removeClass('hl');
+        } else {
+          $top.addClass('hl');
+        }
+			} else {
+				pos = scrollTop;
+				$top.removeClass('show').removeClass('hl');
+			}
+		});
+    $top.click(()=>scrolltoElement(document.body));
+  }
+
 	function setHeader() {
 		if (!window.subData) return;
 		const $wrapper = $('header .wrapper');
 		const $comment = $('.s-comment', $wrapper);
 		const $toc = $('.s-toc', $wrapper);
-		const $top = $('.s-top', $wrapper);
 
 		$wrapper.find('.nav-sub .logo').text(window.subData.title);
 		let pos = document.body.scrollTop;
@@ -42,8 +63,6 @@ var customSearch;
 			$toc.click((e) => { e.stopPropagation(); $tocTarget.toggleClass('active'); });
 		} else $toc.remove();
 
-		$top.click(()=>scrolltoElement(document.body));
-
 	}
 
 	function setHeaderMenu() {
@@ -62,6 +81,16 @@ var customSearch;
     var idname = location.pathname.replace(/\/|%/g, "");
     if (idname.length == 0) {
       idname = "home";
+    }
+		var page = idname.match(/page\d{0,}$/g);
+		if (page) {
+			page = page[0];
+			idname = idname.split(page)[0];
+		}
+    var index = idname.match(/index.html/);
+    if (index) {
+      index = index[0];
+      idname = idname.split(index)[0];
     }
     $active_link = $('#' + idname, $headerMenu);
     setUnderline($active_link);
@@ -125,21 +154,6 @@ var customSearch;
     });
 	}
 
-	function setWaves() {
-		Waves.attach('.flat-btn', ['waves-button']);
-		Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-		Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-		Waves.attach('.flat-box', ['waves-block']);
-		Waves.attach('.float-box', ['waves-block', 'waves-float']);
-		Waves.attach('.waves-image');
-		Waves.init();
-	}
-	function setScrollReveal() {
-		const $reveal = $('.reveal');
-		if ($reveal.length === 0) return;
-		const sr = ScrollReveal({ distance: 0 });
-		sr.reveal('.reveal');
-	}
 	function setTocToggle() {
 		const $toc = $('.toc-wrapper');
 		if ($toc.length === 0) return;
@@ -196,10 +210,9 @@ var customSearch;
 		setHeaderMenu();
 		setHeaderMenuPhone();
 		setHeaderSearch();
-		setWaves();
-		setScrollReveal();
-		setTocToggle();
 
+		setTocToggle();
+    setBackToTop();
 		// $(".article .video-container").fitVids();
 
 		setTimeout(function () {

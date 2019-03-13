@@ -3,11 +3,11 @@
   <title>yangtao&#39;s blog</title>
   
   <subtitle>简单、极致、不失风趣</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://istaotao.com/"/>
-  <updated>2019-02-27T11:46:09.296Z</updated>
-  <id>https://istaotao.com/</id>
+  <link href="https://istaotao.com/blog/"/>
+  <updated>2019-02-27T12:21:51.194Z</updated>
+  <id>https://istaotao.com/blog/</id>
   
   <author>
     <name>大涛子</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>欢迎来到「召唤师峡谷」</title>
-    <link href="https://istaotao.com/9102/04/06/hello-world/"/>
-    <id>https://istaotao.com/9102/04/06/hello-world/</id>
+    <link href="https://istaotao.com/blog/9102/04/06/hello-world/"/>
+    <id>https://istaotao.com/blog/9102/04/06/hello-world/</id>
     <published>9102-04-06T05:45:24.000Z</published>
-    <updated>2019-02-27T11:46:09.296Z</updated>
+    <updated>2019-02-27T12:21:51.194Z</updated>
     
     <content type="html"><![CDATA[<h3 id="戳开可以说点什么哈-…"><a href="#戳开可以说点什么哈-…" class="headerlink" title="戳开可以说点什么哈 …"></a>戳开可以说点什么哈 …</h3>]]></content>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>初探 JavaScript 的变量</title>
-    <link href="https://istaotao.com/2019/02/25/js-var/"/>
-    <id>https://istaotao.com/2019/02/25/js-var/</id>
+    <link href="https://istaotao.com/blog/2019/02/25/js-var/"/>
+    <id>https://istaotao.com/blog/2019/02/25/js-var/</id>
     <published>2019-02-25T08:12:34.000Z</published>
     <updated>2019-02-27T11:04:59.199Z</updated>
     
@@ -52,17 +52,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://istaotao.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://istaotao.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>初探JavaScript之Prototype</title>
-    <link href="https://istaotao.com/2019/02/25/js-prototype/"/>
-    <id>https://istaotao.com/2019/02/25/js-prototype/</id>
+    <link href="https://istaotao.com/blog/2019/02/25/js-prototype/"/>
+    <id>https://istaotao.com/blog/2019/02/25/js-prototype/</id>
     <published>2019-02-25T07:21:42.000Z</published>
     <updated>2019-02-25T08:12:54.597Z</updated>
     
@@ -75,17 +75,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://istaotao.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://istaotao.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Debounce 和 Throttle</title>
-    <link href="https://istaotao.com/2019/02/24/debounce-throttle/"/>
-    <id>https://istaotao.com/2019/02/24/debounce-throttle/</id>
+    <link href="https://istaotao.com/blog/2019/02/24/debounce-throttle/"/>
+    <id>https://istaotao.com/blog/2019/02/24/debounce-throttle/</id>
     <published>2019-02-24T15:49:33.000Z</published>
     <updated>2019-02-24T15:56:22.845Z</updated>
     
@@ -97,17 +97,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://istaotao.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://istaotao.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>初探Class、继承、Promise 及 ES6 常用功能</title>
-    <link href="https://istaotao.com/2019/02/24/es6-class/"/>
-    <id>https://istaotao.com/2019/02/24/es6-class/</id>
+    <link href="https://istaotao.com/blog/2019/02/24/es6-class/"/>
+    <id>https://istaotao.com/blog/2019/02/24/es6-class/</id>
     <published>2019-02-24T15:36:51.000Z</published>
     <updated>2019-02-24T15:46:42.770Z</updated>
     
@@ -124,17 +124,17 @@
     
     </summary>
     
-      <category term="es6" scheme="https://istaotao.com/categories/es6/"/>
+      <category term="es6" scheme="https://istaotao.com/blog/categories/es6/"/>
     
     
-      <category term="es6" scheme="https://istaotao.com/tags/es6/"/>
+      <category term="es6" scheme="https://istaotao.com/blog/tags/es6/"/>
     
   </entry>
   
   <entry>
     <title>说一说常见的请求头和相应头都有什么呢</title>
-    <link href="https://istaotao.com/2019/02/20/header-response/"/>
-    <id>https://istaotao.com/2019/02/20/header-response/</id>
+    <link href="https://istaotao.com/blog/2019/02/20/header-response/"/>
+    <id>https://istaotao.com/blog/2019/02/20/header-response/</id>
     <published>2019-02-20T11:51:25.000Z</published>
     <updated>2019-02-20T12:09:51.296Z</updated>
     
@@ -146,17 +146,17 @@
     
     </summary>
     
-      <category term="http" scheme="https://istaotao.com/categories/http/"/>
+      <category term="http" scheme="https://istaotao.com/blog/categories/http/"/>
     
     
-      <category term="http" scheme="https://istaotao.com/tags/http/"/>
+      <category term="http" scheme="https://istaotao.com/blog/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>关于闭包的一道面试题</title>
-    <link href="https://istaotao.com/2019/02/19/js-closure/"/>
-    <id>https://istaotao.com/2019/02/19/js-closure/</id>
+    <link href="https://istaotao.com/blog/2019/02/19/js-closure/"/>
+    <id>https://istaotao.com/blog/2019/02/19/js-closure/</id>
     <published>2019-02-19T09:57:37.000Z</published>
     <updated>2019-02-19T10:10:49.967Z</updated>
     
@@ -168,17 +168,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://istaotao.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://istaotao.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>使用Node.js+Express+MongoDB 建站实例</title>
-    <link href="https://istaotao.com/2019/02/17/node-express/"/>
-    <id>https://istaotao.com/2019/02/17/node-express/</id>
+    <link href="https://istaotao.com/blog/2019/02/17/node-express/"/>
+    <id>https://istaotao.com/blog/2019/02/17/node-express/</id>
     <published>2019-02-16T16:36:20.000Z</published>
     <updated>2019-02-16T16:40:22.733Z</updated>
     
@@ -194,17 +194,17 @@
     
     </summary>
     
-      <category term="node" scheme="https://istaotao.com/categories/node/"/>
+      <category term="node" scheme="https://istaotao.com/blog/categories/node/"/>
     
     
-      <category term="node" scheme="https://istaotao.com/tags/node/"/>
+      <category term="node" scheme="https://istaotao.com/blog/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>Vue经典实例 ToDoList</title>
-    <link href="https://istaotao.com/2019/02/17/vue-todolist/"/>
-    <id>https://istaotao.com/2019/02/17/vue-todolist/</id>
+    <link href="https://istaotao.com/blog/2019/02/17/vue-todolist/"/>
+    <id>https://istaotao.com/blog/2019/02/17/vue-todolist/</id>
     <published>2019-02-16T16:25:43.000Z</published>
     <updated>2019-02-16T16:31:42.640Z</updated>
     
@@ -219,17 +219,17 @@
     
     </summary>
     
-      <category term="vue" scheme="https://istaotao.com/categories/vue/"/>
+      <category term="vue" scheme="https://istaotao.com/blog/categories/vue/"/>
     
     
-      <category term="vue" scheme="https://istaotao.com/tags/vue/"/>
+      <category term="vue" scheme="https://istaotao.com/blog/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>《Vue.js实战》之前端路由与vue-router</title>
-    <link href="https://istaotao.com/2019/02/04/vue-router/"/>
-    <id>https://istaotao.com/2019/02/04/vue-router/</id>
+    <link href="https://istaotao.com/blog/2019/02/04/vue-router/"/>
+    <id>https://istaotao.com/blog/2019/02/04/vue-router/</id>
     <published>2019-02-04T03:23:17.000Z</published>
     <updated>2019-02-04T03:32:11.541Z</updated>
     
@@ -241,17 +241,17 @@
     
     </summary>
     
-      <category term="vue" scheme="https://istaotao.com/categories/vue/"/>
+      <category term="vue" scheme="https://istaotao.com/blog/categories/vue/"/>
     
     
-      <category term="vue-router" scheme="https://istaotao.com/tags/vue-router/"/>
+      <category term="vue-router" scheme="https://istaotao.com/blog/tags/vue-router/"/>
     
   </entry>
   
   <entry>
     <title>《Vue.js实战》之使用webpack</title>
-    <link href="https://istaotao.com/2019/02/04/vue-webpack/"/>
-    <id>https://istaotao.com/2019/02/04/vue-webpack/</id>
+    <link href="https://istaotao.com/blog/2019/02/04/vue-webpack/"/>
+    <id>https://istaotao.com/blog/2019/02/04/vue-webpack/</id>
     <published>2019-02-04T03:22:59.000Z</published>
     <updated>2019-02-04T03:34:29.822Z</updated>
     
@@ -263,21 +263,21 @@
     
     </summary>
     
-      <category term="vue" scheme="https://istaotao.com/categories/vue/"/>
+      <category term="vue" scheme="https://istaotao.com/blog/categories/vue/"/>
     
-      <category term="webpack" scheme="https://istaotao.com/categories/vue/webpack/"/>
+      <category term="webpack" scheme="https://istaotao.com/blog/categories/vue/webpack/"/>
     
     
-      <category term="vue" scheme="https://istaotao.com/tags/vue/"/>
+      <category term="vue" scheme="https://istaotao.com/blog/tags/vue/"/>
     
-      <category term="webpack" scheme="https://istaotao.com/tags/webpack/"/>
+      <category term="webpack" scheme="https://istaotao.com/blog/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>页面滑动时的动画插件 WOW.js</title>
-    <link href="https://istaotao.com/2019/02/04/wow/"/>
-    <id>https://istaotao.com/2019/02/04/wow/</id>
+    <link href="https://istaotao.com/blog/2019/02/04/wow/"/>
+    <id>https://istaotao.com/blog/2019/02/04/wow/</id>
     <published>2019-02-04T03:16:42.000Z</published>
     <updated>2019-02-04T03:18:27.562Z</updated>
     
@@ -293,17 +293,17 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://istaotao.com/categories/CSS/"/>
+      <category term="CSS" scheme="https://istaotao.com/blog/categories/CSS/"/>
     
     
-      <category term="CSS" scheme="https://istaotao.com/tags/CSS/"/>
+      <category term="CSS" scheme="https://istaotao.com/blog/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>npm run 报错：getaddrinfo ENOTFOUND localhost</title>
-    <link href="https://istaotao.com/2019/01/13/localhost/"/>
-    <id>https://istaotao.com/2019/01/13/localhost/</id>
+    <link href="https://istaotao.com/blog/2019/01/13/localhost/"/>
+    <id>https://istaotao.com/blog/2019/01/13/localhost/</id>
     <published>2019-01-13T03:42:37.000Z</published>
     <updated>2019-01-13T03:51:36.163Z</updated>
     
@@ -315,19 +315,19 @@
     
     </summary>
     
-      <category term="Angular" scheme="https://istaotao.com/categories/Angular/"/>
+      <category term="Angular" scheme="https://istaotao.com/blog/categories/Angular/"/>
     
     
-      <category term="报错" scheme="https://istaotao.com/tags/%E6%8A%A5%E9%94%99/"/>
+      <category term="报错" scheme="https://istaotao.com/blog/tags/%E6%8A%A5%E9%94%99/"/>
     
-      <category term="Angular" scheme="https://istaotao.com/tags/Angular/"/>
+      <category term="Angular" scheme="https://istaotao.com/blog/tags/Angular/"/>
     
   </entry>
   
   <entry>
     <title>Windows下Node.js 多版本管理器-Gnvm</title>
-    <link href="https://istaotao.com/2018/12/21/Windows%E4%B8%8BNode-js-%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%99%A8-Gnvm/"/>
-    <id>https://istaotao.com/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/</id>
+    <link href="https://istaotao.com/blog/2018/12/21/Windows%E4%B8%8BNode-js-%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%99%A8-Gnvm/"/>
+    <id>https://istaotao.com/blog/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/</id>
     <published>2018-12-21T13:40:59.000Z</published>
     <updated>2018-12-23T15:51:29.385Z</updated>
     
@@ -339,19 +339,19 @@
     
     </summary>
     
-      <category term="node" scheme="https://istaotao.com/categories/node/"/>
+      <category term="node" scheme="https://istaotao.com/blog/categories/node/"/>
     
     
-      <category term="node" scheme="https://istaotao.com/tags/node/"/>
+      <category term="node" scheme="https://istaotao.com/blog/tags/node/"/>
     
-      <category term="gnvm" scheme="https://istaotao.com/tags/gnvm/"/>
+      <category term="gnvm" scheme="https://istaotao.com/blog/tags/gnvm/"/>
     
   </entry>
   
   <entry>
     <title>通俗点理解Nodejs的非阻塞及事件驱动</title>
-    <link href="https://istaotao.com/2018/12/18/%E9%80%9A%E4%BF%97%E7%82%B9%E7%90%86%E8%A7%A3Nodejs%E7%9A%84%E9%9D%9E%E9%98%BB%E5%A1%9E%E5%8F%8A%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/"/>
-    <id>https://istaotao.com/2018/12/18/通俗点理解Nodejs的非阻塞及事件驱动/</id>
+    <link href="https://istaotao.com/blog/2018/12/18/%E9%80%9A%E4%BF%97%E7%82%B9%E7%90%86%E8%A7%A3Nodejs%E7%9A%84%E9%9D%9E%E9%98%BB%E5%A1%9E%E5%8F%8A%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/"/>
+    <id>https://istaotao.com/blog/2018/12/18/通俗点理解Nodejs的非阻塞及事件驱动/</id>
     <published>2018-12-18T15:58:41.000Z</published>
     <updated>2018-12-23T16:09:20.413Z</updated>
     
@@ -373,17 +373,17 @@
     
     </summary>
     
-      <category term="node" scheme="https://istaotao.com/categories/node/"/>
+      <category term="node" scheme="https://istaotao.com/blog/categories/node/"/>
     
     
-      <category term="node" scheme="https://istaotao.com/tags/node/"/>
+      <category term="node" scheme="https://istaotao.com/blog/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>git push 报错之 Permission to userA.git denied to userB</title>
-    <link href="https://istaotao.com/2018/12/17/git-push-%E6%8A%A5%E9%94%99%E4%B9%8B-Permission-to-userA-git-denied-to-userB/"/>
-    <id>https://istaotao.com/2018/12/17/git-push-报错之-Permission-to-userA-git-denied-to-userB/</id>
+    <link href="https://istaotao.com/blog/2018/12/17/git-push-%E6%8A%A5%E9%94%99%E4%B9%8B-Permission-to-userA-git-denied-to-userB/"/>
+    <id>https://istaotao.com/blog/2018/12/17/git-push-报错之-Permission-to-userA-git-denied-to-userB/</id>
     <published>2018-12-17T14:47:00.000Z</published>
     <updated>2018-12-23T15:58:01.522Z</updated>
     
@@ -395,19 +395,19 @@
     
     </summary>
     
-      <category term="git" scheme="https://istaotao.com/categories/git/"/>
+      <category term="git" scheme="https://istaotao.com/blog/categories/git/"/>
     
     
-      <category term="git" scheme="https://istaotao.com/tags/git/"/>
+      <category term="git" scheme="https://istaotao.com/blog/tags/git/"/>
     
-      <category term="开发工具" scheme="https://istaotao.com/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://istaotao.com/blog/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>Git 常用命令练习</title>
-    <link href="https://istaotao.com/2018/12/14/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%BB%83%E4%B9%A0/"/>
-    <id>https://istaotao.com/2018/12/14/Git-常用命令练习/</id>
+    <link href="https://istaotao.com/blog/2018/12/14/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%BB%83%E4%B9%A0/"/>
+    <id>https://istaotao.com/blog/2018/12/14/Git-常用命令练习/</id>
     <published>2018-12-14T14:45:16.000Z</published>
     <updated>2018-12-24T15:19:54.011Z</updated>
     
@@ -426,19 +426,19 @@
     
     </summary>
     
-      <category term="git" scheme="https://istaotao.com/categories/git/"/>
+      <category term="git" scheme="https://istaotao.com/blog/categories/git/"/>
     
     
-      <category term="git" scheme="https://istaotao.com/tags/git/"/>
+      <category term="git" scheme="https://istaotao.com/blog/tags/git/"/>
     
-      <category term="开发工具" scheme="https://istaotao.com/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://istaotao.com/blog/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>小片段代码简汇之CSS篇</title>
-    <link href="https://istaotao.com/2018/12/09/%E5%B0%8F%E7%89%87%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B1%87%E4%B9%8BCSS%E7%AF%87/"/>
-    <id>https://istaotao.com/2018/12/09/小片段代码简汇之CSS篇/</id>
+    <link href="https://istaotao.com/blog/2018/12/09/%E5%B0%8F%E7%89%87%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B1%87%E4%B9%8BCSS%E7%AF%87/"/>
+    <id>https://istaotao.com/blog/2018/12/09/小片段代码简汇之CSS篇/</id>
     <published>2018-12-09T13:20:11.000Z</published>
     <updated>2018-12-23T15:55:42.302Z</updated>
     
@@ -453,17 +453,17 @@
     
     </summary>
     
-      <category term="css" scheme="https://istaotao.com/categories/css/"/>
+      <category term="css" scheme="https://istaotao.com/blog/categories/css/"/>
     
     
-      <category term="css" scheme="https://istaotao.com/tags/css/"/>
+      <category term="css" scheme="https://istaotao.com/blog/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>小片段代码简汇之JS篇</title>
-    <link href="https://istaotao.com/2018/12/07/%E5%B0%8F%E7%89%87%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B1%87%E4%B9%8BJS%E7%AF%87/"/>
-    <id>https://istaotao.com/2018/12/07/小片段代码简汇之JS篇/</id>
+    <link href="https://istaotao.com/blog/2018/12/07/%E5%B0%8F%E7%89%87%E6%AE%B5%E4%BB%A3%E7%A0%81%E7%AE%80%E6%B1%87%E4%B9%8BJS%E7%AF%87/"/>
+    <id>https://istaotao.com/blog/2018/12/07/小片段代码简汇之JS篇/</id>
     <published>2018-12-07T15:41:03.000Z</published>
     <updated>2018-12-23T15:56:13.939Z</updated>
     
@@ -478,17 +478,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://istaotao.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://istaotao.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>自定义单选框、复选框样式</title>
-    <link href="https://istaotao.com/2018/12/07/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E9%80%89%E6%A1%86%E3%80%81%E5%A4%8D%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F/"/>
-    <id>https://istaotao.com/2018/12/07/自定义单选框、复选框样式/</id>
+    <link href="https://istaotao.com/blog/2018/12/07/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E9%80%89%E6%A1%86%E3%80%81%E5%A4%8D%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F/"/>
+    <id>https://istaotao.com/blog/2018/12/07/自定义单选框、复选框样式/</id>
     <published>2018-12-07T15:36:33.000Z</published>
     <updated>2018-12-23T15:39:51.286Z</updated>
     
@@ -500,10 +500,10 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://istaotao.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://istaotao.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://istaotao.com/blog/tags/JavaScript/"/>
     
   </entry>
   
