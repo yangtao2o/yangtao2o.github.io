@@ -101,7 +101,7 @@
       
       <categories>
           
-          <category> es6 </category>
+          <category> JavaScript </category>
           
       </categories>
       
@@ -126,7 +126,7 @@
       
       <categories>
           
-          <category> http </category>
+          <category> 网络知识 </category>
           
       </categories>
       
@@ -176,14 +176,14 @@
       
       <categories>
           
-          <category> node </category>
+          <category> Nodejs </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> node </tag>
+            <tag> Nodejs </tag>
             
         </tags>
       
@@ -201,7 +201,7 @@
       
       <categories>
           
-          <category> vue </category>
+          <category> 前端框架 </category>
           
       </categories>
       
@@ -226,7 +226,7 @@
       
       <categories>
           
-          <category> vue </category>
+          <category> 前端框架 </category>
           
       </categories>
       
@@ -251,9 +251,7 @@
       
       <categories>
           
-          <category> vue </category>
-          
-          <category> webpack </category>
+          <category> 前端框架 </category>
           
       </categories>
       
@@ -280,14 +278,14 @@
       
       <categories>
           
-          <category> CSS </category>
+          <category> css </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CSS </tag>
+            <tag> css </tag>
             
         </tags>
       
@@ -305,7 +303,7 @@
       
       <categories>
           
-          <category> Angular </category>
+          <category> 前端框架 </category>
           
       </categories>
       
@@ -332,14 +330,14 @@
       
       <categories>
           
-          <category> node </category>
+          <category> Nodejs </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> node </tag>
+            <tag> Nodejs </tag>
             
             <tag> gnvm </tag>
             
@@ -359,14 +357,14 @@
       
       <categories>
           
-          <category> node </category>
+          <category> Nodejs </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> node </tag>
+            <tag> Nodejs </tag>
             
         </tags>
       
@@ -384,7 +382,7 @@
       
       <categories>
           
-          <category> git </category>
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -411,7 +409,7 @@
       
       <categories>
           
-          <category> git </category>
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -488,7 +486,7 @@
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> 工具库 </category>
           
       </categories>
       
@@ -513,7 +511,7 @@
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> 工具库 </category>
           
       </categories>
       
@@ -536,6 +534,18 @@
         <content type="html"><![CDATA[<p>九宫格抽奖记录：<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 九宫格抽奖</span></span><br><span class="line"><span class="keyword">var</span> click=<span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> luck=&#123;</span><br><span class="line"></span><br><span class="line">  index: <span class="number">0</span>,<span class="comment">//当前转动到哪个位置，起点位置</span></span><br><span class="line">  count: <span class="number">0</span>,<span class="comment">//总共有多少个位置</span></span><br><span class="line">  timer: <span class="number">0</span>,<span class="comment">//setTimeout的ID，用clearTimeout清除</span></span><br><span class="line">  speed: <span class="number">30</span>,<span class="comment">//初始转动速度</span></span><br><span class="line">  times: <span class="number">0</span>,<span class="comment">//转动次数</span></span><br><span class="line">  cycle: <span class="number">70</span>,<span class="comment">//转动基本次数：即至少需要转动多少次再进入抽奖环节</span></span><br><span class="line">  prize: <span class="number">-1</span>,<span class="comment">//中奖位置</span></span><br><span class="line"></span><br><span class="line">  init:<span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="string">"#"</span>+id).find(<span class="string">".luck-unit"</span>).length&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      $luck = $(<span class="string">"#"</span>+id);</span><br><span class="line">      $units = $luck.find(<span class="string">".luck-unit"</span>);</span><br><span class="line">      <span class="keyword">this</span>.obj = $luck;</span><br><span class="line">      <span class="keyword">this</span>.count = $units.length;</span><br><span class="line">      <span class="comment">// $luck.find(".luck-unit-"+this.index).addClass("active");</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  roll:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="keyword">this</span>.index;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="keyword">this</span>.count;</span><br><span class="line">    <span class="keyword">var</span> luck = <span class="keyword">this</span>.obj;</span><br><span class="line">    $(luck).find(<span class="string">".luck-unit-"</span>+index).removeClass(<span class="string">"active"</span>);</span><br><span class="line">    index += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (index&gt;count<span class="number">-1</span>) &#123;</span><br><span class="line">      index = <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    $(luck).find(<span class="string">".luck-unit-"</span>+index).addClass(<span class="string">"active"</span>);</span><br><span class="line">    <span class="keyword">this</span>.index=index;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  stop:<span class="function"><span class="keyword">function</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.prize=index;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">roll</span>(<span class="params">which</span>)</span>&#123;</span><br><span class="line">  luck.times += <span class="number">1</span>;</span><br><span class="line">  luck.roll();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (luck.times &gt; luck.cycle+<span class="number">10</span> &amp;&amp; luck.prize==luck.index) &#123;</span><br><span class="line">    <span class="keyword">var</span> title = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> content = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> desc = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> prize = <span class="string">''</span>;</span><br><span class="line">    <span class="comment">// 最终停下来的位置</span></span><br><span class="line">    <span class="comment">// 初始化</span></span><br><span class="line">    clearTimeout(luck.timer);</span><br><span class="line">    luck.prize=<span class="number">-1</span>;</span><br><span class="line">    luck.times=<span class="number">0</span>;</span><br><span class="line">    click=<span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">switch</span>(which) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        prize = <span class="string">'小米鼠标'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        prize = <span class="string">'固态硬盘'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        prize = <span class="string">'乐扣保温杯'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        prize = <span class="string">'京东券'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        prize = <span class="string">'谢谢参与'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        prize = <span class="string">'万用表'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">        prize = <span class="string">'摩尔吧课程折扣券'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">        prize = <span class="string">'小米耳机'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(which == <span class="number">4</span>) &#123;</span><br><span class="line">      title = <span class="string">'谢谢参与'</span>;</span><br><span class="line">      content = <span class="string">'再接再厉'</span></span><br><span class="line">      desc = <span class="string">'请查看活动详情，获取更多抽奖资格'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      title = <span class="string">'恭喜您'</span>;</span><br><span class="line">      content = <span class="string">'获得 &lt;span class="blue"&gt;'</span>+ prize +<span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">      <span class="keyword">if</span>(which == <span class="number">6</span>) &#123;</span><br><span class="line">        desc = <span class="string">'请至您的”个人中心“查收'</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        desc = <span class="string">'奖品将于活动结束后统一发送'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 展示中奖状态</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      modalShow(title,content,desc);</span><br><span class="line">    &#125;, <span class="number">800</span>);  </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (luck.times&lt;luck.cycle) &#123;</span><br><span class="line">      luck.speed -= <span class="number">10</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (luck.times==luck.cycle) &#123;</span><br><span class="line">      <span class="comment">// 最终中奖位置的索引</span></span><br><span class="line">      luck.prize = which;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (luck.times &gt; luck.cycle+<span class="number">10</span> &amp;&amp; ((luck.prize==<span class="number">0</span> &amp;&amp; luck.index==<span class="number">7</span>) || luck.prize==luck.index+<span class="number">1</span>)) &#123;</span><br><span class="line">        luck.speed += <span class="number">110</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        luck.speed += <span class="number">20</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (luck.speed&lt;<span class="number">40</span>) &#123;</span><br><span class="line">      luck.speed=<span class="number">40</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    luck.timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      roll(which);</span><br><span class="line">    &#125;,luck.speed);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Lottery init</span></span><br><span class="line">  luck.init(<span class="string">'luckArea'</span>);</span><br><span class="line"></span><br><span class="line">  $(<span class="string">"#startBtn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(click) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      click=<span class="literal">true</span>;</span><br><span class="line">      luck.speed=<span class="number">100</span>;</span><br><span class="line">      $.get(<span class="string">"http://www.moore8.com/campaign/lotteryAct"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> data = $.parseJSON(data);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'data:'</span>, data);</span><br><span class="line">        <span class="keyword">if</span>(data.code == <span class="number">1</span>) &#123;</span><br><span class="line">          <span class="keyword">var</span> which = data.type;</span><br><span class="line">          <span class="comment">// 调取抽奖并传值</span></span><br><span class="line">          roll(which);  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">if</span>(data.msg == <span class="string">'请先登录！'</span>) &#123;</span><br><span class="line">            loginFunc(<span class="string">'course_gift'</span>);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> desc = <span class="string">'请查看活动详情，获取更多抽奖资格'</span>;</span><br><span class="line">            modalShow(<span class="string">'对不起'</span>, data.msg, desc);</span><br><span class="line">          &#125;</span><br><span class="line">          click = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">modalShow</span>(<span class="params">title, body, desc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> title = title || <span class="string">'温馨提示'</span>;</span><br><span class="line">  <span class="keyword">var</span> body = body || <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">var</span> desc = desc || <span class="string">''</span>;</span><br><span class="line">  $(<span class="string">'#mTitle'</span>).html(title);</span><br><span class="line">  $(<span class="string">'#mBody'</span>).html(body);</span><br><span class="line">  $(<span class="string">'#mDesc'</span>).html(desc);</span><br><span class="line">  $(<span class="string">'#myModal'</span>).modal(<span class="string">'show'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loginFunc</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> href = <span class="built_in">window</span>.location.href;</span><br><span class="line">  <span class="keyword">var</span> id = id ? <span class="string">"%23"</span> + id : <span class="string">''</span>;</span><br><span class="line">  <span class="built_in">window</span>.location.href = <span class="string">"/login/?referer="</span> + href + id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
       
       
+      <categories>
+          
+          <category> 工具库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+        </tags>
       
     </entry>
     
@@ -551,7 +561,7 @@
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> 工具库 </category>
           
       </categories>
       
@@ -742,27 +752,13 @@
     
     
     <entry>
-      <title>Mac 终端简易学习总结</title>
-      <link href="/2018/08/13/macos-bash/"/>
-      <url>/2018/08/13/macos-bash/</url>
+      <title></title>
+      <link href="/2018/09/16/macos-bash/"/>
+      <url>/2018/09/16/macos-bash/</url>
       
-        <content type="html"><![CDATA[<h4 id="一、目录基本操作"><a href="#一、目录基本操作" class="headerlink" title="一、目录基本操作"></a>一、目录基本操作</h4><h5 id="1-pwd-—-获取当前所在路径"><a href="#1-pwd-—-获取当前所在路径" class="headerlink" title="1. pwd — 获取当前所在路径"></a>1. <code>pwd</code> — 获取当前所在路径</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ <span class="built_in">pwd</span></span><br><span class="line">/Users/yangtao/Desktop/文件创建/<span class="built_in">test</span></span><br></pre></td></tr></table></figure><a id="more"></a><h5 id="2-ls-—-列出当前目录下的所有文件"><a href="#2-ls-—-列出当前目录下的所有文件" class="headerlink" title="2. ls — 列出当前目录下的所有文件"></a>2. <code>ls</code> — 列出当前目录下的所有文件</h5><ul><li><code>ls -l</code> — 用长格式列出来</li><li><code>ls -a</code> — 列出文件（包括隐藏的文件）</li><li><code>ls -al</code> — 以长格式列出文件（包括隐藏的文件）</li></ul><h5 id="3-cd-—-目录间的切换"><a href="#3-cd-—-目录间的切换" class="headerlink" title="3. cd — 目录间的切换"></a>3. <code>cd</code> — 目录间的切换</h5><p>可以使用<code>tab</code>键补全目录名称，将文件拖入终端，可以显示该文件的目录</p><ul><li><code>cd</code> — (无参数)返回home目录</li><li><code>cd ~</code> — 返回home目录，可以使用<code>cd ~/Music</code>快速到达该目录，使用<code>cd ~Guest/</code>进入Guest用户的home目录</li><li><code>cd -</code> — 返回上一次操作的目录，可与当前目录进行切换</li><li><code>cd ..</code> — 返回上一层目录，<code>..</code>表示上一层目录，而<code>.</code>表示当前目录，如<code>./Music</code>，表示当前目录下的Music文件</li></ul><h5 id="4-mkdir-文件名-—-（make-dir）新建文件夹"><a href="#4-mkdir-文件名-—-（make-dir）新建文件夹" class="headerlink" title="4. mkdir 文件名 — （make dir）新建文件夹"></a>4. <code>mkdir 文件名</code> — （make dir）新建文件夹</h5><h5 id="5-rmdir-文件名-—-（remove-dir）删除文件夹"><a href="#5-rmdir-文件名-—-（remove-dir）删除文件夹" class="headerlink" title="5. rmdir 文件名 — （remove dir）删除文件夹"></a>5. <code>rmdir 文件名</code> — （remove dir）删除文件夹</h5><p>如果文件夹内不为空，则无法用rmdir删除文件夹</p><h5 id="6-rm-文件名-—-（remove-dir）删除文件"><a href="#6-rm-文件名-—-（remove-dir）删除文件" class="headerlink" title="6. rm 文件名 — （remove dir）删除文件"></a>6. <code>rm 文件名</code> — （remove dir）删除文件</h5><p>注意：用<code>rm</code>删除掉的文件是无法从回收站中找回的！而且不能使用rm来删除文件夹</p><h5 id="7-mv-原文件-目标目录-新文件名-—-移动"><a href="#7-mv-原文件-目标目录-新文件名-—-移动" class="headerlink" title="7. mv 原文件 目标目录/新文件名 — 移动"></a>7. <code>mv 原文件 目标目录/新文件名</code> — 移动</h5><p>把文件从一个地方移到另一个地方，但是当没有给出另外一个目录时，移动的现象就是为其更改了名字</p><h5 id="8-cp-带目录文件-目标目录-—-复制粘贴"><a href="#8-cp-带目录文件-目标目录-—-复制粘贴" class="headerlink" title="8. cp 带目录文件 目标目录 — 复制粘贴"></a>8. <code>cp 带目录文件 目标目录</code> — 复制粘贴</h5><h5 id="9-man-命令-—-查看使用手册"><a href="#9-man-命令-—-查看使用手册" class="headerlink" title="9. man 命令 — 查看使用手册"></a>9. <code>man 命令</code> — 查看使用手册</h5><h5 id="10-touch-—-创建文件"><a href="#10-touch-—-创建文件" class="headerlink" title="10. touch — 创建文件"></a>10. <code>touch</code> — 创建文件</h5><h5 id="11-cat-—-查看文件内容"><a href="#11-cat-—-查看文件内容" class="headerlink" title="11. cat — 查看文件内容"></a>11. <code>cat</code> — 查看文件内容</h5><h4 id="二、历史操作"><a href="#二、历史操作" class="headerlink" title="二、历史操作"></a>二、历史操作</h4><h5 id="1-向上（向下）箭头"><a href="#1-向上（向下）箭头" class="headerlink" title="1. 向上（向下）箭头"></a>1. <code>向上（向下）箭头</code></h5><p>查看上一个（下一个）命令，可以一直向前查看之前执行过的命令</p><h5 id="2-l-—-找出与你最近一次的l开头的命令，并执行"><a href="#2-l-—-找出与你最近一次的l开头的命令，并执行" class="headerlink" title="2. !l — 找出与你最近一次的l开头的命令，并执行"></a>2. <code>!l</code> — 找出与你最近一次的l开头的命令，并执行</h5><h5 id="3-history-—-查看之前执行过命令的历史记录"><a href="#3-history-—-查看之前执行过命令的历史记录" class="headerlink" title="3. history — 查看之前执行过命令的历史记录"></a>3. <code>history</code> — 查看之前执行过命令的历史记录</h5><h4 id="三、进程管理操作"><a href="#三、进程管理操作" class="headerlink" title="三、进程管理操作"></a>三、进程管理操作</h4><h5 id="1-ps-—-查看当前终端运行的程序"><a href="#1-ps-—-查看当前终端运行的程序" class="headerlink" title="1. ps — 查看当前终端运行的程序"></a>1. <code>ps</code> — 查看当前终端运行的程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ps</span><br><span class="line">  PID TTY           TIME CMD</span><br><span class="line">19083 ttys000    0:00.40 -bash</span><br></pre></td></tr></table></figure><h5 id="2-ps-ax-—列出这台电脑正在运行的所有程序"><a href="#2-ps-ax-—列出这台电脑正在运行的所有程序" class="headerlink" title="2. ps ax —列出这台电脑正在运行的所有程序"></a>2. <code>ps ax</code> —列出这台电脑正在运行的所有程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">20008   ??  S      0:00.12 /System/Library/Frameworks/QuickLook.framework/Resources/quicklookd.app/Contents/MacOS/quicklookd</span><br><span class="line">19082 s000  Ss     0:00.02 login -pf yangtao</span><br><span class="line">19083 s000  S      0:00.40 -bash</span><br><span class="line">20079 s000  R+     0:00.00 ps ax</span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$</span><br></pre></td></tr></table></figure><h5 id="3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等"><a href="#3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等" class="headerlink" title="3. top — 显示这台计算机上有哪些进程，显示内存、CPU、负载等"></a>3. <code>top</code> — 显示这台计算机上有哪些进程，显示内存、CPU、负载等</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">PID    COMMAND      %CPU TIME     <span class="comment">#TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP  PPID  STATE    BOOSTS           %CPU_ME %CPU_OTHRS UID  FAULTS    COW</span></span><br><span class="line">20088  top          4.1  00:00.99 1/1   0    23    6724K  0B     0B     20088 19083 running  *0[1]            0.00000 0.00000    0    7185+     105</span><br><span class="line">20087  AGSService   0.0  00:00.03 2     1    36    1716K  0B     0B     20087 1     sleeping *0[1]            0.00000 0.00000    0    3076</span><br></pre></td></tr></table></figure><h5 id="4-kill-PID-—-结束指定进程ID的进程"><a href="#4-kill-PID-—-结束指定进程ID的进程" class="headerlink" title="4. kill [PID] — 结束指定进程ID的进程"></a>4. <code>kill [PID]</code> — 结束指定进程ID的进程</h5><p><strong>具体做法：</strong> 先使用top命令查看想要结束进程的PID，然后使用命令<code>kill [PID]</code></p><p><strong>Tips：</strong> 如果遇到无法杀掉的进程，输入命令<code>sudo kill -9 [PID]</code> (伪装超级管理员，强迫杀掉该进程)，接着输入自己用户的密码（前提是自己这个用户具有sudo的资格）</p><h4 id="四、万能的grep操作"><a href="#四、万能的grep操作" class="headerlink" title="四、万能的grep操作"></a>四、万能的grep操作</h4><h5 id="1-grep-800-log-txt-—-从log-txt中找出800位置的数据"><a href="#1-grep-800-log-txt-—-从log-txt中找出800位置的数据" class="headerlink" title="1. grep 800 log.txt — 从log.txt中找出800位置的数据"></a>1. <code>grep 800 log.txt</code> — 从log.txt中找出800位置的数据</h5><h5 id="2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号"><a href="#2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号" class="headerlink" title="2. grep -n 800 log.txt — 从log.txt中找出800位置的数据,并在前面加上行号"></a>2. <code>grep -n 800 log.txt</code> — 从log.txt中找出800位置的数据,并在前面加上行号</h5><h5 id="3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件"><a href="#3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件" class="headerlink" title="3. grep (-n) Hello * (是否加上行号) — 从当前目录下的所有文件中找出出现过Hello的文件"></a>3. <code>grep (-n) Hello * (是否加上行号)</code> — 从当前目录下的所有文件中找出出现过Hello的文件</h5><h5 id="4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录"><a href="#4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录" class="headerlink" title="4. ls /usr/bin | grep ls — 查看/usr/bin目录下面带ls的目录"></a>4. <code>ls /usr/bin | grep ls</code> — 查看/usr/bin目录下面带ls的目录</h5><h5 id="5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量"><a href="#5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量" class="headerlink" title="5. ls /usr/bin | grep ls | wc — 计算出单词的数量"></a>5. <code>ls /usr/bin | grep ls | wc</code> — 计算出单词的数量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ls /usr/bin | grep ls | wc</span><br><span class="line">      16      16     124</span><br><span class="line"><span class="comment"># 16行 16个单词 124个字符</span></span><br></pre></td></tr></table></figure><h4 id="五、环境变量操作"><a href="#五、环境变量操作" class="headerlink" title="五、环境变量操作"></a>五、环境变量操作</h4><h5 id="1-set-grep-PATH-—-查看环境变量"><a href="#1-set-grep-PATH-—-查看环境变量" class="headerlink" title="1. set | grep PATH — 查看环境变量"></a>1. <code>set | grep PATH</code> — 查看环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:~ yangtao$ <span class="built_in">set</span> | grep PATH</span><br><span class="line">PATH=/usr/<span class="built_in">local</span>/bin:/usr/bin:/bin:/usr/sbin:/sbin</span><br></pre></td></tr></table></figure><h5 id="2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH"><a href="#2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH" class="headerlink" title="2. set | grep PATH — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH"></a>2. <code>set | grep PATH</code> — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH</h5><p>这样做只是一次性的，也就是说在当前终端，是可以直接生效的，但是当你关闭后，重新打开终端，这个操作是不被保存的。</p><p>在<code>/etc/profile</code>这个文件是任何人打开终端都会执行的，是系统级的profile。</p><p>如果我们想自定义自己的profile，可以在自己的家目录下新建文件命名为：<code>.profile</code>，这个文件会在你打开终端时自动执行。</p><p>我们将刚刚的命令2输入其中，然后保存退出（vim下使用<code>:wq</code>）<br>这样的话，在我们刚刚已经登录的终端里面它还是不起作用的，假如你希望它可以立刻生效，你可以使用<code>source</code>命令。</p><h5 id="3-source-—-例如：source-profile"><a href="#3-source-—-例如：source-profile" class="headerlink" title="3. source — 例如：source .profile"></a>3. <code>source</code> — 例如：<code>source .profile</code></h5><p>使Shell读入指定的Shell程序文件并依次执行文件中的所有语句，通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录</p><h4 id="六、网络配置操作"><a href="#六、网络配置操作" class="headerlink" title="六、网络配置操作"></a>六、网络配置操作</h4><h5 id="1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"><a href="#1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址" class="headerlink" title="1. ifconfig — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"></a>1. <code>ifconfig</code> — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址</h5><p>我的连的是en5，它的状态时active（最后一行），原文是en4</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">en5: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500</span><br><span class="line">ether ac:de:48:00:11:22 </span><br><span class="line">inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0x7 </span><br><span class="line">nd6 options=201&lt;PERFORMNUD,DAD&gt;</span><br><span class="line">media: autoselect</span><br><span class="line">status: active</span><br></pre></td></tr></table></figure><p><em>其他用法：</em></p><ul><li><p><code>ifconfig en4 down/up</code> — 关闭（或打开）某个网络接口，比如en4,一般需要管理员权限，所以需要在前面加sudo命令</p></li><li><p><code>sudo ifconfig en4 add 10.10.10.12 netmask 255.255.255.0</code> — 给en4加入别的网段</p></li><li><code>sudo ifconfig en4 delete 10.10.10.12</code> — 给en4删除指定网段</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时修改MAC地址</span></span><br><span class="line">ifconfig en0 down // 关闭网卡设备（这里假设是en0）</span><br><span class="line">ifconfig en0 hw ether [MAC地址] // 修改MAC地址</span><br><span class="line">ifconfig en0 up // 重启网卡</span><br><span class="line"></span><br><span class="line"><span class="comment"># 临时修改内网ip地址</span></span><br><span class="line">ifconfig en0 down</span><br><span class="line">ifconfig en0 192.168.169.245 netmask 255.255.255.0</span><br></pre></td></tr></table></figure><h5 id="2-ping-—-检测网络是否是连通状态"><a href="#2-ping-—-检测网络是否是连通状态" class="headerlink" title="2. ping — 检测网络是否是连通状态"></a>2. <code>ping</code> — 检测网络是否是连通状态</h5><h5 id="3-netstat-—-显示各种网络相关信息"><a href="#3-netstat-—-显示各种网络相关信息" class="headerlink" title="3. netstat — 显示各种网络相关信息"></a>3. <code>netstat</code> — 显示各种网络相关信息</h5><p><em>其他用法：</em></p><ul><li><p><code>netstat -l</code> — 列出本机进行监听的端口</p></li><li><p><code>netstat -lt</code> — 只列出tcp的连接，同理在l后面跟上u的话，将会列出各种udp的监听端口</p></li><li><p><code>netstat -s</code> — 查看统计数据</p></li><li><p><code>netstat -p</code> — 列出进程信息，你可以了解是哪一个程序在哪一个端口上做些什么事情</p></li><li><p><code>netstat -pc</code> — 会显示出实时更新的进程信息</p></li><li><p><code>netstat -r</code> — 查看路由表</p></li><li><code>netstat -i</code> — 查看接口信息</li></ul><blockquote><p>详情参考<br><a href="https://www.jianshu.com/p/0e43268f01db" target="_blank" rel="noopener">Mac终端学习系列</a></p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> MacOS </category>
-          
-      </categories>
+        <content type="html"><![CDATA[<hr><p>title: Mac 终端简易学习总结<br>date: 2018-08-13 09:07:38<br>tags:</p><ul><li>MacOS</li><li>终端<br>categories:</li><li>系统</li></ul><h4 id="一、目录基本操作"><a href="#一、目录基本操作" class="headerlink" title="一、目录基本操作"></a>一、目录基本操作</h4><h5 id="1-pwd-—-获取当前所在路径"><a href="#1-pwd-—-获取当前所在路径" class="headerlink" title="1. pwd — 获取当前所在路径"></a>1. <code>pwd</code> — 获取当前所在路径</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ <span class="built_in">pwd</span></span><br><span class="line">/Users/yangtao/Desktop/文件创建/<span class="built_in">test</span></span><br></pre></td></tr></table></figure><a id="more"></a><h5 id="2-ls-—-列出当前目录下的所有文件"><a href="#2-ls-—-列出当前目录下的所有文件" class="headerlink" title="2. ls — 列出当前目录下的所有文件"></a>2. <code>ls</code> — 列出当前目录下的所有文件</h5><ul><li><code>ls -l</code> — 用长格式列出来</li><li><code>ls -a</code> — 列出文件（包括隐藏的文件）</li><li><code>ls -al</code> — 以长格式列出文件（包括隐藏的文件）</li></ul><h5 id="3-cd-—-目录间的切换"><a href="#3-cd-—-目录间的切换" class="headerlink" title="3. cd — 目录间的切换"></a>3. <code>cd</code> — 目录间的切换</h5><p>可以使用<code>tab</code>键补全目录名称，将文件拖入终端，可以显示该文件的目录</p><ul><li><code>cd</code> — (无参数)返回home目录</li><li><code>cd ~</code> — 返回home目录，可以使用<code>cd ~/Music</code>快速到达该目录，使用<code>cd ~Guest/</code>进入Guest用户的home目录</li><li><code>cd -</code> — 返回上一次操作的目录，可与当前目录进行切换</li><li><code>cd ..</code> — 返回上一层目录，<code>..</code>表示上一层目录，而<code>.</code>表示当前目录，如<code>./Music</code>，表示当前目录下的Music文件</li></ul><h5 id="4-mkdir-文件名-—-（make-dir）新建文件夹"><a href="#4-mkdir-文件名-—-（make-dir）新建文件夹" class="headerlink" title="4. mkdir 文件名 — （make dir）新建文件夹"></a>4. <code>mkdir 文件名</code> — （make dir）新建文件夹</h5><h5 id="5-rmdir-文件名-—-（remove-dir）删除文件夹"><a href="#5-rmdir-文件名-—-（remove-dir）删除文件夹" class="headerlink" title="5. rmdir 文件名 — （remove dir）删除文件夹"></a>5. <code>rmdir 文件名</code> — （remove dir）删除文件夹</h5><p>如果文件夹内不为空，则无法用rmdir删除文件夹</p><h5 id="6-rm-文件名-—-（remove-dir）删除文件"><a href="#6-rm-文件名-—-（remove-dir）删除文件" class="headerlink" title="6. rm 文件名 — （remove dir）删除文件"></a>6. <code>rm 文件名</code> — （remove dir）删除文件</h5><p>注意：用<code>rm</code>删除掉的文件是无法从回收站中找回的！而且不能使用rm来删除文件夹</p><h5 id="7-mv-原文件-目标目录-新文件名-—-移动"><a href="#7-mv-原文件-目标目录-新文件名-—-移动" class="headerlink" title="7. mv 原文件 目标目录/新文件名 — 移动"></a>7. <code>mv 原文件 目标目录/新文件名</code> — 移动</h5><p>把文件从一个地方移到另一个地方，但是当没有给出另外一个目录时，移动的现象就是为其更改了名字</p><h5 id="8-cp-带目录文件-目标目录-—-复制粘贴"><a href="#8-cp-带目录文件-目标目录-—-复制粘贴" class="headerlink" title="8. cp 带目录文件 目标目录 — 复制粘贴"></a>8. <code>cp 带目录文件 目标目录</code> — 复制粘贴</h5><h5 id="9-man-命令-—-查看使用手册"><a href="#9-man-命令-—-查看使用手册" class="headerlink" title="9. man 命令 — 查看使用手册"></a>9. <code>man 命令</code> — 查看使用手册</h5><h5 id="10-touch-—-创建文件"><a href="#10-touch-—-创建文件" class="headerlink" title="10. touch — 创建文件"></a>10. <code>touch</code> — 创建文件</h5><h5 id="11-cat-—-查看文件内容"><a href="#11-cat-—-查看文件内容" class="headerlink" title="11. cat — 查看文件内容"></a>11. <code>cat</code> — 查看文件内容</h5><h4 id="二、历史操作"><a href="#二、历史操作" class="headerlink" title="二、历史操作"></a>二、历史操作</h4><h5 id="1-向上（向下）箭头"><a href="#1-向上（向下）箭头" class="headerlink" title="1. 向上（向下）箭头"></a>1. <code>向上（向下）箭头</code></h5><p>查看上一个（下一个）命令，可以一直向前查看之前执行过的命令</p><h5 id="2-l-—-找出与你最近一次的l开头的命令，并执行"><a href="#2-l-—-找出与你最近一次的l开头的命令，并执行" class="headerlink" title="2. !l — 找出与你最近一次的l开头的命令，并执行"></a>2. <code>!l</code> — 找出与你最近一次的l开头的命令，并执行</h5><h5 id="3-history-—-查看之前执行过命令的历史记录"><a href="#3-history-—-查看之前执行过命令的历史记录" class="headerlink" title="3. history — 查看之前执行过命令的历史记录"></a>3. <code>history</code> — 查看之前执行过命令的历史记录</h5><h4 id="三、进程管理操作"><a href="#三、进程管理操作" class="headerlink" title="三、进程管理操作"></a>三、进程管理操作</h4><h5 id="1-ps-—-查看当前终端运行的程序"><a href="#1-ps-—-查看当前终端运行的程序" class="headerlink" title="1. ps — 查看当前终端运行的程序"></a>1. <code>ps</code> — 查看当前终端运行的程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ps</span><br><span class="line">  PID TTY           TIME CMD</span><br><span class="line">19083 ttys000    0:00.40 -bash</span><br></pre></td></tr></table></figure><h5 id="2-ps-ax-—列出这台电脑正在运行的所有程序"><a href="#2-ps-ax-—列出这台电脑正在运行的所有程序" class="headerlink" title="2. ps ax —列出这台电脑正在运行的所有程序"></a>2. <code>ps ax</code> —列出这台电脑正在运行的所有程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">20008   ??  S      0:00.12 /System/Library/Frameworks/QuickLook.framework/Resources/quicklookd.app/Contents/MacOS/quicklookd</span><br><span class="line">19082 s000  Ss     0:00.02 login -pf yangtao</span><br><span class="line">19083 s000  S      0:00.40 -bash</span><br><span class="line">20079 s000  R+     0:00.00 ps ax</span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$</span><br></pre></td></tr></table></figure><h5 id="3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等"><a href="#3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等" class="headerlink" title="3. top — 显示这台计算机上有哪些进程，显示内存、CPU、负载等"></a>3. <code>top</code> — 显示这台计算机上有哪些进程，显示内存、CPU、负载等</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">PID    COMMAND      %CPU TIME     <span class="comment">#TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP  PPID  STATE    BOOSTS           %CPU_ME %CPU_OTHRS UID  FAULTS    COW</span></span><br><span class="line">20088  top          4.1  00:00.99 1/1   0    23    6724K  0B     0B     20088 19083 running  *0[1]            0.00000 0.00000    0    7185+     105</span><br><span class="line">20087  AGSService   0.0  00:00.03 2     1    36    1716K  0B     0B     20087 1     sleeping *0[1]            0.00000 0.00000    0    3076</span><br></pre></td></tr></table></figure><h5 id="4-kill-PID-—-结束指定进程ID的进程"><a href="#4-kill-PID-—-结束指定进程ID的进程" class="headerlink" title="4. kill [PID] — 结束指定进程ID的进程"></a>4. <code>kill [PID]</code> — 结束指定进程ID的进程</h5><p><strong>具体做法：</strong> 先使用top命令查看想要结束进程的PID，然后使用命令<code>kill [PID]</code></p><p><strong>Tips：</strong> 如果遇到无法杀掉的进程，输入命令<code>sudo kill -9 [PID]</code> (伪装超级管理员，强迫杀掉该进程)，接着输入自己用户的密码（前提是自己这个用户具有sudo的资格）</p><h4 id="四、万能的grep操作"><a href="#四、万能的grep操作" class="headerlink" title="四、万能的grep操作"></a>四、万能的grep操作</h4><h5 id="1-grep-800-log-txt-—-从log-txt中找出800位置的数据"><a href="#1-grep-800-log-txt-—-从log-txt中找出800位置的数据" class="headerlink" title="1. grep 800 log.txt — 从log.txt中找出800位置的数据"></a>1. <code>grep 800 log.txt</code> — 从log.txt中找出800位置的数据</h5><h5 id="2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号"><a href="#2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号" class="headerlink" title="2. grep -n 800 log.txt — 从log.txt中找出800位置的数据,并在前面加上行号"></a>2. <code>grep -n 800 log.txt</code> — 从log.txt中找出800位置的数据,并在前面加上行号</h5><h5 id="3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件"><a href="#3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件" class="headerlink" title="3. grep (-n) Hello * (是否加上行号) — 从当前目录下的所有文件中找出出现过Hello的文件"></a>3. <code>grep (-n) Hello * (是否加上行号)</code> — 从当前目录下的所有文件中找出出现过Hello的文件</h5><h5 id="4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录"><a href="#4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录" class="headerlink" title="4. ls /usr/bin | grep ls — 查看/usr/bin目录下面带ls的目录"></a>4. <code>ls /usr/bin | grep ls</code> — 查看/usr/bin目录下面带ls的目录</h5><h5 id="5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量"><a href="#5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量" class="headerlink" title="5. ls /usr/bin | grep ls | wc — 计算出单词的数量"></a>5. <code>ls /usr/bin | grep ls | wc</code> — 计算出单词的数量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ls /usr/bin | grep ls | wc</span><br><span class="line">      16      16     124</span><br><span class="line"><span class="comment"># 16行 16个单词 124个字符</span></span><br></pre></td></tr></table></figure><h4 id="五、环境变量操作"><a href="#五、环境变量操作" class="headerlink" title="五、环境变量操作"></a>五、环境变量操作</h4><h5 id="1-set-grep-PATH-—-查看环境变量"><a href="#1-set-grep-PATH-—-查看环境变量" class="headerlink" title="1. set | grep PATH — 查看环境变量"></a>1. <code>set | grep PATH</code> — 查看环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:~ yangtao$ <span class="built_in">set</span> | grep PATH</span><br><span class="line">PATH=/usr/<span class="built_in">local</span>/bin:/usr/bin:/bin:/usr/sbin:/sbin</span><br></pre></td></tr></table></figure><h5 id="2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH"><a href="#2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH" class="headerlink" title="2. set | grep PATH — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH"></a>2. <code>set | grep PATH</code> — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH</h5><p>这样做只是一次性的，也就是说在当前终端，是可以直接生效的，但是当你关闭后，重新打开终端，这个操作是不被保存的。</p><p>在<code>/etc/profile</code>这个文件是任何人打开终端都会执行的，是系统级的profile。</p><p>如果我们想自定义自己的profile，可以在自己的家目录下新建文件命名为：<code>.profile</code>，这个文件会在你打开终端时自动执行。</p><p>我们将刚刚的命令2输入其中，然后保存退出（vim下使用<code>:wq</code>）<br>这样的话，在我们刚刚已经登录的终端里面它还是不起作用的，假如你希望它可以立刻生效，你可以使用<code>source</code>命令。</p><h5 id="3-source-—-例如：source-profile"><a href="#3-source-—-例如：source-profile" class="headerlink" title="3. source — 例如：source .profile"></a>3. <code>source</code> — 例如：<code>source .profile</code></h5><p>使Shell读入指定的Shell程序文件并依次执行文件中的所有语句，通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录</p><h4 id="六、网络配置操作"><a href="#六、网络配置操作" class="headerlink" title="六、网络配置操作"></a>六、网络配置操作</h4><h5 id="1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"><a href="#1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址" class="headerlink" title="1. ifconfig — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"></a>1. <code>ifconfig</code> — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址</h5><p>我的连的是en5，它的状态时active（最后一行），原文是en4</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">en5: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500</span><br><span class="line">ether ac:de:48:00:11:22 </span><br><span class="line">inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0x7 </span><br><span class="line">nd6 options=201&lt;PERFORMNUD,DAD&gt;</span><br><span class="line">media: autoselect</span><br><span class="line">status: active</span><br></pre></td></tr></table></figure><p><em>其他用法：</em></p><ul><li><p><code>ifconfig en4 down/up</code> — 关闭（或打开）某个网络接口，比如en4,一般需要管理员权限，所以需要在前面加sudo命令</p></li><li><p><code>sudo ifconfig en4 add 10.10.10.12 netmask 255.255.255.0</code> — 给en4加入别的网段</p></li><li><code>sudo ifconfig en4 delete 10.10.10.12</code> — 给en4删除指定网段</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时修改MAC地址</span></span><br><span class="line">ifconfig en0 down // 关闭网卡设备（这里假设是en0）</span><br><span class="line">ifconfig en0 hw ether [MAC地址] // 修改MAC地址</span><br><span class="line">ifconfig en0 up // 重启网卡</span><br><span class="line"></span><br><span class="line"><span class="comment"># 临时修改内网ip地址</span></span><br><span class="line">ifconfig en0 down</span><br><span class="line">ifconfig en0 192.168.169.245 netmask 255.255.255.0</span><br></pre></td></tr></table></figure><h5 id="2-ping-—-检测网络是否是连通状态"><a href="#2-ping-—-检测网络是否是连通状态" class="headerlink" title="2. ping — 检测网络是否是连通状态"></a>2. <code>ping</code> — 检测网络是否是连通状态</h5><h5 id="3-netstat-—-显示各种网络相关信息"><a href="#3-netstat-—-显示各种网络相关信息" class="headerlink" title="3. netstat — 显示各种网络相关信息"></a>3. <code>netstat</code> — 显示各种网络相关信息</h5><p><em>其他用法：</em></p><ul><li><p><code>netstat -l</code> — 列出本机进行监听的端口</p></li><li><p><code>netstat -lt</code> — 只列出tcp的连接，同理在l后面跟上u的话，将会列出各种udp的监听端口</p></li><li><p><code>netstat -s</code> — 查看统计数据</p></li><li><p><code>netstat -p</code> — 列出进程信息，你可以了解是哪一个程序在哪一个端口上做些什么事情</p></li><li><p><code>netstat -pc</code> — 会显示出实时更新的进程信息</p></li><li><p><code>netstat -r</code> — 查看路由表</p></li><li><code>netstat -i</code> — 查看接口信息</li></ul><blockquote><p>详情参考<br><a href="https://www.jianshu.com/p/0e43268f01db" target="_blank" rel="noopener">Mac终端学习系列</a></p></blockquote>]]></content>
       
       
-        <tags>
-            
-            <tag> MacOS </tag>
-            
-            <tag> 终端 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -778,7 +774,7 @@
       
       <categories>
           
-          <category> git </category>
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -805,7 +801,7 @@
       
       <categories>
           
-          <category> MacOS </category>
+          <category> 系统 </category>
           
       </categories>
       
@@ -832,7 +828,7 @@
       
       <categories>
           
-          <category> MacOS </category>
+          <category> 系统 </category>
           
       </categories>
       
@@ -886,7 +882,7 @@
       
       <categories>
           
-          <category> github </category>
+          <category> 开发工具 </category>
           
       </categories>
       
@@ -940,7 +936,7 @@
       
       <categories>
           
-          <category> Hexo </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -948,8 +944,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-            <tag> Theme </tag>
             
         </tags>
       
@@ -967,7 +961,7 @@
       
       <categories>
           
-          <category> Hexo </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -975,8 +969,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-            <tag> Theme </tag>
             
         </tags>
       
@@ -994,7 +986,7 @@
       
       <categories>
           
-          <category> Hexo </category>
+          <category> 博客 </category>
           
       </categories>
       
