@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="baidu-site-verification" content="OavY14g4y5" />
   
-  <title>大涛子</title>
+  <title>Mac 终端简易学习总结 | 大涛子</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
   
@@ -354,8 +354,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/09/16/macos-bash/">
-        2018-09-16
+      <a href="/2018/08/13/macos-bash/">
+        Mac 终端简易学习总结
       </a>
     </h1>
   
@@ -384,7 +384,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-09-16</p>
+    <p>2018-08-13</p>
   </a>
 </div>
 
@@ -392,6 +392,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/系统/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>系统</p>
+    </a>
+  </div>
+
 
           
         
@@ -428,14 +436,7 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <hr>
-<p>title: Mac 终端简易学习总结<br>date: 2018-08-13 09:07:38<br>tags:</p>
-<ul>
-<li>MacOS</li>
-<li>终端<br>categories:</li>
-<li>系统</li>
-</ul>
-<h4 id="一、目录基本操作"><a href="#一、目录基本操作" class="headerlink" title="一、目录基本操作"></a>一、目录基本操作</h4><h5 id="1-pwd-—-获取当前所在路径"><a href="#1-pwd-—-获取当前所在路径" class="headerlink" title="1. pwd — 获取当前所在路径"></a>1. <code>pwd</code> — 获取当前所在路径</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ <span class="built_in">pwd</span></span><br><span class="line">/Users/yangtao/Desktop/文件创建/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+          <h3 id="一、目录基本操作"><a href="#一、目录基本操作" class="headerlink" title="一、目录基本操作"></a>一、目录基本操作</h3><h5 id="1-pwd-—-获取当前所在路径"><a href="#1-pwd-—-获取当前所在路径" class="headerlink" title="1. pwd — 获取当前所在路径"></a>1. <code>pwd</code> — 获取当前所在路径</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ <span class="built_in">pwd</span></span><br><span class="line">/Users/yangtao/Desktop/文件创建/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h5 id="2-ls-—-列出当前目录下的所有文件"><a href="#2-ls-—-列出当前目录下的所有文件" class="headerlink" title="2. ls — 列出当前目录下的所有文件"></a>2. <code>ls</code> — 列出当前目录下的所有文件</h5><ul>
 <li><code>ls -l</code> — 用长格式列出来</li>
@@ -444,43 +445,43 @@
 </ul>
 <h5 id="3-cd-—-目录间的切换"><a href="#3-cd-—-目录间的切换" class="headerlink" title="3. cd — 目录间的切换"></a>3. <code>cd</code> — 目录间的切换</h5><p>可以使用<code>tab</code>键补全目录名称，将文件拖入终端，可以显示该文件的目录</p>
 <ul>
-<li><code>cd</code> — (无参数)返回home目录</li>
-<li><code>cd ~</code> — 返回home目录，可以使用<code>cd ~/Music</code>快速到达该目录，使用<code>cd ~Guest/</code>进入Guest用户的home目录</li>
+<li><code>cd</code> — (无参数)返回 home 目录</li>
+<li><code>cd ~</code> — 返回 home 目录，可以使用<code>cd ~/Music</code>快速到达该目录，使用<code>cd ~Guest/</code>进入 Guest 用户的 home 目录</li>
 <li><code>cd -</code> — 返回上一次操作的目录，可与当前目录进行切换</li>
-<li><code>cd ..</code> — 返回上一层目录，<code>..</code>表示上一层目录，而<code>.</code>表示当前目录，如<code>./Music</code>，表示当前目录下的Music文件</li>
+<li><code>cd ..</code> — 返回上一层目录，<code>..</code>表示上一层目录，而<code>.</code>表示当前目录，如<code>./Music</code>，表示当前目录下的 Music 文件</li>
 </ul>
-<h5 id="4-mkdir-文件名-—-（make-dir）新建文件夹"><a href="#4-mkdir-文件名-—-（make-dir）新建文件夹" class="headerlink" title="4. mkdir 文件名 — （make dir）新建文件夹"></a>4. <code>mkdir 文件名</code> — （make dir）新建文件夹</h5><h5 id="5-rmdir-文件名-—-（remove-dir）删除文件夹"><a href="#5-rmdir-文件名-—-（remove-dir）删除文件夹" class="headerlink" title="5. rmdir 文件名 — （remove dir）删除文件夹"></a>5. <code>rmdir 文件名</code> — （remove dir）删除文件夹</h5><p>如果文件夹内不为空，则无法用rmdir删除文件夹</p>
-<h5 id="6-rm-文件名-—-（remove-dir）删除文件"><a href="#6-rm-文件名-—-（remove-dir）删除文件" class="headerlink" title="6. rm 文件名 — （remove dir）删除文件"></a>6. <code>rm 文件名</code> — （remove dir）删除文件</h5><p>注意：用<code>rm</code>删除掉的文件是无法从回收站中找回的！而且不能使用rm来删除文件夹</p>
+<h5 id="4-mkdir-文件名-—-（make-dir）新建文件夹"><a href="#4-mkdir-文件名-—-（make-dir）新建文件夹" class="headerlink" title="4. mkdir 文件名 — （make dir）新建文件夹"></a>4. <code>mkdir 文件名</code> — （make dir）新建文件夹</h5><h5 id="5-rmdir-文件名-—-（remove-dir）删除文件夹"><a href="#5-rmdir-文件名-—-（remove-dir）删除文件夹" class="headerlink" title="5. rmdir 文件名 — （remove dir）删除文件夹"></a>5. <code>rmdir 文件名</code> — （remove dir）删除文件夹</h5><p>如果文件夹内不为空，则无法用 rmdir 删除文件夹</p>
+<h5 id="6-rm-文件名-—-（remove-dir）删除文件"><a href="#6-rm-文件名-—-（remove-dir）删除文件" class="headerlink" title="6. rm 文件名 — （remove dir）删除文件"></a>6. <code>rm 文件名</code> — （remove dir）删除文件</h5><p>注意：用<code>rm</code>删除掉的文件是无法从回收站中找回的！而且不能使用 rm 来删除文件夹</p>
 <h5 id="7-mv-原文件-目标目录-新文件名-—-移动"><a href="#7-mv-原文件-目标目录-新文件名-—-移动" class="headerlink" title="7. mv 原文件 目标目录/新文件名 — 移动"></a>7. <code>mv 原文件 目标目录/新文件名</code> — 移动</h5><p>把文件从一个地方移到另一个地方，但是当没有给出另外一个目录时，移动的现象就是为其更改了名字</p>
 <h5 id="8-cp-带目录文件-目标目录-—-复制粘贴"><a href="#8-cp-带目录文件-目标目录-—-复制粘贴" class="headerlink" title="8. cp 带目录文件 目标目录 — 复制粘贴"></a>8. <code>cp 带目录文件 目标目录</code> — 复制粘贴</h5><h5 id="9-man-命令-—-查看使用手册"><a href="#9-man-命令-—-查看使用手册" class="headerlink" title="9. man 命令 — 查看使用手册"></a>9. <code>man 命令</code> — 查看使用手册</h5><h5 id="10-touch-—-创建文件"><a href="#10-touch-—-创建文件" class="headerlink" title="10. touch — 创建文件"></a>10. <code>touch</code> — 创建文件</h5><h5 id="11-cat-—-查看文件内容"><a href="#11-cat-—-查看文件内容" class="headerlink" title="11. cat — 查看文件内容"></a>11. <code>cat</code> — 查看文件内容</h5><h4 id="二、历史操作"><a href="#二、历史操作" class="headerlink" title="二、历史操作"></a>二、历史操作</h4><h5 id="1-向上（向下）箭头"><a href="#1-向上（向下）箭头" class="headerlink" title="1. 向上（向下）箭头"></a>1. <code>向上（向下）箭头</code></h5><p>查看上一个（下一个）命令，可以一直向前查看之前执行过的命令</p>
-<h5 id="2-l-—-找出与你最近一次的l开头的命令，并执行"><a href="#2-l-—-找出与你最近一次的l开头的命令，并执行" class="headerlink" title="2. !l — 找出与你最近一次的l开头的命令，并执行"></a>2. <code>!l</code> — 找出与你最近一次的l开头的命令，并执行</h5><h5 id="3-history-—-查看之前执行过命令的历史记录"><a href="#3-history-—-查看之前执行过命令的历史记录" class="headerlink" title="3. history — 查看之前执行过命令的历史记录"></a>3. <code>history</code> — 查看之前执行过命令的历史记录</h5><h4 id="三、进程管理操作"><a href="#三、进程管理操作" class="headerlink" title="三、进程管理操作"></a>三、进程管理操作</h4><h5 id="1-ps-—-查看当前终端运行的程序"><a href="#1-ps-—-查看当前终端运行的程序" class="headerlink" title="1. ps — 查看当前终端运行的程序"></a>1. <code>ps</code> — 查看当前终端运行的程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ps</span><br><span class="line">  PID TTY           TIME CMD</span><br><span class="line">19083 ttys000    0:00.40 -bash</span><br></pre></td></tr></table></figure>
+<h5 id="2-l-—-找出与你最近一次的-l-开头的命令，并执行"><a href="#2-l-—-找出与你最近一次的-l-开头的命令，并执行" class="headerlink" title="2. !l — 找出与你最近一次的 l 开头的命令，并执行"></a>2. <code>!l</code> — 找出与你最近一次的 l 开头的命令，并执行</h5><h5 id="3-history-—-查看之前执行过命令的历史记录"><a href="#3-history-—-查看之前执行过命令的历史记录" class="headerlink" title="3. history — 查看之前执行过命令的历史记录"></a>3. <code>history</code> — 查看之前执行过命令的历史记录</h5><h4 id="三、进程管理操作"><a href="#三、进程管理操作" class="headerlink" title="三、进程管理操作"></a>三、进程管理操作</h4><h5 id="1-ps-—-查看当前终端运行的程序"><a href="#1-ps-—-查看当前终端运行的程序" class="headerlink" title="1. ps — 查看当前终端运行的程序"></a>1. <code>ps</code> — 查看当前终端运行的程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ps</span><br><span class="line">  PID TTY           TIME CMD</span><br><span class="line">19083 ttys000    0:00.40 -bash</span><br></pre></td></tr></table></figure>
 <h5 id="2-ps-ax-—列出这台电脑正在运行的所有程序"><a href="#2-ps-ax-—列出这台电脑正在运行的所有程序" class="headerlink" title="2. ps ax —列出这台电脑正在运行的所有程序"></a>2. <code>ps ax</code> —列出这台电脑正在运行的所有程序</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">20008   ??  S      0:00.12 /System/Library/Frameworks/QuickLook.framework/Resources/quicklookd.app/Contents/MacOS/quicklookd</span><br><span class="line">19082 s000  Ss     0:00.02 login -pf yangtao</span><br><span class="line">19083 s000  S      0:00.40 -bash</span><br><span class="line">20079 s000  R+     0:00.00 ps ax</span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$</span><br></pre></td></tr></table></figure>
 <h5 id="3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等"><a href="#3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等" class="headerlink" title="3. top — 显示这台计算机上有哪些进程，显示内存、CPU、负载等"></a>3. <code>top</code> — 显示这台计算机上有哪些进程，显示内存、CPU、负载等</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">PID    COMMAND      %CPU TIME     <span class="comment">#TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP  PPID  STATE    BOOSTS           %CPU_ME %CPU_OTHRS UID  FAULTS    COW</span></span><br><span class="line">20088  top          4.1  00:00.99 1/1   0    23    6724K  0B     0B     20088 19083 running  *0[1]            0.00000 0.00000    0    7185+     105</span><br><span class="line">20087  AGSService   0.0  00:00.03 2     1    36    1716K  0B     0B     20087 1     sleeping *0[1]            0.00000 0.00000    0    3076</span><br></pre></td></tr></table></figure>
-<h5 id="4-kill-PID-—-结束指定进程ID的进程"><a href="#4-kill-PID-—-结束指定进程ID的进程" class="headerlink" title="4. kill [PID] — 结束指定进程ID的进程"></a>4. <code>kill [PID]</code> — 结束指定进程ID的进程</h5><p><strong>具体做法：</strong> 先使用top命令查看想要结束进程的PID，然后使用命令<code>kill [PID]</code></p>
-<p><strong>Tips：</strong> 如果遇到无法杀掉的进程，输入命令<code>sudo kill -9 [PID]</code> (伪装超级管理员，强迫杀掉该进程)，接着输入自己用户的密码（前提是自己这个用户具有sudo的资格）</p>
-<h4 id="四、万能的grep操作"><a href="#四、万能的grep操作" class="headerlink" title="四、万能的grep操作"></a>四、万能的grep操作</h4><h5 id="1-grep-800-log-txt-—-从log-txt中找出800位置的数据"><a href="#1-grep-800-log-txt-—-从log-txt中找出800位置的数据" class="headerlink" title="1. grep 800 log.txt — 从log.txt中找出800位置的数据"></a>1. <code>grep 800 log.txt</code> — 从log.txt中找出800位置的数据</h5><h5 id="2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号"><a href="#2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号" class="headerlink" title="2. grep -n 800 log.txt — 从log.txt中找出800位置的数据,并在前面加上行号"></a>2. <code>grep -n 800 log.txt</code> — 从log.txt中找出800位置的数据,并在前面加上行号</h5><h5 id="3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件"><a href="#3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件" class="headerlink" title="3. grep (-n) Hello * (是否加上行号) — 从当前目录下的所有文件中找出出现过Hello的文件"></a>3. <code>grep (-n) Hello * (是否加上行号)</code> — 从当前目录下的所有文件中找出出现过Hello的文件</h5><h5 id="4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录"><a href="#4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录" class="headerlink" title="4. ls /usr/bin | grep ls — 查看/usr/bin目录下面带ls的目录"></a>4. <code>ls /usr/bin | grep ls</code> — 查看/usr/bin目录下面带ls的目录</h5><h5 id="5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量"><a href="#5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量" class="headerlink" title="5. ls /usr/bin | grep ls | wc — 计算出单词的数量"></a>5. <code>ls /usr/bin | grep ls | wc</code> — 计算出单词的数量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ls /usr/bin | grep ls | wc</span><br><span class="line">      16      16     124</span><br><span class="line"><span class="comment"># 16行 16个单词 124个字符</span></span><br></pre></td></tr></table></figure>
+<h5 id="4-kill-PID-—-结束指定进程-ID-的进程"><a href="#4-kill-PID-—-结束指定进程-ID-的进程" class="headerlink" title="4. kill [PID] — 结束指定进程 ID 的进程"></a>4. <code>kill [PID]</code> — 结束指定进程 ID 的进程</h5><p><strong>具体做法：</strong> 先使用 top 命令查看想要结束进程的 PID，然后使用命令<code>kill [PID]</code></p>
+<p><strong>Tips：</strong> 如果遇到无法杀掉的进程，输入命令<code>sudo kill -9 [PID]</code> (伪装超级管理员，强迫杀掉该进程)，接着输入自己用户的密码（前提是自己这个用户具有 sudo 的资格）</p>
+<h4 id="四、万能的-grep-操作"><a href="#四、万能的-grep-操作" class="headerlink" title="四、万能的 grep 操作"></a>四、万能的 grep 操作</h4><h5 id="1-grep-800-log-txt-—-从-log-txt-中找出-800-位置的数据"><a href="#1-grep-800-log-txt-—-从-log-txt-中找出-800-位置的数据" class="headerlink" title="1. grep 800 log.txt — 从 log.txt 中找出 800 位置的数据"></a>1. <code>grep 800 log.txt</code> — 从 log.txt 中找出 800 位置的数据</h5><h5 id="2-grep-n-800-log-txt-—-从-log-txt-中找出-800-位置的数据-并在前面加上行号"><a href="#2-grep-n-800-log-txt-—-从-log-txt-中找出-800-位置的数据-并在前面加上行号" class="headerlink" title="2. grep -n 800 log.txt — 从 log.txt 中找出 800 位置的数据,并在前面加上行号"></a>2. <code>grep -n 800 log.txt</code> — 从 log.txt 中找出 800 位置的数据,并在前面加上行号</h5><h5 id="3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过-Hello-的文件"><a href="#3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过-Hello-的文件" class="headerlink" title="3. grep (-n) Hello * (是否加上行号) — 从当前目录下的所有文件中找出出现过 Hello 的文件"></a>3. <code>grep (-n) Hello * (是否加上行号)</code> — 从当前目录下的所有文件中找出出现过 Hello 的文件</h5><h5 id="4-ls-usr-bin-grep-ls-—-查看-usr-bin-目录下面带-ls-的目录"><a href="#4-ls-usr-bin-grep-ls-—-查看-usr-bin-目录下面带-ls-的目录" class="headerlink" title="4. ls /usr/bin | grep ls — 查看/usr/bin 目录下面带 ls 的目录"></a>4. <code>ls /usr/bin | grep ls</code> — 查看/usr/bin 目录下面带 ls 的目录</h5><h5 id="5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量"><a href="#5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量" class="headerlink" title="5. ls /usr/bin | grep ls | wc — 计算出单词的数量"></a>5. <code>ls /usr/bin | grep ls | wc</code> — 计算出单词的数量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:<span class="built_in">test</span> yangtao$ ls /usr/bin | grep ls | wc</span><br><span class="line">      16      16     124</span><br><span class="line"><span class="comment"># 16行 16个单词 124个字符</span></span><br></pre></td></tr></table></figure>
 <h4 id="五、环境变量操作"><a href="#五、环境变量操作" class="headerlink" title="五、环境变量操作"></a>五、环境变量操作</h4><h5 id="1-set-grep-PATH-—-查看环境变量"><a href="#1-set-grep-PATH-—-查看环境变量" class="headerlink" title="1. set | grep PATH — 查看环境变量"></a>1. <code>set | grep PATH</code> — 查看环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yangtaodeMacBook-Pro:~ yangtao$ <span class="built_in">set</span> | grep PATH</span><br><span class="line">PATH=/usr/<span class="built_in">local</span>/bin:/usr/bin:/bin:/usr/sbin:/sbin</span><br></pre></td></tr></table></figure>
-<h5 id="2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH"><a href="#2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH" class="headerlink" title="2. set | grep PATH — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH"></a>2. <code>set | grep PATH</code> — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH</h5><p>这样做只是一次性的，也就是说在当前终端，是可以直接生效的，但是当你关闭后，重新打开终端，这个操作是不被保存的。</p>
-<p>在<code>/etc/profile</code>这个文件是任何人打开终端都会执行的，是系统级的profile。</p>
-<p>如果我们想自定义自己的profile，可以在自己的家目录下新建文件命名为：<code>.profile</code>，这个文件会在你打开终端时自动执行。</p>
-<p>我们将刚刚的命令2输入其中，然后保存退出（vim下使用<code>:wq</code>）<br>这样的话，在我们刚刚已经登录的终端里面它还是不起作用的，假如你希望它可以立刻生效，你可以使用<code>source</code>命令。</p>
-<h5 id="3-source-—-例如：source-profile"><a href="#3-source-—-例如：source-profile" class="headerlink" title="3. source — 例如：source .profile"></a>3. <code>source</code> — 例如：<code>source .profile</code></h5><p>使Shell读入指定的Shell程序文件并依次执行文件中的所有语句，通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录</p>
-<h4 id="六、网络配置操作"><a href="#六、网络配置操作" class="headerlink" title="六、网络配置操作"></a>六、网络配置操作</h4><h5 id="1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"><a href="#1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址" class="headerlink" title="1. ifconfig — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"></a>1. <code>ifconfig</code> — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址</h5><p>我的连的是en5，它的状态时active（最后一行），原文是en4</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">en5: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500</span><br><span class="line">	ether ac:de:48:00:11:22 </span><br><span class="line">	inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0x7 </span><br><span class="line">	nd6 options=201&lt;PERFORMNUD,DAD&gt;</span><br><span class="line">	media: autoselect</span><br><span class="line">	status: active</span><br></pre></td></tr></table></figure>
+<h5 id="2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的-bin-目录）添加到-PATH"><a href="#2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的-bin-目录）添加到-PATH" class="headerlink" title="2. set | grep PATH — 将其他文件夹路径（本机用户下面的 bin 目录）添加到 PATH"></a>2. <code>set | grep PATH</code> — 将其他文件夹路径（本机用户下面的 bin 目录）添加到 PATH</h5><p>这样做只是一次性的，也就是说在当前终端，是可以直接生效的，但是当你关闭后，重新打开终端，这个操作是不被保存的。</p>
+<p>在<code>/etc/profile</code>这个文件是任何人打开终端都会执行的，是系统级的 profile。</p>
+<p>如果我们想自定义自己的 profile，可以在自己的家目录下新建文件命名为：<code>.profile</code>，这个文件会在你打开终端时自动执行。</p>
+<p>我们将刚刚的命令 2 输入其中，然后保存退出（vim 下使用<code>:wq</code>）<br>这样的话，在我们刚刚已经登录的终端里面它还是不起作用的，假如你希望它可以立刻生效，你可以使用<code>source</code>命令。</p>
+<h5 id="3-source-—-例如：source-profile"><a href="#3-source-—-例如：source-profile" class="headerlink" title="3. source — 例如：source .profile"></a>3. <code>source</code> — 例如：<code>source .profile</code></h5><p>使 Shell 读入指定的 Shell 程序文件并依次执行文件中的所有语句，通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录</p>
+<h4 id="六、网络配置操作"><a href="#六、网络配置操作" class="headerlink" title="六、网络配置操作"></a>六、网络配置操作</h4><h5 id="1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是-ip-地址和-mac-地址"><a href="#1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是-ip-地址和-mac-地址" class="headerlink" title="1. ifconfig — 列出本机所有的网络设备以及其上面的配置，主要指的是 ip 地址和 mac 地址"></a>1. <code>ifconfig</code> — 列出本机所有的网络设备以及其上面的配置，主要指的是 ip 地址和 mac 地址</h5><p>我的连的是 en5，它的状态时 active（最后一行），原文是 en4</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">en5: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500</span><br><span class="line">	ether ac:de:48:00:11:22</span><br><span class="line">	inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0x7</span><br><span class="line">	nd6 options=201&lt;PERFORMNUD,DAD&gt;</span><br><span class="line">	media: autoselect</span><br><span class="line">	status: active</span><br></pre></td></tr></table></figure>
 <p><em>其他用法：</em></p>
 <ul>
-<li><p><code>ifconfig en4 down/up</code> — 关闭（或打开）某个网络接口，比如en4,一般需要管理员权限，所以需要在前面加sudo命令</p>
+<li><p><code>ifconfig en4 down/up</code> — 关闭（或打开）某个网络接口，比如 en4,一般需要管理员权限，所以需要在前面加 sudo 命令</p>
 </li>
-<li><p><code>sudo ifconfig en4 add 10.10.10.12 netmask 255.255.255.0</code> — 给en4加入别的网段</p>
+<li><p><code>sudo ifconfig en4 add 10.10.10.12 netmask 255.255.255.0</code> — 给 en4 加入别的网段</p>
 </li>
-<li><code>sudo ifconfig en4 delete 10.10.10.12</code> — 给en4删除指定网段</li>
+<li><code>sudo ifconfig en4 delete 10.10.10.12</code> — 给 en4 删除指定网段</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时修改MAC地址</span></span><br><span class="line">ifconfig en0 down // 关闭网卡设备（这里假设是en0）</span><br><span class="line">ifconfig en0 hw ether [MAC地址] // 修改MAC地址</span><br><span class="line">ifconfig en0 up // 重启网卡</span><br><span class="line"></span><br><span class="line"><span class="comment"># 临时修改内网ip地址</span></span><br><span class="line">ifconfig en0 down</span><br><span class="line">ifconfig en0 192.168.169.245 netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
 <h5 id="2-ping-—-检测网络是否是连通状态"><a href="#2-ping-—-检测网络是否是连通状态" class="headerlink" title="2. ping — 检测网络是否是连通状态"></a>2. <code>ping</code> — 检测网络是否是连通状态</h5><h5 id="3-netstat-—-显示各种网络相关信息"><a href="#3-netstat-—-显示各种网络相关信息" class="headerlink" title="3. netstat — 显示各种网络相关信息"></a>3. <code>netstat</code> — 显示各种网络相关信息</h5><p><em>其他用法：</em></p>
 <ul>
 <li><p><code>netstat -l</code> — 列出本机进行监听的端口</p>
 </li>
-<li><p><code>netstat -lt</code> — 只列出tcp的连接，同理在l后面跟上u的话，将会列出各种udp的监听端口</p>
+<li><p><code>netstat -lt</code> — 只列出 tcp 的连接，同理在 l 后面跟上 u 的话，将会列出各种 udp 的监听端口</p>
 </li>
 <li><p><code>netstat -s</code> — 查看统计数据</p>
 </li>
@@ -493,7 +494,7 @@
 <li><code>netstat -i</code> — 查看接口信息</li>
 </ul>
 <blockquote>
-<p>详情参考<br><a href="https://www.jianshu.com/p/0e43268f01db" target="_blank" rel="noopener">Mac终端学习系列</a></p>
+<p>详情参考<br><a href="https://www.jianshu.com/p/0e43268f01db" target="_blank" rel="noopener">Mac 终端学习系列</a></p>
 </blockquote>
 
         </div>
@@ -506,10 +507,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-03-13T22:05:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-11T15:05:39+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年3月13日</p>
+    <p>最后更新于 2019年11月11日</p>
   </a>
 </div>
 
@@ -517,6 +518,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MacOS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>MacOS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/终端/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>终端</p></a></div>
+
 
         
       
@@ -528,14 +532,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/09/16/macos-bash/&title= | 大涛子&summary=
-title: Mac 终端简易学习总结date: 2018-08-13 09:07:38tags:
-
-MacOS
-终端categories:
-系统
-
-一、目录基本操作1. pwd — 获取当前所在路径123yangtaodeMacBook-Pro:test yangtao$ pwd/Users/yangtao/Desktop/文件创建/test"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/08/13/macos-bash/&title=Mac 终端简易学习总结 | 大涛子&summary=一、目录基本操作1. pwd — 获取当前所在路径123yangtaodeMacBook-Pro:test yangtao$ pwd/Users/yangtao/Desktop/文件创建/test"
           
           >
           
@@ -547,14 +544,7 @@ MacOS
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/09/16/macos-bash/&title= | 大涛子&summary=
-title: Mac 终端简易学习总结date: 2018-08-13 09:07:38tags:
-
-MacOS
-终端categories:
-系统
-
-一、目录基本操作1. pwd — 获取当前所在路径123yangtaodeMacBook-Pro:test yangtao$ pwd/Users/yangtao/Desktop/文件创建/test"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/08/13/macos-bash/&title=Mac 终端简易学习总结 | 大涛子&summary=一、目录基本操作1. pwd — 获取当前所在路径123yangtaodeMacBook-Pro:test yangtao$ pwd/Users/yangtao/Desktop/文件创建/test"
           
           >
           
@@ -566,14 +556,7 @@ MacOS
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/09/16/macos-bash/&title= | 大涛子&summary=
-title: Mac 终端简易学习总结date: 2018-08-13 09:07:38tags:
-
-MacOS
-终端categories:
-系统
-
-一、目录基本操作1. pwd — 获取当前所在路径123yangtaodeMacBook-Pro:test yangtao$ pwd/Users/yangtao/Desktop/文件创建/test"
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/08/13/macos-bash/&title=Mac 终端简易学习总结 | 大涛子&summary=一、目录基本操作1. pwd — 获取当前所在路径123yangtaodeMacBook-Pro:test yangtao$ pwd/Users/yangtao/Desktop/文件创建/test"
           
           >
           
@@ -675,7 +658,7 @@ MacOS
 
   <script>
     window.subData = {
-      title: '',
+      title: 'Mac 终端简易学习总结',
       tools: true
     }
   </script>
@@ -692,7 +675,7 @@ MacOS
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、目录基本操作"><span class="toc-text">一、目录基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-pwd-—-获取当前所在路径"><span class="toc-text">1. pwd — 获取当前所在路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ls-—-列出当前目录下的所有文件"><span class="toc-text">2. ls — 列出当前目录下的所有文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-cd-—-目录间的切换"><span class="toc-text">3. cd — 目录间的切换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-mkdir-文件名-—-（make-dir）新建文件夹"><span class="toc-text">4. mkdir 文件名 — （make dir）新建文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-rmdir-文件名-—-（remove-dir）删除文件夹"><span class="toc-text">5. rmdir 文件名 — （remove dir）删除文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-rm-文件名-—-（remove-dir）删除文件"><span class="toc-text">6. rm 文件名 — （remove dir）删除文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-mv-原文件-目标目录-新文件名-—-移动"><span class="toc-text">7. mv 原文件 目标目录/新文件名 — 移动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-cp-带目录文件-目标目录-—-复制粘贴"><span class="toc-text">8. cp 带目录文件 目标目录 — 复制粘贴</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-man-命令-—-查看使用手册"><span class="toc-text">9. man 命令 — 查看使用手册</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-touch-—-创建文件"><span class="toc-text">10. touch — 创建文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-cat-—-查看文件内容"><span class="toc-text">11. cat — 查看文件内容</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、历史操作"><span class="toc-text">二、历史操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-向上（向下）箭头"><span class="toc-text">1. 向上（向下）箭头</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-l-—-找出与你最近一次的l开头的命令，并执行"><span class="toc-text">2. !l — 找出与你最近一次的l开头的命令，并执行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-history-—-查看之前执行过命令的历史记录"><span class="toc-text">3. history — 查看之前执行过命令的历史记录</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、进程管理操作"><span class="toc-text">三、进程管理操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-ps-—-查看当前终端运行的程序"><span class="toc-text">1. ps — 查看当前终端运行的程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ps-ax-—列出这台电脑正在运行的所有程序"><span class="toc-text">2. ps ax —列出这台电脑正在运行的所有程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等"><span class="toc-text">3. top — 显示这台计算机上有哪些进程，显示内存、CPU、负载等</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-kill-PID-—-结束指定进程ID的进程"><span class="toc-text">4. kill [PID] — 结束指定进程ID的进程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、万能的grep操作"><span class="toc-text">四、万能的grep操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-grep-800-log-txt-—-从log-txt中找出800位置的数据"><span class="toc-text">1. grep 800 log.txt — 从log.txt中找出800位置的数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-grep-n-800-log-txt-—-从log-txt中找出800位置的数据-并在前面加上行号"><span class="toc-text">2. grep -n 800 log.txt — 从log.txt中找出800位置的数据,并在前面加上行号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过Hello的文件"><span class="toc-text">3. grep (-n) Hello * (是否加上行号) — 从当前目录下的所有文件中找出出现过Hello的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-ls-usr-bin-grep-ls-—-查看-usr-bin目录下面带ls的目录"><span class="toc-text">4. ls /usr/bin | grep ls — 查看/usr/bin目录下面带ls的目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量"><span class="toc-text">5. ls /usr/bin | grep ls | wc — 计算出单词的数量</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、环境变量操作"><span class="toc-text">五、环境变量操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-set-grep-PATH-—-查看环境变量"><span class="toc-text">1. set | grep PATH — 查看环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的bin目录）添加到PATH"><span class="toc-text">2. set | grep PATH — 将其他文件夹路径（本机用户下面的bin目录）添加到PATH</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-source-—-例如：source-profile"><span class="toc-text">3. source — 例如：source .profile</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、网络配置操作"><span class="toc-text">六、网络配置操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址"><span class="toc-text">1. ifconfig — 列出本机所有的网络设备以及其上面的配置，主要指的是ip地址和mac地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ping-—-检测网络是否是连通状态"><span class="toc-text">2. ping — 检测网络是否是连通状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-netstat-—-显示各种网络相关信息"><span class="toc-text">3. netstat — 显示各种网络相关信息</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、目录基本操作"><span class="toc-text">一、目录基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-pwd-—-获取当前所在路径"><span class="toc-text">1. pwd — 获取当前所在路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ls-—-列出当前目录下的所有文件"><span class="toc-text">2. ls — 列出当前目录下的所有文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-cd-—-目录间的切换"><span class="toc-text">3. cd — 目录间的切换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-mkdir-文件名-—-（make-dir）新建文件夹"><span class="toc-text">4. mkdir 文件名 — （make dir）新建文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-rmdir-文件名-—-（remove-dir）删除文件夹"><span class="toc-text">5. rmdir 文件名 — （remove dir）删除文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-rm-文件名-—-（remove-dir）删除文件"><span class="toc-text">6. rm 文件名 — （remove dir）删除文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-mv-原文件-目标目录-新文件名-—-移动"><span class="toc-text">7. mv 原文件 目标目录/新文件名 — 移动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-cp-带目录文件-目标目录-—-复制粘贴"><span class="toc-text">8. cp 带目录文件 目标目录 — 复制粘贴</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-man-命令-—-查看使用手册"><span class="toc-text">9. man 命令 — 查看使用手册</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-touch-—-创建文件"><span class="toc-text">10. touch — 创建文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-cat-—-查看文件内容"><span class="toc-text">11. cat — 查看文件内容</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、历史操作"><span class="toc-text">二、历史操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-向上（向下）箭头"><span class="toc-text">1. 向上（向下）箭头</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-l-—-找出与你最近一次的-l-开头的命令，并执行"><span class="toc-text">2. !l — 找出与你最近一次的 l 开头的命令，并执行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-history-—-查看之前执行过命令的历史记录"><span class="toc-text">3. history — 查看之前执行过命令的历史记录</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、进程管理操作"><span class="toc-text">三、进程管理操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-ps-—-查看当前终端运行的程序"><span class="toc-text">1. ps — 查看当前终端运行的程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ps-ax-—列出这台电脑正在运行的所有程序"><span class="toc-text">2. ps ax —列出这台电脑正在运行的所有程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-top-—-显示这台计算机上有哪些进程，显示内存、CPU、负载等"><span class="toc-text">3. top — 显示这台计算机上有哪些进程，显示内存、CPU、负载等</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-kill-PID-—-结束指定进程-ID-的进程"><span class="toc-text">4. kill [PID] — 结束指定进程 ID 的进程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、万能的-grep-操作"><span class="toc-text">四、万能的 grep 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-grep-800-log-txt-—-从-log-txt-中找出-800-位置的数据"><span class="toc-text">1. grep 800 log.txt — 从 log.txt 中找出 800 位置的数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-grep-n-800-log-txt-—-从-log-txt-中找出-800-位置的数据-并在前面加上行号"><span class="toc-text">2. grep -n 800 log.txt — 从 log.txt 中找出 800 位置的数据,并在前面加上行号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-grep-n-Hello-是否加上行号-—-从当前目录下的所有文件中找出出现过-Hello-的文件"><span class="toc-text">3. grep (-n) Hello * (是否加上行号) — 从当前目录下的所有文件中找出出现过 Hello 的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-ls-usr-bin-grep-ls-—-查看-usr-bin-目录下面带-ls-的目录"><span class="toc-text">4. ls /usr/bin | grep ls — 查看/usr/bin 目录下面带 ls 的目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-ls-usr-bin-grep-ls-wc-—-计算出单词的数量"><span class="toc-text">5. ls /usr/bin | grep ls | wc — 计算出单词的数量</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、环境变量操作"><span class="toc-text">五、环境变量操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-set-grep-PATH-—-查看环境变量"><span class="toc-text">1. set | grep PATH — 查看环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-set-grep-PATH-—-将其他文件夹路径（本机用户下面的-bin-目录）添加到-PATH"><span class="toc-text">2. set | grep PATH — 将其他文件夹路径（本机用户下面的 bin 目录）添加到 PATH</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-source-—-例如：source-profile"><span class="toc-text">3. source — 例如：source .profile</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、网络配置操作"><span class="toc-text">六、网络配置操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-ifconfig-—-列出本机所有的网络设备以及其上面的配置，主要指的是-ip-地址和-mac-地址"><span class="toc-text">1. ifconfig — 列出本机所有的网络设备以及其上面的配置，主要指的是 ip 地址和 mac 地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ping-—-检测网络是否是连通状态"><span class="toc-text">2. ping — 检测网络是否是连通状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-netstat-—-显示各种网络相关信息"><span class="toc-text">3. netstat — 显示各种网络相关信息</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 

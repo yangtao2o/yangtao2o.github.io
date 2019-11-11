@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="baidu-site-verification" content="OavY14g4y5" />
+  
+  <title>Nodejs系列之HTTP | 大涛子</title>
+  
+  <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
+  
+  
+  <meta name="description" content="一枚小小的前端攻城狮、迷恋摄影">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="大涛子">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>大涛子客栈</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="前端、摄影、羽毛球、电影、脱发" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/"
+            
+            
+            id="categories">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="https://istaotao.com/home/"
+            
+            
+            id="https:istaotao.comhome">
+            <i class='fas fa-home fa-fw'></i>&nbsp;Vue主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="friends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://dataoboy.lofter.com/"
+            
+              rel="nofollow"
+            
+            
+            id="http:dataoboy.lofter.com">
+            <i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          大涛子
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;博文
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/friends/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="friends">
+									<i class='fas fa-users fa-fw'></i>&nbsp;朋友
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="http://dataoboy.lofter.com/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="http:dataoboy.lofter.com">
+									<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main no_sidebar'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/06/14/node-http/">
+        Nodejs系列之HTTP
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://istaotao.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨涛</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-06-14</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Nodejs/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Nodejs</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p>超文本传输协议，是一种 Web 协议，属于 TCP 上层的协议。</p>
+</blockquote>
+<p>HTTP 模块式 Node 的核心模块，主要提供了一系列用于网络传输的 API。</p>
+<a id="more"></a>
+<p>HTTP 消息头如下所示(键是小写的，值不能被修改)：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"content-length"</span>: <span class="string">"123"</span>,</span><br><span class="line">  <span class="attr">"content-type"</span>: <span class="string">"text/plain"</span>,</span><br><span class="line">  <span class="attr">"connection"</span>: <span class="string">"keep-alive"</span>,</span><br><span class="line">  <span class="attr">"host"</span>: <span class="string">"mysite.com"</span>,</span><br><span class="line">  <span class="attr">"accept"</span>: <span class="string">"*/*"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建-HTTP-服务器"><a href="#创建-HTTP-服务器" class="headerlink" title="创建 HTTP 服务器"></a>创建 HTTP 服务器</h2><p>使用 NodeJS 内置的 http 模块简单实现一个 HTTP 服务器:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer(<span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span> &#125;);</span><br><span class="line">    response.end(<span class="string">"Hello World!"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<p>以上程序创建了一个 HTTP 服务器并监听 3000 端口，打开浏览器访问该端口<code>http://127.0.0.1:3000/</code>就能够看到效果。</p>
+<p>使用 createServer 创建一个 HTTP 服务器，该方法返回一个 http.server 类的实例。</p>
+<p>createServer 方法包含了一个匿名的回调函数，该函数有两个参数 request，response，它们是 IncomingMessage 和 ServerResponse 的实例。</p>
+<p>分别表示 HTTP 的 request 和 response 对象，当服务器创建完成后，Node 进程开始循环监听 3000 端口。</p>
+<p>http.server 类定义了一系列的事件，如 connection 和 request 事件。</p>
+<h2 id="处理-HTTP-请求"><a href="#处理-HTTP-请求" class="headerlink" title="处理 HTTP 请求"></a>处理 HTTP 请求</h2><h3 id="method，URL-和-header"><a href="#method，URL-和-header" class="headerlink" title="method，URL 和 header"></a>method，URL 和 header</h3><p>Node 将相关的信息封装在一个对象（request）中，该对象是 IncomingMessage 的实例。</p>
+<p>获取 method、URL：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> method = req.method;</span><br><span class="line"><span class="keyword">const</span> url = req.url;</span><br></pre></td></tr></table></figure>
+<p>比如访问<code>http://127.0.0.1:8000/index.html?name=tao</code>，就会输出：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"method"</span>: <span class="string">"GET"</span>,</span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"/index.html?name=tao"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>URL 的值为去除网站服务器地址之外的完整值。</p>
+<h3 id="header"><a href="#header" class="headerlink" title="header"></a>header</h3><p>获取 HTTP header 信息：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> headers = req.headers;</span><br><span class="line"><span class="keyword">const</span> userAgent = headers[<span class="string">"user-agent"</span>];</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"127.0.0.1:8000"</span>,</span><br><span class="line">    <span class="attr">"user-agent"</span>: <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:68.0) Gecko/20100101 Firefox/68.0"</span>,</span><br><span class="line">    <span class="attr">"accept"</span>: <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span>,</span><br><span class="line">    <span class="attr">"accept-language"</span>: <span class="string">"zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2"</span>,</span><br><span class="line">    <span class="attr">"accept-encoding"</span>: <span class="string">"gzip, deflate"</span>,</span><br><span class="line">    <span class="attr">"connection"</span>: <span class="string">"keep-alive"</span>,</span><br><span class="line">    <span class="attr">"upgrade-insecure-requests"</span>: <span class="string">"1"</span>,</span><br><span class="line">    <span class="attr">"cache-control"</span>: <span class="string">"max-age=0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"userAgent"</span>: <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:68.0) Gecko/20100101 Firefox/68.0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>header 是一个 JSON 对象，可以对属性名进行单独索引。</p>
+<h3 id="request-body"><a href="#request-body" class="headerlink" title="request body"></a>request body</h3><p>Node 使用 stream 处理 HTTP 的请求体，并且注册了两个事件：data 和 end。</p>
+<p>获取完整的 HTTP 内容体：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> body = [];</span><br><span class="line"></span><br><span class="line">request.on(<span class="string">"data"</span>, chunk =&gt; &#123;</span><br><span class="line">  body.push(chunk);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">request.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">  body = Buffer.concat(body).toString();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Response-对象"><a href="#Response-对象" class="headerlink" title="Response 对象"></a>Response 对象</h2><h2 id="get-post-请求"><a href="#get-post-请求" class="headerlink" title="get/post 请求"></a>get/post 请求</h2><p>综上所述，我们来组织一个简易的 get、post 请求实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> method = req.method;</span><br><span class="line">    <span class="keyword">const</span> url = req.url;</span><br><span class="line">    <span class="keyword">const</span> path = url.split(<span class="string">"?"</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">const</span> query = querystring.parse(url.split(<span class="string">"?"</span>)[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">const</span> headers = req.headers;</span><br><span class="line">    <span class="keyword">const</span> userAgent = headers[<span class="string">"user-agent"</span>];</span><br><span class="line">    <span class="keyword">const</span> resData = &#123;</span><br><span class="line">      method,</span><br><span class="line">      url,</span><br><span class="line">      path,</span><br><span class="line">      query,</span><br><span class="line">      headers,</span><br><span class="line">      userAgent</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    res.setHeader(<span class="string">"Content-type"</span>, <span class="string">"application/json"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (method === <span class="string">"GET"</span>) &#123;</span><br><span class="line">      res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (method === <span class="string">"POST"</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> postData = [];</span><br><span class="line"></span><br><span class="line">      req.on(<span class="string">"data"</span>, chunk =&gt; &#123;</span><br><span class="line">        postData.push(chunk);</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      req.on(<span class="string">"end"</span>, () =&gt; &#123;</span><br><span class="line">        resData.postData = Buffer.concat(postData).toString();</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(resData));</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
+<p>比如<code>POST</code>请求 <code>http://127.0.0.1:8000/api/blog?ip=2</code>，然后使用 Postman 工具测试结果如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"method"</span>: <span class="string">"POST"</span>,</span><br><span class="line">  <span class="attr">"url"</span>: <span class="string">"/api/blog?ip=2"</span>,</span><br><span class="line">  <span class="attr">"path"</span>: <span class="string">"/api/blog"</span>,</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"ip"</span>: <span class="string">"2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"headers"</span>: &#123;</span><br><span class="line">    <span class="attr">"content-type"</span>: <span class="string">"application/json"</span>,</span><br><span class="line">    <span class="attr">"cache-control"</span>: <span class="string">"no-cache"</span>,</span><br><span class="line">    <span class="attr">"postman-token"</span>: <span class="string">"9e6cb382-8551-4a3f-b352-0581bb377cbc"</span>,</span><br><span class="line">    <span class="attr">"user-agent"</span>: <span class="string">"PostmanRuntime/7.6.0"</span>,</span><br><span class="line">    <span class="attr">"accept"</span>: <span class="string">"*/*"</span>,</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"127.0.0.1:8000"</span>,</span><br><span class="line">    <span class="attr">"accept-encoding"</span>: <span class="string">"gzip, deflate"</span>,</span><br><span class="line">    <span class="attr">"content-length"</span>: <span class="string">"62"</span>,</span><br><span class="line">    <span class="attr">"connection"</span>: <span class="string">"keep-alive"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"userAgent"</span>: <span class="string">"PostmanRuntime/7.6.0"</span>,</span><br><span class="line">  <span class="attr">"postData"</span>: <span class="string">"&#123;\n\t\"title\": \"你说什么\",\n\t\"content\": \"我知道你知道\"\n&#125;"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p><a href="http://nodejs.cn/api/http.html" target="_blank" rel="noopener">http</a> 模块提供两种使用方式：</p>
+<ol>
+<li>作为服务端使用时，创建一个 HTTP 服务器，监听 HTTP 客户端请求并返回响应。</li>
+<li>作为客户端使用时，发起一个 HTTP 客户端请求，获取服务端响应。</li>
+</ol>
+<h3 id="一个简单的-Web-服务器"><a href="#一个简单的-Web-服务器" class="headerlink" title="一个简单的 Web 服务器"></a>一个简单的 Web 服务器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> qs = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">"/"</span> == req.url) &#123;</span><br><span class="line">      res.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/html"</span> &#125;);</span><br><span class="line">      res.end(</span><br><span class="line">        [</span><br><span class="line">          <span class="string">'&lt;form method="POST" action="/url"&gt;'</span>,</span><br><span class="line">          <span class="string">"&lt;h1&gt;My Form&lt;/h1&gt;"</span>,</span><br><span class="line">          <span class="string">"&lt;fieldset&gt;"</span>,</span><br><span class="line">          <span class="string">"&lt;label&gt;Personal information&lt;/label&gt;"</span>,</span><br><span class="line">          <span class="string">"&lt;p&gt;What is your name?&lt;/p&gt;"</span>,</span><br><span class="line">          <span class="string">'&lt;input type="text" name="name" /&gt;'</span>,</span><br><span class="line">          <span class="string">"&lt;p&gt;&lt;button&gt;Submit&lt;/button&gt;&lt;/p&gt;"</span>,</span><br><span class="line">          <span class="string">"&lt;/fieldset&gt;"</span>,</span><br><span class="line">          <span class="string">"&lt;/form&gt;"</span></span><br><span class="line">        ].join(<span class="string">""</span>)</span><br><span class="line">      );</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"/url"</span> == req.url &amp;&amp; <span class="string">"POST"</span> == req.method) &#123;</span><br><span class="line">      <span class="keyword">var</span> body = <span class="string">""</span>;</span><br><span class="line">      req.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">        body += chunk;</span><br><span class="line">      &#125;);</span><br><span class="line">      req.on(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        res.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/html"</span> &#125;);</span><br><span class="line">        res.end(</span><br><span class="line">          <span class="string">"&lt;p&gt;Content-type: "</span> +</span><br><span class="line">            req.headers[<span class="string">"content-type"</span>] +</span><br><span class="line">            <span class="string">"&lt;/p&gt;"</span> +</span><br><span class="line">            <span class="string">"&lt;p&gt;Data: "</span> +</span><br><span class="line">            qs.parse(body).name +</span><br><span class="line">            <span class="string">"&lt;/p&gt;"</span></span><br><span class="line">        );</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res.writeHead(<span class="number">404</span>);</span><br><span class="line">      res.end(<span class="string">"Not Found."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="一个-Twitter-Web-客户端"><a href="#一个-Twitter-Web-客户端" class="headerlink" title="一个 Twitter Web 客户端"></a>一个 Twitter Web 客户端</h3><p>创建服务器：app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> qs = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> body = <span class="string">""</span>;</span><br><span class="line">    req.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">      body += chunk;</span><br><span class="line">    &#125;);</span><br><span class="line">    req.on(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      res.writeHead(<span class="number">200</span>);</span><br><span class="line">      res.end(<span class="string">"Done"</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"\n got name \033[90m"</span> + qs.parse(body).name + <span class="string">"\033[39m\n"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<p>创建客户端：client.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> qs = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">send</span>(<span class="params">theName</span>) </span>&#123;</span><br><span class="line">  http</span><br><span class="line">    .request(</span><br><span class="line">      &#123;</span><br><span class="line">        host: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">        port: <span class="number">3000</span>,</span><br><span class="line">        url: <span class="string">"/"</span>,</span><br><span class="line">        method: <span class="string">"POST"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> body = <span class="string">""</span>;</span><br><span class="line">        res.setEncoding(<span class="string">"utf8"</span>);</span><br><span class="line">        res.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">          body += chunk;</span><br><span class="line">        &#125;);</span><br><span class="line">        res.on(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"\n  \033[90m request complete! \033[39m"</span>);</span><br><span class="line">          process.stdout.write(<span class="string">"\n your name: "</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">    .end(qs.stringify(&#123; <span class="attr">name</span>: theName &#125;));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">process.stdout.write(<span class="string">"\n your name: "</span>);</span><br><span class="line">process.stdin.resume();</span><br><span class="line">process.stdin.setEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">process.stdin.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  send(name.replace(<span class="string">"\n"</span>, <span class="string">""</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>启动<code>node app.js</code>，再启动<code>node client.js</code></p>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><p>HTTPS 是基于 TLS/SSL 的 HTTP 协议。在 Node.js 中，作为一个单独的模块实现。</p>
+<p>HTTPS 模块与 HTTP 模块极为类似，区别在于 HTTPS 模块需要额外处理 SSL 证书。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">"https"</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  key: fs.readFileSync(<span class="string">"test/fixtures/keys/agent2-key.pem"</span>),</span><br><span class="line">  cert: fs.readFileSync(<span class="string">"test/fixtures/keys/agent2-cert.pem"</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">https</span><br><span class="line">  .createServer(options, (req, res) =&gt; &#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>);</span><br><span class="line">    res.end(<span class="string">"hello world\n"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>处理 HTTP 请求时 url 模块使用率超高，因为该模块允许解析 URL、生成 URL，以及拼接 URL。</p>
+<p>首先我们来看看一个完整的 URL 的各组成部分，输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; require(<span class="string">'url'</span>).parse(<span class="string">'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'</span>);</span><br><span class="line">Url &#123;</span><br><span class="line">  protocol: <span class="string">'http:'</span>,</span><br><span class="line">  slashes: <span class="literal">true</span>,</span><br><span class="line">  auth: <span class="string">'user:pass'</span>,</span><br><span class="line">  host: <span class="string">'host.com:8080'</span>,</span><br><span class="line">  port: <span class="string">'8080'</span>,</span><br><span class="line">  hostname: <span class="string">'host.com'</span>,</span><br><span class="line">  <span class="built_in">hash</span>: <span class="string">'#hash'</span>,</span><br><span class="line">  search: <span class="string">'?query=string'</span>,</span><br><span class="line">  query: <span class="string">'query=string'</span>,</span><br><span class="line">  pathname: <span class="string">'/p/a/t/h'</span>,</span><br><span class="line">  path: <span class="string">'/p/a/t/h?query=string'</span>,</span><br><span class="line">  href: <span class="string">'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，不完整的 url，也可以解析：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer(<span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> body = [];</span><br><span class="line">    <span class="keyword">const</span> tmp = request.url; <span class="comment">// /foo/bar?a=b</span></span><br><span class="line"></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span> &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"url-parse"</span>, url.parse(tmp));</span><br><span class="line"></span><br><span class="line">    response.end(<span class="string">"Hello World"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"protocol"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"slashes"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"auth"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"host"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"port"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"hostname"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"hash"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"search"</span>: <span class="string">"?a=b"</span>,</span><br><span class="line">  <span class="attr">"query"</span>: <span class="string">"a=b"</span>,</span><br><span class="line">  <span class="attr">"pathname"</span>: <span class="string">"/foo/bar"</span>,</span><br><span class="line">  <span class="attr">"path"</span>: <span class="string">"/foo/bar?a=b"</span>,</span><br><span class="line">  <span class="attr">"href"</span>: <span class="string">"/foo/bar?a=b"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>format 方法允许将一个 URL 对象转换为 URL 字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> urlFormat = url.format(&#123;</span><br><span class="line">  protocol: <span class="string">"http:"</span>,</span><br><span class="line">  host: <span class="string">"www.example.com"</span>,</span><br><span class="line">  pathname: <span class="string">"/p/a/t/h"</span>,</span><br><span class="line">  search: <span class="string">"query=string"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(&#123; urlFormat &#125;); <span class="comment">// &#123; urlFormat: 'http://www.example.com/p/a/t/h?query=string' &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Query-String"><a href="#Query-String" class="headerlink" title="Query String"></a>Query String</h2><p><a href="http://nodejs.org/api/querystring.html" target="_blank" rel="noopener">querystring</a> 模块用于实现 URL 参数字符串与参数对象的互相转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">querystring.parse(<span class="string">"foo=bar&amp;baz=qux&amp;baz=quux&amp;corge"</span>);</span><br><span class="line"><span class="comment">// &#123; foo: 'bar', baz: [ 'qux', 'quux' ], corge: '' &#125;</span></span><br><span class="line"></span><br><span class="line">querystring.stringify(&#123; <span class="attr">foo</span>: <span class="string">"bar"</span>, <span class="attr">baz</span>: [<span class="string">"qux"</span>, <span class="string">"quux"</span>], <span class="attr">corge</span>: <span class="string">""</span> &#125;);</span><br><span class="line"><span class="comment">// 'foo=bar&amp;baz=qux&amp;baz=quux&amp;corge='</span></span><br></pre></td></tr></table></figure>
+<h2 id="Zlib"><a href="#Zlib" class="headerlink" title="Zlib"></a>Zlib</h2><p>zlib 模块提供了数据压缩和解压的功能。当我们处理 HTTP 请求和响应时，可能需要用到这个模块。</p>
+<h2 id="Net"><a href="#Net" class="headerlink" title="Net"></a>Net</h2><p>net 模块可用于创建 Socket 服务器或 Socket 客户端。</p>
+<p>由于 Socket 在前端领域的使用范围还不是很广，这里先不涉及到 WebSocket 的介绍，仅仅简单演示一下如何从 Socket 层面来实现 HTTP 请求和响应。</p>
+<h2 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h2><p>使用 NodeJS 操作网络，特别是操作 HTTP 请求和响应时会遇到一些惊喜，这里对一些常见问题做解答。</p>
+<ul>
+<li>为什么通过 headers 对象访问到的 HTTP 请求头或响应头字段不是驼峰的？</li>
+</ul>
+<p>从规范上讲，HTTP 请求头和响应头字段都应该是驼峰的。但现实是残酷的，不是每个 HTTP 服务端或客户端程序都严格遵循规范，所以 NodeJS 在处理从别的客户端或服务端收到的头字段时，都统一地转换为了小写字母格式，以便开发者能使用统一的方式来访问头字段，例如<code>headers[&#39;content-length&#39;]</code>。</p>
+<ul>
+<li>为什么 http 模块创建的 HTTP 服务器返回的响应是 chunked 传输方式的？</li>
+</ul>
+<p>因为默认情况下，使用<code>.writeHead</code>方法写入响应头后，允许使用<code>.write</code>方法写入任意长度的响应体数据，并使用<code>.end</code>方法结束一个响应。由于响应体数据长度不确定，因此 NodeJS 自动在响应头里添加了<code>Transfer-Encoding: chunked</code>字段，并采用 chunked 传输方式。但是当响应体数据长度确定时，可使用<code>.writeHead</code>方法在响应头里加上<code>Content-Length</code>字段，这样做之后 NodeJS 就不会自动添加<code>Transfer-Encoding</code>字段和使用 chunked 传输方式。</p>
+<ul>
+<li>为什么使用 http 模块发起 HTTP 客户端请求时，有时候会发生 socket hang up 错误？</li>
+</ul>
+<p>答： 发起客户端 HTTP 请求前需要先创建一个客户端。http 模块提供了一个全局客户端<code>http.globalAgent</code>，可以让我们使用<code>.request</code>或<code>.get</code>方法时不用手动创建客户端。但是全局客户端默认只允许 5 个并发 Socket 连接，当某一个时刻 HTTP 客户端请求创建过多，超过这个数字时，就会发生<code>socket hang up</code>错误。解决方法也很简单，通过<code>http.globalAgent.maxSockets</code>属性把这个数字改大些即可。另外，https 模块遇到这个问题时也一样通过<code>https.globalAgent.maxSockets</code>属性来处理。</p>
+<h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ul>
+<li><a href="http://nqdeng.github.io/7-days-nodejs/#1.1" target="_blank" rel="noopener">7-days-nodejs</a> - 文章</li>
+<li>《了不起的 Node.js：将 JavaScript 进行到底》- 书籍</li>
+<li>《新时期的 Node.js 入门》- 书籍</li>
+<li><a href="https://coding.imooc.com/class/320.html" target="_blank" rel="noopener">Node.js 从零开发 Web Server 博客项目 前端晋升全栈工程师必备</a> - 视频</li>
+<li><a href="http://nodejs.cn/api/http.html" target="_blank" rel="noopener">http（HTTP）</a> - 官方文档</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-11T14:51:25+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年11月11日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Nodejs/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Nodejs</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2019/06/14/node-http/&title=Nodejs系列之HTTP | 大涛子&summary=
+超文本传输协议，是一种 Web 协议，属于 TCP 上层的协议。
+
+HTTP 模块式 Node 的核心模块，主要提供了一系列用于网络传输的 API。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2019/06/14/node-http/&title=Nodejs系列之HTTP | 大涛子&summary=
+超文本传输协议，是一种 Web 协议，属于 TCP 上层的协议。
+
+HTTP 模块式 Node 的核心模块，主要提供了一系列用于网络传输的 API。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2019/06/14/node-http/&title=Nodejs系列之HTTP | 大涛子&summary=
+超文本传输协议，是一种 Web 协议，属于 TCP 上层的协议。
+
+HTTP 模块式 Node 的核心模块，主要提供了一系列用于网络传输的 API。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/06/25/node-events/" rel="prev" title="Nodejs系列之Events">
+                                  
+                                      Nodejs系列之Events
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Nodejs/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Nodejs</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/06/12/node-tcp/" rel="prev" title="Nodejs系列之TCP">
+                                    
+                                        Nodejs系列之TCP
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Nodejs/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Nodejs</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Nodejs系列之HTTP',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建-HTTP-服务器"><span class="toc-text">创建 HTTP 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理-HTTP-请求"><span class="toc-text">处理 HTTP 请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#method，URL-和-header"><span class="toc-text">method，URL 和 header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#header"><span class="toc-text">header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#request-body"><span class="toc-text">request body</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Response-对象"><span class="toc-text">Response 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get-post-请求"><span class="toc-text">get/post 请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http"><span class="toc-text">http</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的-Web-服务器"><span class="toc-text">一个简单的 Web 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个-Twitter-Web-客户端"><span class="toc-text">一个 Twitter Web 客户端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS"><span class="toc-text">HTTPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL"><span class="toc-text">URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Query-String"><span class="toc-text">Query String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zlib"><span class="toc-text">Zlib</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Net"><span class="toc-text">Net</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解答"><span class="toc-text">问题解答</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-text">学习资料</span></a></li></ol>
+    </div>
+  </section>
+
+
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="https://ae01.alicdn.com/kf/Hd6aab0894803450395b643181cafabc9J.jpg"
+            class="social fab fa-weixin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:istaotao@aliyun.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/yangtao2o"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/"
+            class="social fab fa-linkedin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://weibo.com/taoboy0208"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=282751852"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+    appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+    placeholder: "请留下你的足迹吧~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

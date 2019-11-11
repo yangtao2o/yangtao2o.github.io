@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="baidu-site-verification" content="OavY14g4y5" />
   
-  <title>Windows下Node.js 多版本管理器-Gnvm | 大涛子</title>
+  <title>MacOS如何使用 tree 生成目录结构 | 大涛子</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
   
@@ -354,8 +354,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/">
-        Windows下Node.js 多版本管理器-Gnvm
+      <a href="/2019/09/02/tool-tree/">
+        MacOS如何使用 tree 生成目录结构
       </a>
     </h1>
   
@@ -384,7 +384,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-12-21</p>
+    <p>2019-09-02</p>
   </a>
 </div>
 
@@ -394,9 +394,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/Nodejs/' rel="nofollow">
+    <a href='/categories/开发工具/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Nodejs</p>
+      <p>开发工具</p>
     </a>
   </div>
 
@@ -436,21 +436,109 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>我们在平时的项目开发中，经常需要指定 Node 的版本，所有版本控制管理，就很有必要，需要哪个切哪个。<br><a id="more"></a></p>
-<h4 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h4><p>主要有 <code>n</code> 和 <code>nvm</code>,具体可以自行百度，查之，用之</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接输入 n ,然后回车，可上下选择版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装最新版/稳定版</span></span><br><span class="line">n latest/stable</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">n rm 8.11.3</span><br></pre></td></tr></table></figure>
-<h4 id="主要安利-Windows下的-gnvm"><a href="#主要安利-Windows下的-gnvm" class="headerlink" title="主要安利 Windows下的 gnvm"></a>主要安利 Windows下的 gnvm</h4><p>官方地址：<a href="https://github.com/kenshin/gnvm" target="_blank" rel="noopener">GNVM - Node.js 多版本管理器</a></p>
-<h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 git bash，其它下载方式如 go、curl等可查看官方文档</span></span><br><span class="line">git <span class="built_in">clone</span> git@github.com:Kenshin/gnvm-bin.git</span><br></pre></td></tr></table></figure>
-<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>将解压后的 <code>gnvm.exe</code> 保存到 <code>node.js</code> 所在的文件夹下，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\nodejs</span><br></pre></td></tr></table></figure></p>
-<h5 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h5><p>管理员身份进入 <code>cmd</code>，输入 <code>gnvm version</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm version</span><br><span class="line">Current version 0.2.0 64 bit.</span><br><span class="line">Copyright (C) 2014-2016 Kenshin Wang &lt;kenshin@ksria.com&gt;</span><br><span class="line">See https://github.com/kenshin/gnvm <span class="keyword">for</span> more information.</span><br></pre></td></tr></table></figure></p>
-<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm config</span><br><span class="line">Waring: config file C:\Program Files\nodejs\\.gnvmrc is not exist.</span><br><span class="line">Notice: Config file C:\Program Files\nodejs\\.gnvmrc create success.</span><br><span class="line">Notice: config file path C:\Program Files\nodejs\\.gnvmrc</span><br><span class="line">gnvm config registry is http://nodejs.org/dist/</span><br><span class="line">gnvm config noderoot is C:\Program Files\nodejs\</span><br><span class="line">gnvm config globalversion is 10.14.2-x86</span><br><span class="line">gnvm config latestversion is unknown</span><br></pre></td></tr></table></figure>
-<h5 id="查询需要下载的-node-版本"><a href="#查询需要下载的-node-版本" class="headerlink" title="查询需要下载的 node 版本"></a>查询需要下载的 node 版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm search 8.*.*</span><br><span class="line">Search Node.js version rules [8.*.*] from http://nodejs.org/dist/index.json, please <span class="built_in">wait</span>.</span><br><span class="line">+--------------------------------------------------+</span><br><span class="line">| No.   date         node ver    <span class="built_in">exec</span>      npm ver |</span><br><span class="line">+--------------------------------------------------+</span><br><span class="line">  1     2018-12-18   8.14.1      x86 x64   6.4.1</span><br><span class="line">  2     2018-11-27   8.14.0      x86 x64   6.4.1</span><br><span class="line">  3     2018-11-20   8.13.0      x86 x64   6.4.1</span><br><span class="line">  4     2018-09-10   8.12.0      x86 x64   6.4.1</span><br><span class="line">  5     2018-08-15   8.11.4      x86 x64   5.6.0</span><br><span class="line">  6     2018-06-12   8.11.3      x86 x64   5.6.0</span><br><span class="line">  7     2018-05-15   8.11.2      x86 x64   5.6.0</span><br><span class="line">  8     2018-03-29   8.11.1      x86 x64   5.6.0</span><br><span class="line">  9     2018-03-28   8.11.0      x86 x64   5.6.0</span><br><span class="line">  10    2018-03-06   8.10.0      x86 x64   5.6.0</span><br><span class="line">  11    2018-01-02   8.9.4       x86 x64   5.6.0</span><br><span class="line">  12    2017-12-07   8.9.3       x86 x64   5.5.1</span><br><span class="line">  13    2017-12-05   8.9.2       x86 x64   5.5.1</span><br><span class="line">  14    2017-11-07   8.9.1       x86 x64   5.5.1</span><br><span class="line">  15    2017-10-31   8.9.0       x86 x64   5.5.1</span><br><span class="line">  16    2017-10-25   8.8.1       x86 x64   5.4.2</span><br><span class="line">  17    2017-10-24   8.8.0       x86 x64   5.4.2</span><br><span class="line">  18    2017-10-11   8.7.0       x86 x64   5.4.2</span><br><span class="line">  19    2017-09-26   8.6.0       x86 x64   5.3.0</span><br><span class="line">  20    2017-09-12   8.5.0       x86 x64   5.3.0</span><br><span class="line">  21    2017-08-15   8.4.0       x86 x64   5.3.0</span><br><span class="line">  22    2017-08-08   8.3.0       x86 x64   5.3.0</span><br><span class="line">  23    2017-07-20   8.2.1       x86 x64   5.3.0</span><br><span class="line">  24    2017-07-19   8.2.0       x86 x64   5.3.0</span><br><span class="line">  25    2017-07-11   8.1.4       x86 x64   5.0.3</span><br><span class="line">  26    2017-06-29   8.1.3       x86 x64   5.0.3</span><br><span class="line">  27    2017-06-15   8.1.2       x86 x64   5.0.3</span><br><span class="line">  28    2017-06-13   8.1.1       x86 x64   5.0.3</span><br><span class="line">  29    2017-06-08   8.1.0       x86 x64   5.0.3</span><br><span class="line">  30    2017-05-30   8.0.0       x86 x64   5.0.0</span><br><span class="line">+--------------------------------------------------+</span><br></pre></td></tr></table></figure>
-<h5 id="下载帮助文档"><a href="#下载帮助文档" class="headerlink" title="下载帮助文档"></a>下载帮助文档</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm <span class="built_in">help</span> node-version</span><br><span class="line">Show and fix [global] [latest] Node.js version e.g. :</span><br><span class="line">gnvm node-version            :Show Node.js global and latest version, and fix it.</span><br><span class="line">gnvm node-version latest     :Show Node.js latest version, and fix it.</span><br><span class="line">gnvm node-version global     :Show Node.js global version, and fix it.</span><br></pre></td></tr></table></figure>
-<h5 id="下载node"><a href="#下载node" class="headerlink" title="下载node"></a>下载node</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm install 8.11.3 --global</span><br></pre></td></tr></table></figure>
-<h5 id="查看已下载的版本列表"><a href="#查看已下载的版本列表" class="headerlink" title="查看已下载的版本列表"></a>查看已下载的版本列表</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm ls</span><br><span class="line">Notice: gnvm.exe root is C:\Program Files\nodejs\\</span><br><span class="line">v10.14.2 -- x86</span><br><span class="line">v8.11.2</span><br><span class="line">v8.11.3 -- global</span><br></pre></td></tr></table></figure>
-<h5 id="使用指定版本"><a href="#使用指定版本" class="headerlink" title="使用指定版本"></a>使用指定版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;gnvm use 8.11.3</span><br><span class="line">Set success, global Node.js version is 8.11.3.</span><br></pre></td></tr></table></figure>
-<h5 id="查看当前Node版本"><a href="#查看当前Node版本" class="headerlink" title="查看当前Node版本"></a>查看当前Node版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;node -v</span><br><span class="line">v8.11.3</span><br></pre></td></tr></table></figure>
-<p>基本上可以解决版本切换问题，详情可查询<a href="http://ksria.com/gnvm/" target="_blank" rel="noopener">官方文档</a></p>
+          <h2 id="Homebrew安装"><a href="#Homebrew安装" class="headerlink" title="Homebrew安装"></a>Homebrew安装</h2><p><a href="https://brew.sh/" target="_blank" rel="noopener">homebrew官网</a></p>
+<p><a href="[https://www.jianshu.com/p/de6f1d2d37bf](https://www.jianshu.com/p/de6f1d2d37bf">Homebrew介绍和使用</a></p>
+<a id="more"></a>
+<p>根据官网的方法安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>比如我的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">==&gt; This script will install:</span><br><span class="line">/usr/<span class="built_in">local</span>/bin/brew</span><br><span class="line">/usr/<span class="built_in">local</span>/share/doc/homebrew</span><br><span class="line">/usr/<span class="built_in">local</span>/share/man/man1/brew.1</span><br><span class="line">/usr/<span class="built_in">local</span>/share/zsh/site-functions/_brew</span><br><span class="line">/usr/<span class="built_in">local</span>/etc/bash_completion.d/brew</span><br><span class="line">/usr/<span class="built_in">local</span>/Homebrew</span><br><span class="line"></span><br><span class="line">Press RETURN to <span class="built_in">continue</span> or any other key to abort</span><br></pre></td></tr></table></figure></p>
+<p>一路按照提示操作即可，不出意外的话，就安装成功了:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ brew -v</span><br><span class="line">Homebrew 2.1.9</span><br><span class="line">Homebrew/homebrew-core (git revision c8ff; last commit 2019-08-01)</span><br><span class="line">Homebrew/homebrew-cask (git revision 04bff; last commit 2019-08-02)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Tree-安装"><a href="#Tree-安装" class="headerlink" title="Tree 安装"></a>Tree 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
+<p>常用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载</span></span><br><span class="line">brew install tree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个文件夹下的所有文件</span></span><br><span class="line">tree -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只显示文件夹</span></span><br><span class="line">tree -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示项目的层级，如三级</span></span><br><span class="line">tree -L 3  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 过滤，如除node_modules文件</span></span><br><span class="line">tree -I <span class="string">"node_modules"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">tree &gt; tree.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># Help</span></span><br><span class="line">tree --<span class="built_in">help</span></span><br></pre></td></tr></table></figure></p>
+<p>最后，我的输出：<code>tree -I &quot;node_modules&quot; &gt; tree.md</code><br>查看 <code>tree.md</code> 的内容如下：<br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── README.md</span><br><span class="line">├── dist</span><br><span class="line">├── package.json</span><br><span class="line">├── src</span><br><span class="line">│   ├── app.scss</span><br><span class="line">│   ├── font-awesome</span><br><span class="line">│   │   ├── fonts</span><br><span class="line">│   │   │   ├── FontAwesome.otf</span><br><span class="line">│   │   │   ├── fontawesome-webfont.eot</span><br><span class="line">│   │   │   ├── fontawesome-webfont.svg</span><br><span class="line">│   │   │   ├── fontawesome-webfont.ttf</span><br><span class="line">│   │   │   ├── fontawesome-webfont.woff</span><br><span class="line">│   │   │   └── fontawesome-webfont.woff2</span><br><span class="line">│   │   └── scss</span><br><span class="line">│   │       ├── _animated.scss</span><br><span class="line">│   │       ├── _bordered-pulled.scss</span><br><span class="line">│   │       ├── _core.scss</span><br><span class="line">│   │       ├── _fixed-width.scss</span><br><span class="line">│   │       ├── _icons.scss</span><br><span class="line">│   │       ├── _larger.scss</span><br><span class="line">│   │       ├── _list.scss</span><br><span class="line">│   │       ├── _mixins.scss</span><br><span class="line">│   │       ├── _path.scss</span><br><span class="line">│   │       ├── _rotated-flipped.scss</span><br><span class="line">│   │       ├── _screen-reader.scss</span><br><span class="line">│   │       ├── _stacked.scss</span><br><span class="line">│   │       ├── _variables.scss</span><br><span class="line">│   │       └── font-awesome.scss</span><br><span class="line">│   ├── index.html</span><br><span class="line">│   ├── index.js</span><br><span class="line">│   ├── index.jsx</span><br><span class="line">│   ├── react.png</span><br><span class="line">│   └── style.css</span><br><span class="line">├── tree.md</span><br><span class="line">├── webpack.config.js</span><br><span class="line">└── yarn.lock</span><br><span class="line"></span><br><span class="line">5 directories, 31 files</span><br></pre></td></tr></table></figure></p>
+<h2 id="tree命令行参数"><a href="#tree命令行参数" class="headerlink" title="tree命令行参数"></a>tree命令行参数</h2><table>
+<thead>
+<tr>
+<th>命令行参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>显示所有文件和目录。</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>使用ASNI绘图字符显示树状图而非以ASCII字符组合。</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>在文件和目录清单加上色彩，便于区分各种类型。</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>显示目录名称而非内容。</td>
+</tr>
+<tr>
+<td>-D</td>
+<td>列出文件或目录的更改时间。</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>在每个文件或目录之前，显示完整的相对路径名称。</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>在末尾追加描述性字符，如 ls -F</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>不以阶梯状列出文件或目录名称。</td>
+</tr>
+<tr>
+<td>-I</td>
+<td>不显示符合范本样式的文件或目录名称。</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>不在文件和目录清单加上色彩。</td>
+</tr>
+<tr>
+<td>-N</td>
+<td>直接列出文件和目录名称，包括控制字符。</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>列出权限标示。</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>只显示符合范本样式的文件或目录名称。</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>用”?”号取代控制字符，列出文件和目录名称。</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>列出文件或目录大小。</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>用文件和目录的更改时间排序。</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://www.cnblogs.com/ayseeing/p/4097066.html" target="_blank" rel="noopener">mac tree命令</a></li>
+<li><a href="https://blog.csdn.net/qq673318522/article/details/53713903" target="_blank" rel="noopener">Mac使用tree生成目录结构</a></li>
+</ul>
 
         </div>
         
@@ -462,10 +550,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-03-13T22:06:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-11T15:09:18+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年3月13日</p>
+    <p>最后更新于 2019年11月11日</p>
   </a>
 </div>
 
@@ -474,7 +562,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Nodejs/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Nodejs</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/gnvm/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>gnvm</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MacOS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>MacOS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/终端/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>终端</p></a></div>
 
 
         
@@ -487,7 +575,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/&title=Windows下Node.js 多版本管理器-Gnvm | 大涛子&summary=我们在平时的项目开发中，经常需要指定 Node 的版本，所有版本控制管理，就很有必要，需要哪个切哪个。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2019/09/02/tool-tree/&title=MacOS如何使用 tree 生成目录结构 | 大涛子&summary=Homebrew安装homebrew官网
+Homebrew介绍和使用"
           
           >
           
@@ -499,7 +588,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/&title=Windows下Node.js 多版本管理器-Gnvm | 大涛子&summary=我们在平时的项目开发中，经常需要指定 Node 的版本，所有版本控制管理，就很有必要，需要哪个切哪个。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2019/09/02/tool-tree/&title=MacOS如何使用 tree 生成目录结构 | 大涛子&summary=Homebrew安装homebrew官网
+Homebrew介绍和使用"
           
           >
           
@@ -511,7 +601,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/12/21/Windows下Node-js-多版本管理器-Gnvm/&title=Windows下Node.js 多版本管理器-Gnvm | 大涛子&summary=我们在平时的项目开发中，经常需要指定 Node 的版本，所有版本控制管理，就很有必要，需要哪个切哪个。"
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2019/09/02/tool-tree/&title=MacOS如何使用 tree 生成目录结构 | 大涛子&summary=Homebrew安装homebrew官网
+Homebrew介绍和使用"
           
           >
           
@@ -539,16 +630,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2019/01/13/localhost/" rel="prev" title="npm run 报错：getaddrinfo ENOTFOUND localhost">
+                                <a href="/2019/09/06/web/" rel="prev" title="前端性能优化">
                                   
-                                      npm run 报错：getaddrinfo ENOTFOUND localhost
+                                      前端性能优化
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/报错/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>报错</a> <a class="tag" href="/tags/Angular/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Angular</a>
+                                    <a class="tag" href="/tags/web/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>web</a>
                                 </h6>
                             
                         </span>
@@ -559,16 +650,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/12/18/通俗点理解Nodejs的非阻塞及事件驱动/" rel="prev" title="通俗点理解Nodejs的非阻塞及事件驱动">
+                                <a href="/2019/08/24/react-doc/" rel="prev" title="学习 React 的一些记录日志">
                                     
-                                        通俗点理解Nodejs的非阻塞及事件驱动
+                                        学习 React 的一些记录日志
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/Nodejs/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Nodejs</a>
+                                    <a class="tag" href="/tags/react/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>react</a>
                                 </h6>
                             
                         </span>
@@ -613,7 +704,7 @@
 
   <script>
     window.subData = {
-      title: 'Windows下Node.js 多版本管理器-Gnvm',
+      title: 'MacOS如何使用 tree 生成目录结构',
       tools: true
     }
   </script>
@@ -630,7 +721,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#MacOS"><span class="toc-text">MacOS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要安利-Windows下的-gnvm"><span class="toc-text">主要安利 Windows下的 gnvm</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#验证"><span class="toc-text">验证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询需要下载的-node-版本"><span class="toc-text">查询需要下载的 node 版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下载帮助文档"><span class="toc-text">下载帮助文档</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下载node"><span class="toc-text">下载node</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看已下载的版本列表"><span class="toc-text">查看已下载的版本列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用指定版本"><span class="toc-text">使用指定版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看当前Node版本"><span class="toc-text">查看当前Node版本</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew安装"><span class="toc-text">Homebrew安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tree-安装"><span class="toc-text">Tree 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tree命令行参数"><span class="toc-text">tree命令行参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     </div>
   </section>
 
