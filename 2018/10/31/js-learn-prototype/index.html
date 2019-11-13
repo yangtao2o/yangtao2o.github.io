@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="baidu-site-verification" content="OavY14g4y5" />
   
-  <title>设置Cookie | 大涛子</title>
+  <title>学习JavaScript深入系列简要总结 | 大涛子</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
   
@@ -354,8 +354,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/11/03/设置Cookie/">
-        设置Cookie
+      <a href="/2018/10/31/js-learn-prototype/">
+        学习JavaScript深入系列简要总结
       </a>
     </h1>
   
@@ -384,7 +384,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-11-03</p>
+    <p>2018-10-31</p>
   </a>
 </div>
 
@@ -436,8 +436,54 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h3 id="设置Cookie总结"><a href="#设置Cookie总结" class="headerlink" title="设置Cookie总结"></a>设置Cookie总结</h3><a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 收藏功能</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">addFavorite</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> title = <span class="string">'意法半导体STM32/STM8技术社区 - 提供最新的ST资讯和技术交流'</span>;</span><br><span class="line">   <span class="keyword">var</span> URL = <span class="string">'http://www.stmcu.org.cn/'</span>; </span><br><span class="line">   <span class="comment">// IE10</span></span><br><span class="line">   <span class="keyword">if</span>(<span class="built_in">document</span>.all) &#123;</span><br><span class="line">     <span class="built_in">window</span>.external.addFavorite(URL, title);</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     alert(<span class="string">'手动 Ctrl+D 可以收藏我们的网站哦'</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 设置cookie，同一域名都可获取</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name, value, exdays</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> exdays = exdays || <span class="number">1024</span>;</span><br><span class="line">   <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">   d.setTime(d.getTime() + (exdays * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>));</span><br><span class="line">   <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + <span class="built_in">escape</span>(value) + <span class="string">";path=/;expires="</span> + d.toGMTString();</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">// 读取cookies，判断是否存在设置的name</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> name = name + <span class="string">"="</span>;</span><br><span class="line">   <span class="keyword">var</span> ca = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ca.length; i++) &#123;</span><br><span class="line">     <span class="keyword">var</span> c = ca[i].trim();</span><br><span class="line">     <span class="keyword">if</span> (c.indexOf(name) == <span class="number">0</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> c.substring(name.length, c.length);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">checkCookie</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> user = getCookie(<span class="string">"msgCookie"</span>);</span><br><span class="line">   <span class="keyword">var</span> width = <span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth;</span><br><span class="line">   <span class="keyword">if</span>(width &gt;= <span class="number">1080</span>) &#123;</span><br><span class="line">     <span class="keyword">if</span> (user != <span class="string">""</span>) &#123;</span><br><span class="line">       msgHide();</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       msgShow();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 关闭时设置cookie</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">closeModal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   msgHide();</span><br><span class="line">   setCookie(<span class="string">"msgCookie"</span>, <span class="string">'msgCookie'</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">msgHide</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">'newsTipsModal'</span>).style.display = <span class="string">'none'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">msgShow</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">'newsTipsModal'</span>).style.display = <span class="string">'block'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// init</span></span><br><span class="line"> checkCookie();</span><br></pre></td></tr></table></figure>
+          <p>学习JavaScript深入系列简要总结<br><a id="more"></a></p>
+<h3 id="从原型到原型链"><a href="#从原型到原型链" class="headerlink" title="从原型到原型链"></a>从原型到原型链</h3><p>原文地址：<a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">JavaScript深入之从原型到原型链</a></p>
+<blockquote>
+<p>每一个函数都有一个<code>prototype</code>属性，该属性指向了一个对象，此对象为调用该函数而创建的实例的原型</p>
+</blockquote>
+<p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype1.png" alt="构造函数和实例原型的关系图"></p>
+<blockquote>
+<p>每一个对象（除null）都具有一个属性：<code>__proto__</code>，这个属性指向该对象的原型</p>
+</blockquote>
+<p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype2.png" alt="实例与实例原型的关系图"></p>
+<blockquote>
+<p>每个原型都有一个constructor属性指向关联的构造函数</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/mqyqingfeng/Blog/master/Images/prototype3.png" alt=""></p>
+<blockquote>
+<p>原型对象是通过 <code>Object</code> 构造函数生成的，最后<code>Object.prototype.__proto__ = null</code></p>
+</blockquote>
+<p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png" alt="原型链示意图"></p>
+<h3 id="词法作用域和动态作用域"><a href="#词法作用域和动态作用域" class="headerlink" title="词法作用域和动态作用域"></a>词法作用域和动态作用域</h3><p>原文链接：<a href="https://github.com/mqyqingfeng/Blog/issues/3" target="_blank" rel="noopener">JavaScript深入之词法作用域和动态作用域</a></p>
+<blockquote>
+<p>javascript采用的是<code>词法作用域(lexical scoping)</code>，函数的作用域是在函数定义的时候就决定了，而不是调用的时候才决定</p>
+</blockquote>
+<ul>
+<li>词法作用域，即静态作用域，函数的作用域在函数定义的时候就决定了</li>
+<li>动态作用域，函数的作用域是在函数调用的时候才决定</li>
+</ul>
+<h3 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h3><p>当执行一个函数的时候，就会创建一个<code>执行上下文(execution context)</code>，并且压入<code>执行上下文栈(Execution context stack, ESC)</code></p>
+<p>当函数执行完毕的时候，会将函数的<code>执行上下文栈</code>中弹出</p>
+<h3 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h3><p>1、全局上下文的变量对象初始化：全局对象</p>
+<p>2、函数上下文的变量对象初始化：只包括<code>Arguments</code>对象</p>
+<p>3、进入执行上下文时：给变量对象添加形参、函数声明、变量声明等初始的属性值</p>
+<p>4、代码执行阶段：再次修改变量对象的属性值</p>
+<p>总结：未进入执行阶段之前，<code>变量对象(VO)</code>中的属性都不能访问！但是进入执行阶段之后，<code>变量对象(VO)</code>转变为了<code>活动对象(AO)</code>，里面的属性都能被访问了，然后开始进行执行阶段的操作。它们其实都是同一个对象，只是处于执行上下文的不同生命周期。</p>
+<p>最后，函数是“第一等公民”，记住这个，变量名称和函数名称相同的声明，优先执行函数声明</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><h3 id="从ECMAScript规范解读this"><a href="#从ECMAScript规范解读this" class="headerlink" title="从ECMAScript规范解读this"></a>从ECMAScript规范解读this</h3><h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包是指那些能够访问自由变量的函数。</p>
+<p>自由变量是指在函数中使用的，但既不是参数也不是函数的局部变量的变量。</p>
+<p>那么，闭包 = 函数 + 函数能够访问的自由变量。</p>
+<h3 id="参数按值传递"><a href="#参数按值传递" class="headerlink" title="参数按值传递"></a>参数按值传递</h3><p>ECMAScript中所有函数的参数都是按值传递的。</p>
+<p>即，把函数外部的值复制给函数内部的参数，就和把值从一个变量复制给另一个变量一样。</p>
+<p>参数如果是基本类型是按值传递，如果是引用类型按共享传递。</p>
+<p>共享传递是指，在传递对象的时候，传递对象的引用的副本。</p>
+<h3 id="call和apply的模拟实现"><a href="#call和apply的模拟实现" class="headerlink" title="call和apply的模拟实现"></a>call和apply的模拟实现</h3><p><code>call()</code>在使用一个指定的this值和若干个指定的参数值的前提下，调用某个函数或方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.mycall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> context = context || <span class="built_in">window</span>;</span><br><span class="line">  <span class="comment">//获取调用call的函数，用this可以获取</span></span><br><span class="line">  context.fn = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">var</span> args = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>, l = <span class="built_in">arguments</span>.length; i &lt; l; i++) &#123;</span><br><span class="line">    args.push(<span class="string">'arguments['</span> + i + <span class="string">']'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 把传给call的参数传递给了context.fn函数</span></span><br><span class="line">  <span class="keyword">var</span> result = <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args + <span class="string">')'</span>);</span><br><span class="line">  <span class="keyword">delete</span> context.fn;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>apply()</code>同<code>call()</code>，只不过将多个参数值，以数组的形式传入而已。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myapply = <span class="function"><span class="keyword">function</span>(<span class="params">context, arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> context = <span class="built_in">Object</span>(context) || <span class="built_in">window</span>;</span><br><span class="line">  context.fn = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">var</span> result;</span><br><span class="line">  <span class="keyword">if</span> (!arr) &#123;</span><br><span class="line">    result = context.fn();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> args = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">0</span>; index &lt; arr.length; index++) &#123;</span><br><span class="line">      args.push(<span class="string">'arr['</span> + index + <span class="string">']'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    result = <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args + <span class="string">')'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">delete</span> context.fn;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="bind的模拟实现"><a href="#bind的模拟实现" class="headerlink" title="bind的模拟实现"></a>bind的模拟实现</h3><p><code>bind()</code>方法会创建一个新函数。当这个新函数被调用，bind()第一个参数将作为它运行时的this，之后的一系列参数将会在传递的实参前传入，作为它的参数。</p>
+<h3 id="new的模拟实现"><a href="#new的模拟实现" class="headerlink" title="new的模拟实现"></a>new的模拟实现</h3><p>new运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一。</p>
+
         </div>
         
           
@@ -448,10 +494,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-12-03T23:49:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-13T13:40:14+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2018年12月3日</p>
+    <p>最后更新于 2019年11月13日</p>
   </a>
 </div>
 
@@ -460,7 +506,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/js功能/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>js功能</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>JavaScript</p></a></div>
 
 
         
@@ -473,7 +519,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/11/03/设置Cookie/&title=设置Cookie | 大涛子&summary=设置Cookie总结"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/10/31/js-learn-prototype/&title=学习JavaScript深入系列简要总结 | 大涛子&summary=学习JavaScript深入系列简要总结"
           
           >
           
@@ -485,7 +531,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/11/03/设置Cookie/&title=设置Cookie | 大涛子&summary=设置Cookie总结"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/10/31/js-learn-prototype/&title=学习JavaScript深入系列简要总结 | 大涛子&summary=学习JavaScript深入系列简要总结"
           
           >
           
@@ -497,7 +543,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/11/03/设置Cookie/&title=设置Cookie | 大涛子&summary=设置Cookie总结"
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/10/31/js-learn-prototype/&title=学习JavaScript深入系列简要总结 | 大涛子&summary=学习JavaScript深入系列简要总结"
           
           >
           
@@ -525,9 +571,9 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2018/11/27/整点秒杀功能优化/" rel="prev" title="活动之整点秒杀功能优化">
+                                <a href="/2018/11/03/web-cookie/" rel="prev" title="设置Cookie">
                                   
-                                      活动之整点秒杀功能优化
+                                      设置Cookie
                                   
                                 </a>
                             </h4>
@@ -545,16 +591,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/10/31/学习JavaScript深入系列简要总结/" rel="prev" title="学习JavaScript深入系列简要总结">
+                                <a href="/2018/10/26/blog-01/" rel="prev" title="冴羽的博客之JavaScript、ES6系列集锦">
                                     
-                                        学习JavaScript深入系列简要总结
+                                        冴羽的博客之JavaScript、ES6系列集锦
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
+                                    <a class="tag" href="/tags/Blog/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Blog</a>
                                 </h6>
                             
                         </span>
@@ -599,7 +645,7 @@
 
   <script>
     window.subData = {
-      title: '设置Cookie',
+      title: '学习JavaScript深入系列简要总结',
       tools: true
     }
   </script>
@@ -616,7 +662,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Cookie总结"><span class="toc-text">设置Cookie总结</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从原型到原型链"><span class="toc-text">从原型到原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#词法作用域和动态作用域"><span class="toc-text">词法作用域和动态作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行上下文栈"><span class="toc-text">执行上下文栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从ECMAScript规范解读this"><span class="toc-text">从ECMAScript规范解读this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行上下文"><span class="toc-text">执行上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数按值传递"><span class="toc-text">参数按值传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#call和apply的模拟实现"><span class="toc-text">call和apply的模拟实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind的模拟实现"><span class="toc-text">bind的模拟实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new的模拟实现"><span class="toc-text">new的模拟实现</span></a></li></ol>
     </div>
   </section>
 

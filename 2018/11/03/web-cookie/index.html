@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="baidu-site-verification" content="OavY14g4y5" />
   
-  <title>自定义单选框、复选框样式 | 大涛子</title>
+  <title>设置Cookie | 大涛子</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
   
@@ -354,8 +354,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/12/07/自定义单选框、复选框样式/">
-        自定义单选框、复选框样式
+      <a href="/2018/11/03/web-cookie/">
+        设置Cookie
       </a>
     </h1>
   
@@ -384,7 +384,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-12-07</p>
+    <p>2018-11-03</p>
   </a>
 </div>
 
@@ -394,9 +394,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/工具库/' rel="nofollow">
+    <a href='/categories/JavaScript/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>工具库</p>
+      <p>JavaScript</p>
     </a>
   </div>
 
@@ -436,10 +436,8 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>开发过程中，为了兼容IE低版本浏览器，我们重写单选框、复选框等的样式，就需要借助 js 来实现。<br><a id="more"></a><br>Javascript</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 重写多选框,单选框样式</span></span><br><span class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">  $.fn.hcheckbox = <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">':checkbox+label'</span>, <span class="keyword">this</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="keyword">this</span>).addClass(<span class="string">'disabled'</span>);</span><br><span class="line">      <span class="keyword">if</span> ($(<span class="keyword">this</span>).prev().is(<span class="string">':disabled'</span>) == <span class="literal">false</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="keyword">this</span>).prev().is(<span class="string">':checked'</span>))</span><br><span class="line">          $(<span class="keyword">this</span>).addClass(<span class="string">"checked"</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">'disabled'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;).click(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> ischeckbox = $(<span class="keyword">this</span>).prev().is(<span class="string">':checked'</span>);</span><br><span class="line">      <span class="keyword">if</span> (!ischeckbox) &#123;</span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">"checked"</span>);</span><br><span class="line">        $(<span class="keyword">this</span>).prev().checked = <span class="literal">true</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="keyword">this</span>).removeClass(<span class="string">'checked'</span>);</span><br><span class="line">        $(<span class="keyword">this</span>).prev().checked = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      event.stopPropagation();</span><br><span class="line">    &#125;).prev().hide();</span><br><span class="line">  &#125;</span><br><span class="line">  $.fn.hradio = <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">return</span> $(<span class="string">':radio+label'</span>, <span class="keyword">this</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="keyword">this</span>).addClass(<span class="string">'hRadio'</span>);</span><br><span class="line">      <span class="keyword">if</span> ($(<span class="keyword">this</span>).prev().is(<span class="string">"checked"</span>))</span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">'hRadio-Checked'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;).click(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">      $(<span class="keyword">this</span>).parent().siblings().find(<span class="string">':radio+label'</span>).removeClass(<span class="string">"hRadio-Checked"</span>);</span><br><span class="line">      <span class="keyword">if</span> (!$(<span class="keyword">this</span>).prev().is(<span class="string">':checked'</span>)) &#123;</span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">"hRadio-Checked"</span>);</span><br><span class="line">        $(<span class="keyword">this</span>).prev()[<span class="number">0</span>].checked = <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      event.stopPropagation();</span><br><span class="line">    &#125;).prev().hide();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(jQuery)</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">'.checkbox'</span>).hcheckbox();</span><br><span class="line">  $(<span class="string">'.radio-wper'</span>).hradio();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>Style<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.checkbox</span> <span class="selector-tag">input</span>,</span><br><span class="line"><span class="selector-class">.radio-wper</span> <span class="selector-tag">input</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.checkbox</span> <span class="selector-tag">label</span>,</span><br><span class="line"><span class="selector-class">.radio-wper</span> <span class="selector-tag">label</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">22px</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.checkbox</span> <span class="selector-class">.disabled</span><span class="selector-pseudo">:before</span>,</span><br><span class="line"><span class="selector-class">.checkbox</span> <span class="selector-class">.checked</span><span class="selector-pseudo">:before</span>,</span><br><span class="line"><span class="selector-class">.radio-wper</span> <span class="selector-class">.hRadio</span><span class="selector-pseudo">:before</span>,</span><br><span class="line"><span class="selector-class">.radio-wper</span> <span class="selector-class">.hRadio-Checked</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-position</span>:  <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.checkbox</span> <span class="selector-class">.disabled</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'../../images/activities/adi2018/check-01.png'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.checkbox</span> <span class="selector-class">.checked</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'../../images/activities/adi2018/check-02.png'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.radio-wper</span> <span class="selector-class">.hRadio</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'../../images/activities/adi2018/radio-01.png'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.radio-wper</span> <span class="selector-class">.hRadio-Checked</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'../../images/activities/adi2018/radio-02.png'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+          <h3 id="设置Cookie总结"><a href="#设置Cookie总结" class="headerlink" title="设置Cookie总结"></a>设置Cookie总结</h3><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 收藏功能</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">addFavorite</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> title = <span class="string">'意法半导体STM32/STM8技术社区 - 提供最新的ST资讯和技术交流'</span>;</span><br><span class="line">   <span class="keyword">var</span> URL = <span class="string">'http://www.stmcu.org.cn/'</span>; </span><br><span class="line">   <span class="comment">// IE10</span></span><br><span class="line">   <span class="keyword">if</span>(<span class="built_in">document</span>.all) &#123;</span><br><span class="line">     <span class="built_in">window</span>.external.addFavorite(URL, title);</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     alert(<span class="string">'手动 Ctrl+D 可以收藏我们的网站哦'</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 设置cookie，同一域名都可获取</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name, value, exdays</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> exdays = exdays || <span class="number">1024</span>;</span><br><span class="line">   <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">   d.setTime(d.getTime() + (exdays * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>));</span><br><span class="line">   <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + <span class="built_in">escape</span>(value) + <span class="string">";path=/;expires="</span> + d.toGMTString();</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">// 读取cookies，判断是否存在设置的name</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> name = name + <span class="string">"="</span>;</span><br><span class="line">   <span class="keyword">var</span> ca = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ca.length; i++) &#123;</span><br><span class="line">     <span class="keyword">var</span> c = ca[i].trim();</span><br><span class="line">     <span class="keyword">if</span> (c.indexOf(name) == <span class="number">0</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> c.substring(name.length, c.length);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">checkCookie</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> user = getCookie(<span class="string">"msgCookie"</span>);</span><br><span class="line">   <span class="keyword">var</span> width = <span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth;</span><br><span class="line">   <span class="keyword">if</span>(width &gt;= <span class="number">1080</span>) &#123;</span><br><span class="line">     <span class="keyword">if</span> (user != <span class="string">""</span>) &#123;</span><br><span class="line">       msgHide();</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       msgShow();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 关闭时设置cookie</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">closeModal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   msgHide();</span><br><span class="line">   setCookie(<span class="string">"msgCookie"</span>, <span class="string">'msgCookie'</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">msgHide</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">'newsTipsModal'</span>).style.display = <span class="string">'none'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">msgShow</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">'newsTipsModal'</span>).style.display = <span class="string">'block'</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// init</span></span><br><span class="line"> checkCookie();</span><br></pre></td></tr></table></figure>
         </div>
         
           
@@ -450,10 +448,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-03-13T22:09:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-13T13:41:53+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年3月13日</p>
+    <p>最后更新于 2019年11月13日</p>
   </a>
 </div>
 
@@ -462,7 +460,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>JavaScript</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/js功能/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>js功能</p></a></div>
 
 
         
@@ -475,7 +473,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/12/07/自定义单选框、复选框样式/&title=自定义单选框、复选框样式 | 大涛子&summary=开发过程中，为了兼容IE低版本浏览器，我们重写单选框、复选框等的样式，就需要借助 js 来实现。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/11/03/web-cookie/&title=设置Cookie | 大涛子&summary=设置Cookie总结"
           
           >
           
@@ -487,7 +485,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/12/07/自定义单选框、复选框样式/&title=自定义单选框、复选框样式 | 大涛子&summary=开发过程中，为了兼容IE低版本浏览器，我们重写单选框、复选框等的样式，就需要借助 js 来实现。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/11/03/web-cookie/&title=设置Cookie | 大涛子&summary=设置Cookie总结"
           
           >
           
@@ -499,7 +497,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/12/07/自定义单选框、复选框样式/&title=自定义单选框、复选框样式 | 大涛子&summary=开发过程中，为了兼容IE低版本浏览器，我们重写单选框、复选框等的样式，就需要借助 js 来实现。"
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/11/03/web-cookie/&title=设置Cookie | 大涛子&summary=设置Cookie总结"
           
           >
           
@@ -527,16 +525,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2018/12/07/小片段代码简汇之JS篇/" rel="prev" title="小片段代码简汇之JS篇">
+                                <a href="/2018/11/27/feat-sale/" rel="prev" title="活动之整点秒杀功能优化">
                                   
-                                      小片段代码简汇之JS篇
+                                      活动之整点秒杀功能优化
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
+                                    <a class="tag" href="/tags/js功能/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>js功能</a>
                                 </h6>
                             
                         </span>
@@ -547,16 +545,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/11/29/实现文字的无缝滚动、间歇性向上翻滚/" rel="prev" title="实现文字的无缝滚动、间歇性向上翻滚">
+                                <a href="/2018/10/31/js-learn-prototype/" rel="prev" title="学习JavaScript深入系列简要总结">
                                     
-                                        实现文字的无缝滚动、间歇性向上翻滚
+                                        学习JavaScript深入系列简要总结
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/js插件/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>js插件</a>
+                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
                                 </h6>
                             
                         </span>
@@ -601,7 +599,7 @@
 
   <script>
     window.subData = {
-      title: '自定义单选框、复选框样式',
+      title: '设置Cookie',
       tools: true
     }
   </script>
@@ -610,6 +608,18 @@
 </div>
 <aside class='l_side'>
   
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置Cookie总结"><span class="toc-text">设置Cookie总结</span></a></li></ol>
+    </div>
+  </section>
+
 
 </aside>
 

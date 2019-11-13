@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="baidu-site-verification" content="OavY14g4y5" />
   
-  <title>Git 常用命令练习 | 大涛子</title>
+  <title>git push 报错之 Permission to userA.git denied to userB | 大涛子</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
   
@@ -354,8 +354,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/12/14/Git-常用命令练习/">
-        Git 常用命令练习
+      <a href="/2018/12/17/git-push-error/">
+        git push 报错之 Permission to userA.git denied to userB
       </a>
     </h1>
   
@@ -384,7 +384,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-12-14</p>
+    <p>2018-12-17</p>
   </a>
 </div>
 
@@ -436,29 +436,24 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <blockquote>
-<p>使用 <code>git bash</code> 的过程中，除了常用的那几条，其它的总需要查找手册，索性跟着大牛总结的文章走一遍吧</p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>Workspace: 工作区</li>
-<li>Index / Stage: 暂存区</li>
-<li>Repository: 仓库区（或本地仓库）</li>
-<li>Remote: 远程仓库<a id="more"></a>
-<img src="https://user-images.githubusercontent.com/19526072/49999253-4c690980-ffd1-11e8-892a-bff60b374d12.png" alt="image"></li>
-</ul>
-<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在当前目录 git-command 下新建 Git 代码库，（会生成 .git 文件）</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建目录 git-command 并将其初始化为 Git 代码库</span></span><br><span class="line">git init git-command</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从线上获取一个完整的项目代码</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/yangtao2o/git-command.git</span><br></pre></td></tr></table></figure>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>Git的设置文件为 <code>.gitconfig</code> ，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示配置信息</span></span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改</span></span><br><span class="line">git config --global</span><br><span class="line"></span><br><span class="line">git config --global user.name <span class="string">"yangtao"</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@.qq.com"</span></span><br></pre></td></tr></table></figure>
-<h3 id="增加、删除文件"><a href="#增加、删除文件" class="headerlink" title="增加、删除文件"></a>增加、删除文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">git add index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">git add assets</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加每个变化前，都会要求确认</span></span><br><span class="line"><span class="comment"># 对于同一个文件的多处变化，可以实现分次提交</span></span><br><span class="line">git add -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并将这次删除加入暂存区</span></span><br><span class="line">git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改文件名，并放入暂存区</span></span><br><span class="line">git mv index.html index-new.html</span><br></pre></td></tr></table></figure>
-<h3 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 暂存区提交到仓库区 ( -m (msg) )</span></span><br><span class="line">git commit -m <span class="string">"My first commit"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定文件提交</span></span><br><span class="line">git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次 commit 之后的变化，直接到仓库区</span></span><br><span class="line">git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交时显示所有的 diff 信息</span></span><br><span class="line">git commit -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的 commit ，提交上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何变化，则用来改写上一次 commit 的提交信息</span></span><br><span class="line">git commit --amend -m <span class="string">"new commit"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次 commit ，并包括指定文件的新变化</span></span><br><span class="line">git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有的本地分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有的远程分支 ( -r (remotes))</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有的本地分支和远程分支</span></span><br><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch primary</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建，并切换至 该分支</span></span><br><span class="line">git checkout -b primary-yt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建，指向指定 commit</span></span><br><span class="line">git branch [branch] [commitID]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建，与指定的远程分支建立追踪关系</span></span><br><span class="line">git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到上一个分支</span></span><br><span class="line">git checkout -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">git branch --<span class="built_in">set</span>-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支 master-yt 到当前分支 master</span></span><br><span class="line">git merge master-yt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择一个 commit，合并进当前分支</span></span><br><span class="line">git cherry-pick [commitid]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d master-ytt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">git push origin --delete [branch-name]</span><br><span class="line">git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出标签</span></span><br><span class="line">git tag</span><br></pre></td></tr></table></figure>
-<h3 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考目录"><a href="#参考目录" class="headerlink" title="参考目录"></a>参考目录</h2><ul>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">Git 常用命令</a></li>
-<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程 - 廖雪峰的官方网站</a></li>
-</ul>
-<p><a href="https://github.com/yangtao2o/git-command" target="_blank" rel="noopener">练习 Demo</a></p>
+          <p>报错信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  git-command git:(master) git push</span><br><span class="line">remote: Permission to xxx.git denied to zguii.</span><br><span class="line">fatal: unable to access <span class="string">'https://github.com/xxx.git/'</span>: The requested URL returned error: 403</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h3><h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>之前我有登录过其他账号，如zguii，并进行了一系列操作，后来我要使用自己的账号的时候，就会出现如上的报错信息。</p>
+<p>刚开始嫌麻烦，我使用客户端发布操作，正常，后来，多次使用 <code>git bash</code>，就很痛苦了，索性就改一下。 </p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>既然是用户权限被占用了，而且我也不需要那个用户了，那就删除吧。</p>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新创建文件，暂时设置密码为空，并且会产生 `id_rsa`、`id_rsa.pub`，（有可能会产生 config ，但有可能是空文件）</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"yangtaobanner@foxmail.com"</span></span><br><span class="line"></span><br><span class="line">➜  git-command git:(master) ssh-keygen -t rsa -C <span class="string">"yangtaobanner@foxmail.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/yangtao/.ssh/id_rsa): </span><br><span class="line">/Users/yangtao/.ssh/id_rsa already exists.</span><br><span class="line">Overwrite (y/n)? y</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/yangtao/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/yangtao/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制 `id_rsa.pub` 里的所有内容，将此粘贴到你要新建的 `SSH key`里</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line">git config --list --global</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试是否可以连接</span></span><br><span class="line">ssh -T git@github.com</span><br><span class="line">Hi yangtao2o! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+<p>设置完毕，再次 <code>git push</code>，额…依旧报错…<br>想到可能是缓存，好吧，清！呃呃…依然如此…</p>
+<p>好多分钟之后，忽然想起还能访问默认账户，说明账户依然存在，笨！</p>
+<p>然后，我就去钥匙串查看了一下 <code>github.com</code>，我去，还真是岿然不动地躺在那儿…</p>
+<p>恶狠狠地删之！！！</p>
+<p>然后，<code>git push</code>，输入用户、密码，熬过几秒，刷刷刷，看到了久违的 <code>Done</code></p>
+<p>其实，归根结底，如果Git设置里的账户是你自己的，只要删除钥匙串账户就行，我竟然走了这么久的弯路，脚很疼，哦不，脑瓜子疼！</p>
+<p>PS：MacOS 隐藏文件开启快捷键：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> + ^ + .</span><br></pre></td></tr></table></figure></p>
+<h3 id="windows解决方法"><a href="#windows解决方法" class="headerlink" title="windows解决方法"></a>windows解决方法</h3><p><a href="https://blog.csdn.net/klxh2009/article/details/76019742" target="_blank" rel="noopener">解决 github push failed （remote: Permission to userA/repo.git denied to userB.）</a></p>
+<p>➜ 主要是删除之前的用户，如我的之前的账户是 <code>zguii</code></p>
+<h3 id="MacOS解决方法"><a href="#MacOS解决方法" class="headerlink" title="MacOS解决方法"></a>MacOS解决方法</h3><p><a href="https://www.jianshu.com/p/6621c42ef112" target="_blank" rel="noopener">mac下配置多个git账号并进行账号切换</a></p>
+<p><a href="https://www.jianshu.com/p/b29a3c275f68" target="_blank" rel="noopener">解决git本地多ssh key的问题</a></p>
+<p><a href="https://www.zybuluo.com/yangfch3/note/172120" target="_blank" rel="noopener">多个 SSH KEY 的管理</a></p>
 
         </div>
         
@@ -470,10 +465,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-03-13T22:01:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-13T13:37:55+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年3月13日</p>
+    <p>最后更新于 2019年11月13日</p>
   </a>
 </div>
 
@@ -495,14 +490,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/12/14/Git-常用命令练习/&title=Git 常用命令练习 | 大涛子&summary=
-使用 git bash 的过程中，除了常用的那几条，其它的总需要查找手册，索性跟着大牛总结的文章走一遍吧
-
-前言
-Workspace: 工作区
-Index / Stage: 暂存区
-Repository: 仓库区（或本地仓库）
-Remote: 远程仓库"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/12/17/git-push-error/&title=git push 报错之 Permission to userA.git denied to userB | 大涛子&summary=报错信息：123➜  git-command git:(master) git pushremote: Permission to xxx.git denied to zguii.fatal: unable to access 'https://github.com/xxx.git/': The requested URL returned error: 403"
           
           >
           
@@ -514,14 +502,7 @@ Remote: 远程仓库"
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/12/14/Git-常用命令练习/&title=Git 常用命令练习 | 大涛子&summary=
-使用 git bash 的过程中，除了常用的那几条，其它的总需要查找手册，索性跟着大牛总结的文章走一遍吧
-
-前言
-Workspace: 工作区
-Index / Stage: 暂存区
-Repository: 仓库区（或本地仓库）
-Remote: 远程仓库"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/12/17/git-push-error/&title=git push 报错之 Permission to userA.git denied to userB | 大涛子&summary=报错信息：123➜  git-command git:(master) git pushremote: Permission to xxx.git denied to zguii.fatal: unable to access 'https://github.com/xxx.git/': The requested URL returned error: 403"
           
           >
           
@@ -533,14 +514,7 @@ Remote: 远程仓库"
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/12/14/Git-常用命令练习/&title=Git 常用命令练习 | 大涛子&summary=
-使用 git bash 的过程中，除了常用的那几条，其它的总需要查找手册，索性跟着大牛总结的文章走一遍吧
-
-前言
-Workspace: 工作区
-Index / Stage: 暂存区
-Repository: 仓库区（或本地仓库）
-Remote: 远程仓库"
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/12/17/git-push-error/&title=git push 报错之 Permission to userA.git denied to userB | 大涛子&summary=报错信息：123➜  git-command git:(master) git pushremote: Permission to xxx.git denied to zguii.fatal: unable to access 'https://github.com/xxx.git/': The requested URL returned error: 403"
           
           >
           
@@ -568,16 +542,16 @@ Remote: 远程仓库"
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2018/12/17/git-push-报错之-Permission-to-userA-git-denied-to-userB/" rel="prev" title="git push 报错之 Permission to userA.git denied to userB">
+                                <a href="/2018/12/18/node-event-io/" rel="prev" title="通俗点理解Nodejs的非阻塞及事件驱动">
                                   
-                                      git push 报错之 Permission to userA.git denied to userB
+                                      通俗点理解Nodejs的非阻塞及事件驱动
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/git/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>git</a> <a class="tag" href="/tags/开发工具/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>开发工具</a>
+                                    <a class="tag" href="/tags/Nodejs/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Nodejs</a>
                                 </h6>
                             
                         </span>
@@ -588,16 +562,16 @@ Remote: 远程仓库"
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/12/09/小片段代码简汇之CSS篇/" rel="prev" title="小片段代码简汇之CSS篇">
+                                <a href="/2018/12/14/git-command/" rel="prev" title="Git 常用命令练习">
                                     
-                                        小片段代码简汇之CSS篇
+                                        Git 常用命令练习
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/css/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>css</a>
+                                    <a class="tag" href="/tags/git/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>git</a> <a class="tag" href="/tags/开发工具/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>开发工具</a>
                                 </h6>
                             
                         </span>
@@ -642,7 +616,7 @@ Remote: 远程仓库"
 
   <script>
     window.subData = {
-      title: 'Git 常用命令练习',
+      title: 'git push 报错之 Permission to userA.git denied to userB',
       tools: true
     }
   </script>
@@ -659,7 +633,7 @@ Remote: 远程仓库"
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建"><span class="toc-text">新建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增加、删除文件"><span class="toc-text">增加、删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码提交"><span class="toc-text">代码提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支"><span class="toc-text">分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看信息"><span class="toc-text">查看信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考目录"><span class="toc-text">参考目录</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决过程"><span class="toc-text">解决过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原因"><span class="toc-text">原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过程"><span class="toc-text">过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows解决方法"><span class="toc-text">windows解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MacOS解决方法"><span class="toc-text">MacOS解决方法</span></a></li></ol>
     </div>
   </section>
 

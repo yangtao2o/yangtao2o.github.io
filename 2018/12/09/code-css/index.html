@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="baidu-site-verification" content="OavY14g4y5" />
   
-  <title>关于使用Hexo主题Yilia中碰到的问题一二 | 大涛子</title>
+  <title>小片段代码简汇之CSS篇 | 大涛子</title>
   
   <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css">
   
@@ -354,8 +354,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/04/08/yilia/">
-        关于使用Hexo主题Yilia中碰到的问题一二
+      <a href="/2018/12/09/code-css/">
+        小片段代码简汇之CSS篇
       </a>
     </h1>
   
@@ -384,7 +384,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-04-08</p>
+    <p>2018-12-09</p>
   </a>
 </div>
 
@@ -394,9 +394,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/博客/' rel="nofollow">
+    <a href='/categories/css/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>博客</p>
+      <p>css</p>
     </a>
   </div>
 
@@ -436,50 +436,17 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <ul>
-<li>关于使用主题 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">Yilia</a>的一些问题的集合地：<a href="https://github.com/litten/hexo-theme-yilia/issues" target="_blank" rel="noopener">Issues</a></li>
-</ul>
-<blockquote>
-<p>首推：<a href="http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/" target="_blank" rel="noopener">从零开始制作 Hexo 主题 </a></p>
+          <blockquote>
+<p>总结在平时开发中遇到的一些小问题，大概很长一段时间就会来这么一次，小片段剧场.</p>
 </blockquote>
-<a id="more"></a>
-<blockquote>
-<p>Q1：主页如何截取文本长度？</p>
+<p>Show Time:<br><a id="more"></a></p>
+<h4 id="兼容Windows、Mac的-font-family"><a href="#兼容Windows、Mac的-font-family" class="headerlink" title="兼容Windows、Mac的 font-family"></a>兼容Windows、Mac的 font-family</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: <span class="selector-tag">Helvetica</span> <span class="selector-tag">Neue</span> <span class="selector-tag">For</span> <span class="selector-tag">Number</span>,<span class="selector-tag">-apple-system</span>,<span class="selector-tag">BlinkMacSystemFont</span>,<span class="selector-tag">Segoe</span> <span class="selector-tag">UI</span>,<span class="selector-tag">Roboto</span>,<span class="selector-tag">PingFang</span> <span class="selector-tag">SC</span>,"<span class="selector-tag">PingFangSC-Light</span>" ,"<span class="selector-tag">Microsoft</span> <span class="selector-tag">yahei</span>", <span class="selector-tag">Arial</span>, <span class="selector-tag">Helvetica</span>, <span class="selector-tag">sans-serif</span></span><br></pre></td></tr></table></figure>
+<h4 id="关于ios下的input输入框光标上移的问题"><a href="#关于ios下的input输入框光标上移的问题" class="headerlink" title="关于ios下的input输入框光标上移的问题"></a>关于ios下的input输入框光标上移的问题</h4><blockquote>
+<p>一般外框设置高度为<code>auto</code>,取消掉<code>line-height</code>,input本身设置字号大小，使用padding撑开，取消’height、line-height’</p>
 </blockquote>
-<ul>
-<li>在需要截断的位置使用 <code>&lt;!-- More --&gt;</code> 即可</li>
-</ul>
-<blockquote>
-<p>Q2：如何设置多个标签？</p>
-</blockquote>
-<ul>
-<li><code>tags: [Hexo,Theme]</code>，参考<a href="https://www.zhihu.com/question/48934747/answer/113403121" target="_blank" rel="noopener">此处</a></li>
-</ul>
-<blockquote>
-<p>Q3：更换主题的时候报错</p>
-</blockquote>
-<ul>
-<li>一般是由于主题配置文件中的 <code>key: value</code>前后出现了空格，或者之间没有空格导致的 </li>
-</ul>
-<blockquote>
-<p>Q4：如何创建about等页面？如何创建自定义页面？</p>
-</blockquote>
-<ul>
-<li><code>hexo new page &quot;about&quot;</code></li>
-<li>参考<ul>
-<li><a href="https://blog.csdn.net/lcyaiym/article/details/76762105?locationNum=5&amp;fps=1" target="_blank" rel="noopener">hexo的Next创建tags </a></li>
-<li><a href="https://refined-x.com/2017/07/10/Hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">Hexo自定义页面的方法 </a></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>其他</p>
-</blockquote>
-<ul>
-<li>选择favicon：<a href="http://www.easyicon.net/language.zh-cn/" target="_blank" rel="noopener">easyicon</a></li>
-</ul>
-<p><img src="/img/about-bg.jpg" alt="banner"></p>
-
+<h4 id="下拉框箭头重写"><a href="#下拉框箭头重写" class="headerlink" title="下拉框箭头重写"></a>下拉框箭头重写</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* --ie清除--*/</span></span><br><span class="line"><span class="selector-tag">select</span><span class="selector-pseudo">::-ms-expand</span>&#123; <span class="attribute">display</span>: none; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* --火狐、谷歌清除--*/</span></span><br><span class="line"><span class="selector-tag">select</span>&#123;</span><br><span class="line">  <span class="attribute">appearance</span>:none;  </span><br><span class="line">  <span class="attribute">-moz-appearance</span>:none;  </span><br><span class="line">  <span class="attribute">-webkit-appearance</span>:none;</span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">30px</span><span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fafafb</span> <span class="built_in">url</span>(<span class="string">"/select-logo.png"</span>) <span class="number">98%</span> <span class="number">50%</span> no-repeat<span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="用CSS写三角形箭头"><a href="#用CSS写三角形箭头" class="headerlink" title="用CSS写三角形箭头"></a>用CSS写三角形箭头</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wx-wper-con</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">158px</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e9e9e9</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> -<span class="number">2px</span> <span class="number">#aaa</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wx-wper-con</span><span class="selector-pseudo">:before</span>,</span><br><span class="line"><span class="selector-class">.wx-wper-con</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">9.5px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">border-right</span>: <span class="number">8px</span> solid transparent;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">8px</span> solid <span class="number">#dadada</span>;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">8px</span> solid transparent;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wx-wper-con</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">8.5px</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">8px</span> solid <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="border边框渐变-圆角"><a href="#border边框渐变-圆角" class="headerlink" title="border边框渐变+圆角"></a>border边框渐变+圆角</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-test</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">4px</span> solid transparent;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">border-top-right-radius</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background-clip</span>: padding-box;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-test</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">right</span>: -<span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: -<span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">border-top-right-radius</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(155deg,red, blue);</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
           
@@ -490,10 +457,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-03-13T22:07:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-13T13:40:46+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年3月13日</p>
+    <p>最后更新于 2019年11月13日</p>
   </a>
 </div>
 
@@ -502,7 +469,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Hexo/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Hexo</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/css/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>css</p></a></div>
 
 
         
@@ -515,12 +482,10 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/04/08/yilia/&title=关于使用Hexo主题Yilia中碰到的问题一二 | 大涛子&summary=
-关于使用主题 Yilia的一些问题的集合地：Issues
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://istaotao.com/2018/12/09/code-css/&title=小片段代码简汇之CSS篇 | 大涛子&summary=
+总结在平时开发中遇到的一些小问题，大概很长一段时间就会来这么一次，小片段剧场.
 
-
-首推：从零开始制作 Hexo 主题 
-"
+Show Time:"
           
           >
           
@@ -532,12 +497,10 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/04/08/yilia/&title=关于使用Hexo主题Yilia中碰到的问题一二 | 大涛子&summary=
-关于使用主题 Yilia的一些问题的集合地：Issues
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://istaotao.com/2018/12/09/code-css/&title=小片段代码简汇之CSS篇 | 大涛子&summary=
+总结在平时开发中遇到的一些小问题，大概很长一段时间就会来这么一次，小片段剧场.
 
-
-首推：从零开始制作 Hexo 主题 
-"
+Show Time:"
           
           >
           
@@ -549,12 +512,10 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/04/08/yilia/&title=关于使用Hexo主题Yilia中碰到的问题一二 | 大涛子&summary=
-关于使用主题 Yilia的一些问题的集合地：Issues
+          href="http://service.weibo.com/share/share.php?url=https://istaotao.com/2018/12/09/code-css/&title=小片段代码简汇之CSS篇 | 大涛子&summary=
+总结在平时开发中遇到的一些小问题，大概很长一段时间就会来这么一次，小片段剧场.
 
-
-首推：从零开始制作 Hexo 主题 
-"
+Show Time:"
           
           >
           
@@ -582,16 +543,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2018/07/06/hexo-order/" rel="prev" title="Hexo常用命令集合">
+                                <a href="/2018/12/14/git-command/" rel="prev" title="Git 常用命令练习">
                                   
-                                      Hexo常用命令集合
+                                      Git 常用命令练习
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/Hexo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Hexo</a>
+                                    <a class="tag" href="/tags/git/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>git</a> <a class="tag" href="/tags/开发工具/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>开发工具</a>
                                 </h6>
                             
                         </span>
@@ -602,16 +563,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2018/04/08/hexo/" rel="prev" title="使用Hexo+Github搭建自己的个人网站">
+                                <a href="/2018/12/07/code-js/" rel="prev" title="小片段代码简汇之JS篇">
                                     
-                                        使用Hexo+Github搭建自己的个人网站
+                                        小片段代码简汇之JS篇
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/Hexo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Hexo</a>
+                                    <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
                                 </h6>
                             
                         </span>
@@ -656,7 +617,7 @@
 
   <script>
     window.subData = {
-      title: '关于使用Hexo主题Yilia中碰到的问题一二',
+      title: '小片段代码简汇之CSS篇',
       tools: true
     }
   </script>
@@ -665,6 +626,18 @@
 </div>
 <aside class='l_side'>
   
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#兼容Windows、Mac的-font-family"><span class="toc-text">兼容Windows、Mac的 font-family</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于ios下的input输入框光标上移的问题"><span class="toc-text">关于ios下的input输入框光标上移的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下拉框箭头重写"><span class="toc-text">下拉框箭头重写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用CSS写三角形箭头"><span class="toc-text">用CSS写三角形箭头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#border边框渐变-圆角"><span class="toc-text">border边框渐变+圆角</span></a></li></ol>
+    </div>
+  </section>
+
 
 </aside>
 
