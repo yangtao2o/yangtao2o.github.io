@@ -387,9 +387,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/css/' rel="nofollow">
+    <a href='/categories/CSS/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>css</p>
+      <p>CSS</p>
     </a>
   </div>
 
@@ -432,16 +432,17 @@
           <blockquote>
 <p>当初次加载页面的时候，需要一些动画渐入，并且当滑动到当前内容时也会出现动画，之后就恢复正常，所以就用到了 <code>WOW.js</code>。</p>
 </blockquote>
+<a id="more"></a>
 <p>比如：<a href="https://www.rt-thread.org/" target="_blank" rel="noopener">RT-Thread</a></p>
 <p>再比如设计师必备：<a href="https://www.sketchapp.com/" target="_blank" rel="noopener">sketchapp</a></p>
-<a id="more"></a>
-<h3 id="WOW-js"><a href="#WOW-js" class="headerlink" title="WOW.js"></a>WOW.js</h3><p>文档：<a href="https://www.delac.io/wow/index.html" target="_blank" rel="noopener">WOW</a></p>
-<h3 id="Animate-css"><a href="#Animate-css" class="headerlink" title="Animate.css"></a>Animate.css</h3><p>模拟：<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">Animate</a></p>
+<h2 id="WOW-js"><a href="#WOW-js" class="headerlink" title="WOW.js"></a>WOW.js</h2><p>文档：<a href="https://www.delac.io/wow/index.html" target="_blank" rel="noopener">WOW</a></p>
+<h2 id="Animate-css"><a href="#Animate-css" class="headerlink" title="Animate.css"></a>Animate.css</h2><p>模拟：<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">Animate</a></p>
 <p><code>animate.css</code> 包含了一组炫酷、有趣、跨浏览器的动画，可以在你的项目中直接使用。</p>
-<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/wow/1.1.2/wow.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>文档：<a href="https://www.delac.io/wow/docs.html" target="_blank" rel="noopener">Setup WOW.js</a></p>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span></span></span><br><span class="line"><span class="tag">  <span class="attr">href</span>=<span class="string">"https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">rel</span>=<span class="string">"stylesheet"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/wow/1.1.2/wow.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>文档：<a href="https://www.delac.io/wow/docs.html" target="_blank" rel="noopener">Setup WOW.js</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```html</span><br><span class="line">&lt;div class=&quot;wow bounceInUp&quot;  data-wow-duration=&quot;2s&quot; data-wow-delay=&quot;5s&quot;&gt;</span><br><span class="line">    Content to Reveal Here</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new WOW().init();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>ps：初始加载页面的时候，很有可能会出现内容再动画渲染，所以直接设置：<br><code>`</code>css<br>.wow {<br>    visibility: hidden;<br>}</p>
+<p>ps：初始加载页面的时候，很有可能会出现内容再动画渲染，所以直接设置：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wow</span> &#123;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -453,10 +454,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-13T13:42:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-12-03T18:19:12+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年11月13日</p>
+    <p>最后更新于 2019年12月3日</p>
   </a>
 </div>
 
@@ -465,7 +466,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/css/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>css</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CSS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>CSS</p></a></div>
 
 
         
@@ -480,9 +481,7 @@
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=http://47.101.33.81/2019/02/04/plugin-wow/&title=页面滑动时的动画插件 WOW.js | 大涛子&summary=
 当初次加载页面的时候，需要一些动画渐入，并且当滑动到当前内容时也会出现动画，之后就恢复正常，所以就用到了 WOW.js。
-
-比如：RT-Thread
-再比如设计师必备：sketchapp"
+"
           
           >
           
@@ -496,9 +495,7 @@
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://47.101.33.81/2019/02/04/plugin-wow/&title=页面滑动时的动画插件 WOW.js | 大涛子&summary=
 当初次加载页面的时候，需要一些动画渐入，并且当滑动到当前内容时也会出现动画，之后就恢复正常，所以就用到了 WOW.js。
-
-比如：RT-Thread
-再比如设计师必备：sketchapp"
+"
           
           >
           
@@ -512,9 +509,7 @@
           
           href="http://service.weibo.com/share/share.php?url=http://47.101.33.81/2019/02/04/plugin-wow/&title=页面滑动时的动画插件 WOW.js | 大涛子&summary=
 当初次加载页面的时候，需要一些动画渐入，并且当滑动到当前内容时也会出现动画，之后就恢复正常，所以就用到了 WOW.js。
-
-比如：RT-Thread
-再比如设计师必备：sketchapp"
+"
           
           >
           
@@ -633,7 +628,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WOW-js"><span class="toc-text">WOW.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Animate-css"><span class="toc-text">Animate.css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN"><span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WOW-js"><span class="toc-text">WOW.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Animate-css"><span class="toc-text">Animate.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN"><span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li></ol>
     </div>
   </section>
 
