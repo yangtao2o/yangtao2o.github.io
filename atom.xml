@@ -5,9 +5,9 @@
   <subtitle>简单、极致、不失风趣</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://47.101.33.81/"/>
+  <link href="http://yangtao.site/"/>
   <updated>2019-12-03T10:13:32.294Z</updated>
-  <id>http://47.101.33.81/</id>
+  <id>http://yangtao.site/</id>
   
   <author>
     <name>杨涛</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>探一下 NodeList 和 HTMLCollection</title>
-    <link href="http://47.101.33.81/2019/12/03/html-nodelist/"/>
-    <id>http://47.101.33.81/2019/12/03/html-nodelist/</id>
+    <link href="http://yangtao.site/2019/12/03/html-nodelist/"/>
+    <id>http://yangtao.site/2019/12/03/html-nodelist/</id>
     <published>2019-12-03T10:09:36.000Z</published>
     <updated>2019-12-03T10:13:32.294Z</updated>
     
@@ -33,17 +33,17 @@
     
     </summary>
     
-      <category term="Html" scheme="http://47.101.33.81/categories/Html/"/>
+      <category term="Html" scheme="http://yangtao.site/categories/Html/"/>
     
     
-      <category term="Html" scheme="http://47.101.33.81/tags/Html/"/>
+      <category term="Html" scheme="http://yangtao.site/tags/Html/"/>
     
   </entry>
   
   <entry>
     <title>将 Hexo 和 Vuepress 静态资源推送至 Ubuntu</title>
-    <link href="http://47.101.33.81/2019/11/27/ubuntu-aliyun/"/>
-    <id>http://47.101.33.81/2019/11/27/ubuntu-aliyun/</id>
+    <link href="http://yangtao.site/2019/11/27/ubuntu-aliyun/"/>
+    <id>http://yangtao.site/2019/11/27/ubuntu-aliyun/</id>
     <published>2019-11-27T15:50:05.000Z</published>
     <updated>2019-11-27T15:51:26.920Z</updated>
     
@@ -57,17 +57,17 @@
     
     </summary>
     
-      <category term="服务端" scheme="http://47.101.33.81/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF/"/>
+      <category term="服务端" scheme="http://yangtao.site/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF/"/>
     
     
-      <category term="Ubuntu" scheme="http://47.101.33.81/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://yangtao.site/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>学习冴羽的 JS 深入系列·下篇</title>
-    <link href="http://47.101.33.81/2019/11/27/js-series-3/"/>
-    <id>http://47.101.33.81/2019/11/27/js-series-3/</id>
+    <link href="http://yangtao.site/2019/11/27/js-series-3/"/>
+    <id>http://yangtao.site/2019/11/27/js-series-3/</id>
     <published>2019-11-27T13:05:40.000Z</published>
     <updated>2019-11-27T13:08:12.537Z</updated>
     
@@ -81,17 +81,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://47.101.33.81/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://47.101.33.81/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>学习冴羽的 JS 深入系列·中篇</title>
-    <link href="http://47.101.33.81/2019/11/27/js-series-2/"/>
-    <id>http://47.101.33.81/2019/11/27/js-series-2/</id>
+    <link href="http://yangtao.site/2019/11/27/js-series-2/"/>
+    <id>http://yangtao.site/2019/11/27/js-series-2/</id>
     <published>2019-11-27T13:03:24.000Z</published>
     <updated>2019-12-02T14:11:48.889Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://47.101.33.81/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://47.101.33.81/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>学习冴羽的 JS 深入系列·上篇</title>
-    <link href="http://47.101.33.81/2019/11/27/js-series-1/"/>
-    <id>http://47.101.33.81/2019/11/27/js-series-1/</id>
+    <link href="http://yangtao.site/2019/11/27/js-series-1/"/>
+    <id>http://yangtao.site/2019/11/27/js-series-1/</id>
     <published>2019-11-27T12:59:31.000Z</published>
     <updated>2019-11-27T13:16:02.765Z</updated>
     
@@ -129,17 +129,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://47.101.33.81/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://47.101.33.81/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>常见的 web 攻击方式</title>
-    <link href="http://47.101.33.81/2019/11/12/web-safety/"/>
-    <id>http://47.101.33.81/2019/11/12/web-safety/</id>
+    <link href="http://yangtao.site/2019/11/12/web-safety/"/>
+    <id>http://yangtao.site/2019/11/12/web-safety/</id>
     <published>2019-11-12T14:57:11.000Z</published>
     <updated>2019-12-03T10:22:15.596Z</updated>
     
@@ -153,17 +153,17 @@
     
     </summary>
     
-      <category term="Web" scheme="http://47.101.33.81/categories/Web/"/>
+      <category term="Web" scheme="http://yangtao.site/categories/Web/"/>
     
     
-      <category term="web" scheme="http://47.101.33.81/tags/web/"/>
+      <category term="web" scheme="http://yangtao.site/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>当复制一个对象的副本所导致的“Object大案”</title>
-    <link href="http://47.101.33.81/2019/10/05/js-object/"/>
-    <id>http://47.101.33.81/2019/10/05/js-object/</id>
+    <link href="http://yangtao.site/2019/10/05/js-object/"/>
+    <id>http://yangtao.site/2019/10/05/js-object/</id>
     <published>2019-10-05T01:30:42.000Z</published>
     <updated>2019-11-11T07:46:05.525Z</updated>
     
@@ -176,17 +176,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://47.101.33.81/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://47.101.33.81/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Git 提交的正确姿势：Commit message 编写指南</title>
-    <link href="http://47.101.33.81/2019/09/26/git-commit/"/>
-    <id>http://47.101.33.81/2019/09/26/git-commit/</id>
+    <link href="http://yangtao.site/2019/09/26/git-commit/"/>
+    <id>http://yangtao.site/2019/09/26/git-commit/</id>
     <published>2019-09-26T10:12:30.000Z</published>
     <updated>2019-11-13T03:57:43.331Z</updated>
     
@@ -206,17 +206,17 @@
     
     </summary>
     
-      <category term="开发工具" scheme="http://47.101.33.81/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="http://yangtao.site/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="git" scheme="http://47.101.33.81/tags/git/"/>
+      <category term="git" scheme="http://yangtao.site/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>前端性能优化</title>
-    <link href="http://47.101.33.81/2019/09/06/web-speed/"/>
-    <id>http://47.101.33.81/2019/09/06/web-speed/</id>
+    <link href="http://yangtao.site/2019/09/06/web-speed/"/>
+    <id>http://yangtao.site/2019/09/06/web-speed/</id>
     <published>2019-09-06T11:21:19.000Z</published>
     <updated>2019-12-03T10:21:19.040Z</updated>
     
@@ -230,17 +230,17 @@
     
     </summary>
     
-      <category term="Web" scheme="http://47.101.33.81/categories/Web/"/>
+      <category term="Web" scheme="http://yangtao.site/categories/Web/"/>
     
     
-      <category term="web" scheme="http://47.101.33.81/tags/web/"/>
+      <category term="web" scheme="http://yangtao.site/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>MacOS如何使用 tree 生成目录结构</title>
-    <link href="http://47.101.33.81/2019/09/02/tool-tree/"/>
-    <id>http://47.101.33.81/2019/09/02/tool-tree/</id>
+    <link href="http://yangtao.site/2019/09/02/tool-tree/"/>
+    <id>http://yangtao.site/2019/09/02/tool-tree/</id>
     <published>2019-09-02T07:01:37.000Z</published>
     <updated>2019-11-11T07:09:18.291Z</updated>
     
@@ -253,19 +253,19 @@
     
     </summary>
     
-      <category term="开发工具" scheme="http://47.101.33.81/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="http://yangtao.site/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="MacOS" scheme="http://47.101.33.81/tags/MacOS/"/>
+      <category term="MacOS" scheme="http://yangtao.site/tags/MacOS/"/>
     
-      <category term="终端" scheme="http://47.101.33.81/tags/%E7%BB%88%E7%AB%AF/"/>
+      <category term="终端" scheme="http://yangtao.site/tags/%E7%BB%88%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>学习 React 的一些记录日志</title>
-    <link href="http://47.101.33.81/2019/08/24/react-doc/"/>
-    <id>http://47.101.33.81/2019/08/24/react-doc/</id>
+    <link href="http://yangtao.site/2019/08/24/react-doc/"/>
+    <id>http://yangtao.site/2019/08/24/react-doc/</id>
     <published>2019-08-24T10:15:52.000Z</published>
     <updated>2019-11-11T07:34:04.745Z</updated>
     
@@ -278,17 +278,17 @@
     
     </summary>
     
-      <category term="前端框架" scheme="http://47.101.33.81/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端框架" scheme="http://yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="react" scheme="http://47.101.33.81/tags/react/"/>
+      <category term="react" scheme="http://yangtao.site/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>入门 Webpack@3 的配置过程</title>
-    <link href="http://47.101.33.81/2019/08/05/webpack-v3/"/>
-    <id>http://47.101.33.81/2019/08/05/webpack-v3/</id>
+    <link href="http://yangtao.site/2019/08/05/webpack-v3/"/>
+    <id>http://yangtao.site/2019/08/05/webpack-v3/</id>
     <published>2019-08-05T12:13:10.000Z</published>
     <updated>2019-11-11T07:33:17.062Z</updated>
     
@@ -301,17 +301,17 @@
     
     </summary>
     
-      <category term="前端框架" scheme="http://47.101.33.81/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端框架" scheme="http://yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="webpack" scheme="http://47.101.33.81/tags/webpack/"/>
+      <category term="webpack" scheme="http://yangtao.site/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>入门学习 React 一些实例</title>
-    <link href="http://47.101.33.81/2019/08/02/react-demo/"/>
-    <id>http://47.101.33.81/2019/08/02/react-demo/</id>
+    <link href="http://yangtao.site/2019/08/02/react-demo/"/>
+    <id>http://yangtao.site/2019/08/02/react-demo/</id>
     <published>2019-08-02T01:10:59.000Z</published>
     <updated>2019-11-11T07:26:35.177Z</updated>
     
@@ -325,17 +325,17 @@
     
     </summary>
     
-      <category term="前端框架" scheme="http://47.101.33.81/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端框架" scheme="http://yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="react" scheme="http://47.101.33.81/tags/react/"/>
+      <category term="react" scheme="http://yangtao.site/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>Nodejs 日常杂记</title>
-    <link href="http://47.101.33.81/2019/07/10/node-learning/"/>
-    <id>http://47.101.33.81/2019/07/10/node-learning/</id>
+    <link href="http://yangtao.site/2019/07/10/node-learning/"/>
+    <id>http://yangtao.site/2019/07/10/node-learning/</id>
     <published>2019-07-10T12:30:38.000Z</published>
     <updated>2019-11-11T06:55:33.178Z</updated>
     
@@ -354,8 +354,8 @@
   
   <entry>
     <title>使用 superagent 与 cheerio 完成简单爬虫</title>
-    <link href="http://47.101.33.81/2019/07/06/node-express-spider/"/>
-    <id>http://47.101.33.81/2019/07/06/node-express-spider/</id>
+    <link href="http://yangtao.site/2019/07/06/node-express-spider/"/>
+    <id>http://yangtao.site/2019/07/06/node-express-spider/</id>
     <published>2019-07-06T06:38:13.000Z</published>
     <updated>2019-11-11T06:51:44.246Z</updated>
     
@@ -367,17 +367,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://47.101.33.81/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://47.101.33.81/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Nodejs系列之Events</title>
-    <link href="http://47.101.33.81/2019/06/25/node-events/"/>
-    <id>http://47.101.33.81/2019/06/25/node-events/</id>
+    <link href="http://yangtao.site/2019/06/25/node-events/"/>
+    <id>http://yangtao.site/2019/06/25/node-events/</id>
     <published>2019-06-25T12:11:58.000Z</published>
     <updated>2019-11-11T06:52:24.259Z</updated>
     
@@ -389,17 +389,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://47.101.33.81/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://47.101.33.81/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Nodejs系列之HTTP</title>
-    <link href="http://47.101.33.81/2019/06/14/node-http/"/>
-    <id>http://47.101.33.81/2019/06/14/node-http/</id>
+    <link href="http://yangtao.site/2019/06/14/node-http/"/>
+    <id>http://yangtao.site/2019/06/14/node-http/</id>
     <published>2019-06-14T11:10:40.000Z</published>
     <updated>2019-11-11T06:51:25.375Z</updated>
     
@@ -414,17 +414,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://47.101.33.81/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://47.101.33.81/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Nodejs系列之TCP</title>
-    <link href="http://47.101.33.81/2019/06/12/node-tcp/"/>
-    <id>http://47.101.33.81/2019/06/12/node-tcp/</id>
+    <link href="http://yangtao.site/2019/06/12/node-tcp/"/>
+    <id>http://yangtao.site/2019/06/12/node-tcp/</id>
     <published>2019-06-12T11:37:08.000Z</published>
     <updated>2019-11-11T06:47:58.625Z</updated>
     
@@ -437,17 +437,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://47.101.33.81/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://47.101.33.81/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Nodejs系列之Connect</title>
-    <link href="http://47.101.33.81/2019/06/11/node-connect/"/>
-    <id>http://47.101.33.81/2019/06/11/node-connect/</id>
+    <link href="http://yangtao.site/2019/06/11/node-connect/"/>
+    <id>http://yangtao.site/2019/06/11/node-connect/</id>
     <published>2019-06-11T06:28:31.000Z</published>
     <updated>2019-11-11T06:41:52.056Z</updated>
     
@@ -460,17 +460,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://47.101.33.81/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://47.101.33.81/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>js设计模式学习之单例模式</title>
-    <link href="http://47.101.33.81/2019/05/03/mode-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://47.101.33.81/2019/05/03/mode-单例模式/</id>
+    <link href="http://yangtao.site/2019/05/03/mode-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://yangtao.site/2019/05/03/mode-单例模式/</id>
     <published>2019-05-03T13:24:26.000Z</published>
     <updated>2019-05-03T13:27:02.350Z</updated>
     
@@ -484,10 +484,10 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://47.101.33.81/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="设计模式" scheme="http://47.101.33.81/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://yangtao.site/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
