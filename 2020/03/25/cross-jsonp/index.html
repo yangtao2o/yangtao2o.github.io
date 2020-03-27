@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="baidu-site-verification" content="OavY14g4y5" />
+  
+  <title>跨域解决方案 JSONP | 大涛子</title>
+  
+  <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css React Vue node 大涛子的客栈 dataozi">
+  
+  
+  <meta name="description" content="大涛子写博客的地方，记录日常前端开发中遇到的问题，以及学习到的知识。">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="大涛子">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>大涛子客栈</h1>
+
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-home fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://www.yangtao.site/vuepress"
+            
+            
+            id="http:www.yangtao.sitevuepress">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/"
+            
+            
+            id="categories">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/archives/"
+            
+            
+            id="archives">
+            <i class='fas fa-archive fa-fw'></i>&nbsp;归档
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://dataoboy.lofter.com/"
+            
+              rel="nofollow"
+            
+            
+            id="http:dataoboy.lofter.com">
+            <i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="friends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          大涛子
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;博文
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/friends/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="friends">
+									<i class='fas fa-users fa-fw'></i>&nbsp;朋友
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="http://dataoboy.lofter.com/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="http:dataoboy.lofter.com">
+									<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main no_sidebar'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2020/03/25/cross-jsonp/">
+        跨域解决方案 JSONP
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://yangtao.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨涛</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-25</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/网络知识/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>网络知识</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p>JSONP 请求本质上是利用了 “Ajax 请求会受到同源策略限制，而 script 标签请求不会” 这一点来绕过同源策略。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>什么是同源策略，其作用是什么？</p>
+<p>同源策略指的是：协议+域名+端口三者皆相同，可以视为在同一个域，否则为不同域。同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。</p>
+<p>作用是一个用于隔离潜在恶意文件的重要安全机制。</p>
+<p>所限制的跨域交互包括：</p>
+<ul>
+<li>Cookie、LocalStorage、IndexdDB 等存储内容；</li>
+<li>DOM 节点；</li>
+<li>Ajax 请求。</li>
+</ul>
+<h2 id="Ajax-为什么不能跨域"><a href="#Ajax-为什么不能跨域" class="headerlink" title="Ajax 为什么不能跨域"></a>Ajax 为什么不能跨域</h2><p>Ajax 其实就是向服务器发送一个 GET 或 POST 请求，然后取得服务器响应结果，返回客户端。Ajax 跨域请求，在服务器端不会有任何问题，只是服务端响应数据返回给浏览器的时候，浏览器根据响应头的<code>Access-Control-Allow-Origin</code>字段的值来判断是否有权限获取数据。因此，服务端如果没有设置跨域字段设置，跨域是没有权限访问，数据被浏览器给拦截了。</p>
+<p>所以，要解决的问题是：<strong>如何从客户端拿到返回的数据</strong>？</p>
+<p>其实，在同源策略的基础上，选择性地为同源策略开放了一些后门。例如 img、script、style 等标签，都允许跨域引用资源。</p>
+<p>所以， JSONP 来了。</p>
+<h2 id="JSONP-实现"><a href="#JSONP-实现" class="headerlink" title="JSONP 实现"></a>JSONP 实现</h2><p>JSONP(JSON with Padding（填充）)是 JSON 的一种“使用模式”，本质不是 Ajax 请求，是 script 标签请求。JSONP 请求本质上是利用了 “Ajax 请求会受到同源策略限制，而 script 标签请求不会” 这一点来绕过同源策略。</p>
+<p>简单 JSONP 实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Jsonp</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(req) &#123;</span><br><span class="line">    <span class="keyword">this</span>.url = req.url;</span><br><span class="line">    <span class="keyword">this</span>.callbackName = req.callbackName;</span><br><span class="line">  &#125;</span><br><span class="line">  create() &#123;</span><br><span class="line">    <span class="keyword">const</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.url&#125;</span>?callback=<span class="subst">$&#123;<span class="keyword">this</span>.callbackName&#125;</span>`</span>;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Jsonp(&#123;</span><br><span class="line">  url: <span class="string">"http://127.0.0.1:8000/"</span>,</span><br><span class="line">  callbackName: <span class="string">"getMsg"</span></span><br><span class="line">&#125;).create();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMsg</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  data = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`My name is <span class="subst">$&#123;data.name&#125;</span>, and <span class="subst">$&#123;data.age&#125;</span> years old.`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>服务端（Node）:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> url = req.url;</span><br><span class="line">  <span class="keyword">const</span> query = querystring.parse(url.split(<span class="string">"?"</span>)[<span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">const</span> &#123; callback &#125; = query;</span><br><span class="line">  <span class="keyword">const</span> data = &#123;</span><br><span class="line">    name: <span class="string">"Yang Min"</span>,</span><br><span class="line">    age: <span class="string">"8"</span></span><br><span class="line">  &#125;;</span><br><span class="line">  res.end(<span class="string">`<span class="subst">$&#123;callback&#125;</span>('<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(data)&#125;</span>')`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
+<p>前端利用 <code>http-server -p 8001 .</code>，开启一个服务，然后 Node 也开启一个端口为 8000 的服务，运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">My name is Yang Min, and 8 years old.</span><br></pre></td></tr></table></figure>
+<h3 id="一个-JSONP-的步骤实质"><a href="#一个-JSONP-的步骤实质" class="headerlink" title="一个 JSONP 的步骤实质"></a>一个 JSONP 的步骤实质</h3><p>客户端发送 script 请求，参数中带着处理返回数据的回调函数的名字 (通常是 callback)，如请求 script 的 url 是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8000/?callback=getMsg</span><br></pre></td></tr></table></figure>
+<p>服务端收到请求，以回调函数名和返回数据组成立即执行函数的字符串，比如：其中 callback 的值是客户端发来的回调函数的名字，假设回调函数的名字是 getMsg，返回脚本的内容就是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getMsg(<span class="string">"&#123;name: 'Yang Min', age: '8'&#125;"</span>);</span><br></pre></td></tr></table></figure>
+<p>客户端收到 JavaScript 脚本内容后，立即执行脚本，这样就实现了获取跨域服务器数据的目的。</p>
+<p>很明显，由于 JSONP 技术本质上利用了 script 脚本请求，所以只能实现 GET 跨域请求，这也是 JSONP 跨域的最大限制。</p>
+<p>由于 server 产生的响应为 json 数据的包装（故称之为 jsonp，即 json padding），形如：<code>getMsg(&quot;{name: &#39;Yang Min&#39;, age: &#39;8&#39;}&quot;)</code></p>
+<h2 id="JSONP-封装"><a href="#JSONP-封装" class="headerlink" title="JSONP 封装"></a>JSONP 封装</h2><p>客户端：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jsonp = <span class="function">(<span class="params">&#123; url, params, callbackName &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> generateURL = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dataStr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">      dataStr += <span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>&amp;`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dataStr += <span class="string">`callback=<span class="subst">$&#123;callbackName&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;url&#125;</span>?<span class="subst">$&#123;dataStr&#125;</span>`</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 初始化回调函数名称</span></span><br><span class="line">    callbackName =</span><br><span class="line">      callbackName ||</span><br><span class="line">      <span class="string">"cb"</span> +</span><br><span class="line">        <span class="built_in">Math</span>.random()</span><br><span class="line">          .toString()</span><br><span class="line">          .replace(<span class="string">"."</span>, <span class="string">""</span>);</span><br><span class="line">    <span class="keyword">let</span> scriptEle = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    scriptEle.src = generateURL();</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(scriptEle);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绑定到 window 上，为了后面调用</span></span><br><span class="line">    <span class="built_in">window</span>[callbackName] = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(data);</span><br><span class="line">      <span class="comment">// script 执行完了，成为无用元素，需要清除</span></span><br><span class="line">      <span class="built_in">document</span>.body.removeChild(scriptEle);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">jsonp(&#123;</span><br><span class="line">  url: <span class="string">"http://127.0.0.1:8000/"</span>,</span><br><span class="line">  params: &#123;</span><br><span class="line">    name: <span class="string">"Yang Min"</span>,</span><br><span class="line">    age: <span class="string">"8"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  callbackName: <span class="string">"getData"</span></span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">JSON</span>.parse(data))</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data); <span class="comment">// &#123;name: "Yang Min", age: "8"&#125;</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>Node 端：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">const</span> querystring = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> url = req.url;</span><br><span class="line">  <span class="keyword">const</span> query = querystring.parse(url.split(<span class="string">"?"</span>)[<span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">const</span> &#123; name, age, callback &#125; = query;</span><br><span class="line">  <span class="keyword">const</span> data = &#123;</span><br><span class="line">    name,</span><br><span class="line">    age</span><br><span class="line">  &#125;</span><br><span class="line">  res.end(<span class="string">`<span class="subst">$&#123;callback&#125;</span>('<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(data)&#125;</span>')`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery-中的-JSONP"><a href="#jQuery-中的-JSONP" class="headerlink" title="jQuery 中的 JSONP"></a>jQuery 中的 JSONP</h2><p>Node 部分不变，使用 jQuery(3.4.1) 如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAjaxData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $.ajax(&#123;</span><br><span class="line">    type: <span class="string">"get"</span>,</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">    url: <span class="string">"http://127.0.0.1:8000/"</span>,</span><br><span class="line">    dataType: <span class="string">"jsonp"</span>, <span class="comment">//由 JSON 改为 JSONP</span></span><br><span class="line">    jsonp: <span class="string">"callback"</span>, <span class="comment">//传递给请求处理程序或页面的，标识jsonp回调函数名(一般为:callback)</span></span><br><span class="line">    jsonpCallback: <span class="string">"getData"</span>, <span class="comment">//callback的function名称，成功就会直接走 success 方法</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      data = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`My name is <span class="subst">$&#123;data.name&#125;</span>, and <span class="subst">$&#123;data.age&#125;</span> years old.`</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"Error"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getAjaxData();</span><br></pre></td></tr></table></figure>
+<p>使用延迟对象重新写下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAjaxData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> def = $.ajax(&#123;</span><br><span class="line">    type: <span class="string">"get"</span>,</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">    url: <span class="string">"http://127.0.0.1:8000/"</span>,</span><br><span class="line">    dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">    jsonp: <span class="string">"callback"</span>,</span><br><span class="line">    jsonpCallback: <span class="string">"getData"</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  def</span><br><span class="line">    .done(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      data = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`My name is <span class="subst">$&#123;data.name&#125;</span>, and <span class="subst">$&#123;data.age&#125;</span> years old.`</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .fail(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JSONP-缺点"><a href="#JSONP-缺点" class="headerlink" title="JSONP 缺点"></a>JSONP 缺点</h2><ul>
+<li>只支持 GET 请求</li>
+<li>只支持跨域 HTTP 请求这种情况，不能解决不同域的两个页面之间如何进行 JavaScript 调用的问题</li>
+<li>调用失败的时候不会返回各种 HTTP 状态码。</li>
+<li>安全性，万一假如提供 JSONP 的服务存在页面注入漏洞，即它返回的 javascript 的内容被人控制的。</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://juejin.im/post/5e76bd516fb9a07cce750746#heading-67" target="_blank" rel="noopener">什么是跨域？浏览器如何拦截响应？如何解决</a></li>
+<li><a href="https://segmentfault.com/a/1190000009773724" target="_blank" rel="noopener">jsonp 跨域原理分析</a> - 分析了 Ajax 和 jsonp 之间的关系</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-27T15:39:12+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2020年3月27日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>http</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yangtao.site/2020/03/25/cross-jsonp/&title=跨域解决方案 JSONP | 大涛子&summary=
+JSONP 请求本质上是利用了 “Ajax 请求会受到同源策略限制，而 script 标签请求不会” 这一点来绕过同源策略。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yangtao.site/2020/03/25/cross-jsonp/&title=跨域解决方案 JSONP | 大涛子&summary=
+JSONP 请求本质上是利用了 “Ajax 请求会受到同源策略限制，而 script 标签请求不会” 这一点来绕过同源策略。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yangtao.site/2020/03/25/cross-jsonp/&title=跨域解决方案 JSONP | 大涛子&summary=
+JSONP 请求本质上是利用了 “Ajax 请求会受到同源策略限制，而 script 标签请求不会” 这一点来绕过同源策略。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2020/03/25/cross-cors/" rel="prev" title="跨域资源共享 CORS">
+                                  
+                                      跨域资源共享 CORS
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/http/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>http</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2020/03/20/node-middleware/" rel="prev" title="Node 中间件原理">
+                                    
+                                        Node 中间件原理
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Nodejs/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Nodejs</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '跨域解决方案 JSONP',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同源策略"><span class="toc-text">同源策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax-为什么不能跨域"><span class="toc-text">Ajax 为什么不能跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSONP-实现"><span class="toc-text">JSONP 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个-JSONP-的步骤实质"><span class="toc-text">一个 JSONP 的步骤实质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSONP-封装"><span class="toc-text">JSONP 封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-中的-JSONP"><span class="toc-text">jQuery 中的 JSONP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSONP-缺点"><span class="toc-text">JSONP 缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </section>
+
+
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="https://ae01.alicdn.com/kf/Hd6aab0894803450395b643181cafabc9J.jpg"
+            class="social fab fa-weixin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:istaotao@aliyun.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/yangtao2o"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/"
+            class="social fab fa-linkedin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://weibo.com/taoboy0208"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=282751852"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p><a href="http://www.beian.miit.gov.cn/">苏ICP备19070147号-1</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+    appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+    placeholder: "请留下你的足迹吧~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
