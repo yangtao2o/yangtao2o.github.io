@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="baidu-site-verification" content="OavY14g4y5" />
+  
+  <title>JavaScript 深浅拷贝 | 大涛子</title>
+  
+  <meta name="keywords" content="大涛子 前端 web 摄影 yangtao 杨涛 JavaScript HTML css React Vue node 大涛子的客栈 dataozi">
+  
+  
+  <meta name="description" content="大涛子写博客的地方，记录日常前端开发中遇到的问题，以及学习到的知识。">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="大涛子">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/img/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>大涛子客栈</h1>
+
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-home fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://www.yangtao.site/vuepress"
+            
+            
+            id="http:www.yangtao.sitevuepress">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;主页
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/"
+            
+            
+            id="categories">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/archives/"
+            
+            
+            id="archives">
+            <i class='fas fa-archive fa-fw'></i>&nbsp;归档
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="http://dataoboy.lofter.com/"
+            
+              rel="nofollow"
+            
+            
+            id="http:dataoboy.lofter.com">
+            <i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="friends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          大涛子
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;博文
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/friends/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="friends">
+									<i class='fas fa-users fa-fw'></i>&nbsp;朋友
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="http://dataoboy.lofter.com/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="http:dataoboy.lofter.com">
+									<i class='fas fa-camera-retro fa-fw'></i>&nbsp;摄影
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+			<ul class='switcher h-list'>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main no_sidebar'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2020/04/03/code-copy/">
+        JavaScript 深浅拷贝
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://yangtao.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨涛</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-04-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/JavaScript/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>JavaScript</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p>浅拷贝技巧：数组<code>concat slice</code>，对象<code>Object.assign()</code>等；<br>深拷贝技巧：<code>JSON.parse(JSON.stringify(arr1))</code>。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="数组的浅拷贝"><a href="#数组的浅拷贝" class="headerlink" title="数组的浅拷贝"></a>数组的浅拷贝</h2><p>如果数组元素是基本类型，就会拷贝一份，互不影响，而如果是对象或者数组，就会只拷贝对象和数组的引用，这样我们无论在新旧数组进行了修改，两者都会发生变化。</p>
+<p>我们把这种复制引用的拷贝方法称之为浅拷贝，与之对应的就是深拷贝，深拷贝就是指完全的拷贝一个对象，即使嵌套了对象，两者也相互分离，修改一个对象的属性，也不会影响另一个。</p>
+<p>比如，数组的一些方法：<code>concat、slice</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"old"</span>, <span class="number">1</span>, <span class="literal">true</span>, <span class="literal">null</span>, <span class="literal">undefined</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newArr = arr.concat();</span><br><span class="line">newArr.shift();</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [ 'old', 1, true, null, undefined ]</span></span><br><span class="line"><span class="built_in">console</span>.log(newArr); <span class="comment">// [ 1, true, null, undefined ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newArr2 = arr.slice();</span><br><span class="line"><span class="built_in">console</span>.log(newArr2); <span class="comment">// [ 'old', 1, true, null, undefined ]</span></span><br></pre></td></tr></table></figure>
+<p>但是如果数组嵌套了对象或者数组的话，就会都受影响，比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrObj = [&#123; <span class="attr">a</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">b</span>: <span class="number">2</span> &#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newArrObj = arrObj.concat();</span><br><span class="line">newArrObj[<span class="number">0</span>].a = <span class="string">"aaa"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newArrObj); <span class="comment">// [ &#123; a: 'aaa' &#125;, &#123; b: 2 &#125; ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arrObj); <span class="comment">// [ &#123; a: 'aaa' &#125;, &#123; b: 2 &#125; ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="数组的深拷贝"><a href="#数组的深拷贝" class="headerlink" title="数组的深拷贝"></a>数组的深拷贝</h2><p>使用 <code>JSON.stringify()</code>和<code>JSON.parse()</code>，不管是数组还是对象，都可以实现深拷贝，但是不能拷贝函数，会返回一个 null：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">"old"</span>, <span class="number">1</span>, <span class="literal">true</span>, [<span class="string">"old1"</span>, <span class="string">"old2"</span>], &#123; <span class="attr">old</span>: <span class="number">1</span> &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;];</span><br><span class="line"><span class="keyword">var</span> newArr1 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr1));</span><br><span class="line">newArr1.shift();</span><br><span class="line"><span class="built_in">console</span>.log(arr1); <span class="comment">// [ 'old', 1, true, [ 'old1', 'old2' ], &#123; old: 1 &#125;, [Function] ]</span></span><br><span class="line"><span class="built_in">console</span>.log(newArr1); <span class="comment">// [ 1, true, [ 'old1', 'old2' ], &#123; old: 1 &#125;, null ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">Object.assign()</a> 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// target 目标对象，sources 源对象</span></span><br><span class="line"><span class="built_in">Object</span>.assign(target, ...sources);</span><br></pre></td></tr></table></figure>
+<p><code>Object.assign</code> 方法只会拷贝源对象自身的并且可枚举的属性到目标对象。该方法使用源对象的<code>[[Get]]</code>和目标对象的<code>[[Set]]</code>，所以它会调用相关 getter 和 setter。</p>
+<p>String 类型和 Symbol 类型的属性都会被拷贝。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 赋值一个对象</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> copy = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</span><br><span class="line"><span class="built_in">console</span>.log(copy); <span class="comment">// &#123; a: 1 &#125;</span></span><br></pre></td></tr></table></figure>
+<p>针对深拷贝，需要使用其他办法，如借助 JSON，因为 <code>Object.assign()</code>拷贝的是属性值。假如源对象的属性值是一个对象的引用，那么它也只指向那个引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">let</span> obj3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1));</span><br><span class="line">obj1.a = <span class="number">4</span>;</span><br><span class="line">obj1.b.c = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj3));  <span class="comment">// &#123;"a":0,"b":&#123;"c":0&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="浅拷贝的实现"><a href="#浅拷贝的实现" class="headerlink" title="浅拷贝的实现"></a>浅拷贝的实现</h2><p>技巧型的拷贝，如上边使用的 <code>concat、slice、JSON.stringify</code>等，如果要实现一个对象或者数组的浅拷贝，该怎么实现呢？</p>
+<p>思路：既然是浅拷贝，那就只需要遍历，把对应的属性及属性值添加到新的对象，并返回。</p>
+<p>代码实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shallowCopy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">"object"</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断新建的是数组还是对象</span></span><br><span class="line">  <span class="keyword">var</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="comment">// 遍历obj，并且判断是obj的属性才拷贝</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">      newObj[key] = obj[key];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr20 = [<span class="string">"old"</span>, <span class="number">1</span>, <span class="literal">true</span>, [<span class="string">"old1"</span>, <span class="string">"old2"</span>], &#123; <span class="attr">old</span>: <span class="number">1</span> &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;];</span><br><span class="line"><span class="keyword">var</span> newArr20 = shallowCopy(arr20);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(&#123; newArr20 &#125;);</span><br><span class="line"><span class="comment">// [ 'old', 1, true, [ 'old1', 'old2' ], &#123; old: 1 &#125;, [Function] ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h2><p>思路：如果是对象，通过递归调用拷贝函数</p>
+<p>代码实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> deepCopy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">"object"</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">var</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">      newObj[key] =</span><br><span class="line">        <span class="keyword">typeof</span> obj[key] !== <span class="string">"object"</span> ? obj[key] : deepCopy(obj[key]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  b: &#123;</span><br><span class="line">    name: <span class="string">"Tony"</span>,</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">  &#125;,</span><br><span class="line">  c: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newObj = deepCopy(obj);</span><br><span class="line"><span class="built_in">console</span>.log(newObj);</span><br><span class="line"><span class="comment">// &#123; a: [Function: a],</span></span><br><span class="line"><span class="comment">// b: &#123; name: 'Tony', age: 10 &#125;,</span></span><br><span class="line"><span class="comment">// c: [ 1, 2, 3 ] &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="模拟-jQuery-的-extend"><a href="#模拟-jQuery-的-extend" class="headerlink" title="模拟 jQuery 的 extend"></a>模拟 jQuery 的 extend</h2><p><strong>extend</strong> 的用法：合并两个或者更多的对象的内容到第一个对象中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend( [deep], target, object1 [, objectN ] )</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>deep</strong>，布尔值，如果为 true，进行深拷贝；false 做浅拷贝，target 就往后移动到第二个参数</li>
+<li><strong>target</strong>，表示要拓展的目标，我们就称它为目标对象吧。</li>
+<li>后面的参数，都传入对象，内容都会复制到目标对象中，我们就称它们为待复制对象吧。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> toString = class2type.toString;</span><br><span class="line"><span class="keyword">var</span> hasOwn = class2type.hasOwnProperty;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> proto, Ctor;</span><br><span class="line">  <span class="keyword">if</span> (!obj || toString.call(obj) !== <span class="string">"[object Object]"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  proto = <span class="built_in">Object</span>.getPrototypeOf(obj);</span><br><span class="line">  <span class="keyword">if</span> (!proto) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  Ctor = hasOwn.call(proto, <span class="string">"constructor"</span>) &amp;&amp; proto.constructor;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="keyword">typeof</span> Ctor === <span class="string">"function"</span> &amp;&amp;</span><br><span class="line">    hasOwn.toString.call(Ctor) === hasOwn.toString.call(<span class="built_in">Object</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 默认不进行深拷贝</span></span><br><span class="line">  <span class="keyword">var</span> deep = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">var</span> name, options, src, copy, clone, copyIsArray;</span><br><span class="line">  <span class="keyword">var</span> length = <span class="built_in">arguments</span>.length;</span><br><span class="line">  <span class="comment">// 记录要复制的对象的下标</span></span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// 第一个参数不传布尔值的情况下，target 默认是第一个参数</span></span><br><span class="line">  <span class="keyword">var</span> target = <span class="built_in">arguments</span>[<span class="number">0</span>] || &#123;&#125;;</span><br><span class="line">  <span class="comment">// 如果第一个参数是布尔值，第二个参数是 target</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> target == <span class="string">"boolean"</span>) &#123;</span><br><span class="line">    deep = target;</span><br><span class="line">    target = <span class="built_in">arguments</span>[i] || &#123;&#125;;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 如果target不是对象，我们是无法进行复制的，所以设为 &#123;&#125;</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> target !== <span class="string">"object"</span> &amp;&amp; !isFunction(target)) &#123;</span><br><span class="line">    target = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 循环遍历要复制的对象们</span></span><br><span class="line">  <span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">    <span class="comment">// 获取当前对象</span></span><br><span class="line">    options = <span class="built_in">arguments</span>[i];</span><br><span class="line">    <span class="comment">// 要求不能为空 避免 extend(a,,b) 这种情况</span></span><br><span class="line">    <span class="keyword">if</span> (options != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (name <span class="keyword">in</span> options) &#123;</span><br><span class="line">        <span class="comment">// 目标属性值</span></span><br><span class="line">        src = target[name];</span><br><span class="line">        <span class="comment">// 要复制的对象的属性值</span></span><br><span class="line">        copy = options[name];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 解决循环引用</span></span><br><span class="line">        <span class="keyword">if</span> (target === copy) &#123;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 要递归的对象必须是 plainObject 或者数组</span></span><br><span class="line">        <span class="keyword">if</span> (</span><br><span class="line">          deep &amp;&amp;</span><br><span class="line">          copy &amp;&amp;</span><br><span class="line">          (isPlainObject(copy) || (copyIsArray = <span class="built_in">Array</span>.isArray(copy)))</span><br><span class="line">        ) &#123;</span><br><span class="line">          <span class="comment">// 要复制的对象属性值类型需要与目标属性值相同</span></span><br><span class="line">          <span class="keyword">if</span> (copyIsArray) &#123;</span><br><span class="line">            copyIsArray = <span class="literal">false</span>;</span><br><span class="line">            clone = src &amp;&amp; <span class="built_in">Array</span>.isArray(src) ? src : [];</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            clone = src &amp;&amp; isPlainObject(src) ? src : &#123;&#125;;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          target[name] = extend(deep, clone, copy);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (copy !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">          target[name] = copy;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ul>
+<li><a href="https://github.com/mqyqingfeng/Blog/issues/32" target="_blank" rel="noopener">JavaScript 专题之深浅拷贝</a></li>
+<li><a href="https://github.com/mqyqingfeng/Blog/issues/33" target="_blank" rel="noopener">JavaScript 专题之从零实现 jQuery 的 extend</a></li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-03T11:46:22+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2020年4月3日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/面试/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>面试</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>JavaScript</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yangtao.site/2020/04/03/code-copy/&title=JavaScript 深浅拷贝 | 大涛子&summary=
+浅拷贝技巧：数组concat slice，对象Object.assign()等；深拷贝技巧：JSON.parse(JSON.stringify(arr1))。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yangtao.site/2020/04/03/code-copy/&title=JavaScript 深浅拷贝 | 大涛子&summary=
+浅拷贝技巧：数组concat slice，对象Object.assign()等；深拷贝技巧：JSON.parse(JSON.stringify(arr1))。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yangtao.site/2020/04/03/code-copy/&title=JavaScript 深浅拷贝 | 大涛子&summary=
+浅拷贝技巧：数组concat slice，对象Object.assign()等；深拷贝技巧：JSON.parse(JSON.stringify(arr1))。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2048/10/24/hello-world/" rel="prev" title="Hi，很高兴见到你~">
+                                  
+                                      Hi，很高兴见到你~
+                                  
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2020/04/03/code-debounce-throttle/" rel="prev" title="JavaScript 防抖、节流">
+                                    
+                                        JavaScript 防抖、节流
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/面试/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>面试</a> <a class="tag" href="/tags/JavaScript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>JavaScript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JavaScript 深浅拷贝',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的浅拷贝"><span class="toc-text">数组的浅拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的深拷贝"><span class="toc-text">数组的深拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-assign"><span class="toc-text">Object.assign</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浅拷贝的实现"><span class="toc-text">浅拷贝的实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深拷贝的实现"><span class="toc-text">深拷贝的实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟-jQuery-的-extend"><span class="toc-text">模拟 jQuery 的 extend</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-text">学习资料</span></a></li></ol>
+    </div>
+  </section>
+
+
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="https://ae01.alicdn.com/kf/Hd6aab0894803450395b643181cafabc9J.jpg"
+            class="social fab fa-weixin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:istaotao@aliyun.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/yangtao2o"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.linkedin.com/in/%E6%B6%9B-%E6%9D%A8-06a70212b/"
+            class="social fab fa-linkedin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://weibo.com/taoboy0208"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=282751852"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p><a href="http://www.beian.miit.gov.cn/">苏ICP备19070147号-1</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "BXbRzdRWKuKAzooJu0Gin1mO-gzGzoHsz",
+    appKey: "WEzG2CMtkcbmqrmqMkgIGIRL",
+    placeholder: "请留下你的足迹吧~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

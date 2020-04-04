@@ -533,24 +533,103 @@
 <h2 id="从-ECMAScript-规范解读-this"><a href="#从-ECMAScript-规范解读-this" class="headerlink" title="从 ECMAScript 规范解读 this"></a>从 ECMAScript 规范解读 this</h2><blockquote>
 <p>作者曰：在写文章之初，我就面临着这些问题，最后还是放弃从多个情形下给大家讲解 this 指向的思路，而是追根溯源的从 ECMASciript 规范讲解 this 的指向，尽管从这个角度写起来和读起来都比较吃力，但是一旦多读几遍，明白原理，绝对会给你一个全新的视角看待 this 。</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  value: <span class="number">2</span>,</span><br><span class="line">  bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//示例1</span></span><br><span class="line"><span class="built_in">console</span>.log(foo.bar());</span><br><span class="line"><span class="comment">//示例2</span></span><br><span class="line"><span class="built_in">console</span>.log(foo.bar());</span><br><span class="line"><span class="comment">//示例3</span></span><br><span class="line"><span class="built_in">console</span>.log((foo.bar = foo.bar)());</span><br><span class="line"><span class="comment">//示例4</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">false</span> || foo.bar)());</span><br><span class="line"><span class="comment">//示例5</span></span><br><span class="line"><span class="built_in">console</span>.log((foo.bar, foo.bar)());</span><br></pre></td></tr></table></figure>
+<p>作者主要从 ECMASciript 规范讲解 <strong>this 的指向</strong>，讲解了<strong>示例 3</strong> 中是如何获取 this 指向的，每次阅读都会有不同的收获，也正如作者所说，希望能打开 this 新世界的大门。</p>
 <p>原文链接：<a href="https://github.com/mqyqingfeng/Blog/issues/7" target="_blank" rel="noopener">JavaScript 深入之从 ECMAScript 规范解读 this</a></p>
+<p>补充下我们使用场景下的 this 指向，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>作为<strong>对象</strong>调用时，指向该对象 <code>obj.b();</code> ，this 指向 obj</li>
+<li>作为<strong>函数</strong>调用，<code>var b = obj.b; b();</code> ，this 指向全局 window</li>
+<li>作为<strong>构造函数</strong>调用， <code>var b = new Fun();</code> ，this 指向当前实例对象</li>
+<li>作为 <strong>call、apply</strong> 调用， <code>obj.b.apply(object, []);</code> ，this 指向当前的 object</li>
+<li>作为 <strong>bind</strong> 调用，<code>var foo = obj.b.bind(object);foo()</code>，this 永久被绑定到了 object</li>
+<li>作为<strong>箭头函数</strong>使用，this 与封闭词法环境的 this 保持一致</li>
+<li>作为<strong>DOM 事件处理函数</strong>，this 指向触发事件的元素</li>
+</ul>
+<p>在<strong>严格模式</strong>下，如果 this 没有被执行环境（execution context）定义，那它将保持为 <strong>undefined</strong>。</p>
 <h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><p>对于每个执行上下文，都有三个重要属性：</p>
 <ul>
 <li>变量对象(Variable object，VO)</li>
 <li>作用域链(Scope chain)</li>
 <li>this</li>
 </ul>
+<h3 id="分析第一段代码"><a href="#分析第一段代码" class="headerlink" title="分析第一段代码"></a>分析第一段代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> scope = <span class="string">"local scope"</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> scope;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> f();</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
+<p>1.执行全局代码，创建全局执行上下文，全局上下文被压入执行上下文栈</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [globalContext];</span><br></pre></td></tr></table></figure>
+<p>2.全局上下文初始化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">globalContext = &#123;</span><br><span class="line">  VO: [global],</span><br><span class="line">  Scope: [globalContext.VO],</span><br><span class="line">  <span class="keyword">this</span>: globalContext.VO</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>初始化的同时，checkscope 函数被创建，保存作用域链到函数的内部属性<code>[[scope]]</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checkscope.[[scope]] = [globalContext.VO]</span><br></pre></td></tr></table></figure>
+<p>3.执行 checkscope 函数，创建 checkscope 函数执行上下文，checkscope 函数执行上下文被压入执行上下文栈</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [checkscope, globalContext];</span><br></pre></td></tr></table></figure>
+<p>4.checkscope 函数执行上下文初始化：</p>
+<ol>
+<li>复制函数 <code>[[scope]]</code> 属性创建作用域链，</li>
+<li>用 arguments 创建活动对象，</li>
+<li>初始化活动对象，即加入形参、函数声明、变量声明，</li>
+<li>将活动对象压入 checkscope 作用域链顶端。</li>
+</ol>
+<p>同时 f 函数被创建，保存作用域链到 f 函数的内部属性<code>[[scope]]</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    scope: <span class="literal">undefined</span>,</span><br><span class="line">    f: reference to <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, globalContext.VO],</span><br><span class="line">  <span class="keyword">this</span>: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.执行 f 函数，创建 f 函数执行上下文，f 函数执行上下文被压入执行上下文栈</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [fContext, checkscope, globalContext];</span><br></pre></td></tr></table></figure>
+<p>6.f 函数执行上下文初始化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, checkscopeContext.AO, globalContext.VO],</span><br><span class="line">  <span class="keyword">this</span>: <span class="literal">undefined</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>7.f 函数执行，沿着作用域链查找 scope 值，返回 scope 值，这里之所以能够访问到scope</p>
+<p>8.f 函数执行完毕，f 函数上下文从执行上下文栈中弹出</p>
+<p>9.checkscope 函数执行完毕，checkscope 执行上下文从执行上下文栈中弹出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [globalContext];</span><br></pre></td></tr></table></figure>
+<h3 id="分析第二段代码"><a href="#分析第二段代码" class="headerlink" title="分析第二段代码"></a>分析第二段代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> scope = <span class="string">"local scope"</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> scope;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line">checkscope()();</span><br></pre></td></tr></table></figure>
+<p>1.执行全局代码，创建全局执行上下文，全局上下文被压入执行上下文栈，并初始化全局上下文</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [globalContext];</span><br><span class="line">globalContext = &#123;</span><br><span class="line">  VO: [global],</span><br><span class="line">  Scope: [globalContext.VO],</span><br><span class="line">  <span class="keyword">this</span>: globalContext.VO</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>初始化的同时，checkscope 函数被创建，保存作用域链到函数的内部属性<code>[[scope]]</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checkscope.[[scope]] = [globalContext.VO];</span><br></pre></td></tr></table></figure>
+<p>2.执行 checkscope 函数，创建 checkscope 函数执行上下文，checkscope 函数执行上下文被压入执行上下文栈，并初始化函数上下文</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [checkscopeContext, globalContext];</span><br><span class="line">checkscopeContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    scope: <span class="literal">undefined</span>,</span><br><span class="line">    f: reference to <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, globalContext.VO],</span><br><span class="line">  <span class="keyword">this</span>: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同时 f 函数被创建，保存作用域链到 f 函数的内部属性<code>[[scope]]</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.[[scope]] = [AO, checkscopeContext.AO, globalContext.VO];</span><br></pre></td></tr></table></figure>
+<p>3.checkscope 函数执行完毕，checkscope 执行上下文从执行上下文栈中弹出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [globalContext];</span><br></pre></td></tr></table></figure>
+<p>4.执行 f 函数，创建 f 函数执行上下文，并压入执行上下文栈，将其初始化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [fContext;, globalContext];</span><br><span class="line">fContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, checkscopeContext.AO, globalContext.VO],</span><br><span class="line">  <span class="keyword">this</span>: <span class="literal">undefined</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>5.f 函数执行，沿着作用域链查找 scope 值，返回 scope 值。正是因为 checkscope 函数执行上下文初始化时，f 函数同时被创建，保存作用域链到 f 函数的内部属性<code>[[scope]]</code>，所以即使checkscope函数执行完毕，被弹出执行上下文栈，但是<code>checkscopeContext.AO</code> 依然存在于 f 函数维护的<code>[scope]]</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fContext = &#123;</span><br><span class="line">    Scope: [AO, checkscopeContext.AO, globalContext.VO],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以，闭包的概念产生了，定义：</p>
+<ul>
+<li>即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）</li>
+<li>在代码中引用了自由变量</li>
+</ul>
+<p>6.f 函数执行完毕，f 函数上下文从执行上下文栈中弹出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [globalContext];</span><br></pre></td></tr></table></figure>
 <p>原文链接：<a href="https://github.com/mqyqingfeng/Blog/issues/8" target="_blank" rel="noopener">JavaScript 深入之执行上下文</a></p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包是指那些能够访问自由变量的函数。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>MDN 对闭包的定义为：</p>
+<blockquote>
+<p>闭包是指那些能够访问自由变量的函数。</p>
+</blockquote>
+<p>那什么是自由变量呢？</p>
+<blockquote>
+<p>自由变量是指在函数中使用的，但既不是函数参数也不是函数的局部变量的变量。</p>
+</blockquote>
+<p>由此，我们可以看出闭包共有两部分组成：</p>
+<blockquote>
+<p>闭包 = 函数 + 函数能够访问的自由变量</p>
+</blockquote>
+<p>ECMAScript中，闭包指的是：</p>
+<p>从理论角度：所有的函数。因为它们都在创建的时候就将上层上下文的数据保存起来了。哪怕是简单的全局变量也是如此，因为函数中访问全局变量就相当于是在访问自由变量，这个时候使用最外层的作用域。</p>
+<p>从实践角度：以下函数才算是闭包：</p>
+<ul>
+<li>即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）</li>
+<li>在代码中引用了自由变量</li>
+</ul>
+<p>闭包是指那些能够访问自由变量的函数。</p>
 <p>自由变量是指在函数中使用的，但既不是参数也不是函数的局部变量的变量。</p>
 <p>那么，闭包 = 函数 + 函数能够访问的自由变量。</p>
 <p>看这道刷题必刷，面试必考的闭包题：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();</span><br><span class="line">data[<span class="number">1</span>]();</span><br><span class="line">data[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure>
-<p>循环结束后</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="number">0</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;;</span><br><span class="line">data[<span class="number">1</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;;</span><br><span class="line">data[<span class="number">2</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>执行<code>data[0]()，data[1]()，data[2]()</code>时，i=3,所以都打印 3</p>
 <p>让我们改成闭包看看：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();</span><br><span class="line">data[<span class="number">1</span>]();</span><br><span class="line">data[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>原文链接：<a href="https://github.com/mqyqingfeng/Blog/issues/9" target="_blank" rel="noopener">JavaScript 深入之闭包</a></p>
 <h2 id="参数按值传递"><a href="#参数按值传递" class="headerlink" title="参数按值传递"></a>参数按值传递</h2><p>ECMAScript 中所有函数的参数都是按值传递的。 — 《JavaScript 高级程序设计-第三版》</p>
 <p>即，把函数外部的值复制给函数内部的参数，就和把值从一个变量复制给另一个变量一样。</p>
@@ -560,29 +639,125 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">  v = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(value);</span><br><span class="line"><span class="built_in">console</span>.log(value); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 <p>内存分布如下：</p>
 <p>改变前：</p>
-<table><br>  <tr><br>    <td colspan="2" align="center">栈内存</td><br>    <td colspan="2" align="center">堆内存</td><br>  </tr><br>  <tr><br>    <td>value</td><br>    <td>1</td><br>    <td></td><br>    <td></td><br>  </tr><br>  <tr><br>    <td>v</td><br>    <td>1</td><br>    <td></td><br>    <td></td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th> 栈内存</th>
+<th>栈内存</th>
+<th>堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>v</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 <p>改变后：</p>
-<table><br>  <tr><br>    <td colspan="2" align="center">栈内存</td><br>    <td colspan="2" align="center">堆内存</td><br>  </tr><br>  <tr><br>    <td>value</td><br>    <td>1</td><br>    <td></td><br>    <td></td><br>  </tr><br>  <tr><br>    <td>v</td><br>    <td>2</td><br>    <td></td><br>    <td></td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th> 栈内存</th>
+<th>栈内存</th>
+<th>堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>v</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 <p>例子二：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  value: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  o.value = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(o.value); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj.value); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 <p>内存分布如下：</p>
 <p>改变前：</p>
-<table><br>  <tr><br>    <td colspan="2" align="center">栈内存</td><br>    <td align="center">堆内存</td><br>  </tr><br>  <tr><br>    <td>obj，o</td><br>    <td>指针地址</td><br>    <td>{value: 1}</td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th> 栈内存</th>
+<th>栈内存</th>
+<th>堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj，o</td>
+<td>指针地址</td>
+<td>{value: 1}</td>
+</tr>
+</tbody>
+</table>
 <p>改变后：</p>
-<table><br>  <tr><br>    <td colspan="2" align="center">栈内存</td><br>    <td align="center">堆内存</td><br>  </tr><br>  <tr><br>    <td>obj，o</td><br>    <td>指针地址</td><br>    <td>{value: 2}</td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th> 栈内存</th>
+<th>栈内存</th>
+<th>堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj，o</td>
+<td>指针地址</td>
+<td>{value: 2}</td>
+</tr>
+</tbody>
+</table>
 <p>例子三：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  value: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  o = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(o); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj.value); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 <p>内存分布如下：</p>
 <p>改变前：</p>
-<table><br>  <tr><br>    <td colspan="2" align="center">栈内存</td><br>    <td align="center">堆内存</td><br>  </tr><br>  <tr><br>    <td>obj，o</td><br>    <td>指针地址</td><br>    <td>{value: 1}</td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th> 栈内存</th>
+<th>栈内存</th>
+<th>堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj，o</td>
+<td>指针地址</td>
+<td>{value: 1}</td>
+</tr>
+</tbody>
+</table>
 <p>改变后：</p>
-<table><br>  <tr><br>    <td colspan="2" align="center">栈内存</td><br>    <td align="center">堆内存</td><br>  </tr><br>  <tr><br>    <td>obj</td><br>    <td>指针地址</td><br>    <td>{value: 1}</td><br>  </tr><br>  <tr><br>    <td>o</td><br>    <td>2</td><br>    <td></td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th> 栈内存</th>
+<th>栈内存</th>
+<th>堆内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj</td>
+<td>指针地址</td>
+<td>{value: 1}</td>
+</tr>
+<tr>
+<td>o</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 <p>以上解释来自：<a href="https://github.com/mqyqingfeng/Blog/issues/10#issuecomment-305645497" target="_blank" rel="noopener">sunsl516 commented</a> on 2 Jun 2017.</p>
 <p>原文链接：<a href="https://github.com/mqyqingfeng/Blog/issues/10" target="_blank" rel="noopener">JavaScript 深入之参数按值传递</a></p>
 
@@ -596,10 +771,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-11-27T21:16:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-01T13:39:11+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年11月27日</p>
+    <p>最后更新于 2020年4月1日</p>
   </a>
 </div>
 
@@ -770,7 +945,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从原型到原型链"><span class="toc-text">从原型到原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图示总结"><span class="toc-text">图示总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码总结"><span class="toc-text">代码总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法作用域和动态作用域"><span class="toc-text">词法作用域和动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文栈"><span class="toc-text">执行上下文栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行过程"><span class="toc-text">执行过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数创建"><span class="toc-text">函数创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数激活"><span class="toc-text">函数激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#综合分析"><span class="toc-text">综合分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从-ECMAScript-规范解读-this"><span class="toc-text">从 ECMAScript 规范解读 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文"><span class="toc-text">执行上下文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数按值传递"><span class="toc-text">参数按值传递</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从原型到原型链"><span class="toc-text">从原型到原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图示总结"><span class="toc-text">图示总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码总结"><span class="toc-text">代码总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法作用域和动态作用域"><span class="toc-text">词法作用域和动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文栈"><span class="toc-text">执行上下文栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行过程"><span class="toc-text">执行过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数创建"><span class="toc-text">函数创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数激活"><span class="toc-text">函数激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#综合分析"><span class="toc-text">综合分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从-ECMAScript-规范解读-this"><span class="toc-text">从 ECMAScript 规范解读 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文"><span class="toc-text">执行上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析第一段代码"><span class="toc-text">分析第一段代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析第二段代码"><span class="toc-text">分析第二段代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数按值传递"><span class="toc-text">参数按值传递</span></a></li></ol>
     </div>
   </section>
 
