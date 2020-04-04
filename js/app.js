@@ -159,32 +159,32 @@ var customSearch;
 			e.stopPropagation();
 		});
     $header.ready(function () {
-      $header.bind('keydown', function (event) {
-        if (event.keyCode == 9) {
-          return false;
-        } else {
-          var isie = (document.all) ? true: false;
-          var key;
-          var ev;
-          if (isie) { //IE浏览器
-            key = window.event.keyCode;
-            ev = window.event;
-          } else { //火狐浏览器
-            key = e.which;
-            ev = e;
-          }
-          if (key == 9) { //IE浏览器
-            if (isie) {
-              ev.keyCode = 0;
-              ev.returnValue = false;
-            } else { //火狐浏览器
-              ev.which = 0;
-              ev.preventDefault();
-            }
-          }
-        }
-      });
-    });
+			$header.bind('keydown', function (event) {
+				if (event.keyCode == 9) {
+					return false;
+				} else {
+					var isie = (document.all) ? true : false;
+					var key;
+					var ev;
+					if (isie) { //IE浏览器
+						key = window.event.keyCode;
+						ev = window.event;
+					} else { //火狐浏览器
+						key = event.which;
+						ev = event;
+					}
+					if (key == 9) { //IE浏览器
+						if (isie) {
+							ev.keyCode = 0;
+							ev.returnValue = false;
+						} else { //火狐浏览器
+							ev.which = 0;
+							ev.preventDefault();
+						}
+					}
+				}
+			});
+		});
 	}
 
 	function setTocToggle() {
@@ -250,7 +250,7 @@ var customSearch;
 
 		setTimeout(function () {
 			$('#loading-bar-wrapper').fadeOut(500);
-		}, 300);
+		}, 400);
 
 
 		if (SEARCH_SERVICE === 'google') {
