@@ -5,9 +5,9 @@
   <subtitle>简单、极致、不失风趣</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yangtao.site/"/>
+  <link href="https://www.yangtao.site/"/>
   <updated>2020-03-18T04:09:39.746Z</updated>
-  <id>http://yangtao.site/</id>
+  <id>https://www.yangtao.site/</id>
   
   <author>
     <name>杨涛</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hi，很高兴见到你~</title>
-    <link href="http://yangtao.site/2048/10/24/hello-world/"/>
-    <id>http://yangtao.site/2048/10/24/hello-world/</id>
+    <link href="https://www.yangtao.site/2048/10/24/hello-world/"/>
+    <id>https://www.yangtao.site/2048/10/24/hello-world/</id>
     <published>2048-10-24T05:14:15.000Z</published>
     <updated>2020-03-18T04:09:39.746Z</updated>
     
@@ -39,9 +39,35 @@
   </entry>
   
   <entry>
+    <title>在 Nginx 服务器上配置 HTTPS 证书</title>
+    <link href="https://www.yangtao.site/2020/04/04/http-https/"/>
+    <id>https://www.yangtao.site/2020/04/04/http-https/</id>
+    <published>2020-04-04T13:56:50.000Z</published>
+    <updated>2020-04-05T03:26:01.512Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>安装 https 证书的一些过程</p></blockquote><a id="more"></a><h2 id="下载证书"><a href="#下载证书" class="headerlink" title="下载证书"></a>下载证书</h2><p>我使用的阿里云免费个人版，有效期一年。</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">~/Downloads ❯❯❯ <span class="built_in">cd</span> 3713633_www.yangtao.site_nginx/</span><br><span class="line">~/D/3713633_www.yangtao.site_nginx ❯❯❯ ls</span><br><span class="line">3713633_www.yangtao.site.key 3713633_www.yangtao.site.pem</span><br><span class="line">~/D/3713633_www.yangtao.site_nginx ❯❯❯</span><br><span class="line">scp 3713633_www.yangtao.site.key 3713633_www.yangtao.site.pem root@47.101.33.81:/usr/<span class="built_in">local</span>/nginx/cert/</span><br><span class="line">root@47.101.33.81<span class="string">'s password:</span></span><br><span class="line"><span class="string">Permission denied, please try again.</span></span><br><span class="line"><span class="string">root@47.101.33.81'</span>s password:</span><br><span class="line">3713633_www.yangtao.site.key            100% 1675    88.9KB/s   00:00</span><br><span class="line">3713633_www.yangtao.site.pem            100% 3675   274.2KB/s   00:00</span><br><span class="line">~/D/3713633_www.yangtao.site_nginx ❯❯❯</span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@istaotao:/usr/<span class="built_in">local</span>/nginx/cert<span class="comment"># ls</span></span><br><span class="line">3713633_www.yangtao.site.key  3713633_www.yangtao.site.pem</span><br></pre></td></tr></table></figure><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>按照下文中注释内容修改 nginx.conf 文件：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 443 ssl;   <span class="comment">#SSL协议访问端口号为443。此处如未添加ssl，可能会造成Nginx无法启动。</span></span><br><span class="line">  server_name localhost;  <span class="comment">#将localhost修改为您证书绑定的域名，例如：www.example.com。</span></span><br><span class="line">  root html;</span><br><span class="line">  index index.html index.htm;</span><br><span class="line">  ssl_certificate cert/domain name.pem;   <span class="comment">#将domain name.pem替换成您证书的文件名。</span></span><br><span class="line">  ssl_certificate_key cert/domain name.key;   <span class="comment">#将domain name.key替换成您证书的密钥文件名。</span></span><br><span class="line">  ssl_session_timeout 5m;</span><br><span class="line">  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  <span class="comment">#使用此加密套件。</span></span><br><span class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   <span class="comment">#使用该协议进行配置。</span></span><br><span class="line">  ssl_prefer_server_ciphers on;</span><br><span class="line">  location / &#123;</span><br><span class="line">    root html;   <span class="comment">#站点目录。</span></span><br><span class="line">    index index.html index.htm;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="强制-http-跳转"><a href="#强制-http-跳转" class="headerlink" title="强制 http 跳转"></a>强制 http 跳转</h2><p>使用 curl 命令：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">~ ❯❯❯ curl baidu.com -v</span><br><span class="line">*   Trying 220.181.38.148...</span><br><span class="line">* TCP_NODELAY <span class="built_in">set</span></span><br><span class="line">* Connected to baidu.com (220.181.38.148) port 80 (<span class="comment">#0)</span></span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: baidu.com</span><br><span class="line">&gt; User-Agent: curl/7.64.1</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line">&lt; Date: Sat, 04 Apr 2020 16:33:35 GMT</span><br><span class="line">&lt; Server: Apache</span><br><span class="line">&lt; Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</span><br><span class="line">&lt; ETag: <span class="string">"51-47cf7e6ee8400"</span></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt; Content-Length: 81</span><br><span class="line">&lt; Cache-Control: max-age=86400</span><br><span class="line">&lt; Expires: Sun, 05 Apr 2020 16:33:35 GMT</span><br><span class="line">&lt; Connection: Keep-Alive</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0;url=http://www.baidu.com/"</span>&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">* Connection <span class="comment">#0 to host baidu.com left intact</span></span><br><span class="line">* Closing connection 0</span><br><span class="line">~ ❯❯❯</span><br></pre></td></tr></table></figure><p>可以看到百度很巧妙的利用 meta 的刷新作用，将 baidu.com 跳转到 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>同理, 我们也可以用这个特性来实现 http 向 https 的跳转</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># index.html</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0;url=https://www.yangtao.site/"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name yangtao.site;</span><br><span class="line"></span><br><span class="line">  location / &#123;</span><br><span class="line">      root /var/www/html/refresh/;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>测试 <a href="https://www.yangtao.site">yangtao.site</a>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">~ ❯❯❯ curl yangtao.site -v</span><br><span class="line">*   Trying 47.101.33.81...</span><br><span class="line">* TCP_NODELAY <span class="built_in">set</span></span><br><span class="line">* Connected to yangtao.site (47.101.33.81) port 80 (<span class="comment">#0)</span></span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: yangtao.site</span><br><span class="line">&gt; User-Agent: curl/7.64.1</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line">&lt; Server: nginx/1.14.0 (Ubuntu)</span><br><span class="line">&lt; Date: Sat, 04 Apr 2020 16:34:16 GMT</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt; Content-Length: 91</span><br><span class="line">&lt; Last-Modified: Sat, 04 Apr 2020 16:04:03 GMT</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; ETag: <span class="string">"5e88aff3-5b"</span></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0;url=https://www.yangtao.site/"</span>&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">* Connection <span class="comment">#0 to host yangtao.site left intact</span></span><br><span class="line">* Closing connection 0</span><br></pre></td></tr></table></figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://help.aliyun.com/document_detail/98728.html?spm=5176.2020520163.0.0.36a756a7iFDdyN" target="_blank" rel="noopener">在 Nginx/Tengine 服务器上安装证书</a></li><li><a href="https://www.cnblogs.com/chnmig/p/10343890.html" target="_blank" rel="noopener">Nginx 配置 https 证书</a></li><li><a href="https://www.jianshu.com/p/29add30461ec" target="_blank" rel="noopener">nginx 配置 http 强制跳转 https</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;安装 https 证书的一些过程&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="服务端" scheme="https://www.yangtao.site/categories/%E6%9C%8D%E5%8A%A1%E7%AB%AF/"/>
+    
+    
+      <category term="Hexo" scheme="https://www.yangtao.site/tags/Hexo/"/>
+    
+      <category term="Ubuntu" scheme="https://www.yangtao.site/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript 深浅拷贝</title>
-    <link href="http://yangtao.site/2020/04/03/code-copy/"/>
-    <id>http://yangtao.site/2020/04/03/code-copy/</id>
+    <link href="https://www.yangtao.site/2020/04/03/code-copy/"/>
+    <id>https://www.yangtao.site/2020/04/03/code-copy/</id>
     <published>2020-04-03T03:04:25.000Z</published>
     <updated>2020-04-03T03:46:22.371Z</updated>
     
@@ -55,19 +81,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="面试" scheme="https://www.yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="面试" scheme="http://yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript 防抖、节流</title>
-    <link href="http://yangtao.site/2020/04/03/code-debounce-throttle/"/>
-    <id>http://yangtao.site/2020/04/03/code-debounce-throttle/</id>
+    <link href="https://www.yangtao.site/2020/04/03/code-debounce-throttle/"/>
+    <id>https://www.yangtao.site/2020/04/03/code-debounce-throttle/</id>
     <published>2020-04-03T02:19:34.000Z</published>
     <updated>2020-04-03T02:29:34.877Z</updated>
     
@@ -81,19 +107,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="面试" scheme="https://www.yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="面试" scheme="http://yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>关于 Array 方法的用法及 Polyfill</title>
-    <link href="http://yangtao.site/2020/04/01/handwriting-array/"/>
-    <id>http://yangtao.site/2020/04/01/handwriting-array/</id>
+    <link href="https://www.yangtao.site/2020/04/01/handwriting-array/"/>
+    <id>https://www.yangtao.site/2020/04/01/handwriting-array/</id>
     <published>2020-04-01T09:49:51.000Z</published>
     <updated>2020-04-01T14:30:41.941Z</updated>
     
@@ -107,19 +133,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
-      <category term="手写系列" scheme="http://yangtao.site/tags/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/"/>
+      <category term="手写系列" scheme="https://www.yangtao.site/tags/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>手写系列之 new、instanceof、class、typeAPI</title>
-    <link href="http://yangtao.site/2020/03/30/handwriting-class/"/>
-    <id>http://yangtao.site/2020/03/30/handwriting-class/</id>
+    <link href="https://www.yangtao.site/2020/03/30/handwriting-class/"/>
+    <id>https://www.yangtao.site/2020/03/30/handwriting-class/</id>
     <published>2020-03-30T10:20:19.000Z</published>
     <updated>2020-04-01T11:42:00.302Z</updated>
     
@@ -132,19 +158,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
-      <category term="手写系列" scheme="http://yangtao.site/tags/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/"/>
+      <category term="手写系列" scheme="https://www.yangtao.site/tags/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>手写系列之 bind、call、apply</title>
-    <link href="http://yangtao.site/2020/03/29/handwriting-call-apply-bind/"/>
-    <id>http://yangtao.site/2020/03/29/handwriting-call-apply-bind/</id>
+    <link href="https://www.yangtao.site/2020/03/29/handwriting-call-apply-bind/"/>
+    <id>https://www.yangtao.site/2020/03/29/handwriting-call-apply-bind/</id>
     <published>2020-03-29T07:50:44.000Z</published>
     <updated>2020-03-29T07:59:31.611Z</updated>
     
@@ -158,19 +184,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
-      <category term="手写系列" scheme="http://yangtao.site/tags/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/"/>
+      <category term="手写系列" scheme="https://www.yangtao.site/tags/%E6%89%8B%E5%86%99%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>浏览器是怎么缓存资源的</title>
-    <link href="http://yangtao.site/2020/03/27/web-cache/"/>
-    <id>http://yangtao.site/2020/03/27/web-cache/</id>
+    <link href="https://www.yangtao.site/2020/03/27/web-cache/"/>
+    <id>https://www.yangtao.site/2020/03/27/web-cache/</id>
     <published>2020-03-27T12:24:41.000Z</published>
     <updated>2020-03-27T12:29:14.430Z</updated>
     
@@ -184,17 +210,17 @@
     
     </summary>
     
-      <category term="网络知识" scheme="http://yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
+      <category term="网络知识" scheme="https://www.yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="http" scheme="http://yangtao.site/tags/http/"/>
+      <category term="http" scheme="https://www.yangtao.site/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>5 个有趣的 Node.js 库,带你走进 彩色 Node.js 世界</title>
-    <link href="http://yangtao.site/2020/03/26/node-5-util/"/>
-    <id>http://yangtao.site/2020/03/26/node-5-util/</id>
+    <link href="https://www.yangtao.site/2020/03/26/node-5-util/"/>
+    <id>https://www.yangtao.site/2020/03/26/node-5-util/</id>
     <published>2020-03-26T14:20:41.000Z</published>
     <updated>2020-03-26T14:23:51.527Z</updated>
     
@@ -208,17 +234,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="https://www.yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="https://www.yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>跨域资源共享 CORS</title>
-    <link href="http://yangtao.site/2020/03/25/cross-cors/"/>
-    <id>http://yangtao.site/2020/03/25/cross-cors/</id>
+    <link href="https://www.yangtao.site/2020/03/25/cross-cors/"/>
+    <id>https://www.yangtao.site/2020/03/25/cross-cors/</id>
     <published>2020-03-25T06:43:47.000Z</published>
     <updated>2020-03-27T08:30:19.059Z</updated>
     
@@ -232,17 +258,17 @@
     
     </summary>
     
-      <category term="网络知识" scheme="http://yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
+      <category term="网络知识" scheme="https://www.yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="http" scheme="http://yangtao.site/tags/http/"/>
+      <category term="http" scheme="https://www.yangtao.site/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>跨域解决方案 JSONP</title>
-    <link href="http://yangtao.site/2020/03/25/cross-jsonp/"/>
-    <id>http://yangtao.site/2020/03/25/cross-jsonp/</id>
+    <link href="https://www.yangtao.site/2020/03/25/cross-jsonp/"/>
+    <id>https://www.yangtao.site/2020/03/25/cross-jsonp/</id>
     <published>2020-03-25T03:07:14.000Z</published>
     <updated>2020-03-27T07:39:12.082Z</updated>
     
@@ -256,17 +282,17 @@
     
     </summary>
     
-      <category term="网络知识" scheme="http://yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
+      <category term="网络知识" scheme="https://www.yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="http" scheme="http://yangtao.site/tags/http/"/>
+      <category term="http" scheme="https://www.yangtao.site/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>Node 中间件原理</title>
-    <link href="http://yangtao.site/2020/03/20/node-middleware/"/>
-    <id>http://yangtao.site/2020/03/20/node-middleware/</id>
+    <link href="https://www.yangtao.site/2020/03/20/node-middleware/"/>
+    <id>https://www.yangtao.site/2020/03/20/node-middleware/</id>
     <published>2020-03-20T09:59:34.000Z</published>
     <updated>2020-03-20T10:06:45.464Z</updated>
     
@@ -280,17 +306,17 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://yangtao.site/categories/Nodejs/"/>
+      <category term="Nodejs" scheme="https://www.yangtao.site/categories/Nodejs/"/>
     
     
-      <category term="Nodejs" scheme="http://yangtao.site/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="https://www.yangtao.site/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Cookie、Session、LocalStorage、SessionStorage</title>
-    <link href="http://yangtao.site/2020/03/20/cookie-session/"/>
-    <id>http://yangtao.site/2020/03/20/cookie-session/</id>
+    <link href="https://www.yangtao.site/2020/03/20/cookie-session/"/>
+    <id>https://www.yangtao.site/2020/03/20/cookie-session/</id>
     <published>2020-03-20T04:08:07.000Z</published>
     <updated>2020-03-31T03:30:13.505Z</updated>
     
@@ -304,21 +330,21 @@
     
     </summary>
     
-      <category term="网络知识" scheme="http://yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
+      <category term="网络知识" scheme="https://www.yangtao.site/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="http" scheme="http://yangtao.site/tags/http/"/>
+      <category term="http" scheme="https://www.yangtao.site/tags/http/"/>
     
-      <category term="web" scheme="http://yangtao.site/tags/web/"/>
+      <category term="web" scheme="https://www.yangtao.site/tags/web/"/>
     
-      <category term="cookie" scheme="http://yangtao.site/tags/cookie/"/>
+      <category term="cookie" scheme="https://www.yangtao.site/tags/cookie/"/>
     
   </entry>
   
   <entry>
     <title>Understanding JavaScript Bind ()</title>
-    <link href="http://yangtao.site/2020/03/16/js-bind/"/>
-    <id>http://yangtao.site/2020/03/16/js-bind/</id>
+    <link href="https://www.yangtao.site/2020/03/16/js-bind/"/>
+    <id>https://www.yangtao.site/2020/03/16/js-bind/</id>
     <published>2020-03-16T09:09:08.000Z</published>
     <updated>2020-03-16T11:04:08.368Z</updated>
     
@@ -332,17 +358,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>React 设计思想【转载】</title>
-    <link href="http://yangtao.site/2020/03/16/react-design-ideass/"/>
-    <id>http://yangtao.site/2020/03/16/react-design-ideass/</id>
+    <link href="https://www.yangtao.site/2020/03/16/react-design-ideass/"/>
+    <id>https://www.yangtao.site/2020/03/16/react-design-ideass/</id>
     <published>2020-03-16T03:24:11.000Z</published>
     <updated>2020-03-16T03:28:38.441Z</updated>
     
@@ -356,17 +382,17 @@
     
     </summary>
     
-      <category term="前端框架" scheme="http://yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端框架" scheme="https://www.yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="react" scheme="http://yangtao.site/tags/react/"/>
+      <category term="react" scheme="https://www.yangtao.site/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>Gulp 自动化构建</title>
-    <link href="http://yangtao.site/2020/03/14/gulp-v4/"/>
-    <id>http://yangtao.site/2020/03/14/gulp-v4/</id>
+    <link href="https://www.yangtao.site/2020/03/14/gulp-v4/"/>
+    <id>https://www.yangtao.site/2020/03/14/gulp-v4/</id>
     <published>2020-03-14T04:18:36.000Z</published>
     <updated>2020-03-14T04:25:07.814Z</updated>
     
@@ -380,17 +406,17 @@
     
     </summary>
     
-      <category term="开发工具" scheme="http://yangtao.site/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.yangtao.site/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="gulp" scheme="http://yangtao.site/tags/gulp/"/>
+      <category term="gulp" scheme="https://www.yangtao.site/tags/gulp/"/>
     
   </entry>
   
   <entry>
     <title>Zepto-core-1.1.6 源码注释【转载】</title>
-    <link href="http://yangtao.site/2020/03/13/zepto-v1.6.6/"/>
-    <id>http://yangtao.site/2020/03/13/zepto-v1.6.6/</id>
+    <link href="https://www.yangtao.site/2020/03/13/zepto-v1.6.6/"/>
+    <id>https://www.yangtao.site/2020/03/13/zepto-v1.6.6/</id>
     <published>2020-03-13T06:05:37.000Z</published>
     <updated>2020-03-16T04:05:11.179Z</updated>
     
@@ -404,17 +430,17 @@
     
     </summary>
     
-      <category term="前端框架" scheme="http://yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端框架" scheme="https://www.yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="zepto" scheme="http://yangtao.site/tags/zepto/"/>
+      <category term="zepto" scheme="https://www.yangtao.site/tags/zepto/"/>
     
   </entry>
   
   <entry>
     <title>Zepto 对象思想与源码分析</title>
-    <link href="http://yangtao.site/2020/03/12/zepto/"/>
-    <id>http://yangtao.site/2020/03/12/zepto/</id>
+    <link href="https://www.yangtao.site/2020/03/12/zepto/"/>
+    <id>https://www.yangtao.site/2020/03/12/zepto/</id>
     <published>2020-03-12T09:56:32.000Z</published>
     <updated>2020-03-16T04:03:15.930Z</updated>
     
@@ -428,17 +454,17 @@
     
     </summary>
     
-      <category term="前端框架" scheme="http://yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端框架" scheme="https://www.yangtao.site/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="zepto" scheme="http://yangtao.site/tags/zepto/"/>
+      <category term="zepto" scheme="https://www.yangtao.site/tags/zepto/"/>
     
   </entry>
   
   <entry>
     <title>AJAX 请求</title>
-    <link href="http://yangtao.site/2020/01/07/ajax/"/>
-    <id>http://yangtao.site/2020/01/07/ajax/</id>
+    <link href="https://www.yangtao.site/2020/01/07/ajax/"/>
+    <id>https://www.yangtao.site/2020/01/07/ajax/</id>
     <published>2020-01-07T07:06:16.000Z</published>
     <updated>2020-01-07T09:51:42.474Z</updated>
     
@@ -452,21 +478,21 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="面试" scheme="https://www.yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="面试" scheme="http://yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
-      <category term="Ajax" scheme="http://yangtao.site/tags/Ajax/"/>
+      <category term="Ajax" scheme="https://www.yangtao.site/tags/Ajax/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript 类型判断</title>
-    <link href="http://yangtao.site/2020/01/07/code-typeof/"/>
-    <id>http://yangtao.site/2020/01/07/code-typeof/</id>
+    <link href="https://www.yangtao.site/2020/01/07/code-typeof/"/>
+    <id>https://www.yangtao.site/2020/01/07/code-typeof/</id>
     <published>2020-01-07T06:42:25.000Z</published>
     <updated>2020-01-07T07:00:58.458Z</updated>
     
@@ -480,38 +506,12 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
+      <category term="面试" scheme="https://www.yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="面试" scheme="http://yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 数组去重的几种方式</title>
-    <link href="http://yangtao.site/2020/01/07/code-unique/"/>
-    <id>http://yangtao.site/2020/01/07/code-unique/</id>
-    <published>2020-01-07T05:14:42.000Z</published>
-    <updated>2020-01-07T06:37:17.108Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>数组去重，老生常谈，把学习到的多种方式进行归纳总结</p></blockquote><a id="more"></a><h2 id="双层循环"><a href="#双层循环" class="headerlink" title="双层循环"></a>双层循环</h2><p>第一种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, arrLen = arr.length; i &lt; arrLen; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>, resLen = result.length; j &lt; resLen; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] === result[j]) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (j === result.length) &#123;</span><br><span class="line">      result.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>第二种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arrary = [].concat(arr); <span class="comment">// 避免修改原数组，存个副本</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arrary.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arrary[i] === arrary[j]) &#123;</span><br><span class="line">        arrary.splice(j, <span class="number">1</span>); <span class="comment">// splice() 修改原数组，所以需要手动修改长度</span></span><br><span class="line">        len--;</span><br><span class="line">        j--;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arrary;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="indexOf-方法"><a href="#indexOf-方法" class="headerlink" title="indexOf 方法"></a>indexOf 方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> current = arr[i];</span><br><span class="line">    <span class="keyword">if</span> (result.indexOf(current) === <span class="number">-1</span>) &#123;</span><br><span class="line">      result.push(current);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="filter-indexOf-方法"><a href="#filter-indexOf-方法" class="headerlink" title="filter + indexOf 方法"></a>filter + indexOf 方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.indexOf(item) === index;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">let</span> unique = <span class="function"><span class="params">arr</span> =&gt;</span></span><br><span class="line">  arr.filter(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> arr.indexOf(item) === index);</span><br></pre></td></tr></table></figure><p>如果我们对一个已经排好序的数组去重，这种方法效率肯定高于使用 indexOf：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> unique = <span class="function"><span class="params">arr</span> =&gt;</span></span><br><span class="line">  arr</span><br><span class="line">    .concat()</span><br><span class="line">    .sort()</span><br><span class="line">    .filter(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> !index || item !== arr[index - <span class="number">1</span>]);</span><br></pre></td></tr></table></figure><p>不过对于下面这种就会失效：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="string">"1"</span>, <span class="number">1</span>, <span class="string">"1"</span>];</span><br><span class="line"><span class="comment">//输出 [ 1, '1', 1, '1', 2, 3 ]</span></span><br></pre></td></tr></table></figure><h2 id="Object-键值对"><a href="#Object-键值对" class="headerlink" title="Object 键值对"></a>Object 键值对</h2><p>利用一个空的 Object 对象，我们把数组的值存成 Object 的 key 值，比如 <code>Object[value1] = true</code>，在判断另一个值的时候，如果 <code>Object[value2]</code>存在的话，就说明该值是重复的。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> unique = <span class="function"><span class="params">arr</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">  <span class="keyword">return</span> arr.filter(<span class="function"><span class="params">item</span> =&gt;</span></span><br><span class="line">    obj.hasOwnProperty(<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item))</span><br><span class="line">      ? <span class="literal">false</span></span><br><span class="line">      : (obj[<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item)] = <span class="literal">true</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>注意：</p><ol><li><code>typeof item + item</code> 是为了区分 1 还是 ‘1’</li><li><code>typeof item + JSON.stringify(item)</code> 是为了区分 <code>{value: 1}, {value: 1}</code></li></ol><p>如：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"1"</span>, &#123; <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">value</span>: <span class="number">1</span> &#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> getObjType = <span class="function"><span class="params">arr</span> =&gt;</span> arr.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item));</span><br><span class="line"></span><br><span class="line">getObjType(arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ["number1", "string"1"", "object&#123;"value":1&#125;", "object&#123;"value":1&#125;"]</span></span><br></pre></td></tr></table></figure><h2 id="Set-集合-和-Map-集合"><a href="#Set-集合-和-Map-集合" class="headerlink" title="Set 集合 和 Map 集合"></a>Set 集合 和 Map 集合</h2><p>ES6 去重方式已经是非常的精简：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set</span></span><br><span class="line"><span class="keyword">let</span> unique = <span class="function"><span class="params">arr</span> =&gt;</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr))</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> unique = <span class="function"><span class="params">arr</span> =&gt;</span> [...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"></span><br><span class="line"><span class="comment">// Map</span></span><br><span class="line"><span class="keyword">let</span> unique = <span class="function"><span class="params">arr</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> seen = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">  <span class="keyword">return</span> arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> !seen.has(item) &amp;&amp; seen.set(item, <span class="literal">true</span>));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ul><li><a href="https://github.com/mqyqingfeng/Blog/issues/27" target="_blank" rel="noopener">JavaScript 专题之数组去重</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;数组去重，老生常谈，把学习到的多种方式进行归纳总结&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yangtao.site/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yangtao.site/tags/JavaScript/"/>
-    
-      <category term="面试" scheme="http://yangtao.site/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="JavaScript" scheme="https://www.yangtao.site/tags/JavaScript/"/>
     
   </entry>
   

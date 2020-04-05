@@ -17,6 +17,33 @@
     
     
     <entry>
+      <title>在 Nginx 服务器上配置 HTTPS 证书</title>
+      <link href="/2020/04/04/http-https/"/>
+      <url>/2020/04/04/http-https/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>安装 https 证书的一些过程</p></blockquote><a id="more"></a><h2 id="下载证书"><a href="#下载证书" class="headerlink" title="下载证书"></a>下载证书</h2><p>我使用的阿里云免费个人版，有效期一年。</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">~/Downloads ❯❯❯ <span class="built_in">cd</span> 3713633_www.yangtao.site_nginx/</span><br><span class="line">~/D/3713633_www.yangtao.site_nginx ❯❯❯ ls</span><br><span class="line">3713633_www.yangtao.site.key 3713633_www.yangtao.site.pem</span><br><span class="line">~/D/3713633_www.yangtao.site_nginx ❯❯❯</span><br><span class="line">scp 3713633_www.yangtao.site.key 3713633_www.yangtao.site.pem root@47.101.33.81:/usr/<span class="built_in">local</span>/nginx/cert/</span><br><span class="line">root@47.101.33.81<span class="string">'s password:</span></span><br><span class="line"><span class="string">Permission denied, please try again.</span></span><br><span class="line"><span class="string">root@47.101.33.81'</span>s password:</span><br><span class="line">3713633_www.yangtao.site.key            100% 1675    88.9KB/s   00:00</span><br><span class="line">3713633_www.yangtao.site.pem            100% 3675   274.2KB/s   00:00</span><br><span class="line">~/D/3713633_www.yangtao.site_nginx ❯❯❯</span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@istaotao:/usr/<span class="built_in">local</span>/nginx/cert<span class="comment"># ls</span></span><br><span class="line">3713633_www.yangtao.site.key  3713633_www.yangtao.site.pem</span><br></pre></td></tr></table></figure><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>按照下文中注释内容修改 nginx.conf 文件：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 443 ssl;   <span class="comment">#SSL协议访问端口号为443。此处如未添加ssl，可能会造成Nginx无法启动。</span></span><br><span class="line">  server_name localhost;  <span class="comment">#将localhost修改为您证书绑定的域名，例如：www.example.com。</span></span><br><span class="line">  root html;</span><br><span class="line">  index index.html index.htm;</span><br><span class="line">  ssl_certificate cert/domain name.pem;   <span class="comment">#将domain name.pem替换成您证书的文件名。</span></span><br><span class="line">  ssl_certificate_key cert/domain name.key;   <span class="comment">#将domain name.key替换成您证书的密钥文件名。</span></span><br><span class="line">  ssl_session_timeout 5m;</span><br><span class="line">  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  <span class="comment">#使用此加密套件。</span></span><br><span class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   <span class="comment">#使用该协议进行配置。</span></span><br><span class="line">  ssl_prefer_server_ciphers on;</span><br><span class="line">  location / &#123;</span><br><span class="line">    root html;   <span class="comment">#站点目录。</span></span><br><span class="line">    index index.html index.htm;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="强制-http-跳转"><a href="#强制-http-跳转" class="headerlink" title="强制 http 跳转"></a>强制 http 跳转</h2><p>使用 curl 命令：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">~ ❯❯❯ curl baidu.com -v</span><br><span class="line">*   Trying 220.181.38.148...</span><br><span class="line">* TCP_NODELAY <span class="built_in">set</span></span><br><span class="line">* Connected to baidu.com (220.181.38.148) port 80 (<span class="comment">#0)</span></span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: baidu.com</span><br><span class="line">&gt; User-Agent: curl/7.64.1</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line">&lt; Date: Sat, 04 Apr 2020 16:33:35 GMT</span><br><span class="line">&lt; Server: Apache</span><br><span class="line">&lt; Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</span><br><span class="line">&lt; ETag: <span class="string">"51-47cf7e6ee8400"</span></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt; Content-Length: 81</span><br><span class="line">&lt; Cache-Control: max-age=86400</span><br><span class="line">&lt; Expires: Sun, 05 Apr 2020 16:33:35 GMT</span><br><span class="line">&lt; Connection: Keep-Alive</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0;url=http://www.baidu.com/"</span>&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">* Connection <span class="comment">#0 to host baidu.com left intact</span></span><br><span class="line">* Closing connection 0</span><br><span class="line">~ ❯❯❯</span><br></pre></td></tr></table></figure><p>可以看到百度很巧妙的利用 meta 的刷新作用，将 baidu.com 跳转到 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>同理, 我们也可以用这个特性来实现 http 向 https 的跳转</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># index.html</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0;url=https://www.yangtao.site/"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name yangtao.site;</span><br><span class="line"></span><br><span class="line">  location / &#123;</span><br><span class="line">      root /var/www/html/refresh/;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>测试 <a href="https://www.yangtao.site">yangtao.site</a>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">~ ❯❯❯ curl yangtao.site -v</span><br><span class="line">*   Trying 47.101.33.81...</span><br><span class="line">* TCP_NODELAY <span class="built_in">set</span></span><br><span class="line">* Connected to yangtao.site (47.101.33.81) port 80 (<span class="comment">#0)</span></span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: yangtao.site</span><br><span class="line">&gt; User-Agent: curl/7.64.1</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line">&lt; Server: nginx/1.14.0 (Ubuntu)</span><br><span class="line">&lt; Date: Sat, 04 Apr 2020 16:34:16 GMT</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt; Content-Length: 91</span><br><span class="line">&lt; Last-Modified: Sat, 04 Apr 2020 16:04:03 GMT</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; ETag: <span class="string">"5e88aff3-5b"</span></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"0;url=https://www.yangtao.site/"</span>&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">* Connection <span class="comment">#0 to host yangtao.site left intact</span></span><br><span class="line">* Closing connection 0</span><br></pre></td></tr></table></figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://help.aliyun.com/document_detail/98728.html?spm=5176.2020520163.0.0.36a756a7iFDdyN" target="_blank" rel="noopener">在 Nginx/Tengine 服务器上安装证书</a></li><li><a href="https://www.cnblogs.com/chnmig/p/10343890.html" target="_blank" rel="noopener">Nginx 配置 https 证书</a></li><li><a href="https://www.jianshu.com/p/29add30461ec" target="_blank" rel="noopener">nginx 配置 http 强制跳转 https</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript 深浅拷贝</title>
       <link href="/2020/04/03/code-copy/"/>
       <url>/2020/04/03/code-copy/</url>
@@ -33,9 +60,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 面试 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -60,9 +87,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 面试 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -447,9 +474,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 面试 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Ajax </tag>
             
@@ -476,9 +503,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 面试 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -503,9 +530,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 面试 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
